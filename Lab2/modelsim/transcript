@@ -1,0 +1,906 @@
+# Loading project Lab2
+# reading /home/harwiltz/altera/13.0/modelsim_ase/linux/../modelsim.ini
+file mkdir /home/harwiltz/DSDLabs/Lab3/modelsim
+# Loading project test
+# Compile of g07_debounder.vhd was successful.
+# Compile of g07_debounder_tst.vhd was successful.
+# Compile of g07_stack.vo was successful.
+# Compile of g07_stack.vt was successful.
+# 4 compiles, 0 failed with no errors. 
+vsim work.g07_debounder_vlg_vec_tst
+# vsim work.g07_debounder_vlg_vec_tst 
+# Loading work.g07_debounder_vlg_vec_tst
+# Loading work.g07_debounder
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(128): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(141): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(154): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(167): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(180): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(193): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(207): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(225): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(243): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(261): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(279): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(297): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(314): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(331): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(348): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(373): Instantiation of 'cycloneii_io' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(397): Instantiation of 'cycloneii_clkctrl' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(422): Instantiation of 'cycloneii_io' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(451): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(468): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(485): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(499): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(516): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(530): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(547): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(561): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(578): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(592): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(609): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(623): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(640): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(654): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(671): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(685): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(702): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(715): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(733): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(750): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(764): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(782): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(799): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(813): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(830): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(843): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(856): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(874): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(891): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(905): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(922): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(935): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(952): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(965): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(983): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(1001): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(1018): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(1031): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(1048): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(1065): Instantiation of 'cycloneii_lcell_ff' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(1078): Instantiation of 'cycloneii_lcell_comb' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# ** Error: (vsim-3033) /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vo(1103): Instantiation of 'cycloneii_io' failed. The design unit was not found.
+#         Region: /g07_debounder_vlg_vec_tst/i1
+#         Searched libraries:
+#             /home/harwiltz/DSDLabs/Lab3/modelsim/work
+# Loading work.g07_debounder_vlg_sample_tst
+# Loading work.g07_debounder_vlg_check_tst
+# Error loading design
+vsim -c -do g07_stack.do
+# No design specified
+ls
+# test.mpf
+# work
+ls
+# test.mpf
+# work
+cd ..
+# reading /home/harwiltz/altera/13.0/modelsim_ase/linux/../modelsim.ini
+cd modelsim
+ls
+# test.cr.mti
+# test.mpf
+# work
+cd bin
+# couldn't change working directory to "bin": no such file or directory
+ls
+# test.cr.mti
+# test.mpf
+# work
+pwd
+# /home/harwiltz/DSDLabs/Lab3/modelsim
+cd
+ls
+# ~
+# \
+# 00resume
+# 256Colors.png
+# 8-Bit_Music_The_Ride_of_the_Valkyries.aiff
+# abs
+# AlsiArchLogo_Black.xcf
+# AlsiArchLogo_Test.png
+# altera
+# Android
+# a.out
+# appfs
+# appfs-cache
+# appfs-cert
+# appfsd.8
+# appfsd.c
+# appfsd.tcl
+# appfs.fossil
+# appfs-mkfs
+# Arch
+# ArchInfo
+# ArchShirtPreview.png
+# ArchShirtWrongColors.jpg
+# ArrowKeysTest
+# ArrowKeyTest.cpp
+# ASCIIDragon
+# asciinema
+# ASCIIStormTroopersTransparent2.png
+# ASCIIStormTroopersTransparent.png
+# ASCIIStormTroopersTransparent.xcf
+# ASM
+# Assignment2.pdf
+# Assignment4.pdf
+# Assignment4.tex
+# Assignment5.pdf
+# AUR
+# AUR4
+# basejump
+# BobSacamanoBitches4MoneyArgument
+# boostabs
+# boxes
+# Breeze-Hacked
+# Breeze-Obsidian
+# bspwm
+# build
+# Cache
+# carbonfiberwave.png
+# Chess Games
+# chopin-frederic-nocturnes-opus-9-no-2-1508.pdf
+# chopin_nocture_9_2full1.gif
+# circuits.hs
+# Circuits-HS
+# CIVEAssignment6Number5.png
+# codeschool.vim
+# colorscheme.sh
+# colors.sh
+# comp1301-server.xml
+# comp1575-server.xml
+# COMP250PraticeFinalMergeSort.png
+# Comparator%20Circuits.pdf?sequence=1
+# confighd.sh
+# conkyrcbackup
+# conway
+# cower-git.tar.gz
+# cower.tar.gz
+# CPP
+# crazyfractal.png
+# Crossfire
+# ctf-literature
+# Curses-game-of-life
+# CV
+# DailyProgrammer
+# db
+# dcb802db7d.240.mp4?extra=ttFgq_dJdX0MNxOgegYlT8Vfgf7Ig4ikfTPx_hFK6jSC7QlRqHfkrrUrAtCxKkNI_brC4SCARbeypXURtpXzxiNXI30mKAHkfKcFv-rSsY_0C6h6ugbtnwF9ZiJGk1hErTHDzoKp6ZG8jd8
+# dead.letter
+# Desktop
+# DestructiveLogoHDPI.png
+# DestructiveLogoHDPI.xcf
+# DestructiveLogo.png
+# DestructiveLogoThickBorder.png
+# DestructiveLogoThickBorder.xcf
+# DestructiveLogo.xcf
+# dexterimage.aux
+# dexterimage.dvi
+# dexterimage.log
+# dexterimage.pdf
+# dexterimage.tex
+# DexterSometimes1.jpg
+# dmesgoutput
+# Documents
+# dotfiles
+# Downloads
+# DPM
+# DPMHeadingCorrection.png
+# DPMOdoCorrection.png
+# DPMOdoCorrectionWhite.png
+# DPMSearchAlgo.png
+# DPMSoftDoc4_0.docx
+# DPMSoftDoc4_1backup.docx
+# DPMSoftDoc4_1.docx
+# DPMSoftDoc5_0.doccx.odt
+# DPMSoftDoc5_0.docx
+# DPMSoftDoc6_0.docx
+# Draft1.asc
+# Draft1.log
+# Draft1.op.raw
+# Draft1.raw
+# Draft2.asc
+# Draft2.log
+# Draft2.op.raw
+# Draft2.raw
+# Draft3.log
+# Draft3.raw
+# Draft4.asc
+# Draft4.log
+# Draft4.op.raw
+# Draft4.raw
+# DragonCurve.class
+# DragonCurve.java
+# dragon.svg
+# Drivers
+# dropdown.sh
+# DSDLabs
+# dzenbspwm.sh
+# dzen.hi
+# dzenhs
+# dzen.hs
+# dzen.o
+# dzenpipe.sh
+# ebook_bible_nasb
+# Ebooks
+# EclipseBuggyDialog1.png
+# EclipseBuggyDialog2.png
+# eclipsetest.sh
+# eclipsev3
+# eclipsev3.sh
+# ECSE-211
+# ECSE321-Android
+# ECSE321Lib
+# EEvsCE
+# EMLSPICEResults
+# etpipe_decode=$my_pipe_decode;unsetmy_pipe_decode
+# EventRegistration.jar
+# evincetest.sh
+# facebookproblem.png
+# Fonts
+# fonts.scale
+# FoxEbook.net.txt
+# fractal.png
+# ftp_ccr.exe
+# FullTiltPoker.exe
+# FunctionGenerator.asc
+# FunctionGenerator.log
+# FunctionGenerator.op.raw
+# FunctionGenerator.plt
+# FunctionGenerator.raw
+# ÀG<
+# git
+# glSuperBible
+# Group10
+# GuitarPro
+# Harley's Projects
+# Haskell
+# haskell-ncurses
+# Help
+# HiRiQPlayer.java
+# homepage
+# Homework
+# hscurses
+# ila0601.pdf
+# Inconsolata-Mod.otf
+# Inconsolata.sfd
+# InkData
+# ipad-hires-carbon-fiber-wp22.png
+# ircjew.png
+# IRC_People
+# ironring.png
+# ise
+# ISEDeliverable1
+# Java
+# JavaWorkspace
+# jdk32
+# jellybeans.vim
+# Junior_Team19
+# k7.pdf
+# lejos
+# letter.pdf
+# libeay32.dll
+# libreofficetest.sh
+# LICENSE
+# lmms
+# lock.png
+# lockscreen.sh
+# log.000
+# log.001
+# log.002
+# LogicWorks4
+# logicworks.sh
+# lua
+# Mail
+# =.mailcap
+# main.py
+# major.pdf
+# Makefile
+# Math2400.hilljb.ExamReview.pdf
+# McGillSchedulesSemester1
+# McGillScholarship.png
+# mchacks2017
+# mcskins
+# methods.docx
+# MIASWFTE.TTF
+# microsan.tar
+# midoritest.sh
+# mipstest.asm
+# mirrors
+# MIT6_042JS10_lec25_sol.pdf
+# mnt
+# Monkey.tar
+# monkey.ttf
+# monokai
+# Movies
+# msvcp100.dll
+# msvcr100.dll
+# multiplier
+# multiplier.c
+# Music
+# MyPens
+# nltk_data
+# NocturneNo1.pdf
+# node_modules
+# nohup.out
+# noise.png
+# notes3-karatsuba
+# npm-debug.log
+# octave-workspace
+# OCW
+# OpenSource
+# PacmanHugeUpdate.png
+# peg-solitaire
+# Peg-Solitaire
+# peg-solitaire.c
+# Pictures
+# PKGBUILD
+# pkglist
+# pokerstars
+# Private
+# ProgramFiles
+# Project Euler
+# project.sh
+# Proposal.docx
+# Prosper
+# Python
+# QtCore4.dll
+# QtDeclarative4.dll
+# QtGui4.dll
+# QtNetwork4.dll
+# QtScript4.dll
+# QtSPIM_examples.pdf
+# QtSql4.dll
+# QtSvg4.dll
+# QtWebKit4.dll
+# QtXml4.dll
+# Quartus
+# quartustest.qpf
+# quartustest.qsf
+# QuestionableInduction.png
+# ranger
+# README.md
+# reconky.sh
+# resconf.sh
+# rofifull.sh
+# rofiscript.sh
+# Savant
+# saxmono.tar
+# saxmono.ttf
+# Scratch
+# sent
+# server.xml
+# setup.ilg
+# sha1.c
+# sha1.tcl
+# Shirts
+# Shows
+# sigma.png
+# Skunkworks
+# SociopathicBird
+# spim.pdf
+# spirocomp250ass4.java
+# splashanimation2.gif
+# splashanimation3.gif
+# splashanimation4.gif
+# splashanimation5.gif
+# splashanimation.gif
+# splashanimation.xcf
+# ssleay32.dll
+# Stuff
+# sunvox
+# sunvox_config.ini
+# surf
+# surf-0.6-bookmarks.diff
+# surf-0.6-homepage.diff
+# surf_qsearch.sh
+# SwingWiltzerShnaidman.zip
+# sxhkd
+# TAMAS2
+# TAMAS.jar
+# temp
+# temp.png
+# temp.tex
+# temptex.tex
+# termitetestconfig
+# test
+# testatan.class
+# testatan.java
+# Test.class
+# test.cpp
+# testdisk.log
+# tester$1BitField.class
+# tester$1HiRiQ.class
+# tester$1HiRiQSolver.class
+# tester$1HSLinkedList.class
+# tester$1HSLLNode.class
+# tester$1HTree.class
+# tester$1HTreeNode.class
+# tester.class
+# tester.java
+# testexe
+# testhome
+# testhome.cpp
+# test.java
+# Test.java
+# test.tex
+# Tex
+# tf8.pdf
+# tig2d.sh
+# Tigarmageddon-2D
+# tint2rc
+# tint3
+# transcript
+# typediff
+# typediff.c
+# UbuntuMono-Bold.otf
+# UbuntuMono-Lines.otf
+# UbuntuMono-Lines.sfd
+# UbuntuMono-Modded1.otf
+# UbuntuMono-Modded1.sfd
+# UbuntuMono-RegularMod2.otf
+# UbuntuMono-RegularMod3.otf
+# UbuntuMono-RegularMod4.otf
+# UbuntuMono-RegularMod5.otf
+# UbuntuMono-RegularMod.otf
+# UbuntuMono-Regular.sfd
+# uninstall.dat
+# unproject.sh
+# Updater.exe
+# usb
+# view-source_event.asrock.com_canada_NCIX_mir-0816p3.asp
+# view-source_event.asrock.com_canada_NCIX_mir-0816p3.asp.html
+# vimcolors
+# vim-gotham
+# vim-hybrid
+# vimissue
+# vim-pathogen
+# vimrc
+# vim-wiltz
+# VirtualBox VMs
+# VirtualMachines
+# vlc-record-2015-10-11-19h24m02s-screen___-.avi
+# webdev
+# WebworkFrobeniusShit.png
+# win32
+# workspace
+# xampp
+# xboard-4.4.2
+# xboard-4.4.2.tar.gz
+# xlog.txt
+# xmonad
+# xpp3_min-1.1.4c.jar
+# Xresources
+# Xterm256ColorChart.png
+# Xterm_256color_chart.svg
+# Zip?
+pwd
+# /home/harwiltz
+cd altera/13.0/modelsim_ase
+# reading modelsim.ini
+ls
+# altera
+# bin
+# docs
+# examples
+# floatfixlib
+# gcc-4.3.3-linux
+# gcc-4.5.0-linux
+# ieee
+# ieeepure
+# include
+# install.csh
+# linux
+# linuxaloem
+# modelsim.ini
+# modelsim_lib
+# perl_src
+# readme.txt
+# RELEASE_NOTES
+# RELEASE_NOTES.html
+# RELEASE_NOTES.txt
+# std
+# std_developerskit
+# sv_std
+# synopsys
+# tcl
+# vco
+# verilog
+# verilog_src
+# vhdl_src
+# vital1995
+# vital2000
+# vital2.2b
+cd bin
+# reading /home/harwiltz/altera/13.0/modelsim_ase/linux/../modelsim.ini
+vsim -c -do g07_stack.do
+# No design specified
+ls
+# drill
+# dumplog64
+# g07_stack.do
+# g07_stack_fast.vho
+# g07_stack_fast.vo
+# g07_stack_modelsim.xrf
+# g07_stack.msim.vcd
+# g07_stack_run_msim_gate_vhdl.do
+# g07_stack_run_msim_rtl_vhdl.do
+# g07_stack_run_msim_rtl_vhdl.do.bak
+# g07_stack_run_msim_rtl_vhdl.do.bak1
+# g07_stack_run_msim_rtl_vhdl.do.bak2
+# g07_stack.sft
+# g07_stack_v_fast.sdo
+# g07_stack_vhd_fast.sdo
+# g07_stack_vhd.sdo
+# g07_stack.vho
+# g07_stack.vo
+# g07_stack_v.sdo
+# g07_stack.vt
+# hm_entity
+# jobspy
+# mc2autopart
+# mc2com
+# mc2perfanalyze
+# mc2_util
+# nohup.out
+# popen.mif
+# qhcvt
+# qhdel
+# qhdir
+# qhgencomp
+# qhlib
+# qhmake
+# qhmap
+# qhsim
+# qverilog
+# qvhcom
+# qvlcom
+# sccom
+# scgenmod
+# sdfcom
+# sm_entity
+# transcript
+# vcd2wlf
+# vcom
+# vcover
+# vdbg
+# vdel
+# vdir
+# vencrypt
+# verror
+# vgencomp
+# vhencrypt
+# vlib
+# vlog
+# vmake
+# vmap
+# vopt
+# vrun
+# vsim
+# vsim.wlf
+# wlf2log
+# wlf2vcd
+# wlfman
+# wlfrecover
+# work
+# xml2ucdb
+pwd
+# /home/harwiltz/altera/13.0/modelsim_ase/bin
+cd 
+cd DSDLabs/Lab3
+ls
+# db
+# debounder.vcd
+# e~g07_debounder.o
+# e~g07_debounder_tst.o
+# g07_debounder
+# g07_debounder.bdf
+# g07_debounder.bsf
+# g07_debounder.o
+# g07_debounder_tst
+# g07_debounder_tst.o
+# g07_debounder_tst.vhd
+# g07_debounder.vhd
+# g07_generator.bsf
+# g07_generator.o
+# g07_generator.vhd
+# g07_popenable.bsf
+# g07_popenable.pdf
+# g07_popenable.vhd
+# g07_popenable.vhd.bak
+# g07_popenable.vht
+# g07_pushpopdecide.bsf
+# g07_pushpopdecide.o
+# g07_pushpopdecide.vhd
+# g07_pushpopdecide.vhd.bak
+# g07_stack4.vhd
+# g07_stack52.bdf
+# g07_stack.bdf
+# g07_stack.bsf
+# g07_stack_nativelink_simulation.rpt
+# g07_stack.qpf
+# g07_stack.qsf
+# g07_stack.vhd
+# g07_stack.vhd.bak
+# generator.class
+# generator.java
+# greybox_tmp
+# incremental_db
+# init.mif
+# lab_3_Winter_2017.pdf
+# lpm_compare_0.vhd
+# lpm_constant0.bsf
+# lpm_constant0.cmp
+# lpm_constant0.qip
+# lpm_constant0.vhd
+# lpm_counter_1.vhd
+# makefile
+# modelsim
+# output_files
+# popen.mif
+# popen.mif.bak
+# serv_req_info.txt
+# simulation
+# Waveform1.vwf
+# Waveform2.vwf
+# Waveform.vwf
+# work-obj93.cf
+ls
+# db
+# debounder.vcd
+# e~g07_debounder.o
+# e~g07_debounder_tst.o
+# g07_debounder
+# g07_debounder.bdf
+# g07_debounder.bsf
+# g07_debounder.o
+# g07_debounder_tst
+# g07_debounder_tst.o
+# g07_debounder_tst.vhd
+# g07_debounder.vhd
+# g07_generator.bsf
+# g07_generator.o
+# g07_generator.vhd
+# g07_popenable.bsf
+# g07_popenable.pdf
+# g07_popenable.vhd
+# g07_popenable.vhd.bak
+# g07_popenable.vht
+# g07_pushpopdecide.bsf
+# g07_pushpopdecide.o
+# g07_pushpopdecide.vhd
+# g07_pushpopdecide.vhd.bak
+# g07_stack4.vhd
+# g07_stack52.bdf
+# g07_stack.bdf
+# g07_stack.bsf
+# g07_stack_nativelink_simulation.rpt
+# g07_stack.qpf
+# g07_stack.qsf
+# g07_stack.vhd
+# g07_stack.vhd.bak
+# generator.class
+# generator.java
+# greybox_tmp
+# incremental_db
+# init.mif
+# lab_3_Winter_2017.pdf
+# lpm_compare_0.vhd
+# lpm_constant0.bsf
+# lpm_constant0.cmp
+# lpm_constant0.qip
+# lpm_constant0.vhd
+# lpm_counter_1.vhd
+# makefile
+# modelsim
+# output_files
+# popen.mif
+# popen.mif.bak
+# serv_req_info.txt
+# simulation
+# Waveform1.vwf
+# Waveform2.vwf
+# Waveform.vwf
+# work-obj93.cf
+pwd
+# /home/harwiltz/DSDLabs/Lab3
+cd modelsim
+vsim -do g07_stack.do -c work.g07_debounder_tst
+# vsim -do g07_stack.do -c work.g07_debounder_tst 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.g07_debounder_tst(test)
+# ALTERA version supports only a single HDL
+# ** Error: (vsim-3039) /home/harwiltz/DSDLabs/Lab3/g07_debounder_tst.vhd(20): Instantiation of 'g07_debounder' failed.
+#         Region: /g07_debounder_tst
+# Error loading design
+# Load canceled

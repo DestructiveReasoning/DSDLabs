@@ -1,0 +1,70 @@
+# Loading project g01_lab1
+# reading /home/harwiltz/altera/13.0/modelsim_ase/linux/../modelsim.ini
+# Loading project g00_lab1
+# Compile of g07_comp6.vhd was successful.
+# Compile of g07_lab1.vhd was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim work.g07_lab1
+# vsim work.g07_lab1 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.g07_lab1(bdf_type)
+# Loading work.g07_comp6(bdf_type)
+# Compile of g07_comp6.vhd was successful.
+# Compile of g07_lab1.vhd was successful.
+# Compile of g07_lab1.vht was successful with warnings.
+# 3 compiles, 0 failed with no errors. 
+vsim work.g07_lab1_vhd_tst
+# vsim work.g07_lab1_vhd_tst 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.g07_lab1_vhd_tst(g07_lab1_arch)
+# Loading work.g07_lab1(bdf_type)
+# Loading work.g07_comp6(bdf_type)
+add wave -position end  sim:/g07_lab1_vhd_tst/A
+add wave -position end  sim:/g07_lab1_vhd_tst/AeqB
+add wave -position end  sim:/g07_lab1_vhd_tst/B
+run
+run
+# Compile of g07_comp6.vhd was successful.
+# Compile of g07_lab1.vhd was successful.
+# Compile of g07_lab1.vht was successful.
+# 3 compiles, 0 failed with no errors. 
+run
+run
+restart
+# Loading work.g07_lab1_vhd_tst(g07_lab1_arch)
+# Loading work.g07_lab1(bdf_type)
+# Loading work.g07_comp6(bdf_type)
+run
+# Compile of g07_lab1.vht was successful.
+# Compile of g07_comp6.vhd was successful.
+# Compile of g07_lab1.vhd was successful.
+# Compile of g07_lab1.vht was successful.
+# 3 compiles, 0 failed with no errors. 
+restart
+# Loading work.g07_lab1_vhd_tst(g07_lab1_arch)
+# Loading work.g07_lab1(bdf_type)
+# Loading work.g07_comp6(bdf_type)
+run
+# Compile of g07_comp6.vhd was successful.
+# Compile of g07_lab1.vhd was successful.
+# Compile of g07_lab1.vht was successful.
+# Compile of g07_adder.vhd was successful.
+# Compile of g07_adder.vht failed with 1 errors.
+# 5 compiles, 1 failed with 1 error. 
+# Compile of g07_comp6.vhd was successful.
+# Compile of g07_lab1.vhd was successful.
+# Compile of g07_lab1.vht was successful.
+# Compile of g07_adder.vhd was successful.
+# Compile of g07_adder.vht failed with 1 errors.
+# 5 compiles, 1 failed with 1 error. 
+# Compile of g07_comp6.vhd was successful.
+# Compile of g07_lab1.vhd was successful.
+# Compile of g07_lab1.vht was successful.
+# Compile of g07_adder.vhd was successful.
+# Compile of g07_adder.vht failed with 1 errors.
+# 5 compiles, 1 failed with 1 error. 
+# Compile of g07_adder.vht failed with 1 errors.

@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\intelFPGA\Lab3\simulation\qsim
+vg07_stack
+Z1 Ihf[16@]0]_ad^dQQU6IN50
+Z2 V[@g5`Um4Pkl<k_ZH0z2[f2
+Z3 dD:\intelFPGA\Lab3\simulation\qsim
+Z4 w1488407503
+Z5 8g07_stack.vo
+Z6 Fg07_stack.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|g07_stack.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 1E@K`V7X]FRZ<DNBHN9lA2
+!s85 0
+Z11 !s108 1488407503.649000
+Z12 !s107 g07_stack.vo|
+!s101 -O0
+vg07_stack_vlg_check_tst
+!i10b 1
+Z13 !s100 zCohm^QDP]gif57OR77e50
+Z14 I`j6WHjFQ?56XD0Beg:dN[0
+Z15 Vz;LAR0]ZYKJz9lAEknnV[0
+R3
+Z16 w1488407502
+Z17 8g07_stack.vt
+Z18 Fg07_stack.vt
+L0 67
+R7
+r1
+!s85 0
+31
+Z19 !s108 1488407503.995000
+Z20 !s107 g07_stack.vt|
+Z21 !s90 -work|work|g07_stack.vt|
+!s101 -O0
+R9
+vg07_stack_vlg_sample_tst
+!i10b 1
+Z22 !s100 JQ;jmQPXNmiQUPk@fmNa_3
+Z23 IMVB^Q9fkbN9U2e8U;9j2W3
+Z24 VGU]FMnmDb8DeU1z]b8OKF1
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vg07_stack_vlg_vec_tst
+!i10b 1
+Z25 !s100 jD6PVTG5Q1[C=Meb>[9[o2
+Z26 IF<18Uc>T`ZLBAK[zJZ;=b0
+Z27 V9zQ23Ilo[TXd?5oiZbWRM3
+R3
+R16
+R17
+R18
+Z28 L0 421
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

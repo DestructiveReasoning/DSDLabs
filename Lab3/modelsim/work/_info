@@ -1,0 +1,264 @@
+m255
+K3
+13
+cModel Technology
+d/home/harwiltz/DSDLabs/Lab2/modelsim
+Eg07_debounder
+Z0 w1488901450
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z3 d/home/harwiltz/DSDLabs/Lab3/modelsim
+Z4 8/home/harwiltz/DSDLabs/Lab3/g07_debounder.vhd
+Z5 F/home/harwiltz/DSDLabs/Lab3/g07_debounder.vhd
+l0
+L24
+V1[5J5QQ:WN^Xc^^mJiUM;2
+Z6 OV;C;10.1d;51
+32
+Z7 !s108 1489075678.328792
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab3/g07_debounder.vhd|
+Z9 !s107 /home/harwiltz/DSDLabs/Lab3/g07_debounder.vhd|
+Z10 o-work work -2002 -explicit -O0
+Z11 tExplicit 1
+!s100 jfPLNFPPFFe<VaQ^RzWi`0
+!i10b 1
+Abdf_type
+R1
+R2
+DEx4 work 13 g07_debounder 0 22 1[5J5QQ:WN^Xc^^mJiUM;2
+l73
+L33
+V:EjnZ@hKU3;zKlVZz5>021
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 `:`YA4dRdGaNRZTiQDgUg3
+!i10b 1
+Eg07_debounder_tst
+Z12 w1488902531
+Z13 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R1
+R2
+R3
+Z14 8/home/harwiltz/DSDLabs/Lab3/g07_debounder_tst.vht
+Z15 F/home/harwiltz/DSDLabs/Lab3/g07_debounder_tst.vht
+l0
+L5
+V=RA5bL=Gek`Yb0PnjkiEF1
+R6
+32
+Z16 !s108 1489075678.367333
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab3/g07_debounder_tst.vht|
+Z18 !s107 /home/harwiltz/DSDLabs/Lab3/g07_debounder_tst.vht|
+R10
+R11
+!s100 ZfYNaOL6[fh:WBjkmol470
+!i10b 1
+Atest
+R13
+R1
+R2
+DEx4 work 17 g07_debounder_tst 0 22 =RA5bL=Gek`Yb0PnjkiEF1
+l19
+L8
+VSbA<7WKe<Tl<[KH37^Aml3
+R6
+32
+R16
+R17
+R18
+R10
+R11
+!s100 _c_3Wg3_C]_R07DNeMXK:0
+!i10b 1
+vg07_debounder_vlg_check_tst
+I_CfUZSkKc8eQf55QQ5jJH0
+VbH1]F?HJ1lT_=IMN??2CF0
+R3
+Z19 w1488399571
+Z20 8/home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vt
+Z21 F/home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vt
+L0 59
+Z22 OV;L;10.1d;51
+r1
+31
+Z23 !s108 1488402481.765778
+Z24 !s107 /home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vt|
+Z25 !s90 -reportprogress|300|-work|work|/home/harwiltz/altera/13.0/modelsim_ase/bin/g07_stack.vt|
+Z26 o-work work -O0
+!i10b 1
+!s100 M=0VdS`X>VW^NVKUe6Uzi3
+!s85 0
+!s101 -O0
+vg07_debounder_vlg_sample_tst
+Id0^;A67gG8<`7fG]h^6z21
+V_Z_9VBJl2j^3^;Q;:dXEI3
+R3
+R19
+R20
+R21
+L0 29
+R22
+r1
+31
+R23
+R24
+R25
+R26
+!i10b 1
+!s100 S1_9GV6He[F1564VTCX^81
+!s85 0
+!s101 -O0
+vg07_debounder_vlg_vec_tst
+I9ZVBf_NQMcknE68h>WIk60
+VToWiO0Y_oiM6mhLR6HDg11
+R3
+R19
+R20
+R21
+L0 154
+R22
+r1
+31
+R23
+R24
+R25
+R26
+!i10b 1
+!s100 :_hAToW:WIzIPm_Q]3>g=0
+!s85 0
+!s101 -O0
+Eg07_stack
+w1488899193
+R1
+R2
+R3
+8/home/harwiltz/DSDLabs/Lab3/g07_stack.vhd
+F/home/harwiltz/DSDLabs/Lab3/g07_stack.vhd
+l0
+L24
+VL[fe9MXFA55mQQ0RGP=3`1
+R6
+32
+R10
+R11
+!s100 AL@>TfKKB?dLTZ5C`oaQz1
+!i10b 1
+!s108 1489075678.405675
+!s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab3/g07_stack.vhd|
+!s107 /home/harwiltz/DSDLabs/Lab3/g07_stack.vhd|
+Emod13
+Z27 w1488408414
+Z28 DPx3 lpm 14 lpm_components 0 22 iingGbl@N@a>h=m<^4?ml0
+R1
+R2
+R3
+Z29 8/home/harwiltz/DSDLabs/Lab3/mod13.vhd
+Z30 F/home/harwiltz/DSDLabs/Lab3/mod13.vhd
+l0
+L6
+VL:WmOW9dVnN6^RXeo8Nk60
+R6
+32
+Z31 !s108 1489075678.237387
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab3/mod13.vhd|
+Z33 !s107 /home/harwiltz/DSDLabs/Lab3/mod13.vhd|
+R10
+R11
+!s100 ^Q_5C2nQm8deOP[h@oREL0
+!i10b 1
+Abehavior
+R28
+R1
+R2
+DEx4 work 5 mod13 0 22 L:WmOW9dVnN6^RXeo8Nk60
+l26
+L14
+VlJc5E21QCHYBJ8RQM:6z?1
+R6
+32
+R31
+R32
+R33
+R10
+R11
+!s100 mgQM9M3PZ1Y39>@QL0=Z10
+!i10b 1
+Emod13tst
+Z34 w1488409608
+R13
+R1
+R2
+R3
+Z35 8/home/harwiltz/DSDLabs/Lab3/mod13tst.vht
+Z36 F/home/harwiltz/DSDLabs/Lab3/mod13tst.vht
+l0
+L5
+VIhkhA62B2QO71G:zKEoWM1
+R6
+32
+Z37 !s108 1489075678.287004
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab3/mod13tst.vht|
+Z39 !s107 /home/harwiltz/DSDLabs/Lab3/mod13tst.vht|
+R10
+R11
+!s100 3OX5j8gJkfKF?Y@`dSF_;0
+!i10b 1
+Atest
+R13
+R1
+R2
+DEx4 work 8 mod13tst 0 22 IhkhA62B2QO71G:zKEoWM1
+l17
+L8
+V7_B=lWJ]emfi7L7]PU4Y41
+R6
+32
+R37
+R38
+R39
+R10
+R11
+!s100 n8Ym@Gik`l?`FG:O`aYA63
+!i10b 1
+Estacktest
+Z40 w1489075538
+R13
+R1
+R2
+R3
+Z41 8/home/harwiltz/DSDLabs/Lab3/stacktest.vhd
+Z42 F/home/harwiltz/DSDLabs/Lab3/stacktest.vhd
+l0
+L5
+V7J870M4W[];[Cc1FW[oGI3
+!s100 XzXaSMXTB>Co2]@kJLVf]1
+R6
+32
+!i10b 1
+Z43 !s108 1489075678.464859
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab3/stacktest.vhd|
+Z45 !s107 /home/harwiltz/DSDLabs/Lab3/stacktest.vhd|
+R10
+R11
+Atest
+R13
+R1
+R2
+Z46 DEx4 work 9 stacktest 0 22 7J870M4W[];[Cc1FW[oGI3
+l30
+L8
+Z47 V_9oGMS@g0ZA=ZQPEU@I4;2
+Z48 !s100 1T=eDR;;j?k[KF?a]Q?>>1
+R6
+32
+!i10b 1
+R43
+R44
+R45
+R10
+R11

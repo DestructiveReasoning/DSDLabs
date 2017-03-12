@@ -1,0 +1,17 @@
+/home/harwiltz/DSDLabs/Lab1/g07_comp6.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab1/g07_comp6.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity g07_comp6
+-- Compiling architecture bdf_type of g07_comp6
+
+} {} {}} /home/harwiltz/DSDLabs/Lab1/g07_lab1.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab1/g07_lab1.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity g07_lab1
+-- Compiling architecture bdf_type of g07_lab1
+
+} {} {}}

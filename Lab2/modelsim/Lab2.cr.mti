@@ -1,0 +1,53 @@
+/home/harwiltz/DSDLabs/Lab2/g07_adder.vht {2 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab2/g07_adder.vht
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity g07_RANDU_vhd_tst
+-- Compiling architecture g07_RANDU_arch of g07_RANDU_vhd_tst
+** Warning: [4] /home/harwiltz/DSDLabs/Lab2/g07_adder.vht(35): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] /home/harwiltz/DSDLabs/Lab2/g07_adder.vht(37): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] /home/harwiltz/DSDLabs/Lab2/g07_adder.vht(39): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] /home/harwiltz/DSDLabs/Lab2/g07_adder.vht(41): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} /home/harwiltz/DSDLabs/Lab2/g07_7_segment_decoder_testbench.vht {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab2/g07_7_segment_decoder_testbench.vht
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity g07_7_segment_decoder_testbench
+-- Compiling architecture test of g07_7_segment_decoder_testbench
+
+} {} {}} /home/harwiltz/DSDLabs/Lab2/g07_popenable.vht {2 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab2/g07_popenable.vht
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity g07_popenable_vhd_tst
+-- Compiling architecture g07_popenable_arch of g07_popenable_vhd_tst
+** Warning: [4] /home/harwiltz/DSDLabs/Lab2/g07_popenable.vht(37): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] /home/harwiltz/DSDLabs/Lab2/g07_popenable.vht(40): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] /home/harwiltz/DSDLabs/Lab2/g07_popenable.vht(42): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] /home/harwiltz/DSDLabs/Lab2/g07_popenable.vht(44): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} /home/harwiltz/DSDLabs/Lab2/g07_RANDU.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab2/g07_RANDU.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package LPM_COMPONENTS
+-- Compiling entity g07_RANDU
+-- Compiling architecture generator of g07_RANDU
+
+} {} {}} /home/harwiltz/DSDLabs/Lab2/g07_7_segment_decoder.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab2/g07_7_segment_decoder.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity g07_7_segment_decoder
+-- Compiling architecture costanza of g07_7_segment_decoder
+
+} {} {}}

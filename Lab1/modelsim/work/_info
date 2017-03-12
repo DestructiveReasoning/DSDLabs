@@ -1,0 +1,219 @@
+m255
+K3
+13
+cModel Technology
+d/home/harwiltz/DSDLabs/Lab1
+Eg07_adder
+Z0 w1486051982
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z3 d/home/harwiltz/DSDLabs/Lab1/modelsim
+Z4 8/home/harwiltz/DSDLabs/Lab1/g07_adder.vhd
+Z5 F/home/harwiltz/DSDLabs/Lab1/g07_adder.vhd
+l0
+L24
+VX[1E70nG]a^:YnDdzCCAD3
+Z6 OV;C;10.1d;51
+32
+Z7 !s108 1486052172.611802
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab1/g07_adder.vhd|
+Z9 !s107 /home/harwiltz/DSDLabs/Lab1/g07_adder.vhd|
+Z10 o-work work -2002 -explicit -O0
+Z11 tExplicit 1
+!s100 e:GWd_kPS8J`>lVQR<c1:1
+!i10b 1
+Abdf_type
+R1
+R2
+DEx4 work 9 g07_adder 0 22 X[1E70nG]a^:YnDdzCCAD3
+l88
+L34
+VCW@MozYJ;L6Kf=R6l?kh=0
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 Qkh757:Y56Aje6PT3k6?m2
+!i10b 1
+Eg07_adder_vhd_tst
+Z12 w1486052165
+Z13 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R1
+R2
+R3
+Z14 8/home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_adder.vht
+Z15 F/home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_adder.vht
+l0
+L8
+Vj[?70R@2zAFjR=OXmNLKO1
+R6
+32
+Z16 !s108 1486052172.634543
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_adder.vht|
+Z18 !s107 /home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_adder.vht|
+R10
+R11
+!s100 96iIKhi6m1XI2DUD7McUi1
+!i10b 1
+Ag07_adder_arch
+R13
+R1
+R2
+DEx4 work 17 g07_adder_vhd_tst 0 22 j[?70R@2zAFjR=OXmNLKO1
+l25
+L10
+VOlfnVK5@mXn^PNYhCn_`53
+R6
+32
+R16
+R17
+R18
+R10
+R11
+!s100 >GhhAU8ilD?1H8P6Z7kz11
+!i10b 1
+Eg07_comp6
+Z19 w1485290478
+R1
+R2
+R3
+Z20 8/home/harwiltz/DSDLabs/Lab1/g07_comp6.vhd
+Z21 F/home/harwiltz/DSDLabs/Lab1/g07_comp6.vhd
+l0
+L24
+V19zSlTJ:_9S_4Bi@Q`NAG1
+R6
+32
+Z22 !s108 1486052172.505547
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab1/g07_comp6.vhd|
+Z24 !s107 /home/harwiltz/DSDLabs/Lab1/g07_comp6.vhd|
+R10
+R11
+!s100 D=8_@MGU=LkeTd9D0nMDK2
+!i10b 1
+Abdf_type
+R1
+R2
+DEx4 work 9 g07_comp6 0 22 19zSlTJ:_9S_4Bi@Q`NAG1
+l45
+L33
+VzM`46nnlK0ObQcd1<9L6J1
+R6
+32
+R22
+R23
+R24
+R10
+R11
+!s100 lGA5dEQ[9:0[0n?7M[N0b2
+!i10b 1
+Eg07_lab1
+Z25 w1485288461
+R1
+R2
+R3
+Z26 8/home/harwiltz/DSDLabs/Lab1/g07_lab1.vhd
+Z27 F/home/harwiltz/DSDLabs/Lab1/g07_lab1.vhd
+l0
+L24
+V]Nbn<jYYC<J7QlhP_S]ZP3
+R6
+32
+Z28 !s108 1486052172.562151
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab1/g07_lab1.vhd|
+Z30 !s107 /home/harwiltz/DSDLabs/Lab1/g07_lab1.vhd|
+R10
+R11
+!s100 Z]D^kRCAK8m5n1A95B0G83
+!i10b 1
+Abdf_type
+R1
+R2
+DEx4 work 8 g07_lab1 0 22 ]Nbn<jYYC<J7QlhP_S]ZP3
+l44
+L33
+V:YnZZoz1z<aRPZ007^TCP0
+R6
+32
+R28
+R29
+R30
+R10
+R11
+!s100 6zHokmMkgg8R@MTZiD8YQ1
+!i10b 1
+Eg07_lab1_vhd_tst
+Z31 w1486050580
+R1
+R2
+R3
+Z32 8/home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_lab1.vht
+Z33 F/home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_lab1.vht
+l0
+L30
+V4j32c2;0k;5TM34lY]U^_3
+R6
+32
+Z34 !s108 1486052172.588568
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_lab1.vht|
+Z36 !s107 /home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_lab1.vht|
+R10
+R11
+!s100 j>l8eC=;Y?2H07lzz5N9N2
+!i10b 1
+Ag07_lab1_arch
+R1
+R2
+DEx4 work 16 g07_lab1_vhd_tst 0 22 4j32c2;0k;5TM34lY]U^_3
+l45
+L32
+VPeJEg@f0TgoVPF]je^Az:0
+R6
+32
+R34
+R35
+R36
+R10
+R11
+!s100 X<Fmz3G^oH]DJ;;YozYRB2
+!i10b 1
+Eg07_lab1_vhdfull_tst
+Z37 w1486051080
+R13
+R1
+R2
+R3
+Z38 8/home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_lab1full.vht
+Z39 F/home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_lab1full.vht
+l0
+L31
+V:jhDLOVeCPdgc<kPaPEF^0
+!s100 dh`0mI51c39R7;]Q`K`ID2
+R6
+32
+!i10b 1
+Z40 !s108 1486052172.659807
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_lab1full.vht|
+Z42 !s107 /home/harwiltz/DSDLabs/Lab1/simulation/modelsim/g07_lab1full.vht|
+R10
+R11
+Ag07_lab1_arch
+R13
+R1
+R2
+Z43 DEx4 work 20 g07_lab1_vhdfull_tst 0 22 :jhDLOVeCPdgc<kPaPEF^0
+l46
+L33
+Z44 V[I?>P85^PdBdFfclYRAZ91
+Z45 !s100 5bbKABNc`;fB6Q22WJ^H70
+R6
+32
+!i10b 1
+R40
+R41
+R42
+R10
+R11

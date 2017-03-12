@@ -1,0 +1,27 @@
+<internal_error>
+<sub_system>ERR</sub_system>
+<callstack>
+	 0xf11d95b8: ccl_err + 0xa5b8 (_ZN15ERR_STACKWALKER15get_stack_traceEPPKviiPv + 0x90)
+	 0xf11dc76b: ccl_err + 0xd76b (_Z14err_terminatorv + 0x8a)
+	 0xee75f07e: dinkum_alt + 0x1707e (_ZSt9terminatev + 0x1e)
+	 0xed7eaaab: stdc++.so.6 + 0xb0aab (__cxa_rethrow + 0x5b)
+	 0xf05a2fbd: QtCore.so.4 + 0x17cfbd (_ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE + 0x36d)
+	 0xf778e6af: sys_qgq + 0xc6af (_ZN22QGQ_WELCOME_SCREEN_DLG19show_welcome_screenEv + 0x69)
+	 0xf7792d42: sys_qgq + 0x10d42 (_ZN7QGQ_APP13init_instanceEiPPKcP11QUI_CMDLINE + 0x30c)
+	  0x804e44e: quartus + 0x644e (__gxx_personality_v0 + 0x356)
+	 0xf181f908: ccl_msg + 0x23908 (_Z15msg_main_threadPv + 0x18)
+	 0xf1193f9e: ccl_thr + 0x5f9e (thr_final_wrapper + 0xe)
+	 0xf1820625: ccl_msg + 0x24625 (_Z18msg_thread_wrapperPFPvS_ES_ + 0x6c)
+	  0x805de1d: quartus + 0x15e1d (_Z18mem_thread_wrapperPFPvS_ES_ + 0xdd)
+	 0xf11defd8: ccl_err + 0xffd8 (_Z18err_thread_wrapperPFPvS_ES_ + 0x2a)
+	 0xf11943fa: ccl_thr + 0x63fa (thr_thread_wrapper + 0x2f)
+	 0xf1832e9a: ccl_msg + 0x36e9a (_Z12msg_exe_mainiPPKcPFiiS1_E + 0xb7)
+	  0x804e531: quartus + 0x6531 (__gxx_personality_v0 + 0x439)
+	 0xed51d196: c.so.6 + 0x18196 (__libc_start_main + 0xf6)
+	  0x804e311: quartus + 0x6311 (__gxx_personality_v0 + 0x219)
+</callstack>
+<error>*** Fatal Error: Unhandled Exception</error>
+<date>Tue Feb 28 21:41:43 2017
+</date>
+<version>Version 13.0.0 Build 156 04/24/2013 SJ Web Edition</version>
+</internal_error>

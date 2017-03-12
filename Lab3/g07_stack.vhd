@@ -1,0 +1,4478 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+
+-- PROGRAM		"Quartus II 32-bit"
+-- VERSION		"Version 13.0.0 Build 156 04/24/2013 SJ Web Edition"
+-- CREATED		"Tue Mar  7 15:06:33 2017"
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all; 
+
+LIBRARY work;
+
+ENTITY g07_stack IS 
+	PORT
+	(
+		ENABLE :  IN  STD_LOGIC;
+		RST :  IN  STD_LOGIC;
+		CLK :  IN  STD_LOGIC;
+		ADDR :  IN  STD_LOGIC_VECTOR(5 DOWNTO 0);
+		DATA :  IN  STD_LOGIC_VECTOR(5 DOWNTO 0);
+		MODE :  IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
+		FULL :  OUT  STD_LOGIC;
+		EMPTY :  OUT  STD_LOGIC;
+		NUM :  OUT  STD_LOGIC_VECTOR(5 DOWNTO 0);
+		VALUE :  OUT  STD_LOGIC_VECTOR(5 DOWNTO 0)
+	);
+END g07_stack;
+
+ARCHITECTURE bdf_type OF g07_stack IS 
+
+ATTRIBUTE black_box : BOOLEAN;
+ATTRIBUTE noopt : BOOLEAN;
+
+COMPONENT lpm_compare_66
+	PORT(dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 alb : OUT STD_LOGIC);
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_compare_66: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_compare_66: COMPONENT IS true;
+
+COMPONENT lpm_compare_67
+	PORT(dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 aeb : OUT STD_LOGIC);
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_compare_67: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_compare_67: COMPONENT IS true;
+
+COMPONENT lpm_counter_9
+	PORT(clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 sset : IN STD_LOGIC;
+		 updown : IN STD_LOGIC;
+		 cnt_en : IN STD_LOGIC;
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_counter_9: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_counter_9: COMPONENT IS true;
+
+COMPONENT lpm_ff_0
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_0: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_0: COMPONENT IS true;
+
+COMPONENT lpm_ff_1
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_1: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_1: COMPONENT IS true;
+
+COMPONENT lpm_ff_106
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_106: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_106: COMPONENT IS true;
+
+COMPONENT lpm_ff_107
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_107: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_107: COMPONENT IS true;
+
+COMPONENT lpm_ff_108
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_108: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_108: COMPONENT IS true;
+
+COMPONENT lpm_ff_11
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_11: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_11: COMPONENT IS true;
+
+COMPONENT lpm_ff_118
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_118: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_118: COMPONENT IS true;
+
+COMPONENT lpm_ff_119
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_119: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_119: COMPONENT IS true;
+
+COMPONENT lpm_ff_12
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_12: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_12: COMPONENT IS true;
+
+COMPONENT lpm_ff_120
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_120: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_120: COMPONENT IS true;
+
+COMPONENT lpm_ff_13
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_13: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_13: COMPONENT IS true;
+
+COMPONENT lpm_ff_130
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_130: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_130: COMPONENT IS true;
+
+COMPONENT lpm_ff_131
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_131: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_131: COMPONENT IS true;
+
+COMPONENT lpm_ff_132
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_132: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_132: COMPONENT IS true;
+
+COMPONENT lpm_ff_142
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_142: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_142: COMPONENT IS true;
+
+COMPONENT lpm_ff_143
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_143: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_143: COMPONENT IS true;
+
+COMPONENT lpm_ff_153
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_153: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_153: COMPONENT IS true;
+
+COMPONENT lpm_ff_154
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_154: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_154: COMPONENT IS true;
+
+COMPONENT lpm_ff_159
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_159: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_159: COMPONENT IS true;
+
+COMPONENT lpm_ff_160
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_160: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_160: COMPONENT IS true;
+
+COMPONENT lpm_ff_161
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_161: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_161: COMPONENT IS true;
+
+COMPONENT lpm_ff_162
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_162: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_162: COMPONENT IS true;
+
+COMPONENT lpm_ff_2
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_2: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_2: COMPONENT IS true;
+
+COMPONENT lpm_ff_23
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_23: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_23: COMPONENT IS true;
+
+COMPONENT lpm_ff_24
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_24: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_24: COMPONENT IS true;
+
+COMPONENT lpm_ff_3
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_3: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_3: COMPONENT IS true;
+
+COMPONENT lpm_ff_34
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_34: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_34: COMPONENT IS true;
+
+COMPONENT lpm_ff_35
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_35: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_35: COMPONENT IS true;
+
+COMPONENT lpm_ff_4
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_4: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_4: COMPONENT IS true;
+
+COMPONENT lpm_ff_40
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_40: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_40: COMPONENT IS true;
+
+COMPONENT lpm_ff_41
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_41: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_41: COMPONENT IS true;
+
+COMPONENT lpm_ff_42
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_42: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_42: COMPONENT IS true;
+
+COMPONENT lpm_ff_43
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_43: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_43: COMPONENT IS true;
+
+COMPONENT lpm_ff_5
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_5: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_5: COMPONENT IS true;
+
+COMPONENT lpm_ff_53
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_53: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_53: COMPONENT IS true;
+
+COMPONENT lpm_ff_54
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_54: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_54: COMPONENT IS true;
+
+COMPONENT lpm_ff_55
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_55: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_55: COMPONENT IS true;
+
+COMPONENT lpm_ff_56
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_56: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_56: COMPONENT IS true;
+
+COMPONENT lpm_ff_6
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_6: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_6: COMPONENT IS true;
+
+COMPONENT lpm_ff_7
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_7: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_7: COMPONENT IS true;
+
+COMPONENT lpm_ff_70
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_70: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_70: COMPONENT IS true;
+
+COMPONENT lpm_ff_71
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_71: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_71: COMPONENT IS true;
+
+COMPONENT lpm_ff_72
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_72: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_72: COMPONENT IS true;
+
+COMPONENT lpm_ff_73
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_73: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_73: COMPONENT IS true;
+
+COMPONENT lpm_ff_8
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_8: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_8: COMPONENT IS true;
+
+COMPONENT lpm_ff_82
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_82: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_82: COMPONENT IS true;
+
+COMPONENT lpm_ff_83
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_83: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_83: COMPONENT IS true;
+
+COMPONENT lpm_ff_84
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_84: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_84: COMPONENT IS true;
+
+COMPONENT lpm_ff_93
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_93: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_93: COMPONENT IS true;
+
+COMPONENT lpm_ff_94
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_94: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_94: COMPONENT IS true;
+
+COMPONENT lpm_ff_95
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_95: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_95: COMPONENT IS true;
+
+COMPONENT lpm_ff_96
+	PORT(enable : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 data : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_ff_96: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_ff_96: COMPONENT IS true;
+
+TYPE ARRAY2D0 IS ARRAY (51 DOWNTO 0,5 DOWNTO 0) OF STD_LOGIC;
+
+COMPONENT lpm_mux_68
+	PORT(data : IN ARRAY2D0;
+		 sel : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF lpm_mux_68: COMPONENT IS true;
+ATTRIBUTE noopt OF lpm_mux_68: COMPONENT IS true;
+
+COMPONENT busmux_10
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_10: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_10: COMPONENT IS true;
+
+COMPONENT busmux_100
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_100: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_100: COMPONENT IS true;
+
+COMPONENT busmux_101
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_101: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_101: COMPONENT IS true;
+
+COMPONENT busmux_102
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_102: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_102: COMPONENT IS true;
+
+COMPONENT busmux_103
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_103: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_103: COMPONENT IS true;
+
+COMPONENT busmux_104
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_104: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_104: COMPONENT IS true;
+
+COMPONENT busmux_105
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_105: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_105: COMPONENT IS true;
+
+COMPONENT busmux_109
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_109: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_109: COMPONENT IS true;
+
+COMPONENT busmux_110
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_110: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_110: COMPONENT IS true;
+
+COMPONENT busmux_111
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_111: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_111: COMPONENT IS true;
+
+COMPONENT busmux_112
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_112: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_112: COMPONENT IS true;
+
+COMPONENT busmux_113
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_113: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_113: COMPONENT IS true;
+
+COMPONENT busmux_114
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_114: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_114: COMPONENT IS true;
+
+COMPONENT busmux_115
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_115: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_115: COMPONENT IS true;
+
+COMPONENT busmux_116
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_116: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_116: COMPONENT IS true;
+
+COMPONENT busmux_117
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_117: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_117: COMPONENT IS true;
+
+COMPONENT busmux_121
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_121: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_121: COMPONENT IS true;
+
+COMPONENT busmux_122
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_122: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_122: COMPONENT IS true;
+
+COMPONENT busmux_123
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_123: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_123: COMPONENT IS true;
+
+COMPONENT busmux_124
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_124: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_124: COMPONENT IS true;
+
+COMPONENT busmux_125
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_125: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_125: COMPONENT IS true;
+
+COMPONENT busmux_126
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_126: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_126: COMPONENT IS true;
+
+COMPONENT busmux_127
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_127: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_127: COMPONENT IS true;
+
+COMPONENT busmux_128
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_128: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_128: COMPONENT IS true;
+
+COMPONENT busmux_129
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_129: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_129: COMPONENT IS true;
+
+COMPONENT busmux_133
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_133: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_133: COMPONENT IS true;
+
+COMPONENT busmux_134
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_134: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_134: COMPONENT IS true;
+
+COMPONENT busmux_135
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_135: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_135: COMPONENT IS true;
+
+COMPONENT busmux_136
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_136: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_136: COMPONENT IS true;
+
+COMPONENT busmux_137
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_137: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_137: COMPONENT IS true;
+
+COMPONENT busmux_138
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_138: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_138: COMPONENT IS true;
+
+COMPONENT busmux_139
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_139: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_139: COMPONENT IS true;
+
+COMPONENT busmux_14
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_14: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_14: COMPONENT IS true;
+
+COMPONENT busmux_140
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_140: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_140: COMPONENT IS true;
+
+COMPONENT busmux_141
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_141: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_141: COMPONENT IS true;
+
+COMPONENT busmux_144
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_144: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_144: COMPONENT IS true;
+
+COMPONENT busmux_145
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_145: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_145: COMPONENT IS true;
+
+COMPONENT busmux_146
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_146: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_146: COMPONENT IS true;
+
+COMPONENT busmux_147
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_147: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_147: COMPONENT IS true;
+
+COMPONENT busmux_148
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_148: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_148: COMPONENT IS true;
+
+COMPONENT busmux_149
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_149: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_149: COMPONENT IS true;
+
+COMPONENT busmux_15
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_15: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_15: COMPONENT IS true;
+
+COMPONENT busmux_150
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_150: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_150: COMPONENT IS true;
+
+COMPONENT busmux_151
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_151: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_151: COMPONENT IS true;
+
+COMPONENT busmux_152
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_152: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_152: COMPONENT IS true;
+
+COMPONENT busmux_155
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_155: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_155: COMPONENT IS true;
+
+COMPONENT busmux_156
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_156: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_156: COMPONENT IS true;
+
+COMPONENT busmux_157
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_157: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_157: COMPONENT IS true;
+
+COMPONENT busmux_158
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_158: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_158: COMPONENT IS true;
+
+COMPONENT busmux_16
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_16: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_16: COMPONENT IS true;
+
+COMPONENT busmux_17
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_17: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_17: COMPONENT IS true;
+
+COMPONENT busmux_18
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_18: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_18: COMPONENT IS true;
+
+COMPONENT busmux_19
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_19: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_19: COMPONENT IS true;
+
+COMPONENT busmux_20
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_20: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_20: COMPONENT IS true;
+
+COMPONENT busmux_21
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_21: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_21: COMPONENT IS true;
+
+COMPONENT busmux_22
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_22: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_22: COMPONENT IS true;
+
+COMPONENT busmux_25
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_25: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_25: COMPONENT IS true;
+
+COMPONENT busmux_26
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_26: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_26: COMPONENT IS true;
+
+COMPONENT busmux_27
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_27: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_27: COMPONENT IS true;
+
+COMPONENT busmux_28
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_28: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_28: COMPONENT IS true;
+
+COMPONENT busmux_29
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_29: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_29: COMPONENT IS true;
+
+COMPONENT busmux_30
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_30: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_30: COMPONENT IS true;
+
+COMPONENT busmux_31
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_31: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_31: COMPONENT IS true;
+
+COMPONENT busmux_32
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_32: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_32: COMPONENT IS true;
+
+COMPONENT busmux_33
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_33: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_33: COMPONENT IS true;
+
+COMPONENT busmux_36
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_36: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_36: COMPONENT IS true;
+
+COMPONENT busmux_37
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_37: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_37: COMPONENT IS true;
+
+COMPONENT busmux_38
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_38: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_38: COMPONENT IS true;
+
+COMPONENT busmux_39
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_39: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_39: COMPONENT IS true;
+
+COMPONENT busmux_44
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_44: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_44: COMPONENT IS true;
+
+COMPONENT busmux_45
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_45: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_45: COMPONENT IS true;
+
+COMPONENT busmux_46
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_46: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_46: COMPONENT IS true;
+
+COMPONENT busmux_47
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_47: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_47: COMPONENT IS true;
+
+COMPONENT busmux_48
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_48: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_48: COMPONENT IS true;
+
+COMPONENT busmux_49
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_49: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_49: COMPONENT IS true;
+
+COMPONENT busmux_50
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_50: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_50: COMPONENT IS true;
+
+COMPONENT busmux_51
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_51: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_51: COMPONENT IS true;
+
+COMPONENT busmux_52
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(51 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(51 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(51 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_52: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_52: COMPONENT IS true;
+
+COMPONENT busmux_57
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_57: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_57: COMPONENT IS true;
+
+COMPONENT busmux_58
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_58: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_58: COMPONENT IS true;
+
+COMPONENT busmux_59
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_59: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_59: COMPONENT IS true;
+
+COMPONENT busmux_60
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_60: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_60: COMPONENT IS true;
+
+COMPONENT busmux_61
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_61: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_61: COMPONENT IS true;
+
+COMPONENT busmux_62
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_62: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_62: COMPONENT IS true;
+
+COMPONENT busmux_63
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(51 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(51 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(51 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_63: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_63: COMPONENT IS true;
+
+COMPONENT busmux_64
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_64: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_64: COMPONENT IS true;
+
+COMPONENT busmux_65
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_65: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_65: COMPONENT IS true;
+
+COMPONENT busmux_69
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(51 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(51 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(51 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_69: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_69: COMPONENT IS true;
+
+COMPONENT busmux_74
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_74: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_74: COMPONENT IS true;
+
+COMPONENT busmux_75
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_75: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_75: COMPONENT IS true;
+
+COMPONENT busmux_76
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_76: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_76: COMPONENT IS true;
+
+COMPONENT busmux_77
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_77: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_77: COMPONENT IS true;
+
+COMPONENT busmux_78
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_78: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_78: COMPONENT IS true;
+
+COMPONENT busmux_79
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_79: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_79: COMPONENT IS true;
+
+COMPONENT busmux_80
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_80: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_80: COMPONENT IS true;
+
+COMPONENT busmux_81
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_81: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_81: COMPONENT IS true;
+
+COMPONENT busmux_85
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_85: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_85: COMPONENT IS true;
+
+COMPONENT busmux_86
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_86: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_86: COMPONENT IS true;
+
+COMPONENT busmux_87
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_87: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_87: COMPONENT IS true;
+
+COMPONENT busmux_88
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_88: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_88: COMPONENT IS true;
+
+COMPONENT busmux_89
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_89: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_89: COMPONENT IS true;
+
+COMPONENT busmux_90
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_90: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_90: COMPONENT IS true;
+
+COMPONENT busmux_91
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_91: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_91: COMPONENT IS true;
+
+COMPONENT busmux_92
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_92: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_92: COMPONENT IS true;
+
+COMPONENT busmux_97
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_97: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_97: COMPONENT IS true;
+
+COMPONENT busmux_98
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_98: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_98: COMPONENT IS true;
+
+COMPONENT busmux_99
+	PORT(sel : IN STD_LOGIC;
+		 dataa : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 datab : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 result : OUT STD_LOGIC_VECTOR(5 DOWNTO 0));
+END COMPONENT;
+ATTRIBUTE black_box OF busmux_99: COMPONENT IS true;
+ATTRIBUTE noopt OF busmux_99: COMPONENT IS true;
+
+COMPONENT g07_popenable
+	PORT(CLK : IN STD_LOGIC;
+		 N : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 P_EN : OUT STD_LOGIC_VECTOR(51 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT g07_generator
+	PORT(		 O0 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O15 : OUT STD_LOGIC;
+		 O14 : OUT STD_LOGIC;
+		 O13 : OUT STD_LOGIC;
+		 O12 : OUT STD_LOGIC;
+		 O11 : OUT STD_LOGIC;
+		 O10 : OUT STD_LOGIC;
+		 O105 : OUT STD_LOGIC;
+		 O104 : OUT STD_LOGIC;
+		 O103 : OUT STD_LOGIC;
+		 O102 : OUT STD_LOGIC;
+		 O101 : OUT STD_LOGIC;
+		 O100 : OUT STD_LOGIC;
+		 O115 : OUT STD_LOGIC;
+		 O114 : OUT STD_LOGIC;
+		 O113 : OUT STD_LOGIC;
+		 O112 : OUT STD_LOGIC;
+		 O111 : OUT STD_LOGIC;
+		 O110 : OUT STD_LOGIC;
+		 O125 : OUT STD_LOGIC;
+		 O124 : OUT STD_LOGIC;
+		 O123 : OUT STD_LOGIC;
+		 O122 : OUT STD_LOGIC;
+		 O121 : OUT STD_LOGIC;
+		 O120 : OUT STD_LOGIC;
+		 O135 : OUT STD_LOGIC;
+		 O134 : OUT STD_LOGIC;
+		 O133 : OUT STD_LOGIC;
+		 O132 : OUT STD_LOGIC;
+		 O131 : OUT STD_LOGIC;
+		 O130 : OUT STD_LOGIC;
+		 O145 : OUT STD_LOGIC;
+		 O144 : OUT STD_LOGIC;
+		 O143 : OUT STD_LOGIC;
+		 O142 : OUT STD_LOGIC;
+		 O141 : OUT STD_LOGIC;
+		 O140 : OUT STD_LOGIC;
+		 O155 : OUT STD_LOGIC;
+		 O154 : OUT STD_LOGIC;
+		 O153 : OUT STD_LOGIC;
+		 O152 : OUT STD_LOGIC;
+		 O151 : OUT STD_LOGIC;
+		 O150 : OUT STD_LOGIC;
+		 O16 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O17 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O18 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O19 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O25 : OUT STD_LOGIC;
+		 O24 : OUT STD_LOGIC;
+		 O23 : OUT STD_LOGIC;
+		 O22 : OUT STD_LOGIC;
+		 O21 : OUT STD_LOGIC;
+		 O20 : OUT STD_LOGIC;
+		 O205 : OUT STD_LOGIC;
+		 O204 : OUT STD_LOGIC;
+		 O203 : OUT STD_LOGIC;
+		 O202 : OUT STD_LOGIC;
+		 O201 : OUT STD_LOGIC;
+		 O200 : OUT STD_LOGIC;
+		 O215 : OUT STD_LOGIC;
+		 O214 : OUT STD_LOGIC;
+		 O213 : OUT STD_LOGIC;
+		 O212 : OUT STD_LOGIC;
+		 O211 : OUT STD_LOGIC;
+		 O210 : OUT STD_LOGIC;
+		 O225 : OUT STD_LOGIC;
+		 O224 : OUT STD_LOGIC;
+		 O223 : OUT STD_LOGIC;
+		 O222 : OUT STD_LOGIC;
+		 O221 : OUT STD_LOGIC;
+		 O220 : OUT STD_LOGIC;
+		 O235 : OUT STD_LOGIC;
+		 O234 : OUT STD_LOGIC;
+		 O233 : OUT STD_LOGIC;
+		 O232 : OUT STD_LOGIC;
+		 O231 : OUT STD_LOGIC;
+		 O230 : OUT STD_LOGIC;
+		 O245 : OUT STD_LOGIC;
+		 O244 : OUT STD_LOGIC;
+		 O243 : OUT STD_LOGIC;
+		 O242 : OUT STD_LOGIC;
+		 O241 : OUT STD_LOGIC;
+		 O240 : OUT STD_LOGIC;
+		 O255 : OUT STD_LOGIC;
+		 O254 : OUT STD_LOGIC;
+		 O253 : OUT STD_LOGIC;
+		 O252 : OUT STD_LOGIC;
+		 O251 : OUT STD_LOGIC;
+		 O250 : OUT STD_LOGIC;
+		 O26 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O27 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O28 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O29 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O35 : OUT STD_LOGIC;
+		 O34 : OUT STD_LOGIC;
+		 O33 : OUT STD_LOGIC;
+		 O32 : OUT STD_LOGIC;
+		 O31 : OUT STD_LOGIC;
+		 O30 : OUT STD_LOGIC;
+		 O305 : OUT STD_LOGIC;
+		 O304 : OUT STD_LOGIC;
+		 O303 : OUT STD_LOGIC;
+		 O302 : OUT STD_LOGIC;
+		 O301 : OUT STD_LOGIC;
+		 O300 : OUT STD_LOGIC;
+		 O315 : OUT STD_LOGIC;
+		 O314 : OUT STD_LOGIC;
+		 O313 : OUT STD_LOGIC;
+		 O312 : OUT STD_LOGIC;
+		 O311 : OUT STD_LOGIC;
+		 O310 : OUT STD_LOGIC;
+		 O325 : OUT STD_LOGIC;
+		 O324 : OUT STD_LOGIC;
+		 O323 : OUT STD_LOGIC;
+		 O322 : OUT STD_LOGIC;
+		 O321 : OUT STD_LOGIC;
+		 O320 : OUT STD_LOGIC;
+		 O335 : OUT STD_LOGIC;
+		 O334 : OUT STD_LOGIC;
+		 O333 : OUT STD_LOGIC;
+		 O332 : OUT STD_LOGIC;
+		 O331 : OUT STD_LOGIC;
+		 O330 : OUT STD_LOGIC;
+		 O345 : OUT STD_LOGIC;
+		 O344 : OUT STD_LOGIC;
+		 O343 : OUT STD_LOGIC;
+		 O342 : OUT STD_LOGIC;
+		 O341 : OUT STD_LOGIC;
+		 O340 : OUT STD_LOGIC;
+		 O355 : OUT STD_LOGIC;
+		 O354 : OUT STD_LOGIC;
+		 O353 : OUT STD_LOGIC;
+		 O352 : OUT STD_LOGIC;
+		 O351 : OUT STD_LOGIC;
+		 O350 : OUT STD_LOGIC;
+		 O36 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O37 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O38 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O39 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O45 : OUT STD_LOGIC;
+		 O44 : OUT STD_LOGIC;
+		 O43 : OUT STD_LOGIC;
+		 O42 : OUT STD_LOGIC;
+		 O41 : OUT STD_LOGIC;
+		 O40 : OUT STD_LOGIC;
+		 O405 : OUT STD_LOGIC;
+		 O404 : OUT STD_LOGIC;
+		 O403 : OUT STD_LOGIC;
+		 O402 : OUT STD_LOGIC;
+		 O401 : OUT STD_LOGIC;
+		 O400 : OUT STD_LOGIC;
+		 O415 : OUT STD_LOGIC;
+		 O414 : OUT STD_LOGIC;
+		 O413 : OUT STD_LOGIC;
+		 O412 : OUT STD_LOGIC;
+		 O411 : OUT STD_LOGIC;
+		 O410 : OUT STD_LOGIC;
+		 O425 : OUT STD_LOGIC;
+		 O424 : OUT STD_LOGIC;
+		 O423 : OUT STD_LOGIC;
+		 O422 : OUT STD_LOGIC;
+		 O421 : OUT STD_LOGIC;
+		 O420 : OUT STD_LOGIC;
+		 O435 : OUT STD_LOGIC;
+		 O434 : OUT STD_LOGIC;
+		 O433 : OUT STD_LOGIC;
+		 O432 : OUT STD_LOGIC;
+		 O431 : OUT STD_LOGIC;
+		 O430 : OUT STD_LOGIC;
+		 O445 : OUT STD_LOGIC;
+		 O444 : OUT STD_LOGIC;
+		 O443 : OUT STD_LOGIC;
+		 O442 : OUT STD_LOGIC;
+		 O441 : OUT STD_LOGIC;
+		 O440 : OUT STD_LOGIC;
+		 O455 : OUT STD_LOGIC;
+		 O454 : OUT STD_LOGIC;
+		 O453 : OUT STD_LOGIC;
+		 O452 : OUT STD_LOGIC;
+		 O451 : OUT STD_LOGIC;
+		 O450 : OUT STD_LOGIC;
+		 O46 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O47 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O48 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O49 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O55 : OUT STD_LOGIC;
+		 O54 : OUT STD_LOGIC;
+		 O53 : OUT STD_LOGIC;
+		 O52 : OUT STD_LOGIC;
+		 O51 : OUT STD_LOGIC;
+		 O50 : OUT STD_LOGIC;
+		 O505 : OUT STD_LOGIC;
+		 O504 : OUT STD_LOGIC;
+		 O503 : OUT STD_LOGIC;
+		 O502 : OUT STD_LOGIC;
+		 O501 : OUT STD_LOGIC;
+		 O500 : OUT STD_LOGIC;
+		 O515 : OUT STD_LOGIC;
+		 O514 : OUT STD_LOGIC;
+		 O513 : OUT STD_LOGIC;
+		 O512 : OUT STD_LOGIC;
+		 O511 : OUT STD_LOGIC;
+		 O510 : OUT STD_LOGIC;
+		 O6 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O7 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O8 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 O9 : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 ONES : OUT STD_LOGIC_VECTOR(51 DOWNTO 0);
+		 ZERO : OUT STD_LOGIC_VECTOR(51 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT g07_pushpopdecide
+	PORT(FULL : IN STD_LOGIC;
+		 EMPTY : IN STD_LOGIC;
+		 ENABLE : IN STD_LOGIC;
+		 MODE : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+		 RES : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+	);
+END COMPONENT;
+
+SIGNAL	EMPTY_ALTERA_SYNTHESIZED :  STD_LOGIC;
+SIGNAL	FULL_ALTERA_SYNTHESIZED :  STD_LOGIC;
+SIGNAL	NMDE :  STD_LOGIC_VECTOR(1 TO 1);
+SIGNAL	NUM_ALTERA_SYNTHESIZED :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O0 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O10 :  STD_LOGIC;
+SIGNAL	O100 :  STD_LOGIC;
+SIGNAL	O101 :  STD_LOGIC;
+SIGNAL	O102 :  STD_LOGIC;
+SIGNAL	O103 :  STD_LOGIC;
+SIGNAL	O104 :  STD_LOGIC;
+SIGNAL	O105 :  STD_LOGIC;
+SIGNAL	O11 :  STD_LOGIC;
+SIGNAL	O110 :  STD_LOGIC;
+SIGNAL	O111 :  STD_LOGIC;
+SIGNAL	O112 :  STD_LOGIC;
+SIGNAL	O113 :  STD_LOGIC;
+SIGNAL	O114 :  STD_LOGIC;
+SIGNAL	O115 :  STD_LOGIC;
+SIGNAL	O12 :  STD_LOGIC;
+SIGNAL	O120 :  STD_LOGIC;
+SIGNAL	O121 :  STD_LOGIC;
+SIGNAL	O122 :  STD_LOGIC;
+SIGNAL	O123 :  STD_LOGIC;
+SIGNAL	O124 :  STD_LOGIC;
+SIGNAL	O125 :  STD_LOGIC;
+SIGNAL	O13 :  STD_LOGIC;
+SIGNAL	O130 :  STD_LOGIC;
+SIGNAL	O131 :  STD_LOGIC;
+SIGNAL	O132 :  STD_LOGIC;
+SIGNAL	O133 :  STD_LOGIC;
+SIGNAL	O134 :  STD_LOGIC;
+SIGNAL	O135 :  STD_LOGIC;
+SIGNAL	O14 :  STD_LOGIC;
+SIGNAL	O140 :  STD_LOGIC;
+SIGNAL	O141 :  STD_LOGIC;
+SIGNAL	O142 :  STD_LOGIC;
+SIGNAL	O143 :  STD_LOGIC;
+SIGNAL	O144 :  STD_LOGIC;
+SIGNAL	O145 :  STD_LOGIC;
+SIGNAL	O15 :  STD_LOGIC;
+SIGNAL	O150 :  STD_LOGIC;
+SIGNAL	O151 :  STD_LOGIC;
+SIGNAL	O152 :  STD_LOGIC;
+SIGNAL	O153 :  STD_LOGIC;
+SIGNAL	O154 :  STD_LOGIC;
+SIGNAL	O155 :  STD_LOGIC;
+SIGNAL	O16 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O17 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O18 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O19 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O20 :  STD_LOGIC;
+SIGNAL	O200 :  STD_LOGIC;
+SIGNAL	O201 :  STD_LOGIC;
+SIGNAL	O202 :  STD_LOGIC;
+SIGNAL	O203 :  STD_LOGIC;
+SIGNAL	O204 :  STD_LOGIC;
+SIGNAL	O205 :  STD_LOGIC;
+SIGNAL	O21 :  STD_LOGIC;
+SIGNAL	O210 :  STD_LOGIC;
+SIGNAL	O211 :  STD_LOGIC;
+SIGNAL	O212 :  STD_LOGIC;
+SIGNAL	O213 :  STD_LOGIC;
+SIGNAL	O214 :  STD_LOGIC;
+SIGNAL	O215 :  STD_LOGIC;
+SIGNAL	O22 :  STD_LOGIC;
+SIGNAL	O220 :  STD_LOGIC;
+SIGNAL	O221 :  STD_LOGIC;
+SIGNAL	O222 :  STD_LOGIC;
+SIGNAL	O223 :  STD_LOGIC;
+SIGNAL	O224 :  STD_LOGIC;
+SIGNAL	O225 :  STD_LOGIC;
+SIGNAL	O23 :  STD_LOGIC;
+SIGNAL	O230 :  STD_LOGIC;
+SIGNAL	O231 :  STD_LOGIC;
+SIGNAL	O232 :  STD_LOGIC;
+SIGNAL	O233 :  STD_LOGIC;
+SIGNAL	O234 :  STD_LOGIC;
+SIGNAL	O235 :  STD_LOGIC;
+SIGNAL	O24 :  STD_LOGIC;
+SIGNAL	O240 :  STD_LOGIC;
+SIGNAL	O241 :  STD_LOGIC;
+SIGNAL	O242 :  STD_LOGIC;
+SIGNAL	O243 :  STD_LOGIC;
+SIGNAL	O244 :  STD_LOGIC;
+SIGNAL	O245 :  STD_LOGIC;
+SIGNAL	O25 :  STD_LOGIC;
+SIGNAL	O250 :  STD_LOGIC;
+SIGNAL	O251 :  STD_LOGIC;
+SIGNAL	O252 :  STD_LOGIC;
+SIGNAL	O253 :  STD_LOGIC;
+SIGNAL	O254 :  STD_LOGIC;
+SIGNAL	O255 :  STD_LOGIC;
+SIGNAL	O26 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O27 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O28 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O29 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O30 :  STD_LOGIC;
+SIGNAL	O300 :  STD_LOGIC;
+SIGNAL	O301 :  STD_LOGIC;
+SIGNAL	O302 :  STD_LOGIC;
+SIGNAL	O303 :  STD_LOGIC;
+SIGNAL	O304 :  STD_LOGIC;
+SIGNAL	O305 :  STD_LOGIC;
+SIGNAL	O31 :  STD_LOGIC;
+SIGNAL	O310 :  STD_LOGIC;
+SIGNAL	O311 :  STD_LOGIC;
+SIGNAL	O312 :  STD_LOGIC;
+SIGNAL	O313 :  STD_LOGIC;
+SIGNAL	O314 :  STD_LOGIC;
+SIGNAL	O315 :  STD_LOGIC;
+SIGNAL	O32 :  STD_LOGIC;
+SIGNAL	O320 :  STD_LOGIC;
+SIGNAL	O321 :  STD_LOGIC;
+SIGNAL	O322 :  STD_LOGIC;
+SIGNAL	O323 :  STD_LOGIC;
+SIGNAL	O324 :  STD_LOGIC;
+SIGNAL	O325 :  STD_LOGIC;
+SIGNAL	O33 :  STD_LOGIC;
+SIGNAL	O330 :  STD_LOGIC;
+SIGNAL	O331 :  STD_LOGIC;
+SIGNAL	O332 :  STD_LOGIC;
+SIGNAL	O333 :  STD_LOGIC;
+SIGNAL	O334 :  STD_LOGIC;
+SIGNAL	O335 :  STD_LOGIC;
+SIGNAL	O34 :  STD_LOGIC;
+SIGNAL	O340 :  STD_LOGIC;
+SIGNAL	O341 :  STD_LOGIC;
+SIGNAL	O342 :  STD_LOGIC;
+SIGNAL	O343 :  STD_LOGIC;
+SIGNAL	O344 :  STD_LOGIC;
+SIGNAL	O345 :  STD_LOGIC;
+SIGNAL	O35 :  STD_LOGIC;
+SIGNAL	O350 :  STD_LOGIC;
+SIGNAL	O351 :  STD_LOGIC;
+SIGNAL	O352 :  STD_LOGIC;
+SIGNAL	O353 :  STD_LOGIC;
+SIGNAL	O354 :  STD_LOGIC;
+SIGNAL	O355 :  STD_LOGIC;
+SIGNAL	O36 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O37 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O38 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O39 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O40 :  STD_LOGIC;
+SIGNAL	O400 :  STD_LOGIC;
+SIGNAL	O401 :  STD_LOGIC;
+SIGNAL	O402 :  STD_LOGIC;
+SIGNAL	O403 :  STD_LOGIC;
+SIGNAL	O404 :  STD_LOGIC;
+SIGNAL	O405 :  STD_LOGIC;
+SIGNAL	O41 :  STD_LOGIC;
+SIGNAL	O410 :  STD_LOGIC;
+SIGNAL	O411 :  STD_LOGIC;
+SIGNAL	O412 :  STD_LOGIC;
+SIGNAL	O413 :  STD_LOGIC;
+SIGNAL	O414 :  STD_LOGIC;
+SIGNAL	O415 :  STD_LOGIC;
+SIGNAL	O42 :  STD_LOGIC;
+SIGNAL	O420 :  STD_LOGIC;
+SIGNAL	O421 :  STD_LOGIC;
+SIGNAL	O422 :  STD_LOGIC;
+SIGNAL	O423 :  STD_LOGIC;
+SIGNAL	O424 :  STD_LOGIC;
+SIGNAL	O425 :  STD_LOGIC;
+SIGNAL	O43 :  STD_LOGIC;
+SIGNAL	O430 :  STD_LOGIC;
+SIGNAL	O431 :  STD_LOGIC;
+SIGNAL	O432 :  STD_LOGIC;
+SIGNAL	O433 :  STD_LOGIC;
+SIGNAL	O434 :  STD_LOGIC;
+SIGNAL	O435 :  STD_LOGIC;
+SIGNAL	O44 :  STD_LOGIC;
+SIGNAL	O440 :  STD_LOGIC;
+SIGNAL	O441 :  STD_LOGIC;
+SIGNAL	O442 :  STD_LOGIC;
+SIGNAL	O443 :  STD_LOGIC;
+SIGNAL	O444 :  STD_LOGIC;
+SIGNAL	O445 :  STD_LOGIC;
+SIGNAL	O45 :  STD_LOGIC;
+SIGNAL	O450 :  STD_LOGIC;
+SIGNAL	O451 :  STD_LOGIC;
+SIGNAL	O452 :  STD_LOGIC;
+SIGNAL	O453 :  STD_LOGIC;
+SIGNAL	O454 :  STD_LOGIC;
+SIGNAL	O455 :  STD_LOGIC;
+SIGNAL	O46 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O47 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O48 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O49 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O50 :  STD_LOGIC;
+SIGNAL	O500 :  STD_LOGIC;
+SIGNAL	O501 :  STD_LOGIC;
+SIGNAL	O502 :  STD_LOGIC;
+SIGNAL	O503 :  STD_LOGIC;
+SIGNAL	O504 :  STD_LOGIC;
+SIGNAL	O505 :  STD_LOGIC;
+SIGNAL	O51 :  STD_LOGIC;
+SIGNAL	O510 :  STD_LOGIC;
+SIGNAL	O511 :  STD_LOGIC;
+SIGNAL	O512 :  STD_LOGIC;
+SIGNAL	O513 :  STD_LOGIC;
+SIGNAL	O514 :  STD_LOGIC;
+SIGNAL	O515 :  STD_LOGIC;
+SIGNAL	O52 :  STD_LOGIC;
+SIGNAL	O53 :  STD_LOGIC;
+SIGNAL	O54 :  STD_LOGIC;
+SIGNAL	O55 :  STD_LOGIC;
+SIGNAL	O6 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O7 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O8 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	O9 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	ONE :  STD_LOGIC_VECTOR(51 DOWNTO 0);
+SIGNAL	pops :  STD_LOGIC_VECTOR(51 DOWNTO 0);
+SIGNAL	Q0 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q10 :  STD_LOGIC;
+SIGNAL	Q100 :  STD_LOGIC;
+SIGNAL	Q101 :  STD_LOGIC;
+SIGNAL	Q102 :  STD_LOGIC;
+SIGNAL	Q103 :  STD_LOGIC;
+SIGNAL	Q104 :  STD_LOGIC;
+SIGNAL	Q105 :  STD_LOGIC;
+SIGNAL	Q11 :  STD_LOGIC;
+SIGNAL	Q110 :  STD_LOGIC;
+SIGNAL	Q111 :  STD_LOGIC;
+SIGNAL	Q112 :  STD_LOGIC;
+SIGNAL	Q113 :  STD_LOGIC;
+SIGNAL	Q114 :  STD_LOGIC;
+SIGNAL	Q115 :  STD_LOGIC;
+SIGNAL	Q12 :  STD_LOGIC;
+SIGNAL	Q120 :  STD_LOGIC;
+SIGNAL	Q121 :  STD_LOGIC;
+SIGNAL	Q122 :  STD_LOGIC;
+SIGNAL	Q123 :  STD_LOGIC;
+SIGNAL	Q124 :  STD_LOGIC;
+SIGNAL	Q125 :  STD_LOGIC;
+SIGNAL	Q13 :  STD_LOGIC;
+SIGNAL	Q130 :  STD_LOGIC;
+SIGNAL	Q131 :  STD_LOGIC;
+SIGNAL	Q132 :  STD_LOGIC;
+SIGNAL	Q133 :  STD_LOGIC;
+SIGNAL	Q134 :  STD_LOGIC;
+SIGNAL	Q135 :  STD_LOGIC;
+SIGNAL	Q14 :  STD_LOGIC;
+SIGNAL	Q140 :  STD_LOGIC;
+SIGNAL	Q141 :  STD_LOGIC;
+SIGNAL	Q142 :  STD_LOGIC;
+SIGNAL	Q143 :  STD_LOGIC;
+SIGNAL	Q144 :  STD_LOGIC;
+SIGNAL	Q145 :  STD_LOGIC;
+SIGNAL	Q15 :  STD_LOGIC;
+SIGNAL	Q150 :  STD_LOGIC;
+SIGNAL	Q151 :  STD_LOGIC;
+SIGNAL	Q152 :  STD_LOGIC;
+SIGNAL	Q153 :  STD_LOGIC;
+SIGNAL	Q154 :  STD_LOGIC;
+SIGNAL	Q155 :  STD_LOGIC;
+SIGNAL	Q16 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q17 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q18 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q19 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q20 :  STD_LOGIC;
+SIGNAL	Q200 :  STD_LOGIC;
+SIGNAL	Q201 :  STD_LOGIC;
+SIGNAL	Q202 :  STD_LOGIC;
+SIGNAL	Q203 :  STD_LOGIC;
+SIGNAL	Q204 :  STD_LOGIC;
+SIGNAL	Q205 :  STD_LOGIC;
+SIGNAL	Q21 :  STD_LOGIC;
+SIGNAL	Q210 :  STD_LOGIC;
+SIGNAL	Q211 :  STD_LOGIC;
+SIGNAL	Q212 :  STD_LOGIC;
+SIGNAL	Q213 :  STD_LOGIC;
+SIGNAL	Q214 :  STD_LOGIC;
+SIGNAL	Q215 :  STD_LOGIC;
+SIGNAL	Q22 :  STD_LOGIC;
+SIGNAL	Q220 :  STD_LOGIC;
+SIGNAL	Q221 :  STD_LOGIC;
+SIGNAL	Q222 :  STD_LOGIC;
+SIGNAL	Q223 :  STD_LOGIC;
+SIGNAL	Q224 :  STD_LOGIC;
+SIGNAL	Q225 :  STD_LOGIC;
+SIGNAL	Q23 :  STD_LOGIC;
+SIGNAL	Q230 :  STD_LOGIC;
+SIGNAL	Q231 :  STD_LOGIC;
+SIGNAL	Q232 :  STD_LOGIC;
+SIGNAL	Q233 :  STD_LOGIC;
+SIGNAL	Q234 :  STD_LOGIC;
+SIGNAL	Q235 :  STD_LOGIC;
+SIGNAL	Q24 :  STD_LOGIC;
+SIGNAL	Q240 :  STD_LOGIC;
+SIGNAL	Q241 :  STD_LOGIC;
+SIGNAL	Q242 :  STD_LOGIC;
+SIGNAL	Q243 :  STD_LOGIC;
+SIGNAL	Q244 :  STD_LOGIC;
+SIGNAL	Q245 :  STD_LOGIC;
+SIGNAL	Q25 :  STD_LOGIC;
+SIGNAL	Q250 :  STD_LOGIC;
+SIGNAL	Q251 :  STD_LOGIC;
+SIGNAL	Q252 :  STD_LOGIC;
+SIGNAL	Q253 :  STD_LOGIC;
+SIGNAL	Q254 :  STD_LOGIC;
+SIGNAL	Q255 :  STD_LOGIC;
+SIGNAL	Q26 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q27 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q28 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q29 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q30 :  STD_LOGIC;
+SIGNAL	Q300 :  STD_LOGIC;
+SIGNAL	Q301 :  STD_LOGIC;
+SIGNAL	Q302 :  STD_LOGIC;
+SIGNAL	Q303 :  STD_LOGIC;
+SIGNAL	Q304 :  STD_LOGIC;
+SIGNAL	Q305 :  STD_LOGIC;
+SIGNAL	Q31 :  STD_LOGIC;
+SIGNAL	Q310 :  STD_LOGIC;
+SIGNAL	Q311 :  STD_LOGIC;
+SIGNAL	Q312 :  STD_LOGIC;
+SIGNAL	Q313 :  STD_LOGIC;
+SIGNAL	Q314 :  STD_LOGIC;
+SIGNAL	Q315 :  STD_LOGIC;
+SIGNAL	Q32 :  STD_LOGIC;
+SIGNAL	Q320 :  STD_LOGIC;
+SIGNAL	Q321 :  STD_LOGIC;
+SIGNAL	Q322 :  STD_LOGIC;
+SIGNAL	Q323 :  STD_LOGIC;
+SIGNAL	Q324 :  STD_LOGIC;
+SIGNAL	Q325 :  STD_LOGIC;
+SIGNAL	Q33 :  STD_LOGIC;
+SIGNAL	Q330 :  STD_LOGIC;
+SIGNAL	Q331 :  STD_LOGIC;
+SIGNAL	Q332 :  STD_LOGIC;
+SIGNAL	Q333 :  STD_LOGIC;
+SIGNAL	Q334 :  STD_LOGIC;
+SIGNAL	Q335 :  STD_LOGIC;
+SIGNAL	Q34 :  STD_LOGIC;
+SIGNAL	Q340 :  STD_LOGIC;
+SIGNAL	Q341 :  STD_LOGIC;
+SIGNAL	Q342 :  STD_LOGIC;
+SIGNAL	Q343 :  STD_LOGIC;
+SIGNAL	Q344 :  STD_LOGIC;
+SIGNAL	Q345 :  STD_LOGIC;
+SIGNAL	Q35 :  STD_LOGIC;
+SIGNAL	Q350 :  STD_LOGIC;
+SIGNAL	Q351 :  STD_LOGIC;
+SIGNAL	Q352 :  STD_LOGIC;
+SIGNAL	Q353 :  STD_LOGIC;
+SIGNAL	Q354 :  STD_LOGIC;
+SIGNAL	Q355 :  STD_LOGIC;
+SIGNAL	Q36 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q37 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q38 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q39 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q40 :  STD_LOGIC;
+SIGNAL	Q400 :  STD_LOGIC;
+SIGNAL	Q401 :  STD_LOGIC;
+SIGNAL	Q402 :  STD_LOGIC;
+SIGNAL	Q403 :  STD_LOGIC;
+SIGNAL	Q404 :  STD_LOGIC;
+SIGNAL	Q405 :  STD_LOGIC;
+SIGNAL	Q41 :  STD_LOGIC;
+SIGNAL	Q410 :  STD_LOGIC;
+SIGNAL	Q411 :  STD_LOGIC;
+SIGNAL	Q412 :  STD_LOGIC;
+SIGNAL	Q413 :  STD_LOGIC;
+SIGNAL	Q414 :  STD_LOGIC;
+SIGNAL	Q415 :  STD_LOGIC;
+SIGNAL	Q42 :  STD_LOGIC;
+SIGNAL	Q420 :  STD_LOGIC;
+SIGNAL	Q421 :  STD_LOGIC;
+SIGNAL	Q422 :  STD_LOGIC;
+SIGNAL	Q423 :  STD_LOGIC;
+SIGNAL	Q424 :  STD_LOGIC;
+SIGNAL	Q425 :  STD_LOGIC;
+SIGNAL	Q43 :  STD_LOGIC;
+SIGNAL	Q430 :  STD_LOGIC;
+SIGNAL	Q431 :  STD_LOGIC;
+SIGNAL	Q432 :  STD_LOGIC;
+SIGNAL	Q433 :  STD_LOGIC;
+SIGNAL	Q434 :  STD_LOGIC;
+SIGNAL	Q435 :  STD_LOGIC;
+SIGNAL	Q44 :  STD_LOGIC;
+SIGNAL	Q440 :  STD_LOGIC;
+SIGNAL	Q441 :  STD_LOGIC;
+SIGNAL	Q442 :  STD_LOGIC;
+SIGNAL	Q443 :  STD_LOGIC;
+SIGNAL	Q444 :  STD_LOGIC;
+SIGNAL	Q445 :  STD_LOGIC;
+SIGNAL	Q45 :  STD_LOGIC;
+SIGNAL	Q450 :  STD_LOGIC;
+SIGNAL	Q451 :  STD_LOGIC;
+SIGNAL	Q452 :  STD_LOGIC;
+SIGNAL	Q453 :  STD_LOGIC;
+SIGNAL	Q454 :  STD_LOGIC;
+SIGNAL	Q455 :  STD_LOGIC;
+SIGNAL	Q46 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q47 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q48 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q49 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q50 :  STD_LOGIC;
+SIGNAL	Q500 :  STD_LOGIC;
+SIGNAL	Q501 :  STD_LOGIC;
+SIGNAL	Q502 :  STD_LOGIC;
+SIGNAL	Q503 :  STD_LOGIC;
+SIGNAL	Q504 :  STD_LOGIC;
+SIGNAL	Q505 :  STD_LOGIC;
+SIGNAL	Q51 :  STD_LOGIC;
+SIGNAL	Q510 :  STD_LOGIC;
+SIGNAL	Q511 :  STD_LOGIC;
+SIGNAL	Q512 :  STD_LOGIC;
+SIGNAL	Q513 :  STD_LOGIC;
+SIGNAL	Q514 :  STD_LOGIC;
+SIGNAL	Q515 :  STD_LOGIC;
+SIGNAL	Q52 :  STD_LOGIC;
+SIGNAL	Q53 :  STD_LOGIC;
+SIGNAL	Q54 :  STD_LOGIC;
+SIGNAL	Q55 :  STD_LOGIC;
+SIGNAL	Q6 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q7 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q8 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	Q9 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	RES :  STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL	ZERO :  STD_LOGIC_VECTOR(51 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_0 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_1 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_2 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_3 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_4 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_5 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_6 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_7 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_8 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_9 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_10 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_11 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_12 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_13 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_14 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_15 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_16 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_17 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_18 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_19 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_20 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_21 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_22 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_23 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_24 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_25 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_26 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_27 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_28 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_29 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_30 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_31 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_32 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_33 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_34 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_35 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_36 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_37 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_38 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_39 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_40 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_41 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_42 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_43 :  STD_LOGIC_VECTOR(0 TO 5);
+SIGNAL	SYNTHESIZED_WIRE_44 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_45 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_46 :  STD_LOGIC_VECTOR(51 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_47 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_48 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_49 :  STD_LOGIC_VECTOR(51 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_50 :  STD_LOGIC_VECTOR(51 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_51 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_52 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_53 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_54 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_55 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_56 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_57 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_58 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_59 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_60 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_61 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_62 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_63 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_64 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_65 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_66 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_67 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_68 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_69 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_70 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_71 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_72 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_73 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_74 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_75 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_76 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_77 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_78 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_79 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_80 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_81 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_82 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_83 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_84 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_85 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_86 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_87 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_88 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_89 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_90 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_91 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_92 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_93 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_94 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_95 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_96 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_97 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_98 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_99 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_100 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_101 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_102 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_103 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_104 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_105 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_106 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_107 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_108 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_109 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_110 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+
+SIGNAL	GDFX_TEMP_SIGNAL_47 :  ARRAY2D0;
+SIGNAL	GDFX_TEMP_SIGNAL_40 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_42 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_39 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_41 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_43 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_48 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_51 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_53 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_32 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_34 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_36 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_28 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_31 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_35 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_24 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_26 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_33 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_19 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_23 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_27 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_15 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_17 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_25 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_4 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_16 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_18 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_52 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_106 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_136 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_7 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_9 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_11 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_5 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_10 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_120 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_8 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_116 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_118 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_112 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_115 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_119 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_108 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_110 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_117 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_3 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_109 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_111 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_50 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_65 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_96 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_99 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_101 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_103 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_0 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_92 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_102 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_85 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_90 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_100 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_84 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_88 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_91 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_83 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_86 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_89 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_2 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_81 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_87 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_56 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_82 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_105 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_67 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_73 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_80 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_66 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_71 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_74 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_64 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_69 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_72 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_61 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_70 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_135 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_57 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_59 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_68 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_1 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_58 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_60 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_49 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_79 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_95 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_45 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_46 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_44 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_55 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_38 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_37 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_30 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_29 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_22 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_21 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_54 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_13 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_12 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_121 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_122 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_114 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_113 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_20 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_107 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_104 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_98 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_97 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_94 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_93 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_14 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_78 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_77 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_76 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_75 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_63 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_62 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_6 :  STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL	GDFX_TEMP_SIGNAL_129 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_130 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_131 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_132 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_133 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_134 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_123 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_124 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_125 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_126 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_127 :  STD_LOGIC;
+SIGNAL	GDFX_TEMP_SIGNAL_128 :  STD_LOGIC;
+
+BEGIN 
+SYNTHESIZED_WIRE_43 <= "000000";
+
+GDFX_TEMP_SIGNAL_47 <= (Q515 & Q514 & Q513 & Q512 & Q511 & Q510 & Q505 & Q504 & Q503 & Q502 & Q501 & Q500 & Q49(5 DOWNTO 0) & Q48(5 DOWNTO 0) & Q47(5 DOWNTO 0) & Q46(5 DOWNTO 0) & Q455 & Q454 & Q453 & Q452 & Q451 & Q450 & Q445 & Q444 & Q443 & Q442 & Q441 & Q440 & Q435 & Q434 & Q433 & Q432 & Q431 & Q430 & Q425 & Q424 & Q423 & Q422 & Q421 & Q420 & Q415 & Q414 & Q413 & Q412 & Q411 & Q410 & Q405 & Q404 & Q403 & Q402 & Q401 & Q400 & Q39(5 DOWNTO 0) & Q38(5 DOWNTO 0) & Q37(5 DOWNTO 0) & Q36(5 DOWNTO 0) & Q355 & Q354 & Q353 & Q352 & Q351 & Q350 & Q345 & Q344 & Q343 & Q342 & Q341 & Q340 & Q335 & Q334 & Q333 & Q332 & Q331 & Q330 & Q325 & Q324 & Q323 & Q322 & Q321 & Q320 & Q315 & Q314 & Q313 & Q312 & Q311 & Q310 & Q305 & Q304 & Q303 & Q302 & Q301 & Q300 & Q29(5 DOWNTO 0) & Q28(5 DOWNTO 0) & Q27(5 DOWNTO 0) & Q26(5 DOWNTO 0) & Q255 & Q254 & Q253 & Q252 & Q251 & Q250 & Q245 & Q244 & Q243 & Q242 & Q241 & Q240 & Q235 & Q234 & Q233 & Q232 & Q231 & Q230 & Q225 & Q224 & Q223 & Q222 & Q221 & Q220 & Q215 & Q214 & Q213 & Q212 & Q211 & Q210 & Q205 & Q204 & Q203 & Q202 & Q201 & Q200 & Q19(5 DOWNTO 0) & Q18(5 DOWNTO 0) & Q17(5 DOWNTO 0) & Q16(5 DOWNTO 0) & Q155 & Q154 & Q153 & Q152 & Q151 & Q150 & Q145 & Q144 & Q143 & Q142 & Q141 & Q140 & Q135 & Q134 & Q133 & Q132 & Q131 & Q130 & Q125 & Q124 & Q123 & Q122 & Q121 & Q120 & Q115 & Q114 & Q113 & Q112 & Q111 & Q110 & Q105 & Q104 & Q103 & Q102 & Q101 & Q100 & Q9(5 DOWNTO 0) & Q8(5 DOWNTO 0) & Q7(5 DOWNTO 0) & Q6(5 DOWNTO 0) & Q55 & Q54 & Q53 & Q52 & Q51 & Q50 & Q45 & Q44 & Q43 & Q42 & Q41 & Q40 & Q35 & Q34 & Q33 & Q32 & Q31 & Q30 & Q25 & Q24 & Q23 & Q22 & Q21 & Q20 & Q15 & Q14 & Q13 & Q12 & Q11 & Q10 & Q0(5 DOWNTO 0));
+Q515 <= GDFX_TEMP_SIGNAL_40(5);
+Q514 <= GDFX_TEMP_SIGNAL_40(4);
+Q513 <= GDFX_TEMP_SIGNAL_40(3);
+Q512 <= GDFX_TEMP_SIGNAL_40(2);
+Q511 <= GDFX_TEMP_SIGNAL_40(1);
+Q510 <= GDFX_TEMP_SIGNAL_40(0);
+
+GDFX_TEMP_SIGNAL_42 <= (Q515 & Q514 & Q513 & Q512 & Q511 & Q510);
+Q505 <= GDFX_TEMP_SIGNAL_39(5);
+Q504 <= GDFX_TEMP_SIGNAL_39(4);
+Q503 <= GDFX_TEMP_SIGNAL_39(3);
+Q502 <= GDFX_TEMP_SIGNAL_39(2);
+Q501 <= GDFX_TEMP_SIGNAL_39(1);
+Q500 <= GDFX_TEMP_SIGNAL_39(0);
+
+GDFX_TEMP_SIGNAL_41 <= (Q505 & Q504 & Q503 & Q502 & Q501 & Q500);
+GDFX_TEMP_SIGNAL_43 <= (Q505 & Q504 & Q503 & Q502 & Q501 & Q500);
+Q55 <= GDFX_TEMP_SIGNAL_48(5);
+Q54 <= GDFX_TEMP_SIGNAL_48(4);
+Q53 <= GDFX_TEMP_SIGNAL_48(3);
+Q52 <= GDFX_TEMP_SIGNAL_48(2);
+Q51 <= GDFX_TEMP_SIGNAL_48(1);
+Q50 <= GDFX_TEMP_SIGNAL_48(0);
+
+GDFX_TEMP_SIGNAL_51 <= (Q55 & Q54 & Q53 & Q52 & Q51 & Q50);
+GDFX_TEMP_SIGNAL_53 <= (Q55 & Q54 & Q53 & Q52 & Q51 & Q50);
+Q455 <= GDFX_TEMP_SIGNAL_32(5);
+Q454 <= GDFX_TEMP_SIGNAL_32(4);
+Q453 <= GDFX_TEMP_SIGNAL_32(3);
+Q452 <= GDFX_TEMP_SIGNAL_32(2);
+Q451 <= GDFX_TEMP_SIGNAL_32(1);
+Q450 <= GDFX_TEMP_SIGNAL_32(0);
+
+GDFX_TEMP_SIGNAL_34 <= (Q455 & Q454 & Q453 & Q452 & Q451 & Q450);
+GDFX_TEMP_SIGNAL_36 <= (Q455 & Q454 & Q453 & Q452 & Q451 & Q450);
+GDFX_TEMP_SIGNAL_28 <= (Q445 & Q444 & Q443 & Q442 & Q441 & Q440);
+Q445 <= GDFX_TEMP_SIGNAL_31(5);
+Q444 <= GDFX_TEMP_SIGNAL_31(4);
+Q443 <= GDFX_TEMP_SIGNAL_31(3);
+Q442 <= GDFX_TEMP_SIGNAL_31(2);
+Q441 <= GDFX_TEMP_SIGNAL_31(1);
+Q440 <= GDFX_TEMP_SIGNAL_31(0);
+
+GDFX_TEMP_SIGNAL_35 <= (Q445 & Q444 & Q443 & Q442 & Q441 & Q440);
+Q435 <= GDFX_TEMP_SIGNAL_24(5);
+Q434 <= GDFX_TEMP_SIGNAL_24(4);
+Q433 <= GDFX_TEMP_SIGNAL_24(3);
+Q432 <= GDFX_TEMP_SIGNAL_24(2);
+Q431 <= GDFX_TEMP_SIGNAL_24(1);
+Q430 <= GDFX_TEMP_SIGNAL_24(0);
+
+GDFX_TEMP_SIGNAL_26 <= (Q435 & Q434 & Q433 & Q432 & Q431 & Q430);
+GDFX_TEMP_SIGNAL_33 <= (Q435 & Q434 & Q433 & Q432 & Q431 & Q430);
+GDFX_TEMP_SIGNAL_19 <= (Q425 & Q424 & Q423 & Q422 & Q421 & Q420);
+Q425 <= GDFX_TEMP_SIGNAL_23(5);
+Q424 <= GDFX_TEMP_SIGNAL_23(4);
+Q423 <= GDFX_TEMP_SIGNAL_23(3);
+Q422 <= GDFX_TEMP_SIGNAL_23(2);
+Q421 <= GDFX_TEMP_SIGNAL_23(1);
+Q420 <= GDFX_TEMP_SIGNAL_23(0);
+
+GDFX_TEMP_SIGNAL_27 <= (Q425 & Q424 & Q423 & Q422 & Q421 & Q420);
+Q415 <= GDFX_TEMP_SIGNAL_15(5);
+Q414 <= GDFX_TEMP_SIGNAL_15(4);
+Q413 <= GDFX_TEMP_SIGNAL_15(3);
+Q412 <= GDFX_TEMP_SIGNAL_15(2);
+Q411 <= GDFX_TEMP_SIGNAL_15(1);
+Q410 <= GDFX_TEMP_SIGNAL_15(0);
+
+GDFX_TEMP_SIGNAL_17 <= (Q415 & Q414 & Q413 & Q412 & Q411 & Q410);
+GDFX_TEMP_SIGNAL_25 <= (Q415 & Q414 & Q413 & Q412 & Q411 & Q410);
+Q405 <= GDFX_TEMP_SIGNAL_4(5);
+Q404 <= GDFX_TEMP_SIGNAL_4(4);
+Q403 <= GDFX_TEMP_SIGNAL_4(3);
+Q402 <= GDFX_TEMP_SIGNAL_4(2);
+Q401 <= GDFX_TEMP_SIGNAL_4(1);
+Q400 <= GDFX_TEMP_SIGNAL_4(0);
+
+GDFX_TEMP_SIGNAL_16 <= (Q405 & Q404 & Q403 & Q402 & Q401 & Q400);
+GDFX_TEMP_SIGNAL_18 <= (Q405 & Q404 & Q403 & Q402 & Q401 & Q400);
+GDFX_TEMP_SIGNAL_52 <= (Q45 & Q44 & Q43 & Q42 & Q41 & Q40);
+GDFX_TEMP_SIGNAL_106 <= (Q45 & Q44 & Q43 & Q42 & Q41 & Q40);
+Q45 <= GDFX_TEMP_SIGNAL_136(5);
+Q44 <= GDFX_TEMP_SIGNAL_136(4);
+Q43 <= GDFX_TEMP_SIGNAL_136(3);
+Q42 <= GDFX_TEMP_SIGNAL_136(2);
+Q41 <= GDFX_TEMP_SIGNAL_136(1);
+Q40 <= GDFX_TEMP_SIGNAL_136(0);
+
+Q355 <= GDFX_TEMP_SIGNAL_7(5);
+Q354 <= GDFX_TEMP_SIGNAL_7(4);
+Q353 <= GDFX_TEMP_SIGNAL_7(3);
+Q352 <= GDFX_TEMP_SIGNAL_7(2);
+Q351 <= GDFX_TEMP_SIGNAL_7(1);
+Q350 <= GDFX_TEMP_SIGNAL_7(0);
+
+GDFX_TEMP_SIGNAL_9 <= (Q355 & Q354 & Q353 & Q352 & Q351 & Q350);
+GDFX_TEMP_SIGNAL_11 <= (Q355 & Q354 & Q353 & Q352 & Q351 & Q350);
+Q345 <= GDFX_TEMP_SIGNAL_5(5);
+Q344 <= GDFX_TEMP_SIGNAL_5(4);
+Q343 <= GDFX_TEMP_SIGNAL_5(3);
+Q342 <= GDFX_TEMP_SIGNAL_5(2);
+Q341 <= GDFX_TEMP_SIGNAL_5(1);
+Q340 <= GDFX_TEMP_SIGNAL_5(0);
+
+GDFX_TEMP_SIGNAL_10 <= (Q345 & Q344 & Q343 & Q342 & Q341 & Q340);
+GDFX_TEMP_SIGNAL_120 <= (Q345 & Q344 & Q343 & Q342 & Q341 & Q340);
+GDFX_TEMP_SIGNAL_8 <= (Q335 & Q334 & Q333 & Q332 & Q331 & Q330);
+Q335 <= GDFX_TEMP_SIGNAL_116(5);
+Q334 <= GDFX_TEMP_SIGNAL_116(4);
+Q333 <= GDFX_TEMP_SIGNAL_116(3);
+Q332 <= GDFX_TEMP_SIGNAL_116(2);
+Q331 <= GDFX_TEMP_SIGNAL_116(1);
+Q330 <= GDFX_TEMP_SIGNAL_116(0);
+
+GDFX_TEMP_SIGNAL_118 <= (Q335 & Q334 & Q333 & Q332 & Q331 & Q330);
+GDFX_TEMP_SIGNAL_112 <= (Q325 & Q324 & Q323 & Q322 & Q321 & Q320);
+Q325 <= GDFX_TEMP_SIGNAL_115(5);
+Q324 <= GDFX_TEMP_SIGNAL_115(4);
+Q323 <= GDFX_TEMP_SIGNAL_115(3);
+Q322 <= GDFX_TEMP_SIGNAL_115(2);
+Q321 <= GDFX_TEMP_SIGNAL_115(1);
+Q320 <= GDFX_TEMP_SIGNAL_115(0);
+
+GDFX_TEMP_SIGNAL_119 <= (Q325 & Q324 & Q323 & Q322 & Q321 & Q320);
+Q315 <= GDFX_TEMP_SIGNAL_108(5);
+Q314 <= GDFX_TEMP_SIGNAL_108(4);
+Q313 <= GDFX_TEMP_SIGNAL_108(3);
+Q312 <= GDFX_TEMP_SIGNAL_108(2);
+Q311 <= GDFX_TEMP_SIGNAL_108(1);
+Q310 <= GDFX_TEMP_SIGNAL_108(0);
+
+GDFX_TEMP_SIGNAL_110 <= (Q315 & Q314 & Q313 & Q312 & Q311 & Q310);
+GDFX_TEMP_SIGNAL_117 <= (Q315 & Q314 & Q313 & Q312 & Q311 & Q310);
+Q305 <= GDFX_TEMP_SIGNAL_3(5);
+Q304 <= GDFX_TEMP_SIGNAL_3(4);
+Q303 <= GDFX_TEMP_SIGNAL_3(3);
+Q302 <= GDFX_TEMP_SIGNAL_3(2);
+Q301 <= GDFX_TEMP_SIGNAL_3(1);
+Q300 <= GDFX_TEMP_SIGNAL_3(0);
+
+GDFX_TEMP_SIGNAL_109 <= (Q305 & Q304 & Q303 & Q302 & Q301 & Q300);
+GDFX_TEMP_SIGNAL_111 <= (Q305 & Q304 & Q303 & Q302 & Q301 & Q300);
+GDFX_TEMP_SIGNAL_50 <= (Q35 & Q34 & Q33 & Q32 & Q31 & Q30);
+Q35 <= GDFX_TEMP_SIGNAL_65(5);
+Q34 <= GDFX_TEMP_SIGNAL_65(4);
+Q33 <= GDFX_TEMP_SIGNAL_65(3);
+Q32 <= GDFX_TEMP_SIGNAL_65(2);
+Q31 <= GDFX_TEMP_SIGNAL_65(1);
+Q30 <= GDFX_TEMP_SIGNAL_65(0);
+
+GDFX_TEMP_SIGNAL_96 <= (Q35 & Q34 & Q33 & Q32 & Q31 & Q30);
+Q255 <= GDFX_TEMP_SIGNAL_99(5);
+Q254 <= GDFX_TEMP_SIGNAL_99(4);
+Q253 <= GDFX_TEMP_SIGNAL_99(3);
+Q252 <= GDFX_TEMP_SIGNAL_99(2);
+Q251 <= GDFX_TEMP_SIGNAL_99(1);
+Q250 <= GDFX_TEMP_SIGNAL_99(0);
+
+GDFX_TEMP_SIGNAL_101 <= (Q255 & Q254 & Q253 & Q252 & Q251 & Q250);
+GDFX_TEMP_SIGNAL_103 <= (Q255 & Q254 & Q253 & Q252 & Q251 & Q250);
+Q245 <= GDFX_TEMP_SIGNAL_0(5);
+Q244 <= GDFX_TEMP_SIGNAL_0(4);
+Q243 <= GDFX_TEMP_SIGNAL_0(3);
+Q242 <= GDFX_TEMP_SIGNAL_0(2);
+Q241 <= GDFX_TEMP_SIGNAL_0(1);
+Q240 <= GDFX_TEMP_SIGNAL_0(0);
+
+GDFX_TEMP_SIGNAL_92 <= (Q245 & Q244 & Q243 & Q242 & Q241 & Q240);
+GDFX_TEMP_SIGNAL_102 <= (Q245 & Q244 & Q243 & Q242 & Q241 & Q240);
+Q235 <= GDFX_TEMP_SIGNAL_85(5);
+Q234 <= GDFX_TEMP_SIGNAL_85(4);
+Q233 <= GDFX_TEMP_SIGNAL_85(3);
+Q232 <= GDFX_TEMP_SIGNAL_85(2);
+Q231 <= GDFX_TEMP_SIGNAL_85(1);
+Q230 <= GDFX_TEMP_SIGNAL_85(0);
+
+GDFX_TEMP_SIGNAL_90 <= (Q235 & Q234 & Q233 & Q232 & Q231 & Q230);
+GDFX_TEMP_SIGNAL_100 <= (Q235 & Q234 & Q233 & Q232 & Q231 & Q230);
+Q225 <= GDFX_TEMP_SIGNAL_84(5);
+Q224 <= GDFX_TEMP_SIGNAL_84(4);
+Q223 <= GDFX_TEMP_SIGNAL_84(3);
+Q222 <= GDFX_TEMP_SIGNAL_84(2);
+Q221 <= GDFX_TEMP_SIGNAL_84(1);
+Q220 <= GDFX_TEMP_SIGNAL_84(0);
+
+GDFX_TEMP_SIGNAL_88 <= (Q225 & Q224 & Q223 & Q222 & Q221 & Q220);
+GDFX_TEMP_SIGNAL_91 <= (Q225 & Q224 & Q223 & Q222 & Q221 & Q220);
+Q215 <= GDFX_TEMP_SIGNAL_83(5);
+Q214 <= GDFX_TEMP_SIGNAL_83(4);
+Q213 <= GDFX_TEMP_SIGNAL_83(3);
+Q212 <= GDFX_TEMP_SIGNAL_83(2);
+Q211 <= GDFX_TEMP_SIGNAL_83(1);
+Q210 <= GDFX_TEMP_SIGNAL_83(0);
+
+GDFX_TEMP_SIGNAL_86 <= (Q215 & Q214 & Q213 & Q212 & Q211 & Q210);
+GDFX_TEMP_SIGNAL_89 <= (Q215 & Q214 & Q213 & Q212 & Q211 & Q210);
+Q205 <= GDFX_TEMP_SIGNAL_2(5);
+Q204 <= GDFX_TEMP_SIGNAL_2(4);
+Q203 <= GDFX_TEMP_SIGNAL_2(3);
+Q202 <= GDFX_TEMP_SIGNAL_2(2);
+Q201 <= GDFX_TEMP_SIGNAL_2(1);
+Q200 <= GDFX_TEMP_SIGNAL_2(0);
+
+GDFX_TEMP_SIGNAL_81 <= (Q205 & Q204 & Q203 & Q202 & Q201 & Q200);
+GDFX_TEMP_SIGNAL_87 <= (Q205 & Q204 & Q203 & Q202 & Q201 & Q200);
+Q25 <= GDFX_TEMP_SIGNAL_56(5);
+Q24 <= GDFX_TEMP_SIGNAL_56(4);
+Q23 <= GDFX_TEMP_SIGNAL_56(3);
+Q22 <= GDFX_TEMP_SIGNAL_56(2);
+Q21 <= GDFX_TEMP_SIGNAL_56(1);
+Q20 <= GDFX_TEMP_SIGNAL_56(0);
+
+GDFX_TEMP_SIGNAL_82 <= (Q25 & Q24 & Q23 & Q22 & Q21 & Q20);
+GDFX_TEMP_SIGNAL_105 <= (Q25 & Q24 & Q23 & Q22 & Q21 & Q20);
+Q155 <= GDFX_TEMP_SIGNAL_67(5);
+Q154 <= GDFX_TEMP_SIGNAL_67(4);
+Q153 <= GDFX_TEMP_SIGNAL_67(3);
+Q152 <= GDFX_TEMP_SIGNAL_67(2);
+Q151 <= GDFX_TEMP_SIGNAL_67(1);
+Q150 <= GDFX_TEMP_SIGNAL_67(0);
+
+GDFX_TEMP_SIGNAL_73 <= (Q155 & Q154 & Q153 & Q152 & Q151 & Q150);
+GDFX_TEMP_SIGNAL_80 <= (Q155 & Q154 & Q153 & Q152 & Q151 & Q150);
+Q145 <= GDFX_TEMP_SIGNAL_66(5);
+Q144 <= GDFX_TEMP_SIGNAL_66(4);
+Q143 <= GDFX_TEMP_SIGNAL_66(3);
+Q142 <= GDFX_TEMP_SIGNAL_66(2);
+Q141 <= GDFX_TEMP_SIGNAL_66(1);
+Q140 <= GDFX_TEMP_SIGNAL_66(0);
+
+GDFX_TEMP_SIGNAL_71 <= (Q145 & Q144 & Q143 & Q142 & Q141 & Q140);
+GDFX_TEMP_SIGNAL_74 <= (Q145 & Q144 & Q143 & Q142 & Q141 & Q140);
+Q135 <= GDFX_TEMP_SIGNAL_64(5);
+Q134 <= GDFX_TEMP_SIGNAL_64(4);
+Q133 <= GDFX_TEMP_SIGNAL_64(3);
+Q132 <= GDFX_TEMP_SIGNAL_64(2);
+Q131 <= GDFX_TEMP_SIGNAL_64(1);
+Q130 <= GDFX_TEMP_SIGNAL_64(0);
+
+GDFX_TEMP_SIGNAL_69 <= (Q135 & Q134 & Q133 & Q132 & Q131 & Q130);
+GDFX_TEMP_SIGNAL_72 <= (Q135 & Q134 & Q133 & Q132 & Q131 & Q130);
+GDFX_TEMP_SIGNAL_61 <= (Q125 & Q124 & Q123 & Q122 & Q121 & Q120);
+GDFX_TEMP_SIGNAL_70 <= (Q125 & Q124 & Q123 & Q122 & Q121 & Q120);
+Q125 <= GDFX_TEMP_SIGNAL_135(5);
+Q124 <= GDFX_TEMP_SIGNAL_135(4);
+Q123 <= GDFX_TEMP_SIGNAL_135(3);
+Q122 <= GDFX_TEMP_SIGNAL_135(2);
+Q121 <= GDFX_TEMP_SIGNAL_135(1);
+Q120 <= GDFX_TEMP_SIGNAL_135(0);
+
+Q115 <= GDFX_TEMP_SIGNAL_57(5);
+Q114 <= GDFX_TEMP_SIGNAL_57(4);
+Q113 <= GDFX_TEMP_SIGNAL_57(3);
+Q112 <= GDFX_TEMP_SIGNAL_57(2);
+Q111 <= GDFX_TEMP_SIGNAL_57(1);
+Q110 <= GDFX_TEMP_SIGNAL_57(0);
+
+GDFX_TEMP_SIGNAL_59 <= (Q115 & Q114 & Q113 & Q112 & Q111 & Q110);
+GDFX_TEMP_SIGNAL_68 <= (Q115 & Q114 & Q113 & Q112 & Q111 & Q110);
+Q105 <= GDFX_TEMP_SIGNAL_1(5);
+Q104 <= GDFX_TEMP_SIGNAL_1(4);
+Q103 <= GDFX_TEMP_SIGNAL_1(3);
+Q102 <= GDFX_TEMP_SIGNAL_1(2);
+Q101 <= GDFX_TEMP_SIGNAL_1(1);
+Q100 <= GDFX_TEMP_SIGNAL_1(0);
+
+GDFX_TEMP_SIGNAL_58 <= (Q105 & Q104 & Q103 & Q102 & Q101 & Q100);
+GDFX_TEMP_SIGNAL_60 <= (Q105 & Q104 & Q103 & Q102 & Q101 & Q100);
+Q15 <= GDFX_TEMP_SIGNAL_49(5);
+Q14 <= GDFX_TEMP_SIGNAL_49(4);
+Q13 <= GDFX_TEMP_SIGNAL_49(3);
+Q12 <= GDFX_TEMP_SIGNAL_49(2);
+Q11 <= GDFX_TEMP_SIGNAL_49(1);
+Q10 <= GDFX_TEMP_SIGNAL_49(0);
+
+GDFX_TEMP_SIGNAL_79 <= (Q15 & Q14 & Q13 & Q12 & Q11 & Q10);
+GDFX_TEMP_SIGNAL_95 <= (Q15 & Q14 & Q13 & Q12 & Q11 & Q10);
+GDFX_TEMP_SIGNAL_45 <= (O515 & O514 & O513 & O512 & O511 & O510);
+GDFX_TEMP_SIGNAL_46 <= (O515 & O514 & O513 & O512 & O511 & O510);
+GDFX_TEMP_SIGNAL_44 <= (O505 & O504 & O503 & O502 & O501 & O500);
+GDFX_TEMP_SIGNAL_55 <= (O55 & O54 & O53 & O52 & O51 & O50);
+GDFX_TEMP_SIGNAL_38 <= (O455 & O454 & O453 & O452 & O451 & O450);
+GDFX_TEMP_SIGNAL_37 <= (O445 & O444 & O443 & O442 & O441 & O440);
+GDFX_TEMP_SIGNAL_30 <= (O435 & O434 & O433 & O432 & O431 & O430);
+GDFX_TEMP_SIGNAL_29 <= (O425 & O424 & O423 & O422 & O421 & O420);
+GDFX_TEMP_SIGNAL_22 <= (O415 & O414 & O413 & O412 & O411 & O410);
+GDFX_TEMP_SIGNAL_21 <= (O405 & O404 & O403 & O402 & O401 & O400);
+GDFX_TEMP_SIGNAL_54 <= (O45 & O44 & O43 & O42 & O41 & O40);
+GDFX_TEMP_SIGNAL_13 <= (O355 & O354 & O353 & O352 & O351 & O350);
+GDFX_TEMP_SIGNAL_12 <= (O345 & O344 & O343 & O342 & O341 & O340);
+GDFX_TEMP_SIGNAL_121 <= (O325 & O324 & O323 & O322 & O321 & O320);
+GDFX_TEMP_SIGNAL_122 <= (O325 & O324 & O323 & O322 & O321 & O320);
+GDFX_TEMP_SIGNAL_114 <= (O315 & O314 & O313 & O312 & O311 & O310);
+GDFX_TEMP_SIGNAL_113 <= (O305 & O304 & O303 & O302 & O301 & O300);
+GDFX_TEMP_SIGNAL_20 <= (O35 & O34 & O33 & O32 & O31 & O30);
+GDFX_TEMP_SIGNAL_107 <= (O255 & O254 & O253 & O252 & O251 & O250);
+GDFX_TEMP_SIGNAL_104 <= (O245 & O244 & O243 & O242 & O241 & O240);
+GDFX_TEMP_SIGNAL_98 <= (O235 & O234 & O233 & O232 & O231 & O230);
+GDFX_TEMP_SIGNAL_97 <= (O225 & O224 & O223 & O222 & O221 & O220);
+GDFX_TEMP_SIGNAL_94 <= (O215 & O214 & O213 & O212 & O211 & O210);
+GDFX_TEMP_SIGNAL_93 <= (O205 & O204 & O203 & O202 & O201 & O200);
+GDFX_TEMP_SIGNAL_14 <= (O25 & O24 & O23 & O22 & O21 & O20);
+GDFX_TEMP_SIGNAL_78 <= (O155 & O154 & O153 & O152 & O151 & O150);
+GDFX_TEMP_SIGNAL_77 <= (O145 & O144 & O143 & O142 & O141 & O140);
+GDFX_TEMP_SIGNAL_76 <= (O135 & O134 & O133 & O132 & O131 & O130);
+GDFX_TEMP_SIGNAL_75 <= (O125 & O124 & O123 & O122 & O121 & O120);
+GDFX_TEMP_SIGNAL_63 <= (O115 & O114 & O113 & O112 & O111 & O110);
+GDFX_TEMP_SIGNAL_62 <= (O105 & O104 & O103 & O102 & O101 & O100);
+GDFX_TEMP_SIGNAL_6 <= (O15 & O14 & O13 & O12 & O11 & O10);
+O515 <= GDFX_TEMP_SIGNAL_129;
+O514 <= GDFX_TEMP_SIGNAL_129;
+O513 <= GDFX_TEMP_SIGNAL_129;
+O512 <= GDFX_TEMP_SIGNAL_129;
+O511 <= GDFX_TEMP_SIGNAL_129;
+O510 <= GDFX_TEMP_SIGNAL_129;
+
+O515 <= GDFX_TEMP_SIGNAL_130;
+O514 <= GDFX_TEMP_SIGNAL_130;
+O513 <= GDFX_TEMP_SIGNAL_130;
+O512 <= GDFX_TEMP_SIGNAL_130;
+O511 <= GDFX_TEMP_SIGNAL_130;
+O510 <= GDFX_TEMP_SIGNAL_130;
+
+O515 <= GDFX_TEMP_SIGNAL_131;
+O514 <= GDFX_TEMP_SIGNAL_131;
+O513 <= GDFX_TEMP_SIGNAL_131;
+O512 <= GDFX_TEMP_SIGNAL_131;
+O511 <= GDFX_TEMP_SIGNAL_131;
+O510 <= GDFX_TEMP_SIGNAL_131;
+
+O515 <= GDFX_TEMP_SIGNAL_132;
+O514 <= GDFX_TEMP_SIGNAL_132;
+O513 <= GDFX_TEMP_SIGNAL_132;
+O512 <= GDFX_TEMP_SIGNAL_132;
+O511 <= GDFX_TEMP_SIGNAL_132;
+O510 <= GDFX_TEMP_SIGNAL_132;
+
+O515 <= GDFX_TEMP_SIGNAL_133;
+O514 <= GDFX_TEMP_SIGNAL_133;
+O513 <= GDFX_TEMP_SIGNAL_133;
+O512 <= GDFX_TEMP_SIGNAL_133;
+O511 <= GDFX_TEMP_SIGNAL_133;
+O510 <= GDFX_TEMP_SIGNAL_133;
+
+O515 <= GDFX_TEMP_SIGNAL_134;
+O514 <= GDFX_TEMP_SIGNAL_134;
+O513 <= GDFX_TEMP_SIGNAL_134;
+O512 <= GDFX_TEMP_SIGNAL_134;
+O511 <= GDFX_TEMP_SIGNAL_134;
+O510 <= GDFX_TEMP_SIGNAL_134;
+
+O325 <= GDFX_TEMP_SIGNAL_123;
+O324 <= GDFX_TEMP_SIGNAL_123;
+O323 <= GDFX_TEMP_SIGNAL_123;
+O322 <= GDFX_TEMP_SIGNAL_123;
+O321 <= GDFX_TEMP_SIGNAL_123;
+O320 <= GDFX_TEMP_SIGNAL_123;
+
+O325 <= GDFX_TEMP_SIGNAL_124;
+O324 <= GDFX_TEMP_SIGNAL_124;
+O323 <= GDFX_TEMP_SIGNAL_124;
+O322 <= GDFX_TEMP_SIGNAL_124;
+O321 <= GDFX_TEMP_SIGNAL_124;
+O320 <= GDFX_TEMP_SIGNAL_124;
+
+O325 <= GDFX_TEMP_SIGNAL_125;
+O324 <= GDFX_TEMP_SIGNAL_125;
+O323 <= GDFX_TEMP_SIGNAL_125;
+O322 <= GDFX_TEMP_SIGNAL_125;
+O321 <= GDFX_TEMP_SIGNAL_125;
+O320 <= GDFX_TEMP_SIGNAL_125;
+
+O325 <= GDFX_TEMP_SIGNAL_126;
+O324 <= GDFX_TEMP_SIGNAL_126;
+O323 <= GDFX_TEMP_SIGNAL_126;
+O322 <= GDFX_TEMP_SIGNAL_126;
+O321 <= GDFX_TEMP_SIGNAL_126;
+O320 <= GDFX_TEMP_SIGNAL_126;
+
+O325 <= GDFX_TEMP_SIGNAL_127;
+O324 <= GDFX_TEMP_SIGNAL_127;
+O323 <= GDFX_TEMP_SIGNAL_127;
+O322 <= GDFX_TEMP_SIGNAL_127;
+O321 <= GDFX_TEMP_SIGNAL_127;
+O320 <= GDFX_TEMP_SIGNAL_127;
+
+O325 <= GDFX_TEMP_SIGNAL_128;
+O324 <= GDFX_TEMP_SIGNAL_128;
+O323 <= GDFX_TEMP_SIGNAL_128;
+O322 <= GDFX_TEMP_SIGNAL_128;
+O321 <= GDFX_TEMP_SIGNAL_128;
+O320 <= GDFX_TEMP_SIGNAL_128;
+
+
+
+b2v_Bubbles : lpm_ff_0
+PORT MAP(enable => pops(24),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_0,
+		 q => GDFX_TEMP_SIGNAL_0);
+
+
+b2v_Corey : lpm_ff_1
+PORT MAP(enable => pops(0),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_1,
+		 q => Q0);
+
+
+b2v_Cyrus : lpm_ff_2
+PORT MAP(enable => pops(38),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_2,
+		 q => Q38);
+
+
+b2v_DFF10 : lpm_ff_3
+PORT MAP(enable => pops(10),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_3,
+		 q => GDFX_TEMP_SIGNAL_1);
+
+
+b2v_DFF20 : lpm_ff_4
+PORT MAP(enable => pops(20),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_4,
+		 q => GDFX_TEMP_SIGNAL_2);
+
+
+b2v_DFF30 : lpm_ff_5
+PORT MAP(enable => pops(30),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_5,
+		 q => GDFX_TEMP_SIGNAL_3);
+
+
+b2v_DFF40 : lpm_ff_6
+PORT MAP(enable => pops(40),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_6,
+		 q => GDFX_TEMP_SIGNAL_4);
+
+
+b2v_Donna : lpm_ff_7
+PORT MAP(enable => pops(34),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_7,
+		 q => GDFX_TEMP_SIGNAL_5);
+
+
+b2v_GeorgeGreen : lpm_ff_8
+PORT MAP(enable => pops(28),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_8,
+		 q => Q28);
+
+
+b2v_inst : lpm_counter_9
+PORT MAP(clock => CLK,
+		 aclr => RST,
+		 sset => SYNTHESIZED_WIRE_9,
+		 updown => SYNTHESIZED_WIRE_10,
+		 cnt_en => RES(0),
+		 q => NUM_ALTERA_SYNTHESIZED);
+
+
+
+b2v_inst10 : busmux_10
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_6,
+		 datab => SYNTHESIZED_WIRE_11,
+		 result => SYNTHESIZED_WIRE_54);
+
+
+b2v_inst100 : lpm_ff_11
+PORT MAP(enable => pops(35),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_12,
+		 q => GDFX_TEMP_SIGNAL_7);
+
+
+b2v_inst101 : lpm_ff_12
+PORT MAP(enable => pops(36),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_13,
+		 q => Q36);
+
+
+b2v_inst102 : lpm_ff_13
+PORT MAP(enable => pops(37),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_14,
+		 q => Q37);
+
+
+b2v_inst103 : busmux_14
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_8,
+		 datab => GDFX_TEMP_SIGNAL_9,
+		 result => SYNTHESIZED_WIRE_15);
+
+
+b2v_inst104 : busmux_15
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_10,
+		 datab => Q36,
+		 result => SYNTHESIZED_WIRE_16);
+
+
+b2v_inst105 : busmux_16
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_11,
+		 datab => Q37,
+		 result => SYNTHESIZED_WIRE_17);
+
+
+b2v_inst106 : busmux_17
+PORT MAP(sel => MODE(1),
+		 dataa => Q36,
+		 datab => Q38,
+		 result => SYNTHESIZED_WIRE_19);
+
+
+b2v_inst107 : busmux_18
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_12,
+		 datab => SYNTHESIZED_WIRE_15,
+		 result => SYNTHESIZED_WIRE_7);
+
+
+b2v_inst108 : busmux_19
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_13,
+		 datab => SYNTHESIZED_WIRE_16,
+		 result => SYNTHESIZED_WIRE_12);
+
+
+b2v_inst109 : busmux_20
+PORT MAP(sel => MODE(0),
+		 dataa => O36,
+		 datab => SYNTHESIZED_WIRE_17,
+		 result => SYNTHESIZED_WIRE_13);
+
+
+b2v_inst11 : busmux_21
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_14,
+		 datab => SYNTHESIZED_WIRE_18,
+		 result => SYNTHESIZED_WIRE_61);
+
+
+b2v_inst110 : busmux_22
+PORT MAP(sel => MODE(0),
+		 dataa => O37,
+		 datab => SYNTHESIZED_WIRE_19,
+		 result => SYNTHESIZED_WIRE_14);
+
+
+b2v_inst111 : lpm_ff_23
+PORT MAP(enable => pops(39),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_20,
+		 q => Q39);
+
+
+b2v_inst113 : lpm_ff_24
+PORT MAP(enable => pops(41),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_21,
+		 q => GDFX_TEMP_SIGNAL_15);
+
+
+b2v_inst114 : busmux_25
+PORT MAP(sel => MODE(1),
+		 dataa => Q37,
+		 datab => Q39,
+		 result => SYNTHESIZED_WIRE_22);
+
+
+b2v_inst115 : busmux_26
+PORT MAP(sel => MODE(1),
+		 dataa => Q38,
+		 datab => GDFX_TEMP_SIGNAL_16,
+		 result => SYNTHESIZED_WIRE_23);
+
+
+b2v_inst116 : busmux_27
+PORT MAP(sel => MODE(1),
+		 dataa => Q39,
+		 datab => GDFX_TEMP_SIGNAL_17,
+		 result => SYNTHESIZED_WIRE_25);
+
+
+b2v_inst117 : busmux_28
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_18,
+		 datab => GDFX_TEMP_SIGNAL_19,
+		 result => SYNTHESIZED_WIRE_26);
+
+
+b2v_inst118 : busmux_29
+PORT MAP(sel => MODE(0),
+		 dataa => O38,
+		 datab => SYNTHESIZED_WIRE_22,
+		 result => SYNTHESIZED_WIRE_2);
+
+
+b2v_inst119 : busmux_30
+PORT MAP(sel => MODE(0),
+		 dataa => O39,
+		 datab => SYNTHESIZED_WIRE_23,
+		 result => SYNTHESIZED_WIRE_20);
+
+
+b2v_inst12 : busmux_31
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_20,
+		 datab => SYNTHESIZED_WIRE_24,
+		 result => SYNTHESIZED_WIRE_68);
+
+
+b2v_inst120 : busmux_32
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_21,
+		 datab => SYNTHESIZED_WIRE_25,
+		 result => SYNTHESIZED_WIRE_6);
+
+
+b2v_inst121 : busmux_33
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_22,
+		 datab => SYNTHESIZED_WIRE_26,
+		 result => SYNTHESIZED_WIRE_21);
+
+
+b2v_inst122 : lpm_ff_34
+PORT MAP(enable => pops(42),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_27,
+		 q => GDFX_TEMP_SIGNAL_23);
+
+
+b2v_inst123 : lpm_ff_35
+PORT MAP(enable => pops(43),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_28,
+		 q => GDFX_TEMP_SIGNAL_24);
+
+
+b2v_inst124 : busmux_36
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_25,
+		 datab => GDFX_TEMP_SIGNAL_26,
+		 result => SYNTHESIZED_WIRE_29);
+
+
+b2v_inst125 : busmux_37
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_27,
+		 datab => GDFX_TEMP_SIGNAL_28,
+		 result => SYNTHESIZED_WIRE_30);
+
+
+b2v_inst126 : busmux_38
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_29,
+		 datab => SYNTHESIZED_WIRE_29,
+		 result => SYNTHESIZED_WIRE_27);
+
+
+b2v_inst127 : busmux_39
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_30,
+		 datab => SYNTHESIZED_WIRE_30,
+		 result => SYNTHESIZED_WIRE_28);
+
+
+b2v_inst128 : lpm_ff_40
+PORT MAP(enable => pops(44),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_31,
+		 q => GDFX_TEMP_SIGNAL_31);
+
+
+b2v_inst129 : lpm_ff_41
+PORT MAP(enable => pops(45),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_32,
+		 q => GDFX_TEMP_SIGNAL_32);
+
+
+b2v_inst13 : g07_popenable
+PORT MAP(CLK => CLK,
+		 N => ADDR,
+		 P_EN => SYNTHESIZED_WIRE_46);
+
+
+b2v_inst130 : lpm_ff_42
+PORT MAP(enable => pops(46),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_33,
+		 q => Q46);
+
+
+b2v_inst131 : lpm_ff_43
+PORT MAP(enable => pops(47),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_34,
+		 q => Q47);
+
+
+b2v_inst132 : busmux_44
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_33,
+		 datab => GDFX_TEMP_SIGNAL_34,
+		 result => SYNTHESIZED_WIRE_35);
+
+
+b2v_inst133 : busmux_45
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_35,
+		 datab => Q46,
+		 result => SYNTHESIZED_WIRE_36);
+
+
+b2v_inst134 : busmux_46
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_36,
+		 datab => Q47,
+		 result => SYNTHESIZED_WIRE_37);
+
+
+b2v_inst135 : busmux_47
+PORT MAP(sel => MODE(1),
+		 dataa => Q46,
+		 datab => Q48,
+		 result => SYNTHESIZED_WIRE_38);
+
+
+b2v_inst136 : busmux_48
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_37,
+		 datab => SYNTHESIZED_WIRE_35,
+		 result => SYNTHESIZED_WIRE_31);
+
+
+b2v_inst137 : busmux_49
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_38,
+		 datab => SYNTHESIZED_WIRE_36,
+		 result => SYNTHESIZED_WIRE_32);
+
+
+b2v_inst138 : busmux_50
+PORT MAP(sel => MODE(0),
+		 dataa => O46,
+		 datab => SYNTHESIZED_WIRE_37,
+		 result => SYNTHESIZED_WIRE_33);
+
+
+b2v_inst139 : busmux_51
+PORT MAP(sel => MODE(0),
+		 dataa => O47,
+		 datab => SYNTHESIZED_WIRE_38,
+		 result => SYNTHESIZED_WIRE_34);
+
+
+b2v_inst14 : busmux_52
+PORT MAP(sel => RES(0),
+		 dataa => ZERO,
+		 datab => ONE,
+		 result => SYNTHESIZED_WIRE_49);
+
+
+b2v_inst140 : lpm_ff_53
+PORT MAP(enable => pops(48),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_39,
+		 q => Q48);
+
+
+b2v_inst141 : lpm_ff_54
+PORT MAP(enable => pops(49),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_40,
+		 q => Q49);
+
+
+b2v_inst142 : lpm_ff_55
+PORT MAP(enable => pops(50),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_41,
+		 q => GDFX_TEMP_SIGNAL_39);
+
+
+b2v_inst143 : lpm_ff_56
+PORT MAP(enable => pops(51),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_42,
+		 q => GDFX_TEMP_SIGNAL_40);
+
+
+b2v_inst144 : busmux_57
+PORT MAP(sel => MODE(1),
+		 dataa => Q47,
+		 datab => Q49,
+		 result => SYNTHESIZED_WIRE_44);
+
+
+b2v_inst145 : busmux_58
+PORT MAP(sel => MODE(1),
+		 dataa => Q48,
+		 datab => GDFX_TEMP_SIGNAL_41,
+		 result => SYNTHESIZED_WIRE_45);
+
+
+b2v_inst146 : busmux_59
+PORT MAP(sel => MODE(1),
+		 dataa => Q49,
+		 datab => GDFX_TEMP_SIGNAL_42,
+		 result => SYNTHESIZED_WIRE_47);
+
+
+b2v_inst147 : busmux_60
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_43,
+		 datab => SYNTHESIZED_WIRE_43,
+		 result => SYNTHESIZED_WIRE_48);
+
+
+b2v_inst148 : busmux_61
+PORT MAP(sel => MODE(0),
+		 dataa => O48,
+		 datab => SYNTHESIZED_WIRE_44,
+		 result => SYNTHESIZED_WIRE_39);
+
+
+b2v_inst149 : busmux_62
+PORT MAP(sel => MODE(0),
+		 dataa => O49,
+		 datab => SYNTHESIZED_WIRE_45,
+		 result => SYNTHESIZED_WIRE_40);
+
+
+b2v_inst15 : busmux_63
+PORT MAP(sel => RES(0),
+		 dataa => ONE,
+		 datab => SYNTHESIZED_WIRE_46,
+		 result => SYNTHESIZED_WIRE_50);
+
+
+b2v_inst150 : busmux_64
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_44,
+		 datab => SYNTHESIZED_WIRE_47,
+		 result => SYNTHESIZED_WIRE_41);
+
+
+b2v_inst151 : busmux_65
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_45,
+		 datab => SYNTHESIZED_WIRE_48,
+		 result => SYNTHESIZED_WIRE_42);
+
+
+
+SYNTHESIZED_WIRE_60 <= NOT(MODE(0) AND MODE(0));
+
+
+SYNTHESIZED_WIRE_10 <= NOT(MODE(1) AND MODE(1));
+
+
+b2v_inst156 : lpm_compare_66
+PORT MAP(dataa => GDFX_TEMP_SIGNAL_46,
+		 datab => NUM_ALTERA_SYNTHESIZED,
+		 alb => FULL_ALTERA_SYNTHESIZED);
+
+
+b2v_inst157 : lpm_compare_67
+PORT MAP(dataa => NUM_ALTERA_SYNTHESIZED,
+		 datab => O0,
+		 aeb => EMPTY_ALTERA_SYNTHESIZED);
+
+
+b2v_inst159 : lpm_mux_68
+PORT MAP(data => GDFX_TEMP_SIGNAL_47,
+		 sel => ADDR,
+		 result => VALUE);
+
+
+b2v_inst16 : busmux_69
+PORT MAP(sel => RES(1),
+		 dataa => SYNTHESIZED_WIRE_49,
+		 datab => SYNTHESIZED_WIRE_50,
+		 result => pops);
+
+
+b2v_inst17 : lpm_ff_70
+PORT MAP(enable => pops(5),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_51,
+		 q => GDFX_TEMP_SIGNAL_48);
+
+
+b2v_inst18 : lpm_ff_71
+PORT MAP(enable => pops(6),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_52,
+		 q => Q6);
+
+
+b2v_inst19 : lpm_ff_72
+PORT MAP(enable => pops(7),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_53,
+		 q => Q7);
+
+
+b2v_inst2 : lpm_ff_73
+PORT MAP(enable => pops(1),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_54,
+		 q => GDFX_TEMP_SIGNAL_49);
+
+
+b2v_inst20 : busmux_74
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_50,
+		 datab => GDFX_TEMP_SIGNAL_51,
+		 result => SYNTHESIZED_WIRE_55);
+
+
+b2v_inst21 : busmux_75
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_52,
+		 datab => Q6,
+		 result => SYNTHESIZED_WIRE_56);
+
+
+b2v_inst22 : busmux_76
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_53,
+		 datab => Q7,
+		 result => SYNTHESIZED_WIRE_57);
+
+
+b2v_inst23 : busmux_77
+PORT MAP(sel => MODE(1),
+		 dataa => Q6,
+		 datab => Q8,
+		 result => SYNTHESIZED_WIRE_58);
+
+
+b2v_inst24 : busmux_78
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_54,
+		 datab => SYNTHESIZED_WIRE_55,
+		 result => SYNTHESIZED_WIRE_110);
+
+
+b2v_inst25 : busmux_79
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_55,
+		 datab => SYNTHESIZED_WIRE_56,
+		 result => SYNTHESIZED_WIRE_51);
+
+
+b2v_inst26 : busmux_80
+PORT MAP(sel => MODE(0),
+		 dataa => O6,
+		 datab => SYNTHESIZED_WIRE_57,
+		 result => SYNTHESIZED_WIRE_52);
+
+
+b2v_inst27 : busmux_81
+PORT MAP(sel => MODE(0),
+		 dataa => O7,
+		 datab => SYNTHESIZED_WIRE_58,
+		 result => SYNTHESIZED_WIRE_53);
+
+
+b2v_inst28 : lpm_ff_82
+PORT MAP(enable => pops(9),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_59,
+		 q => Q9);
+
+
+SYNTHESIZED_WIRE_9 <= MODE(1) AND SYNTHESIZED_WIRE_60;
+
+
+b2v_inst3 : lpm_ff_83
+PORT MAP(enable => pops(2),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_61,
+		 q => GDFX_TEMP_SIGNAL_56);
+
+
+b2v_inst30 : lpm_ff_84
+PORT MAP(enable => pops(11),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_62,
+		 q => GDFX_TEMP_SIGNAL_57);
+
+
+b2v_inst31 : busmux_85
+PORT MAP(sel => MODE(1),
+		 dataa => Q7,
+		 datab => Q9,
+		 result => SYNTHESIZED_WIRE_63);
+
+
+b2v_inst32 : busmux_86
+PORT MAP(sel => MODE(1),
+		 dataa => Q8,
+		 datab => GDFX_TEMP_SIGNAL_58,
+		 result => SYNTHESIZED_WIRE_64);
+
+
+b2v_inst33 : busmux_87
+PORT MAP(sel => MODE(1),
+		 dataa => Q9,
+		 datab => GDFX_TEMP_SIGNAL_59,
+		 result => SYNTHESIZED_WIRE_65);
+
+
+b2v_inst34 : busmux_88
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_60,
+		 datab => GDFX_TEMP_SIGNAL_61,
+		 result => SYNTHESIZED_WIRE_66);
+
+
+b2v_inst35 : busmux_89
+PORT MAP(sel => MODE(0),
+		 dataa => O8,
+		 datab => SYNTHESIZED_WIRE_63,
+		 result => SYNTHESIZED_WIRE_108);
+
+
+b2v_inst36 : busmux_90
+PORT MAP(sel => MODE(0),
+		 dataa => O9,
+		 datab => SYNTHESIZED_WIRE_64,
+		 result => SYNTHESIZED_WIRE_59);
+
+
+b2v_inst37 : busmux_91
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_62,
+		 datab => SYNTHESIZED_WIRE_65,
+		 result => SYNTHESIZED_WIRE_3);
+
+
+b2v_inst38 : busmux_92
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_63,
+		 datab => SYNTHESIZED_WIRE_66,
+		 result => SYNTHESIZED_WIRE_62);
+
+
+b2v_inst39 : lpm_ff_93
+PORT MAP(enable => pops(13),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_67,
+		 q => GDFX_TEMP_SIGNAL_64);
+
+
+b2v_inst4 : lpm_ff_94
+PORT MAP(enable => pops(3),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_68,
+		 q => GDFX_TEMP_SIGNAL_65);
+
+
+b2v_inst40 : lpm_ff_95
+PORT MAP(enable => pops(14),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_69,
+		 q => GDFX_TEMP_SIGNAL_66);
+
+
+b2v_inst41 : lpm_ff_96
+PORT MAP(enable => pops(15),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_70,
+		 q => GDFX_TEMP_SIGNAL_67);
+
+
+b2v_inst42 : busmux_97
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_68,
+		 datab => GDFX_TEMP_SIGNAL_69,
+		 result => SYNTHESIZED_WIRE_71);
+
+
+b2v_inst43 : busmux_98
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_70,
+		 datab => GDFX_TEMP_SIGNAL_71,
+		 result => SYNTHESIZED_WIRE_72);
+
+
+b2v_inst44 : busmux_99
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_72,
+		 datab => GDFX_TEMP_SIGNAL_73,
+		 result => SYNTHESIZED_WIRE_73);
+
+
+b2v_inst45 : busmux_100
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_74,
+		 datab => Q16,
+		 result => SYNTHESIZED_WIRE_74);
+
+
+b2v_inst46 : busmux_101
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_75,
+		 datab => SYNTHESIZED_WIRE_71,
+		 result => SYNTHESIZED_WIRE_109);
+
+
+b2v_inst47 : busmux_102
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_76,
+		 datab => SYNTHESIZED_WIRE_72,
+		 result => SYNTHESIZED_WIRE_67);
+
+
+b2v_inst48 : busmux_103
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_77,
+		 datab => SYNTHESIZED_WIRE_73,
+		 result => SYNTHESIZED_WIRE_69);
+
+
+b2v_inst49 : busmux_104
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_78,
+		 datab => SYNTHESIZED_WIRE_74,
+		 result => SYNTHESIZED_WIRE_70);
+
+
+b2v_inst5 : busmux_105
+PORT MAP(sel => MODE(1),
+		 dataa => DATA,
+		 datab => GDFX_TEMP_SIGNAL_79,
+		 result => SYNTHESIZED_WIRE_98);
+
+
+b2v_inst50 : lpm_ff_106
+PORT MAP(enable => pops(17),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_75,
+		 q => Q17);
+
+
+b2v_inst51 : lpm_ff_107
+PORT MAP(enable => pops(18),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_76,
+		 q => Q18);
+
+
+b2v_inst52 : lpm_ff_108
+PORT MAP(enable => pops(19),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_77,
+		 q => Q19);
+
+
+b2v_inst53 : busmux_109
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_80,
+		 datab => Q17,
+		 result => SYNTHESIZED_WIRE_78);
+
+
+b2v_inst54 : busmux_110
+PORT MAP(sel => MODE(1),
+		 dataa => Q16,
+		 datab => Q18,
+		 result => SYNTHESIZED_WIRE_79);
+
+
+b2v_inst55 : busmux_111
+PORT MAP(sel => MODE(1),
+		 dataa => Q17,
+		 datab => Q19,
+		 result => SYNTHESIZED_WIRE_80);
+
+
+b2v_inst56 : busmux_112
+PORT MAP(sel => MODE(1),
+		 dataa => Q18,
+		 datab => GDFX_TEMP_SIGNAL_81,
+		 result => SYNTHESIZED_WIRE_81);
+
+
+b2v_inst57 : busmux_113
+PORT MAP(sel => MODE(0),
+		 dataa => O16,
+		 datab => SYNTHESIZED_WIRE_78,
+		 result => SYNTHESIZED_WIRE_107);
+
+
+b2v_inst58 : busmux_114
+PORT MAP(sel => MODE(0),
+		 dataa => O17,
+		 datab => SYNTHESIZED_WIRE_79,
+		 result => SYNTHESIZED_WIRE_75);
+
+
+b2v_inst59 : busmux_115
+PORT MAP(sel => MODE(0),
+		 dataa => O18,
+		 datab => SYNTHESIZED_WIRE_80,
+		 result => SYNTHESIZED_WIRE_76);
+
+
+b2v_inst6 : busmux_116
+PORT MAP(sel => MODE(1),
+		 dataa => Q0,
+		 datab => GDFX_TEMP_SIGNAL_82,
+		 result => SYNTHESIZED_WIRE_11);
+
+
+b2v_inst60 : busmux_117
+PORT MAP(sel => MODE(0),
+		 dataa => O19,
+		 datab => SYNTHESIZED_WIRE_81,
+		 result => SYNTHESIZED_WIRE_77);
+
+
+b2v_inst61 : lpm_ff_118
+PORT MAP(enable => pops(21),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_82,
+		 q => GDFX_TEMP_SIGNAL_83);
+
+
+b2v_inst62 : lpm_ff_119
+PORT MAP(enable => pops(22),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_83,
+		 q => GDFX_TEMP_SIGNAL_84);
+
+
+b2v_inst63 : lpm_ff_120
+PORT MAP(enable => pops(23),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_84,
+		 q => GDFX_TEMP_SIGNAL_85);
+
+
+b2v_inst64 : busmux_121
+PORT MAP(sel => MODE(1),
+		 dataa => Q19,
+		 datab => GDFX_TEMP_SIGNAL_86,
+		 result => SYNTHESIZED_WIRE_85);
+
+
+b2v_inst65 : busmux_122
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_87,
+		 datab => GDFX_TEMP_SIGNAL_88,
+		 result => SYNTHESIZED_WIRE_86);
+
+
+b2v_inst66 : busmux_123
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_89,
+		 datab => GDFX_TEMP_SIGNAL_90,
+		 result => SYNTHESIZED_WIRE_87);
+
+
+b2v_inst67 : busmux_124
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_91,
+		 datab => GDFX_TEMP_SIGNAL_92,
+		 result => SYNTHESIZED_WIRE_88);
+
+
+b2v_inst68 : busmux_125
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_93,
+		 datab => SYNTHESIZED_WIRE_85,
+		 result => SYNTHESIZED_WIRE_4);
+
+
+b2v_inst69 : busmux_126
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_94,
+		 datab => SYNTHESIZED_WIRE_86,
+		 result => SYNTHESIZED_WIRE_82);
+
+
+b2v_inst7 : busmux_127
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_95,
+		 datab => GDFX_TEMP_SIGNAL_96,
+		 result => SYNTHESIZED_WIRE_18);
+
+
+b2v_inst70 : busmux_128
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_97,
+		 datab => SYNTHESIZED_WIRE_87,
+		 result => SYNTHESIZED_WIRE_83);
+
+
+b2v_inst71 : busmux_129
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_98,
+		 datab => SYNTHESIZED_WIRE_88,
+		 result => SYNTHESIZED_WIRE_84);
+
+
+b2v_inst72 : lpm_ff_130
+PORT MAP(enable => pops(25),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_89,
+		 q => GDFX_TEMP_SIGNAL_99);
+
+
+b2v_inst73 : lpm_ff_131
+PORT MAP(enable => pops(26),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_90,
+		 q => Q26);
+
+
+b2v_inst74 : lpm_ff_132
+PORT MAP(enable => pops(27),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_91,
+		 q => Q27);
+
+
+b2v_inst75 : busmux_133
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_100,
+		 datab => GDFX_TEMP_SIGNAL_101,
+		 result => SYNTHESIZED_WIRE_92);
+
+
+b2v_inst76 : busmux_134
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_102,
+		 datab => Q26,
+		 result => SYNTHESIZED_WIRE_93);
+
+
+b2v_inst77 : busmux_135
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_103,
+		 datab => Q27,
+		 result => SYNTHESIZED_WIRE_94);
+
+
+b2v_inst78 : busmux_136
+PORT MAP(sel => MODE(1),
+		 dataa => Q26,
+		 datab => Q28,
+		 result => SYNTHESIZED_WIRE_95);
+
+
+b2v_inst79 : busmux_137
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_104,
+		 datab => SYNTHESIZED_WIRE_92,
+		 result => SYNTHESIZED_WIRE_0);
+
+
+b2v_inst8 : busmux_138
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_105,
+		 datab => GDFX_TEMP_SIGNAL_106,
+		 result => SYNTHESIZED_WIRE_24);
+
+
+b2v_inst80 : busmux_139
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_107,
+		 datab => SYNTHESIZED_WIRE_93,
+		 result => SYNTHESIZED_WIRE_89);
+
+
+b2v_inst81 : busmux_140
+PORT MAP(sel => MODE(0),
+		 dataa => O26,
+		 datab => SYNTHESIZED_WIRE_94,
+		 result => SYNTHESIZED_WIRE_90);
+
+
+b2v_inst82 : busmux_141
+PORT MAP(sel => MODE(0),
+		 dataa => O27,
+		 datab => SYNTHESIZED_WIRE_95,
+		 result => SYNTHESIZED_WIRE_91);
+
+
+b2v_inst83 : lpm_ff_142
+PORT MAP(enable => pops(29),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_96,
+		 q => Q29);
+
+
+b2v_inst85 : lpm_ff_143
+PORT MAP(enable => pops(31),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_97,
+		 q => GDFX_TEMP_SIGNAL_108);
+
+
+b2v_inst86 : busmux_144
+PORT MAP(sel => MODE(1),
+		 dataa => Q27,
+		 datab => Q29,
+		 result => SYNTHESIZED_WIRE_99);
+
+
+b2v_inst87 : busmux_145
+PORT MAP(sel => MODE(1),
+		 dataa => Q28,
+		 datab => GDFX_TEMP_SIGNAL_109,
+		 result => SYNTHESIZED_WIRE_100);
+
+
+b2v_inst88 : busmux_146
+PORT MAP(sel => MODE(1),
+		 dataa => Q29,
+		 datab => GDFX_TEMP_SIGNAL_110,
+		 result => SYNTHESIZED_WIRE_101);
+
+
+b2v_inst89 : busmux_147
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_111,
+		 datab => GDFX_TEMP_SIGNAL_112,
+		 result => SYNTHESIZED_WIRE_102);
+
+
+b2v_inst9 : busmux_148
+PORT MAP(sel => MODE(0),
+		 dataa => O0,
+		 datab => SYNTHESIZED_WIRE_98,
+		 result => SYNTHESIZED_WIRE_1);
+
+
+b2v_inst90 : busmux_149
+PORT MAP(sel => MODE(0),
+		 dataa => O28,
+		 datab => SYNTHESIZED_WIRE_99,
+		 result => SYNTHESIZED_WIRE_8);
+
+
+b2v_inst91 : busmux_150
+PORT MAP(sel => MODE(0),
+		 dataa => O29,
+		 datab => SYNTHESIZED_WIRE_100,
+		 result => SYNTHESIZED_WIRE_96);
+
+
+b2v_inst92 : busmux_151
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_113,
+		 datab => SYNTHESIZED_WIRE_101,
+		 result => SYNTHESIZED_WIRE_5);
+
+
+b2v_inst93 : busmux_152
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_114,
+		 datab => SYNTHESIZED_WIRE_102,
+		 result => SYNTHESIZED_WIRE_97);
+
+
+b2v_inst94 : lpm_ff_153
+PORT MAP(enable => pops(32),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_103,
+		 q => GDFX_TEMP_SIGNAL_115);
+
+
+b2v_inst95 : lpm_ff_154
+PORT MAP(enable => pops(33),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_104,
+		 q => GDFX_TEMP_SIGNAL_116);
+
+
+b2v_inst96 : busmux_155
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_117,
+		 datab => GDFX_TEMP_SIGNAL_118,
+		 result => SYNTHESIZED_WIRE_105);
+
+
+b2v_inst97 : busmux_156
+PORT MAP(sel => MODE(1),
+		 dataa => GDFX_TEMP_SIGNAL_119,
+		 datab => GDFX_TEMP_SIGNAL_120,
+		 result => SYNTHESIZED_WIRE_106);
+
+
+b2v_inst98 : busmux_157
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_121,
+		 datab => SYNTHESIZED_WIRE_105,
+		 result => SYNTHESIZED_WIRE_103);
+
+
+b2v_inst99 : busmux_158
+PORT MAP(sel => MODE(0),
+		 dataa => GDFX_TEMP_SIGNAL_122,
+		 datab => SYNTHESIZED_WIRE_106,
+		 result => SYNTHESIZED_WIRE_104);
+
+
+b2v_JimLahey : g07_generator
+PORT MAP(		 O0 => O0,
+		 O15 => O15,
+		 O14 => O14,
+		 O13 => O13,
+		 O12 => O12,
+		 O11 => O11,
+		 O10 => O10,
+		 O105 => O105,
+		 O104 => O104,
+		 O103 => O103,
+		 O102 => O102,
+		 O101 => O101,
+		 O100 => O100,
+		 O115 => O115,
+		 O114 => O114,
+		 O113 => O113,
+		 O112 => O112,
+		 O111 => O111,
+		 O110 => O110,
+		 O125 => O125,
+		 O124 => O124,
+		 O123 => O123,
+		 O122 => O122,
+		 O121 => O121,
+		 O120 => O120,
+		 O135 => O135,
+		 O134 => O134,
+		 O133 => O133,
+		 O132 => O132,
+		 O131 => O131,
+		 O130 => O130,
+		 O145 => O145,
+		 O144 => O144,
+		 O143 => O143,
+		 O142 => O142,
+		 O141 => O141,
+		 O140 => O140,
+		 O155 => O155,
+		 O154 => O154,
+		 O153 => O153,
+		 O152 => O152,
+		 O151 => O151,
+		 O150 => O150,
+		 O16 => O16,
+		 O17 => O17,
+		 O18 => O18,
+		 O19 => O19,
+		 O25 => O25,
+		 O24 => O24,
+		 O23 => O23,
+		 O22 => O22,
+		 O21 => O21,
+		 O20 => O20,
+		 O205 => O205,
+		 O204 => O204,
+		 O203 => O203,
+		 O202 => O202,
+		 O201 => O201,
+		 O200 => O200,
+		 O215 => O215,
+		 O214 => O214,
+		 O213 => O213,
+		 O212 => O212,
+		 O211 => O211,
+		 O210 => O210,
+		 O225 => O225,
+		 O224 => O224,
+		 O223 => O223,
+		 O222 => O222,
+		 O221 => O221,
+		 O220 => O220,
+		 O235 => O235,
+		 O234 => O234,
+		 O233 => O233,
+		 O232 => O232,
+		 O231 => O231,
+		 O230 => O230,
+		 O245 => O245,
+		 O244 => O244,
+		 O243 => O243,
+		 O242 => O242,
+		 O241 => O241,
+		 O240 => O240,
+		 O255 => O255,
+		 O254 => O254,
+		 O253 => O253,
+		 O252 => O252,
+		 O251 => O251,
+		 O250 => O250,
+		 O26 => O26,
+		 O27 => O27,
+		 O28 => O28,
+		 O29 => O29,
+		 O35 => O35,
+		 O34 => O34,
+		 O33 => O33,
+		 O32 => O32,
+		 O31 => O31,
+		 O30 => O30,
+		 O305 => O305,
+		 O304 => O304,
+		 O303 => O303,
+		 O302 => O302,
+		 O301 => O301,
+		 O300 => O300,
+		 O315 => O315,
+		 O314 => O314,
+		 O313 => O313,
+		 O312 => O312,
+		 O311 => O311,
+		 O310 => O310,
+		 O325 => GDFX_TEMP_SIGNAL_123,
+		 O324 => GDFX_TEMP_SIGNAL_124,
+		 O323 => GDFX_TEMP_SIGNAL_125,
+		 O322 => GDFX_TEMP_SIGNAL_126,
+		 O321 => GDFX_TEMP_SIGNAL_127,
+		 O320 => GDFX_TEMP_SIGNAL_128,
+		 O345 => O345,
+		 O344 => O344,
+		 O343 => O343,
+		 O342 => O342,
+		 O341 => O341,
+		 O340 => O340,
+		 O355 => O355,
+		 O354 => O354,
+		 O353 => O353,
+		 O352 => O352,
+		 O351 => O351,
+		 O350 => O350,
+		 O36 => O36,
+		 O37 => O37,
+		 O38 => O38,
+		 O39 => O39,
+		 O45 => O45,
+		 O44 => O44,
+		 O43 => O43,
+		 O42 => O42,
+		 O41 => O41,
+		 O40 => O40,
+		 O405 => O405,
+		 O404 => O404,
+		 O403 => O403,
+		 O402 => O402,
+		 O401 => O401,
+		 O400 => O400,
+		 O415 => O415,
+		 O414 => O414,
+		 O413 => O413,
+		 O412 => O412,
+		 O411 => O411,
+		 O410 => O410,
+		 O425 => O425,
+		 O424 => O424,
+		 O423 => O423,
+		 O422 => O422,
+		 O421 => O421,
+		 O420 => O420,
+		 O435 => O435,
+		 O434 => O434,
+		 O433 => O433,
+		 O432 => O432,
+		 O431 => O431,
+		 O430 => O430,
+		 O445 => O445,
+		 O444 => O444,
+		 O443 => O443,
+		 O442 => O442,
+		 O441 => O441,
+		 O440 => O440,
+		 O455 => O455,
+		 O454 => O454,
+		 O453 => O453,
+		 O452 => O452,
+		 O451 => O451,
+		 O450 => O450,
+		 O46 => O46,
+		 O47 => O47,
+		 O48 => O48,
+		 O49 => O49,
+		 O55 => O55,
+		 O54 => O54,
+		 O53 => O53,
+		 O52 => O52,
+		 O51 => O51,
+		 O50 => O50,
+		 O505 => O505,
+		 O504 => O504,
+		 O503 => O503,
+		 O502 => O502,
+		 O501 => O501,
+		 O500 => O500,
+		 O515 => GDFX_TEMP_SIGNAL_129,
+		 O514 => GDFX_TEMP_SIGNAL_130,
+		 O513 => GDFX_TEMP_SIGNAL_131,
+		 O512 => GDFX_TEMP_SIGNAL_132,
+		 O511 => GDFX_TEMP_SIGNAL_133,
+		 O510 => GDFX_TEMP_SIGNAL_134,
+		 O6 => O6,
+		 O7 => O7,
+		 O8 => O8,
+		 O9 => O9,
+		 ONES => ONE,
+		 ZERO => ZERO);
+
+
+b2v_Julian : lpm_ff_159
+PORT MAP(enable => pops(16),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_107,
+		 q => Q16);
+
+
+b2v_RANDY : lpm_ff_160
+PORT MAP(enable => pops(8),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_108,
+		 q => Q8);
+
+
+b2v_Ricky : lpm_ff_161
+PORT MAP(enable => pops(12),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_109,
+		 q => GDFX_TEMP_SIGNAL_135);
+
+
+b2v_SnoopDogg : g07_pushpopdecide
+PORT MAP(FULL => FULL_ALTERA_SYNTHESIZED,
+		 EMPTY => EMPTY_ALTERA_SYNTHESIZED,
+		 ENABLE => ENABLE,
+		 MODE => MODE,
+		 RES => RES);
+
+
+b2v_Trevor : lpm_ff_162
+PORT MAP(enable => pops(4),
+		 clock => CLK,
+		 aclr => RST,
+		 data => SYNTHESIZED_WIRE_110,
+		 q => GDFX_TEMP_SIGNAL_136);
+
+FULL <= FULL_ALTERA_SYNTHESIZED;
+EMPTY <= EMPTY_ALTERA_SYNTHESIZED;
+NUM <= NUM_ALTERA_SYNTHESIZED;
+
+Q10 <= GDFX_TEMP_SIGNAL_49(0);
+Q100 <= GDFX_TEMP_SIGNAL_1(0);
+Q101 <= GDFX_TEMP_SIGNAL_1(1);
+Q102 <= GDFX_TEMP_SIGNAL_1(2);
+Q103 <= GDFX_TEMP_SIGNAL_1(3);
+Q104 <= GDFX_TEMP_SIGNAL_1(4);
+Q105 <= GDFX_TEMP_SIGNAL_1(5);
+Q11 <= GDFX_TEMP_SIGNAL_49(1);
+Q110 <= GDFX_TEMP_SIGNAL_57(0);
+Q111 <= GDFX_TEMP_SIGNAL_57(1);
+Q112 <= GDFX_TEMP_SIGNAL_57(2);
+Q113 <= GDFX_TEMP_SIGNAL_57(3);
+Q114 <= GDFX_TEMP_SIGNAL_57(4);
+Q115 <= GDFX_TEMP_SIGNAL_57(5);
+Q12 <= GDFX_TEMP_SIGNAL_49(2);
+Q120 <= GDFX_TEMP_SIGNAL_135(0);
+Q121 <= GDFX_TEMP_SIGNAL_135(1);
+Q122 <= GDFX_TEMP_SIGNAL_135(2);
+Q123 <= GDFX_TEMP_SIGNAL_135(3);
+Q124 <= GDFX_TEMP_SIGNAL_135(4);
+Q125 <= GDFX_TEMP_SIGNAL_135(5);
+Q13 <= GDFX_TEMP_SIGNAL_49(3);
+Q130 <= GDFX_TEMP_SIGNAL_64(0);
+Q131 <= GDFX_TEMP_SIGNAL_64(1);
+Q132 <= GDFX_TEMP_SIGNAL_64(2);
+Q133 <= GDFX_TEMP_SIGNAL_64(3);
+Q134 <= GDFX_TEMP_SIGNAL_64(4);
+Q135 <= GDFX_TEMP_SIGNAL_64(5);
+Q14 <= GDFX_TEMP_SIGNAL_49(4);
+Q140 <= GDFX_TEMP_SIGNAL_66(0);
+Q141 <= GDFX_TEMP_SIGNAL_66(1);
+Q142 <= GDFX_TEMP_SIGNAL_66(2);
+Q143 <= GDFX_TEMP_SIGNAL_66(3);
+Q144 <= GDFX_TEMP_SIGNAL_66(4);
+Q145 <= GDFX_TEMP_SIGNAL_66(5);
+Q15 <= GDFX_TEMP_SIGNAL_49(5);
+Q150 <= GDFX_TEMP_SIGNAL_67(0);
+Q151 <= GDFX_TEMP_SIGNAL_67(1);
+Q152 <= GDFX_TEMP_SIGNAL_67(2);
+Q153 <= GDFX_TEMP_SIGNAL_67(3);
+Q154 <= GDFX_TEMP_SIGNAL_67(4);
+Q155 <= GDFX_TEMP_SIGNAL_67(5);
+Q20 <= GDFX_TEMP_SIGNAL_56(0);
+Q200 <= GDFX_TEMP_SIGNAL_2(0);
+Q201 <= GDFX_TEMP_SIGNAL_2(1);
+Q202 <= GDFX_TEMP_SIGNAL_2(2);
+Q203 <= GDFX_TEMP_SIGNAL_2(3);
+Q204 <= GDFX_TEMP_SIGNAL_2(4);
+Q205 <= GDFX_TEMP_SIGNAL_2(5);
+Q21 <= GDFX_TEMP_SIGNAL_56(1);
+Q210 <= GDFX_TEMP_SIGNAL_83(0);
+Q211 <= GDFX_TEMP_SIGNAL_83(1);
+Q212 <= GDFX_TEMP_SIGNAL_83(2);
+Q213 <= GDFX_TEMP_SIGNAL_83(3);
+Q214 <= GDFX_TEMP_SIGNAL_83(4);
+Q215 <= GDFX_TEMP_SIGNAL_83(5);
+Q22 <= GDFX_TEMP_SIGNAL_56(2);
+Q220 <= GDFX_TEMP_SIGNAL_84(0);
+Q221 <= GDFX_TEMP_SIGNAL_84(1);
+Q222 <= GDFX_TEMP_SIGNAL_84(2);
+Q223 <= GDFX_TEMP_SIGNAL_84(3);
+Q224 <= GDFX_TEMP_SIGNAL_84(4);
+Q225 <= GDFX_TEMP_SIGNAL_84(5);
+Q23 <= GDFX_TEMP_SIGNAL_56(3);
+Q230 <= GDFX_TEMP_SIGNAL_85(0);
+Q231 <= GDFX_TEMP_SIGNAL_85(1);
+Q232 <= GDFX_TEMP_SIGNAL_85(2);
+Q233 <= GDFX_TEMP_SIGNAL_85(3);
+Q234 <= GDFX_TEMP_SIGNAL_85(4);
+Q235 <= GDFX_TEMP_SIGNAL_85(5);
+Q24 <= GDFX_TEMP_SIGNAL_56(4);
+Q240 <= GDFX_TEMP_SIGNAL_0(0);
+Q241 <= GDFX_TEMP_SIGNAL_0(1);
+Q242 <= GDFX_TEMP_SIGNAL_0(2);
+Q243 <= GDFX_TEMP_SIGNAL_0(3);
+Q244 <= GDFX_TEMP_SIGNAL_0(4);
+Q245 <= GDFX_TEMP_SIGNAL_0(5);
+Q25 <= GDFX_TEMP_SIGNAL_56(5);
+Q250 <= GDFX_TEMP_SIGNAL_99(0);
+Q251 <= GDFX_TEMP_SIGNAL_99(1);
+Q252 <= GDFX_TEMP_SIGNAL_99(2);
+Q253 <= GDFX_TEMP_SIGNAL_99(3);
+Q254 <= GDFX_TEMP_SIGNAL_99(4);
+Q255 <= GDFX_TEMP_SIGNAL_99(5);
+Q30 <= GDFX_TEMP_SIGNAL_65(0);
+Q300 <= GDFX_TEMP_SIGNAL_3(0);
+Q301 <= GDFX_TEMP_SIGNAL_3(1);
+Q302 <= GDFX_TEMP_SIGNAL_3(2);
+Q303 <= GDFX_TEMP_SIGNAL_3(3);
+Q304 <= GDFX_TEMP_SIGNAL_3(4);
+Q305 <= GDFX_TEMP_SIGNAL_3(5);
+Q31 <= GDFX_TEMP_SIGNAL_65(1);
+Q310 <= GDFX_TEMP_SIGNAL_108(0);
+Q311 <= GDFX_TEMP_SIGNAL_108(1);
+Q312 <= GDFX_TEMP_SIGNAL_108(2);
+Q313 <= GDFX_TEMP_SIGNAL_108(3);
+Q314 <= GDFX_TEMP_SIGNAL_108(4);
+Q315 <= GDFX_TEMP_SIGNAL_108(5);
+Q32 <= GDFX_TEMP_SIGNAL_65(2);
+Q320 <= GDFX_TEMP_SIGNAL_115(0);
+Q321 <= GDFX_TEMP_SIGNAL_115(1);
+Q322 <= GDFX_TEMP_SIGNAL_115(2);
+Q323 <= GDFX_TEMP_SIGNAL_115(3);
+Q324 <= GDFX_TEMP_SIGNAL_115(4);
+Q325 <= GDFX_TEMP_SIGNAL_115(5);
+Q33 <= GDFX_TEMP_SIGNAL_65(3);
+Q330 <= GDFX_TEMP_SIGNAL_116(0);
+Q331 <= GDFX_TEMP_SIGNAL_116(1);
+Q332 <= GDFX_TEMP_SIGNAL_116(2);
+Q333 <= GDFX_TEMP_SIGNAL_116(3);
+Q334 <= GDFX_TEMP_SIGNAL_116(4);
+Q335 <= GDFX_TEMP_SIGNAL_116(5);
+Q34 <= GDFX_TEMP_SIGNAL_65(4);
+Q340 <= GDFX_TEMP_SIGNAL_5(0);
+Q341 <= GDFX_TEMP_SIGNAL_5(1);
+Q342 <= GDFX_TEMP_SIGNAL_5(2);
+Q343 <= GDFX_TEMP_SIGNAL_5(3);
+Q344 <= GDFX_TEMP_SIGNAL_5(4);
+Q345 <= GDFX_TEMP_SIGNAL_5(5);
+Q35 <= GDFX_TEMP_SIGNAL_65(5);
+Q350 <= GDFX_TEMP_SIGNAL_7(0);
+Q351 <= GDFX_TEMP_SIGNAL_7(1);
+Q352 <= GDFX_TEMP_SIGNAL_7(2);
+Q353 <= GDFX_TEMP_SIGNAL_7(3);
+Q354 <= GDFX_TEMP_SIGNAL_7(4);
+Q355 <= GDFX_TEMP_SIGNAL_7(5);
+Q40 <= GDFX_TEMP_SIGNAL_136(0);
+Q400 <= GDFX_TEMP_SIGNAL_4(0);
+Q401 <= GDFX_TEMP_SIGNAL_4(1);
+Q402 <= GDFX_TEMP_SIGNAL_4(2);
+Q403 <= GDFX_TEMP_SIGNAL_4(3);
+Q404 <= GDFX_TEMP_SIGNAL_4(4);
+Q405 <= GDFX_TEMP_SIGNAL_4(5);
+Q41 <= GDFX_TEMP_SIGNAL_136(1);
+Q410 <= GDFX_TEMP_SIGNAL_15(0);
+Q411 <= GDFX_TEMP_SIGNAL_15(1);
+Q412 <= GDFX_TEMP_SIGNAL_15(2);
+Q413 <= GDFX_TEMP_SIGNAL_15(3);
+Q414 <= GDFX_TEMP_SIGNAL_15(4);
+Q415 <= GDFX_TEMP_SIGNAL_15(5);
+Q42 <= GDFX_TEMP_SIGNAL_136(2);
+Q420 <= GDFX_TEMP_SIGNAL_23(0);
+Q421 <= GDFX_TEMP_SIGNAL_23(1);
+Q422 <= GDFX_TEMP_SIGNAL_23(2);
+Q423 <= GDFX_TEMP_SIGNAL_23(3);
+Q424 <= GDFX_TEMP_SIGNAL_23(4);
+Q425 <= GDFX_TEMP_SIGNAL_23(5);
+Q43 <= GDFX_TEMP_SIGNAL_136(3);
+Q430 <= GDFX_TEMP_SIGNAL_24(0);
+Q431 <= GDFX_TEMP_SIGNAL_24(1);
+Q432 <= GDFX_TEMP_SIGNAL_24(2);
+Q433 <= GDFX_TEMP_SIGNAL_24(3);
+Q434 <= GDFX_TEMP_SIGNAL_24(4);
+Q435 <= GDFX_TEMP_SIGNAL_24(5);
+Q44 <= GDFX_TEMP_SIGNAL_136(4);
+Q440 <= GDFX_TEMP_SIGNAL_31(0);
+Q441 <= GDFX_TEMP_SIGNAL_31(1);
+Q442 <= GDFX_TEMP_SIGNAL_31(2);
+Q443 <= GDFX_TEMP_SIGNAL_31(3);
+Q444 <= GDFX_TEMP_SIGNAL_31(4);
+Q445 <= GDFX_TEMP_SIGNAL_31(5);
+Q45 <= GDFX_TEMP_SIGNAL_136(5);
+Q450 <= GDFX_TEMP_SIGNAL_32(0);
+Q451 <= GDFX_TEMP_SIGNAL_32(1);
+Q452 <= GDFX_TEMP_SIGNAL_32(2);
+Q453 <= GDFX_TEMP_SIGNAL_32(3);
+Q454 <= GDFX_TEMP_SIGNAL_32(4);
+Q455 <= GDFX_TEMP_SIGNAL_32(5);
+Q50 <= GDFX_TEMP_SIGNAL_48(0);
+Q500 <= GDFX_TEMP_SIGNAL_39(0);
+Q501 <= GDFX_TEMP_SIGNAL_39(1);
+Q502 <= GDFX_TEMP_SIGNAL_39(2);
+Q503 <= GDFX_TEMP_SIGNAL_39(3);
+Q504 <= GDFX_TEMP_SIGNAL_39(4);
+Q505 <= GDFX_TEMP_SIGNAL_39(5);
+Q51 <= GDFX_TEMP_SIGNAL_48(1);
+Q510 <= GDFX_TEMP_SIGNAL_40(0);
+Q511 <= GDFX_TEMP_SIGNAL_40(1);
+Q512 <= GDFX_TEMP_SIGNAL_40(2);
+Q513 <= GDFX_TEMP_SIGNAL_40(3);
+Q514 <= GDFX_TEMP_SIGNAL_40(4);
+Q515 <= GDFX_TEMP_SIGNAL_40(5);
+Q52 <= GDFX_TEMP_SIGNAL_48(2);
+Q53 <= GDFX_TEMP_SIGNAL_48(3);
+Q54 <= GDFX_TEMP_SIGNAL_48(4);
+Q55 <= GDFX_TEMP_SIGNAL_48(5);
+END bdf_type;

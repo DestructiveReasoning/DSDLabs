@@ -1,0 +1,25 @@
+library ieee;
+library lpm;
+use ieee.std_logic_1164.all;
+use lpm.lpm_components.all;
+
+entity g07_popenable is
+	port (
+		SEL: IN STD_LOGIC_VECTOR(5 downto 0),
+		POP: OUT STD_LOGIC_VECTOR(51 downto 0)
+	);
+end g07_popenable;
+
+architecture behavior of g07_popenable is
+BEGIN
+	rom: lpm_rom
+	GENERIC MAP(
+		LPM_WIDTH => 52,
+		LPM_WIDTHAD => 6,
+		LPM_FILE => "popen.mif"
+	);
+	PORT MAP (
+		address => SEL,
+		q => POP
+	);
+END behavior;

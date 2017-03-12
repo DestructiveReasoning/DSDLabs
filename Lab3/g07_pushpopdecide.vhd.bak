@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity g07_pushpopdecide is
+	port (
+		MODE: IN STD_LOGIC_VECTOR(1 downto 0);
+		FULL: IN STD_LOGIC;
+		EMPTY: IN STD_LOGIC;
+		RES: OUT STD_LOGIC_VECTOR
+	);
+end g07_pushpopdecide;
+
+architecture behavior of g07_pushpopdecide is
+SIGNAL code: STD_LOGIC_VECTOR(3 downto 0);
+begin
+	code <= MODE & FULL & EMPTY;
+	WITH code SELECT
+		RES <= 
+			  "00" WHEN "0110",
+			  "00" WHEN "1101",
+			  MODE WHEN others;
+end behavior;

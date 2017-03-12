@@ -1,0 +1,31 @@
+# Loading project test
+# Compile of mod13.vhd was successful.
+# Compile of mod13tst.vht was successful.
+# Compile of g07_debounder.vhd was successful.
+# Compile of g07_debounder_tst.vht was successful.
+# 4 compiles, 0 failed with no errors. 
+# Load canceled
+# Compile of mod13.vhd was successful.
+# Compile of mod13tst.vht was successful.
+# Compile of g07_debounder.vhd was successful.
+# Compile of g07_debounder_tst.vht was successful.
+# Compile of g07_stack.vhd failed with 1 errors.
+# Compile of stacktest.vhd was successful.
+# 6 compiles, 1 failed with 1 error. 
+vsim work.stacktest
+# vsim work.stacktest 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.stacktest(test)
+# ** Error: (vsim-3173) Entity '/home/harwiltz/DSDLabs/Lab3/modelsim/work.g07_stack' has no architecture.
+# Load interrupted
+# Error loading design
+# Compile of mod13.vhd was successful.
+# Compile of mod13tst.vht was successful.
+# Compile of g07_debounder.vhd was successful.
+# Compile of g07_debounder_tst.vht was successful.
+# Compile of g07_stack.vhd failed with 1 errors.
+# Compile of stacktest.vhd was successful.
+# 6 compiles, 1 failed with 1 error. 
