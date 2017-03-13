@@ -1,0 +1,18 @@
+\BOOKMARK [-1][-]{part.1}{I A Modest Overture}{}% 1
+\BOOKMARK [-1][-]{part.2}{II The g07\137stack Circuit}{}% 2
+\BOOKMARK [0][-]{chapter*.2}{Introduction}{part.2}% 3
+\BOOKMARK [0][-]{chapter*.3}{Circuit Description}{part.2}% 4
+\BOOKMARK [0][-]{chapter*.13}{Gate-Level Schematic}{part.2}% 5
+\BOOKMARK [-1][-]{part.3}{III On the Testing of the g07\137stack Circuit}{}% 6
+\BOOKMARK [0][-]{chapter*.17}{Overview}{part.3}% 7
+\BOOKMARK [1][-]{section*.18}{The g07\137debounder Circuit: A Brief Interlude}{chapter*.17}% 8
+\BOOKMARK [0][-]{chapter*.19}{Testing the g07\137stack Circuit}{part.3}% 9
+\BOOKMARK [0][-]{chapter*.20}{Testing the Testbed on the Hardware}{part.3}% 10
+\BOOKMARK [-1][-]{part.4}{IV The Results}{}% 11
+\BOOKMARK [0][-]{chapter*.21}{The Plight of the g07\137stack and its Companions}{part.4}% 12
+\BOOKMARK [1][-]{section*.22}{The Flow Summary}{chapter*.21}% 13
+\BOOKMARK [1][-]{section*.23}{The Timing Analysis}{chapter*.21}% 14
+\BOOKMARK [0][-]{section*.24}{Appendices}{part.4}% 15
+\BOOKMARK [0][-]{Appendix.1.A}{Haskell Code for g07\137generator}{part.4}% 16
+\BOOKMARK [0][-]{Appendix.1.B}{VHDL Code tor g07\137testbed}{part.4}% 17
+\BOOKMARK [0][-]{Appendix.1.C}{Schematic of the g07\137debounder}{part.4}% 18

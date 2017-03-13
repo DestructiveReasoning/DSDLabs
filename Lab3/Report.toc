@@ -1,0 +1,18 @@
+\contentsline {part}{I\hspace {1em}A Modest Overture}{2}{part.1}
+\contentsline {part}{II\hspace {1em}The \texttt {g07\_stack} Circuit}{4}{part.2}
+\contentsline {chapter}{Introduction}{5}{chapter*.2}
+\contentsline {chapter}{Circuit Description}{6}{chapter*.3}
+\contentsline {chapter}{Gate-Level Schematic}{8}{chapter*.13}
+\contentsline {part}{III\hspace {1em}On the Testing of the \texttt {g07\_stack} Circuit}{12}{part.3}
+\contentsline {chapter}{Overview}{13}{chapter*.17}
+\contentsline {section}{The \texttt {g07\_debounder} Circuit: A Brief Interlude}{13}{section*.18}
+\contentsline {chapter}{Testing the \texttt {g07\_stack} Circuit}{15}{chapter*.19}
+\contentsline {chapter}{Testing the Testbed on the Hardware}{18}{chapter*.20}
+\contentsline {part}{IV\hspace {1em}The Results}{22}{part.4}
+\contentsline {chapter}{The Plight of the \texttt {g07\_stack} and its Companions}{23}{chapter*.21}
+\contentsline {section}{The Flow Summary}{23}{section*.22}
+\contentsline {section}{The Timing Analysis}{23}{section*.23}
+\contentsline {chapter}{Appendices}{24}{section*.24}
+\contentsline {chapter}{\numberline {A}Haskell Code for \texttt {g07\_generator}}{25}{Appendix.1.A}
+\contentsline {chapter}{\numberline {B}VHDL Code tor \texttt {g07\_testbed}}{26}{Appendix.1.B}
+\contentsline {chapter}{\numberline {C}Schematic of the \texttt {g07\_debounder}}{28}{Appendix.1.C}

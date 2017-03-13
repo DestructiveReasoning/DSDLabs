@@ -1,0 +1,2 @@
+
+(evince:12192): Gtk-WARNING **: Allocating size to EvSidebar 0x242d540 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
