@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.21)  12 MAR 2017 21:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.21)  12 MAR 2017 22:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -950,10 +950,7 @@ LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <30.14444> not available
 (Font)              size <24.88> substituted on input line 48.
 
-
-LaTeX Warning: Citation `pig' on page 3 undefined on input line 60.
-
-<piggy1.jpg, id=132, 405.01312pt x 310.91156pt>
+<piggy1.jpg, id=133, 405.01312pt x 310.91156pt>
 File: piggy1.jpg Graphic file (type jpg)
  <use piggy1.jpg>
 Package pdftex.def Info: piggy1.jpg used on input line 61.
@@ -990,10 +987,6 @@ LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <24.88> not available
  [4
 
 ]
-
-LaTeX Warning: Citation `lowther' on page 5 undefined on input line 97.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 84--106
 
  []
@@ -1005,7 +998,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--106
 
 [5
 
-] <Lab3/stack_symb.pdf, id=148, 154.81438pt x 136.95064pt>
+] <Lab3/stack_symb.pdf, id=152, 154.81438pt x 136.95064pt>
 File: Lab3/stack_symb.pdf Graphic file (type pdf)
 
 <use Lab3/stack_symb.pdf>
@@ -1014,7 +1007,7 @@ Package pdftex.def Info: Lab3/stack_symb.pdf used on input line 112.
  [6
 
  <./Lab3/stack_symb.pdf>] [7]
-<stack1.png, id=181, 1086.0575pt x 699.61375pt>
+<stack1.png, id=185, 1086.0575pt x 699.61375pt>
 File: stack1.png Graphic file (type png)
  <use stack1.png>
 Package pdftex.def Info: stack1.png used on input line 165.
@@ -1027,7 +1020,7 @@ Overfull \hbox (42.54343pt too wide) in paragraph at lines 165--166
 [8
 
  <./stack1.png (PNG copy)>]
-<Lab3/stack_array1.png, id=188, 945.5325pt x 731.73375pt>
+<Lab3/stack_array1.png, id=192, 945.5325pt x 731.73375pt>
 File: Lab3/stack_array1.png Graphic file (type png)
 
 <use Lab3/stack_array1.png>
@@ -1044,7 +1037,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--207
  []
 
 [9 <./Lab3/stack_array1.png (PNG copy)>]
-<Lab3/stack_array2.png, id=196, 817.0525pt x 727.71875pt>
+<Lab3/stack_array2.png, id=200, 817.0525pt x 727.71875pt>
 File: Lab3/stack_array2.png Graphic file (type png)
 
 <use Lab3/stack_array2.png>
@@ -1063,7 +1056,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--238
 
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/pcr/b/n' tried instead on input line 238.
-<debounderresults.png, id=215, 1223.57124pt x 134.5025pt>
+<debounderresults.png, id=219, 1223.57124pt x 134.5025pt>
 File: debounderresults.png Graphic file (type png)
 
 <use debounderresults.png>
@@ -1097,25 +1090,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 240--277
 [13
 
 ] [14 <./debounderresults.png (PNG copy)>]
-<stacktest_1.png, id=228, 539.01375pt x 325.215pt>
+<stacktest_1.png, id=232, 539.01375pt x 325.215pt>
 File: stacktest_1.png Graphic file (type png)
  <use stacktest_1.png>
 Package pdftex.def Info: stacktest_1.png used on input line 286.
 (pdftex.def)             Requested size: 253.33649pt x 152.85106pt.
 
-<stacktest_2.png, id=229, 626.34pt x 327.2225pt>
+<stacktest_2.png, id=233, 626.34pt x 327.2225pt>
 File: stacktest_2.png Graphic file (type png)
  <use stacktest_2.png>
 Package pdftex.def Info: stacktest_2.png used on input line 297.
 (pdftex.def)             Requested size: 313.16922pt x 163.61084pt.
 
-<stacktest_3.png, id=230, 777.90625pt x 328.22626pt>
+<stacktest_3.png, id=234, 777.90625pt x 328.22626pt>
 File: stacktest_3.png Graphic file (type png)
  <use stacktest_3.png>
 Package pdftex.def Info: stacktest_3.png used on input line 310.
 (pdftex.def)             Requested size: 466.74734pt x 196.93727pt.
 
-<stacktest_4.png, id=231, 788.9475pt x 329.23pt>
+<stacktest_4.png, id=235, 788.9475pt x 329.23pt>
 File: stacktest_4.png Graphic file (type png)
  <use stacktest_4.png>
 Package pdftex.def Info: stacktest_4.png used on input line 320.
@@ -1134,7 +1127,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--330
 
  <./stacktest_1.png (PNG copy)> <./stacktest_2.png (PNG copy)>] [16 <./stacktes
 t_3.png (PNG copy)> <./stacktest_4.png (PNG copy)>] [17]
-<fpga1.jpg, id=248, 2826.56pt x 1132.23pt>
+<fpga1.jpg, id=252, 2826.56pt x 1132.23pt>
 File: fpga1.jpg Graphic file (type jpg)
  <use fpga1.jpg>
 Package pdftex.def Info: fpga1.jpg used on input line 339.
@@ -1142,19 +1135,19 @@ Package pdftex.def Info: fpga1.jpg used on input line 339.
  [18
 
  <./fpga1.jpg>]
-<fpga2.jpg, id=255, 2999.205pt x 1397.22pt>
+<fpga2.jpg, id=259, 2999.205pt x 1397.22pt>
 File: fpga2.jpg Graphic file (type jpg)
  <use fpga2.jpg>
 Package pdftex.def Info: fpga2.jpg used on input line 365.
 (pdftex.def)             Requested size: 449.86134pt x 209.57396pt.
 
-<fpga3.jpg, id=256, 2995.19pt x 1316.92pt>
+<fpga3.jpg, id=260, 2995.19pt x 1316.92pt>
 File: fpga3.jpg Graphic file (type jpg)
  <use fpga3.jpg>
 Package pdftex.def Info: fpga3.jpg used on input line 375.
 (pdftex.def)             Requested size: 449.25912pt x 197.52948pt.
 
-<fpga4.jpg, id=257, 2995.19pt x 1260.71pt>
+<fpga4.jpg, id=261, 2995.19pt x 1260.71pt>
 File: fpga4.jpg Graphic file (type jpg)
  <use fpga4.jpg>
 Package pdftex.def Info: fpga4.jpg used on input line 384.
@@ -1163,12 +1156,12 @@ Package pdftex.def Info: fpga4.jpg used on input line 384.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<fpga5.jpg, id=258, 2999.205pt x 1268.74pt>
+<fpga5.jpg, id=262, 2999.205pt x 1268.74pt>
 File: fpga5.jpg Graphic file (type jpg)
  <use fpga5.jpg>
 Package pdftex.def Info: fpga5.jpg used on input line 396.
 (pdftex.def)             Requested size: 449.86134pt x 190.30278pt.
- [19 <./fpga2.jpg> <./fpga3.jpg>] <fpga6.jpg, id=267, 2999.205pt x 1397.22pt>
+ [19 <./fpga2.jpg> <./fpga3.jpg>] <fpga6.jpg, id=271, 2999.205pt x 1397.22pt>
 File: fpga6.jpg Graphic file (type jpg)
  <use fpga6.jpg>
 Package pdftex.def Info: fpga6.jpg used on input line 406.
@@ -1213,23 +1206,31 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 
 ]) [27]
 Appendix C.
-<debounder1.png, id=409, 844.15375pt x 635.37375pt>
+<debounder1.png, id=413, 844.15375pt x 635.37375pt>
 File: debounder1.png Graphic file (type png)
  <use debounder1.png>
 Package pdftex.def Info: debounder1.png used on input line 465.
 (pdftex.def)             Requested size: 337.65552pt x 254.14499pt.
 
-<debounder2.png, id=410, 827.09pt x 634.37pt>
+<debounder2.png, id=414, 827.09pt x 634.37pt>
 File: debounder2.png Graphic file (type png)
  <use debounder2.png>
 Package pdftex.def Info: debounder2.png used on input line 466.
 (pdftex.def)             Requested size: 306.01851pt x 234.71321pt.
 
-No file Report.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
-[28
+(./Report.bbl [28
 
  <./debounder1.png (PNG copy)> <./debounder2.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+[]\OT1/cmr/m/n/12 J. O'Connor, ``This lit-tle piggy's on the mar-ket!,'' \OT1/c
+mr/m/it/12 time-sunion\OT1/cmr/m/n/12 , 11 2011.
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
+ [29
+
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
  (./Report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
@@ -1237,18 +1238,16 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: 2C348361464FA3AE42819CFB2832C185;1226.
 
+
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 5.26443pt have occurred.
-
-
-LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
  ) 
 Here is how much of TeX's memory you used:
- 10213 strings out of 493013
- 140059 string characters out of 6139316
- 384063 words of memory out of 5000000
+ 10219 strings out of 493013
+ 140119 string characters out of 6139316
+ 384081 words of memory out of 5000000
  13402 multiletter control sequences out of 15000+600000
  18874 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1266,10 +1265,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts
 /type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/c
 m-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb>
 </usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Report.pdf (29 pages, 4739521 bytes).
+Output written on Report.pdf (30 pages, 4740602 bytes).
 PDF statistics:
- 501 PDF objects out of 1000 (max. 8388607)
- 430 compressed objects within 5 object streams
- 180 named destinations out of 1000 (max. 500000)
+ 512 PDF objects out of 1000 (max. 8388607)
+ 440 compressed objects within 5 object streams
+ 184 named destinations out of 1000 (max. 500000)
  235 words of extra memory for PDF output out of 10000 (max. 10000000)
 
