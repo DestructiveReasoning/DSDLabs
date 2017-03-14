@@ -16,3 +16,4 @@
 \contentsline {chapter}{\numberline {A}Haskell Code for \texttt {g07\_generator}}{25}{Appendix.1.A}
 \contentsline {chapter}{\numberline {B}VHDL Code tor \texttt {g07\_testbed}}{26}{Appendix.1.B}
 \contentsline {chapter}{\numberline {C}Schematic of the \texttt {g07\_debounder}}{28}{Appendix.1.C}
+\contentsline {part}{V\hspace {1em}Works Cited}{29}{part.5}
