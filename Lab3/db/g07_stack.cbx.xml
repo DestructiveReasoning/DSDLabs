@@ -10,8 +10,11 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst78|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst96|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst88|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram" CBX_FILE_NAME="altsyncram_gp14.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst98|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|LPM_MUX:inst159" CBX_FILE_NAME="mux_koc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux" CBX_FILE_NAME="mux_aoc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter" CBX_FILE_NAME="cntr_nbi.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst110|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst11|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst120|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
@@ -37,27 +40,16 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst53|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst71|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst108|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst117|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst126|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst135|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst144|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst27|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst36|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst45|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst54|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst81|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst90|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst9|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst109|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst118|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst127|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst136|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst145|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst37|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst46|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst55|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst64|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst82|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst91|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst119|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst137|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
@@ -68,6 +60,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst65|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst92|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|LPM_COMPARE:inst156" CBX_FILE_NAME="cmpr_pkd.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter" CBX_FILE_NAME="cntr_02j.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst138|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst147|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst48|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
@@ -81,6 +74,8 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst67|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst59|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst77|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_rqf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter" CBX_FILE_NAME="cntr_gui.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst69|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst87|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst79|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
@@ -93,6 +88,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst103|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst121|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst22|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter" CBX_FILE_NAME="cntr_sbi.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst14|LPM_MUX:$00000" CBX_FILE_NAME="mux_boc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst32|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst105|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
@@ -113,5 +109,16 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst80|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst8|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|LPM_COUNTER:inst" CBX_FILE_NAME="cntr_qeg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst117|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst135|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst36|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst54|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst90|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst109|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst127|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst145|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst46|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst64|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_stack|BUSMUX:inst82|LPM_MUX:$00000" CBX_FILE_NAME="mux_qmc.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
