@@ -450,9 +450,11 @@ implemented.
 \addcontentsline{toc}{section}{The Timing Analysis}
 To determine the feasibility of the testbed with regard to speed, Quartus II's TimeQuest Timing
 Analyzer was used. This tool was used to calculate the longest path of data within the testbed, and
-reported that this path required a maximum clock frequency of 158.93 MHz. Given the 50 MHz clock
-frequency maximum on the DE1 board, this restriction is not very restricting, and is perfectly
-acceptable.
+reported that this path required a maximum clock frequency of 158.93 MHz. This corresponds to a
+maximum propagation delay between the input and output of $\frac{1}{158930000} = 6.29$ns. Given the
+50 MHz clock
+frequency maximum on the DE1 board, this restriction is not very restricting, as the hardware is
+more than capable of accomodating the propagation delay with its 50MHz clock.
 \begin{appendices}
 	\chapter{Haskell Code for \texttt{g07\_generator}}
 	\label{app:hs}
