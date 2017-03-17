@@ -259,11 +259,19 @@ to the \texttt{g07\_stack}, which is a severe issue. The \texttt{g07\_debounder}
 designed to only register one clock pulse of high output within a $2^{23}$ clock-pulse period. This
 sets a limit on how frequently button presses can be registered, but it also removes the possibility
 of registering multiple pulses from one button press.\\\\
-To achieve this functionality, a Moore-type finite state machine was designed. This machine includes
+To achieve this functionality, a Moore-type finite state machine was designed. The state machine is
+composed of three states: an initial state for when no pulse has occured, a \textit{start counter}
+state which starts the counter, and a \textit{hold} state which stays in such state until the
+counter overflows, so as to allow the circuit to only output one pulse in $2^{23}$ clock cycles.
+This machine includes
 two SR Flip Flops to store the current state of the machine, as well as a 23-bit counter to count
 clock pulses since the button was first pressed. The counter output is fed to a comparator which
 keeps the machine in a certain state until the count goes back to 0. The circuit may be observed
-\hyperref[app:debounder]{here}.\\\\
+\hyperref[app:debounder]{here}. The state assignment for this circuit is 00 for the initial state,
+01 for the \textit{start counter} state, and 10 for the \textit{hold} state, where thr output of the
+circuit is high only in the \textit{start counter} state. Furthermore, the circuit guarantees that
+the state transits to from the \textit{start counter} state to the \textit{hold} state so as to
+ensure that the output pulse is only one clock cycle wide.\\\\
 In case the reader is still skeptical of the functionality of the \texttt{g07\_debounder}, the
 functional analysis results are given below. Note that both inputs, the button and the clock, are
 modeled as clock signals. The button has a higher frequency to represent the signal
