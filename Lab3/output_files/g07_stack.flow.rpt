@@ -1,5 +1,5 @@
 Flow report for g07_stack
-Thu Mar 16 08:50:29 2017
+Thu Mar 16 15:27:52 2017
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 16 08:50:29 2017      ;
+; Flow Status                        ; Successful - Thu Mar 16 15:27:52 2017      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; g07_stack                                  ;
-; Top-level Entity Name              ; g07_stack                                  ;
+; Top-level Entity Name              ; g07_testbed_diagram                        ;
 ; Family                             ; Cyclone II                                 ;
 ; Device                             ; EP2C20F484C7                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 1,164 / 18,752 ( 6 % )                     ;
-;     Total combinational functions  ; 976 / 18,752 ( 5 % )                       ;
-;     Dedicated logic registers      ; 734 / 18,752 ( 4 % )                       ;
-; Total registers                    ; 734                                        ;
-; Total pins                         ; 31 / 315 ( 10 % )                          ;
+; Total logic elements               ; 1,250 / 18,752 ( 7 % )                     ;
+;     Total combinational functions  ; 1,045 / 18,752 ( 6 % )                     ;
+;     Dedicated logic registers      ; 784 / 18,752 ( 4 % )                       ;
+; Total registers                    ; 784                                        ;
+; Total pins                         ; 27 / 315 ( 9 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 4,608 / 239,616 ( 2 % )                    ;
+; Total memory bits                  ; 4,864 / 239,616 ( 2 % )                    ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
@@ -64,59 +64,60 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/16/2017 08:49:49 ;
+; Start date & time ; 03/16/2017 15:25:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; g07_stack           ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                              ;
-+-------------------------------------+------------------------------------------------------------------------+---------------+-------------+------------------+
-; Assignment Name                     ; Value                                                                  ; Default Value ; Entity Name ; Section Id       ;
-+-------------------------------------+------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 0.148965418916558                                                      ; --            ; --          ; --               ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                                     ; --            ; --          ; eda_simulation   ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                            ; --            ; --          ; eda_simulation   ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                              ; <None>        ; --          ; --               ;
-; EDA_TIME_SCALE                      ; 1 ps                                                                   ; --            ; --          ; eda_simulation   ;
-; ENABLE_SIGNALTAP                    ; On                                                                     ; --            ; --          ; --               ;
-; IP_TOOL_NAME                        ; LPM_CONSTANT                                                           ; --            ; --          ; --               ;
-; IP_TOOL_VERSION                     ; 13.0                                                                   ; --            ; --          ; --               ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                                     ; --            ; --          ; --               ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                                      ; --            ; --          ; --               ;
-; MISC_FILE                           ; lpm_constant0.bsf                                                      ; --            ; --          ; --               ;
-; MISC_FILE                           ; lpm_constant0.cmp                                                      ; --            ; --          ; --               ;
-; PARTITION_COLOR                     ; 16764057                                                               ; --            ; --          ; Top              ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                  ; --            ; --          ; Top              ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                                                 ; --            ; --          ; Top              ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                           ; --            ; --          ; --               ;
-; SLD_FILE                            ; /home/harwiltz/DSDLabs/Lab3/g07_signaltap_auto_stripped.stp            ; --            ; --          ; --               ;
-; SLD_NODE_CREATOR_ID                 ; 110                                                                    ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                          ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                 ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                          ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                                                   ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                             ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                         ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                      ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                 ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                           ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                    ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                                                   ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                               ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                   ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                           ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                          ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=10                                                       ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=10                                                    ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000 ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=51                                           ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_LOWORD=16393                                              ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_HIWORD=34953                                              ; --            ; --          ; auto_signaltap_0 ;
-; USE_SIGNALTAP_FILE                  ; g07_signaltap.stp                                                      ; --            ; --          ; --               ;
-+-------------------------------------+------------------------------------------------------------------------+---------------+-------------+------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                            ;
++-------------------------------------+------------------------------------------------------------------------------+---------------+---------------------+------------------+
+; Assignment Name                     ; Value                                                                        ; Default Value ; Entity Name         ; Section Id       ;
++-------------------------------------+------------------------------------------------------------------------------+---------------+---------------------+------------------+
+; COMPILER_SIGNATURE_ID               ; 0.148967790100803                                                            ; --            ; --                  ; --               ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                                           ; --            ; --                  ; eda_simulation   ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                  ; --            ; --                  ; eda_simulation   ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                                    ; <None>        ; --                  ; --               ;
+; EDA_TIME_SCALE                      ; 1 ps                                                                         ; --            ; --                  ; eda_simulation   ;
+; ENABLE_SIGNALTAP                    ; On                                                                           ; --            ; --                  ; --               ;
+; IP_TOOL_NAME                        ; LPM_CONSTANT                                                                 ; --            ; --                  ; --               ;
+; IP_TOOL_VERSION                     ; 13.0                                                                         ; --            ; --                  ; --               ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                           ; --            ; --                  ; --               ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                            ; --            ; --                  ; --               ;
+; MISC_FILE                           ; lpm_constant0.bsf                                                            ; --            ; --                  ; --               ;
+; MISC_FILE                           ; lpm_constant0.cmp                                                            ; --            ; --                  ; --               ;
+; PARTITION_COLOR                     ; 16764057                                                                     ; --            ; g07_testbed_diagram ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                        ; --            ; g07_testbed_diagram ; Top              ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                                       ; --            ; g07_testbed_diagram ; Top              ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                 ; --            ; --                  ; --               ;
+; SLD_FILE                            ; /home/harwiltz/DSDLabs/Lab3/g07_stack52_testbed_auto_stripped.stp            ; --            ; --                  ; --               ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                                          ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                      ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                       ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                                                         ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                   ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                               ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                            ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                       ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                                 ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                          ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                                                         ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                                     ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                         ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                 ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=12                                                             ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=12                                                          ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000 ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=57                                                 ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_LOWORD=14328                                                    ; --            ; --                  ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_HIWORD=43791                                                    ; --            ; --                  ; auto_signaltap_0 ;
+; TOP_LEVEL_ENTITY                    ; g07_testbed_diagram                                                          ; g07_stack     ; --                  ; --               ;
+; USE_SIGNALTAP_FILE                  ; g07_stack52_testbed.stp                                                      ; --            ; --                  ; --               ;
++-------------------------------------+------------------------------------------------------------------------------+---------------+---------------------+------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -124,12 +125,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 408 MB              ; 00:00:09                           ;
-; Fitter                    ; 00:00:07     ; 1.5                     ; 502 MB              ; 00:00:09                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 349 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 348 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 318 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:19     ; --                      ; --                  ; 00:00:22                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 412 MB              ; 00:00:10                           ;
+; Fitter                    ; 00:00:07     ; 1.5                     ; 508 MB              ; 00:00:09                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 352 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 337 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 313 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:23                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

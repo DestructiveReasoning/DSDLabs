@@ -1,31 +1,87 @@
 # Loading project test
+# reading /home/harwiltz/altera/13.0/modelsim_ase/linux/../modelsim.ini
+file mkdir /home/harwiltz/DSDLabs/Lab4/modelsim
+# Loading project Lab4
+# Compile of g07_rules.vhd was successful with warnings.
+# Compile of g07_rules_tst.vhd was successful.
 # Compile of mod13.vhd was successful.
-# Compile of mod13tst.vht was successful.
-# Compile of g07_debounder.vhd was successful.
-# Compile of g07_debounder_tst.vht was successful.
-# 4 compiles, 0 failed with no errors. 
-# Load canceled
-# Compile of mod13.vhd was successful.
-# Compile of mod13tst.vht was successful.
-# Compile of g07_debounder.vhd was successful.
-# Compile of g07_debounder_tst.vht was successful.
-# Compile of g07_stack.vhd failed with 1 errors.
-# Compile of stacktest.vhd was successful.
-# 6 compiles, 1 failed with 1 error. 
-vsim work.stacktest
-# vsim work.stacktest 
+# 3 compiles, 0 failed with no errors. 
+vsim work.g07_rules_tst
+# vsim work.g07_rules_tst 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.stacktest(test)
-# ** Error: (vsim-3173) Entity '/home/harwiltz/DSDLabs/Lab3/modelsim/work.g07_stack' has no architecture.
-# Load interrupted
-# Error loading design
+# Loading work.g07_rules_tst(test)
+# Loading work.g07_rules(legal)
+# Loading lpm.lpm_components
+# Loading work.mod13(behavior)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_add_sub(lpm_syn)
+# Loading lpm.lpm_add_sub_signed(lpm_syn)
+add wave sim:/g07_rules_tst/*
+restart
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A4/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A4/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A4/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A4/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A3/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A3/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A3/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A2/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A2/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A2/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A1/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A1/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m2/A1/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A4/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A4/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A4/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A4/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A3/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A3/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A3/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A2/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A2/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A2/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A1/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A1/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /g07_rules_tst/m1/A1/L2/V
+# Compile of g07_rules.vhd was successful with warnings.
+# Compile of g07_rules_tst.vhd was successful.
 # Compile of mod13.vhd was successful.
-# Compile of mod13tst.vht was successful.
-# Compile of g07_debounder.vhd was successful.
-# Compile of g07_debounder_tst.vht was successful.
-# Compile of g07_stack.vhd failed with 1 errors.
-# Compile of stacktest.vhd was successful.
-# 6 compiles, 1 failed with 1 error. 
+# Compile of g07_rules_tst.vht was successful.
+# 4 compiles, 0 failed with no errors. 
+# Break key hit 
+# Break key hit 
+# Break key hit 
+# Break key hit 
