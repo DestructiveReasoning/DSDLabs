@@ -1,4 +1,7 @@
 v 4
+file . "numreducer_tst.vhd" "6f0d2d39788fa44d980d8f0dd7e0664ab7e1fd48" "20170322142251.623":
+  entity numreducer_tst at 1( 0) + 0 on 73;
+  architecture test of numreducer_tst at 8( 116) + 0 on 74;
 file . "stacktest.vhd" "c587b91702adfd8f0f5ba5f6039ffd10d44a80a7" "20170309163106.646":
   entity stacktest at 1( 0) + 0 on 61;
   architecture test of stacktest at 8( 106) + 0 on 62;
@@ -17,3 +20,6 @@ file . "g07_debounder_tst.vhd" "e509cc3b8fd416d3a7c1b007f3c8ad6007908023" "20170
 file . "deboundertst.vhd" "2ed460cea329d6eba794bc310537e216fb98af07" "20170307152717.782":
   entity deboundertst at 1( 0) + 0 on 39;
   architecture test of deboundertst at 7( 73) + 0 on 40;
+file . "g07_numreducer.vhd" "f0cd4b318ba820ce8d0da55ca3e5009f7f26a497" "20170322142247.320":
+  entity g07_numreducer at 1( 0) + 0 on 71;
+  architecture reduce of g07_numreducer at 11( 190) + 0 on 72;
