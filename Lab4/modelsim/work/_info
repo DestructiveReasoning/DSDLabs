@@ -3,23 +3,167 @@ K3
 13
 cModel Technology
 d/home/harwiltz/DSDLabs/Lab3/modelsim
-Eg07_rules
-Z0 w1490182441
+Eg07_compare6
+Z0 w1490187540
 Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z3 d/home/harwiltz/DSDLabs/Lab4/modelsim
-Z4 8/home/harwiltz/DSDLabs/Lab4/g07_rules.vhd
-Z5 F/home/harwiltz/DSDLabs/Lab4/g07_rules.vhd
+Z4 8/home/harwiltz/DSDLabs/Lab4/g07_compare6.vhd
+Z5 F/home/harwiltz/DSDLabs/Lab4/g07_compare6.vhd
+l0
+L4
+Vc^FBkW>d_0DZWHd8:1mTj0
+!s100 ;@HFdP_4CEE5;5Qbg1U_g2
+Z6 OV;C;10.1d;51
+32
+!i10b 1
+Z7 !s108 1490188537.705598
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_compare6.vhd|
+Z9 !s107 /home/harwiltz/DSDLabs/Lab4/g07_compare6.vhd|
+Z10 o-work work -2002 -explicit -O0
+Z11 tExplicit 1
+Acomp
+R1
+R2
+Z12 DEx4 work 12 g07_compare6 0 22 c^FBkW>d_0DZWHd8:1mTj0
+l15
+L14
+Z13 V7a6gQbjBdP@d8jo`2b_`j0
+Z14 !s100 [3_3gjTl2?koBXa`K2DVc2
+R6
+32
+!i10b 1
+R7
+R8
+R9
+R10
+R11
+Eg07_fsm
+Z15 w1490188534
+Z16 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R1
+R2
+R3
+Z17 8/home/harwiltz/DSDLabs/Lab4/g07_dealerFSM.vhd
+Z18 F/home/harwiltz/DSDLabs/Lab4/g07_dealerFSM.vhd
+l0
+L5
+VgkZ<9b@bFG<U^l8l?1N6>1
+R6
+32
+Z19 !s108 1490188537.657096
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_dealerFSM.vhd|
+Z21 !s107 /home/harwiltz/DSDLabs/Lab4/g07_dealerFSM.vhd|
+R10
+R11
+!s100 k4B^21<5RNGeEgL<W3;o;3
+!i10b 1
+Amachineofstate
+R16
+R1
+R2
+DEx4 work 7 g07_fsm 0 22 gkZ<9b@bFG<U^l8l?1N6>1
+l25
+L16
+VSXBj`nDiJ276AlCTF4H]z3
+R6
+32
+R19
+R20
+R21
+R10
+R11
+!s100 W1bT?o^R_n^NQnDZCKad32
+!i10b 1
+Eg07_randu
+Z22 w1490186691
+Z23 DPx3 lpm 14 lpm_components 0 22 iingGbl@N@a>h=m<^4?ml0
+R1
+R2
+R3
+Z24 8/home/harwiltz/DSDLabs/Lab4/g07_RANDU.vhd
+Z25 F/home/harwiltz/DSDLabs/Lab4/g07_RANDU.vhd
+l0
+L6
+VXMbRWlHz;dJ;;mcHgid2R1
+R6
+32
+Z26 !s108 1490188537.682718
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_RANDU.vhd|
+Z28 !s107 /home/harwiltz/DSDLabs/Lab4/g07_RANDU.vhd|
+R10
+R11
+!s100 f735kaW4^iWlAWbzNVl_g0
+!i10b 1
+Agenerator
+R23
+R1
+R2
+DEx4 work 9 g07_randu 0 22 XMbRWlHz;dJ;;mcHgid2R1
+l21
+L13
+VePShJihJ55j[TU6[@=I_22
+!s100 8jZX0UHHVCSc6eij9SzQ63
+R6
+32
+R26
+R27
+R28
+R10
+R11
+!i10b 1
+Eg07_register6
+Z29 w1490181167
+R1
+R2
+R3
+Z30 8/home/harwiltz/DSDLabs/Lab4/g07_register6.vhd
+Z31 F/home/harwiltz/DSDLabs/Lab4/g07_register6.vhd
+l0
+L4
+V?Ya:39nPdULeg6dHInYXf0
+R6
+32
+Z32 !s108 1490188537.635950
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_register6.vhd|
+Z34 !s107 /home/harwiltz/DSDLabs/Lab4/g07_register6.vhd|
+R10
+R11
+!s100 XE7^[h9j?f=KT6fIBAT5B2
+!i10b 1
+Areg
+R1
+R2
+DEx4 work 13 g07_register6 0 22 ?Ya:39nPdULeg6dHInYXf0
+l14
+L13
+Vje3PJ[71M5S<FR7^i`YkL1
+R6
+32
+R32
+R33
+R34
+R10
+R11
+!s100 UZYZM@BkkncNn3O@XLh6P0
+!i10b 1
+Eg07_rules
+Z35 w1490182441
+R1
+R2
+R3
+Z36 8/home/harwiltz/DSDLabs/Lab4/g07_rules.vhd
+Z37 F/home/harwiltz/DSDLabs/Lab4/g07_rules.vhd
 l0
 L4
 VYETK>iGif?=GF`EP=3oPo1
-Z6 OV;C;10.1d;51
+R6
 32
-Z7 !s108 1490182447.224161
-Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_rules.vhd|
-Z9 !s107 /home/harwiltz/DSDLabs/Lab4/g07_rules.vhd|
-Z10 o-work work -2002 -explicit -O0
-Z11 tExplicit 1
+Z38 !s108 1490188537.420448
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_rules.vhd|
+Z40 !s107 /home/harwiltz/DSDLabs/Lab4/g07_rules.vhd|
+R10
+R11
 !s100 lUiVk2JP0S[oBll_nHQL?2
 !i10b 1
 Alegal
@@ -31,66 +175,85 @@ L10
 V0o><lKnH>0WNCCfJf;Kk51
 R6
 32
-R7
-R8
-R9
+R38
+R39
+R40
 R10
 R11
 !s100 7A0b?c0hZB?bV<JZ=UVH]2
 !i10b 1
 Eg07_rules_tst
-Z12 w1490182187
-Z13 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z41 w1490182187
+R16
 R1
 R2
 R3
-Z14 8/home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht
-Z15 F/home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht
+Z42 8/home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht
+Z43 F/home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht
 l0
 L5
 V?ZjZfl`@SkEdKEjz_:OG63
-!s100 05aJ^Fz>cAgYa4OUA2L2G1
 R6
 32
-!i10b 1
-Z16 !s108 1490182447.309856
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht|
-Z18 !s107 /home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht|
+Z44 !s108 1490188537.516654
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht|
+Z46 !s107 /home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht|
 R10
 R11
+!s100 05aJ^Fz>cAgYa4OUA2L2G1
+!i10b 1
 Atest
-R13
+R16
 R1
 R2
-Z19 DEx4 work 13 g07_rules_tst 0 22 ?ZjZfl`@SkEdKEjz_:OG63
+DEx4 work 13 g07_rules_tst 0 22 ?ZjZfl`@SkEdKEjz_:OG63
 l26
 L8
-Z20 Va1JSz5i?Fz>O]DK_Y0RjI0
-Z21 !s100 oI2BkS2BLf;AbB2[n6Q?V2
+Va1JSz5i?Fz>O]DK_Y0RjI0
 R6
 32
-!i10b 1
-R16
-R17
-R18
+R44
+R45
+R46
 R10
 R11
-Emod13
-Z22 w1490108140
-Z23 DPx3 lpm 14 lpm_components 0 22 iingGbl@N@a>h=m<^4?ml0
+!s100 oI2BkS2BLf;AbB2[n6Q?V2
+!i10b 1
+Eg07_stack
+w1490186705
 R1
 R2
 R3
-Z24 8/home/harwiltz/DSDLabs/Lab4/mod13.vhd
-Z25 F/home/harwiltz/DSDLabs/Lab4/mod13.vhd
+8/home/harwiltz/DSDLabs/Lab4/g07_stack.vhd
+F/home/harwiltz/DSDLabs/Lab4/g07_stack.vhd
+l0
+L24
+VL[fe9MXFA55mQQ0RGP=3`1
+R6
+32
+R10
+R11
+!s100 AL@>TfKKB?dLTZ5C`oaQz1
+!i10b 1
+!s108 1490188537.563642
+!s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_stack.vhd|
+!s107 /home/harwiltz/DSDLabs/Lab4/g07_stack.vhd|
+Emod13
+Z47 w1490108140
+R23
+R1
+R2
+R3
+Z48 8/home/harwiltz/DSDLabs/Lab4/mod13.vhd
+Z49 F/home/harwiltz/DSDLabs/Lab4/mod13.vhd
 l0
 L6
 VL:WmOW9dVnN6^RXeo8Nk60
 R6
 32
-Z26 !s108 1490182447.263244
-Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/mod13.vhd|
-Z28 !s107 /home/harwiltz/DSDLabs/Lab4/mod13.vhd|
+Z50 !s108 1490188537.465687
+Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/mod13.vhd|
+Z52 !s107 /home/harwiltz/DSDLabs/Lab4/mod13.vhd|
 R10
 R11
 !s100 ^Q_5C2nQm8deOP[h@oREL0
@@ -103,12 +266,12 @@ DEx4 work 5 mod13 0 22 L:WmOW9dVnN6^RXeo8Nk60
 l26
 L14
 VlJc5E21QCHYBJ8RQM:6z?1
-!s100 mgQM9M3PZ1Y39>@QL0=Z10
 R6
 32
-R26
-R27
-R28
+R50
+R51
+R52
 R10
 R11
+!s100 mgQM9M3PZ1Y39>@QL0=Z10
 !i10b 1

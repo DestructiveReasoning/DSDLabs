@@ -1,4 +1,39 @@
-/home/harwiltz/DSDLabs/Lab4/mod13.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab4/mod13.vhd
+/home/harwiltz/DSDLabs/Lab4/g07_RANDU.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab4/g07_RANDU.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package LPM_COMPONENTS
+-- Compiling entity g07_RANDU
+-- Compiling architecture generator of g07_RANDU
+
+} {} {}} /home/harwiltz/DSDLabs/Lab4/g07_stack.vhd {0 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab4/g07_stack.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity g07_stack
+-- Compiling architecture bdf_type of g07_stack
+** Error: /home/harwiltz/DSDLabs/Lab4/g07_stack.vhd(2469): Type error resolving infix expression "&" as type ARRAY2D0.
+** Error: /home/harwiltz/DSDLabs/Lab4/g07_stack.vhd(4478): VHDL Compiler exiting
+
+} {8.0 10.0} {}} /home/harwiltz/DSDLabs/Lab4/g07_register6.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab4/g07_register6.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity g07_register6
+-- Compiling architecture reg of g07_register6
+
+} {} {}} /home/harwiltz/DSDLabs/Lab4/g07_rules.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab4/g07_rules.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity g07_rules
+-- Compiling architecture legal of g07_rules
+
+} {} {}} /home/harwiltz/DSDLabs/Lab4/mod13.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab4/mod13.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -6,6 +41,14 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package LPM_COMPONENTS
 -- Compiling entity mod13
 -- Compiling architecture behavior of mod13
+
+} {} {}} /home/harwiltz/DSDLabs/Lab4/g07_compare6.vhd {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab4/g07_compare6.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity g07_compare6
+-- Compiling architecture comp of g07_compare6
 
 } {} {}} /home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht {1 {vcom -work work -2002 -explicit /home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
