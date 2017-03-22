@@ -1,7 +1,13 @@
 v 4
-file . "g07_rules.vhd" "04704b2b918d5271e212a888a2aaec9ac10ac89a" "20170321194437.490":
-  entity g07_rules at 1( 0) + 0 on 15;
-  architecture legal of g07_rules at 10( 222) + 0 on 16;
+file . "g07_register6.vhd" "5f559f1f6162f6b978885ca4b1cb5fc2c7c744d4" "20170322151104.793":
+  entity g07_register6 at 1( 0) + 0 on 17;
+  architecture reg of g07_register6 at 13( 236) + 0 on 18;
 file . "g07_rules_tst.vhd" "68efae4ca53529c3805f9e72be78b1d4c457616a" "20170321194046.502":
   entity g07_rules_tst at 1( 0) + 0 on 13;
   architecture test of g07_rules_tst at 8( 114) + 0 on 14;
+file . "g07_rules.vhd" "04704b2b918d5271e212a888a2aaec9ac10ac89a" "20170321194437.490":
+  entity g07_rules at 1( 0) + 0 on 15;
+  architecture legal of g07_rules at 10( 222) + 0 on 16;
+file . "register6_tst.vhd" "d51cbe31171d5b17160453509cfe24e792d5ace2" "20170322153639.687":
+  entity register6_tst at 1( 0) + 0 on 29;
+  architecture test of register6_tst at 8( 114) + 0 on 30;
