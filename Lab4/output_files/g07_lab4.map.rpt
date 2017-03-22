@@ -1,0 +1,361 @@
+Analysis & Synthesis report for g07_lab4
+Wed Mar 22 14:25:10 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Wed Mar 22 14:25:10 2017          ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; g07_lab4                                   ;
+; Top-level Entity Name              ; g07_dealerFSM                              ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; N/A until Partition Merge                  ;
+;     Total combinational functions  ; N/A until Partition Merge                  ;
+;     Dedicated logic registers      ; N/A until Partition Merge                  ;
+; Total registers                    ; N/A until Partition Merge                  ;
+; Total pins                         ; N/A until Partition Merge                  ;
+; Total virtual pins                 ; N/A until Partition Merge                  ;
+; Total memory bits                  ; N/A until Partition Merge                  ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
+; Total PLLs                         ; N/A until Partition Merge                  ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; g07_dealerFSM      ; g07_lab4           ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Wed Mar 22 14:25:07 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g07_lab4 -c g07_lab4
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file register6_tst.vhd
+    Info (12022): Found design unit 1: register6_tst-test
+    Info (12023): Found entity 1: register6_tst
+Info (12021): Found 2 design units, including 1 entities, in source file mod13.vhd
+    Info (12022): Found design unit 1: mod13-behavior
+    Info (12023): Found entity 1: mod13
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(51)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(59)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(70)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(80)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(90)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(100)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(110)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(120)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(130)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(140)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(150)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(160)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(170)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(180)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(190)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(200)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(210)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(220)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(230)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(240)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(250)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(260)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(270)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(280)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(290)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(300)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(310)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(320)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(330)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(340)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(350)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(360)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(370)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(380)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(390)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(400)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(410)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(420)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(430)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(440)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(450)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(460)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(470)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(480)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(490)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(500)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(510)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(520)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(530)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(540)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(550)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(560)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(570)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(580)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(590)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(600)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(609)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(618)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(627)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(636)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(645)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(654)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(663)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(672)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(681)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(690)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(699)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(708)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(717)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(726)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(735)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(744)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(753)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(762)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(771)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(780)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(789)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(798)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(807)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(816)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(825)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(834)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(843)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(852)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(861)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(870)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(879)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(888)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(897)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(906)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(915)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(924)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(933)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(942)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(951)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(960)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(969)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(978)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(987)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(996)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1005)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1014)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1023)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1032)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1041)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1050)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1059)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1068)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1077)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1086)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1095)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1104)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1113)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1122)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1131)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1140)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1149)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1158)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1167)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1176)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1185)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1194)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1203)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1212)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1221)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1230)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1239)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1248)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1257)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1266)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1275)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1284)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1293)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1302)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1311)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1320)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1329)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1338)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1347)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1356)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1365)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1374)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1383)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1392)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1401)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1410)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1419)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1428)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1437)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1446)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1455)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1464)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1473)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1482)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1491)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1500)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1509)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1518)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1527)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1536)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1545)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1554)
+Warning (10335): Unrecognized synthesis attribute "noopt" at g07_stack.vhd(1563)
+Info (12021): Found 2 design units, including 1 entities, in source file g07_stack.vhd
+    Info (12022): Found design unit 1: g07_stack-bdf_type
+    Info (12023): Found entity 1: g07_stack
+Info (12021): Found 2 design units, including 1 entities, in source file g07_rules_tst.vhd
+    Info (12022): Found design unit 1: g07_rules_tst-test
+    Info (12023): Found entity 1: g07_rules_tst
+Info (12021): Found 2 design units, including 1 entities, in source file g07_rules.vhd
+    Info (12022): Found design unit 1: g07_rules-legal
+    Info (12023): Found entity 1: g07_rules
+Info (12021): Found 2 design units, including 1 entities, in source file g07_register6.vhd
+    Info (12022): Found design unit 1: g07_register6-reg
+    Info (12023): Found entity 1: g07_register6
+Info (12021): Found 2 design units, including 1 entities, in source file g07_randu.vhd
+    Info (12022): Found design unit 1: g07_RANDU-generator
+    Info (12023): Found entity 1: g07_RANDU
+Info (12021): Found 2 design units, including 1 entities, in source file g07_dealerfsm.vhd
+    Info (12022): Found design unit 1: g07_FSM-machineOfState
+    Info (12023): Found entity 1: g07_FSM
+Info (12021): Found 2 design units, including 1 entities, in source file g07_compare6.vhd
+    Info (12022): Found design unit 1: g07_compare6-comp
+    Info (12023): Found entity 1: g07_compare6
+Info (12021): Found 2 design units, including 1 entities, in source file compare6_tst.vhd
+    Info (12022): Found design unit 1: compare6_tst-test
+    Info (12023): Found entity 1: compare6_tst
+Error (10327): VHDL error at g07_stack.vhd(2469): can't determine definition of operator ""&"" -- found 0 possible definitions File: D:/DSDLabs/Lab4/g07_stack.vhd Line: 2469
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 164 warnings
+    Error: Peak virtual memory: 494 megabytes
+    Error: Processing ended: Wed Mar 22 14:25:10 2017
+    Error: Elapsed time: 00:00:03
+    Error: Total CPU time (on all processors): 00:00:02
+
+
