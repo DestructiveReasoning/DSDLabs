@@ -16,8 +16,8 @@ architecture legal of g07_rules is
 
 	signal pile_value, pile_suit, card_value, card_suit: std_logic_vector(5 downto 0);
 begin
-	m1: mod13 port map(x => play_pile_top_card, floor => pile_value, modulo => pile_suit);
-	m2: mod13 port map(x => card_to_play, floor => card_value, modulo => card_suit);
+	m1: mod13 port map(x => play_pile_top_card, floor => pile_suit, modulo => pile_value);
+	m2: mod13 port map(x => card_to_play, floor => card_suit, modulo => card_value);
 
 	arbitration: process (pile_value,pile_suit,card_value,card_suit)
 	begin

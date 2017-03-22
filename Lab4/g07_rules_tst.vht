@@ -47,23 +47,23 @@ begin
 
 	always: process
 	begin
-		top_card <= "000100";
-		play_card <= "001000";
+		top_card <= "000111";
+		play_card <= "011000";
 		WAIT FOR 10 ns;
-		top_card <= "001000";
-		play_card <= "001111";
+		top_card <= "011000";
+		play_card <= "000111";
 		WAIT FOR 10 ns;
-		top_card <= "001111";
-		play_card <= "010000";
+		top_card <= "000110";
+		play_card <= "000010";
 		WAIT FOR 10 ns;
-		top_card <= "010000";
-		play_card <= "010111";
+		top_card <= "000110";
+		play_card <= "001110";
 		WAIT FOR 10 ns;
-		top_card <= "010111";
-		play_card <= "101010";
+		top_card <= "000000";
+		play_card <= "001101";
 		WAIT FOR 10 ns;
-		top_card <= "101010";
-		play_card <= "001000";
+		top_card <= "000111";
+		play_card <= "010100";
 		WAIT;
 	end process always;
 end test;

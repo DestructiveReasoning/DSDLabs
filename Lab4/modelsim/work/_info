@@ -4,7 +4,7 @@ K3
 cModel Technology
 d/home/harwiltz/DSDLabs/Lab3/modelsim
 Eg07_rules
-Z0 w1490181635
+Z0 w1490182441
 Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z3 d/home/harwiltz/DSDLabs/Lab4/modelsim
@@ -15,7 +15,7 @@ L4
 VYETK>iGif?=GF`EP=3oPo1
 Z6 OV;C;10.1d;51
 32
-Z7 !s108 1490181642.157932
+Z7 !s108 1490182447.224161
 Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_rules.vhd|
 Z9 !s107 /home/harwiltz/DSDLabs/Lab4/g07_rules.vhd|
 Z10 o-work work -2002 -explicit -O0
@@ -28,7 +28,7 @@ R2
 DEx4 work 9 g07_rules 0 22 YETK>iGif?=GF`EP=3oPo1
 l18
 L10
-VNS72BEU@F3CF_OL?9jmiY0
+V0o><lKnH>0WNCCfJf;Kk51
 R6
 32
 R7
@@ -36,10 +36,10 @@ R8
 R9
 R10
 R11
-!s100 ?bV;O:6;0RdnJm_B1KL^d1
+!s100 7A0b?c0hZB?bV<JZ=UVH]2
 !i10b 1
 Eg07_rules_tst
-Z12 w1490108490
+Z12 w1490182187
 Z13 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 R1
 R2
@@ -53,7 +53,7 @@ V?ZjZfl`@SkEdKEjz_:OG63
 R6
 32
 !i10b 1
-Z16 !s108 1490181642.230079
+Z16 !s108 1490182447.309856
 Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht|
 Z18 !s107 /home/harwiltz/DSDLabs/Lab4/g07_rules_tst.vht|
 R10
@@ -65,8 +65,8 @@ R2
 Z19 DEx4 work 13 g07_rules_tst 0 22 ?ZjZfl`@SkEdKEjz_:OG63
 l26
 L8
-Z20 V4D@1zgFZ7J:cli<_9nEb90
-Z21 !s100 mIdom=9XQ=bQg4j6iI;jD1
+Z20 Va1JSz5i?Fz>O]DK_Y0RjI0
+Z21 !s100 oI2BkS2BLf;AbB2[n6Q?V2
 R6
 32
 !i10b 1
@@ -88,7 +88,7 @@ L6
 VL:WmOW9dVnN6^RXeo8Nk60
 R6
 32
-Z26 !s108 1490181642.190782
+Z26 !s108 1490182447.263244
 Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/harwiltz/DSDLabs/Lab4/mod13.vhd|
 Z28 !s107 /home/harwiltz/DSDLabs/Lab4/mod13.vhd|
 R10
