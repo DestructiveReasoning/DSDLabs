@@ -19,7 +19,7 @@ begin
 	m1: mod13 port map(x => play_pile_top_card, floor => pile_value, modulo => pile_suit);
 	m2: mod13 port map(x => card_to_play, floor => card_value, modulo => card_suit);
 
-	arbitration: process (play_pile_top_card,card_to_play)
+	arbitration: process (pile_value,pile_suit,card_value,card_suit)
 	begin
 		if (pile_value = "000111") then legal_play <= '1';
 		elsif (card_value = "000111") then legal_play <= '1';
