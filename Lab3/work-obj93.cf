@@ -23,3 +23,9 @@ file . "deboundertst.vhd" "2ed460cea329d6eba794bc310537e216fb98af07" "2017030715
 file . "g07_numreducer.vhd" "f0cd4b318ba820ce8d0da55ca3e5009f7f26a497" "20170322142247.320":
   entity g07_numreducer at 1( 0) + 0 on 71;
   architecture reduce of g07_numreducer at 11( 190) + 0 on 72;
+file . "compare6_tst.vhd" "d88b23df4fee4066ef88f7778e3cfbec91f6afb6" "20170322172237.269":
+  entity compare6_tst at 1( 0) + 0 on 85;
+  architecture test of compare6_tst at 8( 112) + 0 on 86;
+file . "g07_compare6.vhd" "726b2b2690b8a00d1695372fc34c81ed838b4cca" "20170322172022.416":
+  entity g07_compare6 at 1( 0) + 0 on 79;
+  architecture comp of g07_compare6 at 14( 244) + 0 on 80;

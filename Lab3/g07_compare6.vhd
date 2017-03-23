@@ -18,9 +18,9 @@ begin
 		eq <= '0';
 		gt <= '0';
 		lt <= '0';
-		if(dataa > datab) then gt <= '1';
-		elsif (dataa < datab) then lt <= '1';
-		else eq <= '1';
+		if(dataa > datab) then gt <= '1'; lt <= '0'; eq <= '0';
+		elsif (dataa < datab) then lt <= '1'; gt <= '0'; eq <= '0';
+		else eq <= '1'; lt <= '0'; gt <= '0';
 		end if;
 	end process proc;
 end comp;

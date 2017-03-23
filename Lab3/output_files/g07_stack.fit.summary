@@ -1,16 +1,16 @@
-Fitter Status : Successful - Wed Mar 22 14:33:44 2017
-Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Fitter Status : Successful - Thu Mar 23 14:39:02 2017
+Quartus II 32-bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
 Revision Name : g07_stack
-Top-level Entity Name : g07_dealerFSM
+Top-level Entity Name : g07_dealer_testbed
 Family : Cyclone II
 Device : EP2C20F484C7
 Timing Models : Final
-Total logic elements : 3 / 18,752 ( < 1 % )
-    Total combinational functions : 3 / 18,752 ( < 1 % )
-    Dedicated logic registers : 3 / 18,752 ( < 1 % )
-Total registers : 3
-Total pins : 6 / 315 ( 2 % )
+Total logic elements : 689 / 18,752 ( 4 % )
+    Total combinational functions : 688 / 18,752 ( 4 % )
+    Dedicated logic registers : 358 / 18,752 ( 2 % )
+Total registers : 358
+Total pins : 37 / 315 ( 12 % )
 Total virtual pins : 0
-Total memory bits : 0 / 239,616 ( 0 % )
+Total memory bits : 1,664 / 239,616 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )

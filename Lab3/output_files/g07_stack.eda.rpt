@@ -1,6 +1,6 @@
 EDA Netlist Writer report for g07_stack
-Wed Mar 22 14:37:15 2017
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Thu Mar 23 14:39:54 2017
+Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -36,9 +36,9 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Mar 22 14:37:15 2017 ;
+; EDA Netlist Writer Status ; Successful - Thu Mar 23 14:39:54 2017 ;
 ; Revision Name             ; g07_stack                             ;
-; Top-level Entity Name     ; g07_dealerFSM                         ;
+; Top-level Entity Name     ; g07_dealer_testbed                    ;
 ; Family                    ; Cyclone II                            ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -65,27 +65,27 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+--------------------------------------------------+
-; Simulation Generated Files                       ;
-+--------------------------------------------------+
-; Generated Files                                  ;
-+--------------------------------------------------+
-; D:/DSDLabs/Lab3/simulation/modelsim/g07_stack.vo ;
-+--------------------------------------------------+
++--------------------------------------------------------------+
+; Simulation Generated Files                                   ;
++--------------------------------------------------------------+
+; Generated Files                                              ;
++--------------------------------------------------------------+
+; /home/harwiltz/DSDLabs/Lab3/simulation/modelsim/g07_stack.vo ;
++--------------------------------------------------------------+
 
 
 +-----------------------------+
 ; EDA Netlist Writer Messages ;
 +-----------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit EDA Netlist Writer
+Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Mar 22 14:37:14 2017
-Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog g07_stack -c g07_stack
-Info (204019): Generated file g07_stack.vo in folder "D:/DSDLabs/Lab3/simulation/modelsim/" for EDA simulation tool
-Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 397 megabytes
-    Info: Processing ended: Wed Mar 22 14:37:15 2017
+    Info: Processing started: Thu Mar 23 14:39:53 2017
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off g07_stack -c g07_stack
+Info (204019): Generated file g07_stack.vo in folder "/home/harwiltz/DSDLabs/Lab3/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 322 megabytes
+    Info: Processing ended: Thu Mar 23 14:39:54 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
