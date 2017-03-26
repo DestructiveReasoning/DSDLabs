@@ -1,4 +1,7 @@
 v 4
+file . "omnimux_tst.vhd" "01f3d6ab4ecf96d8d101a74dce5956d0e331b0d8" "20170326205505.938":
+  entity omnimux_tst at 1( 0) + 0 on 39;
+  architecture test of omnimux_tst at 8( 98) + 0 on 40;
 file . "g07_dff.vhd" "d699c4c1f45b027f1caac5f10ec9ba22467eb79d" "20170326201055.981":
   entity g07_dff at 1( 0) + 0 on 33;
   architecture flippityflop of g07_dff at 20( 347) + 0 on 34;
@@ -23,3 +26,6 @@ file . "g07_popenable.vhd" "698f9539338717b80afe0e94ee88f937d124665c" "201703261
 file . "dff_tst.vhd" "4ff15953e32529752343c83cc6afa83bd5df1ea4" "20170326201101.746":
   entity dff_tst at 1( 0) + 0 on 35;
   architecture test of dff_tst at 7( 76) + 0 on 36;
+file . "g07_omnimux.vhd" "b561a5a5de13faf80cc07f43ddfa7192f346ea7e" "20170326204556.688":
+  entity g07_omnimux at 1( 0) + 0 on 37;
+  architecture mux of g07_omnimux at 17( 364) + 0 on 38;

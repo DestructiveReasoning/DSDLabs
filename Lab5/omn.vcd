@@ -1,0 +1,77 @@
+$date
+  Sun Mar 26 16:55:20 2017
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$var reg 24 ! inputs[23:0] $end
+$var reg 3 " sel[2:0] $end
+$var reg 3 # output[2:0] $end
+$var reg 3 $ a0[2:0] $end
+$var reg 3 % a1[2:0] $end
+$var reg 3 & a2[2:0] $end
+$var reg 3 ' a3[2:0] $end
+$var reg 3 ( a4[2:0] $end
+$var reg 3 ) a5[2:0] $end
+$var reg 3 * a6[2:0] $end
+$var reg 3 + a7[2:0] $end
+$scope module mux $end
+$var reg 24 , inputs[23:0] $end
+$var reg 3 - sel[2:0] $end
+$var reg 3 . output[2:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+b111110101100011010001000 !
+b000 "
+b000 #
+b000 $
+b001 %
+b010 &
+b011 '
+b100 (
+b101 )
+b110 *
+b111 +
+b111110101100011010001000 ,
+b000 -
+b000 .
+#5000000
+b001 "
+b001 #
+b001 -
+b001 .
+#10000000
+b010 "
+b010 #
+b010 -
+b010 .
+#15000000
+b011 "
+b011 #
+b011 -
+b011 .
+#20000000
+b100 "
+b100 #
+b100 -
+b100 .
+#25000000
+b101 "
+b101 #
+b101 -
+b101 .
+#30000000
+b110 "
+b110 #
+b110 -
+b110 .
+#35000000
+b111 "
+b111 #
+b111 -
+b111 .
+#40000000

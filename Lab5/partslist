@@ -2,5 +2,5 @@ Counter - Using SSET, up/down, clock, cnt_en, aclr: COMPLETE
 Compare: COMPLETE
 Pop-Enable: COMPLETE
 Busmux: COMPLETE
-DFF - Using Data, Clock, Enable, ACLR, and SSET
+DFF - Using Data, Clock, Enable, ACLR, and SSET: COMPLETE
 LPM_MUX
