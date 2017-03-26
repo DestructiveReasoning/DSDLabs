@@ -1,5 +1,5 @@
-Counter
-Compare
+Counter - Using SSET, up/down, clock, cnt_en, aclr
+Compare: COMPLETE
 Pop-Enable
 Busmux: COMPLETE
 DFF - Using Data, Clock, Enable, ACLR, and SSET
