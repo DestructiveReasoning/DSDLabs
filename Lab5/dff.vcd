@@ -1,0 +1,127 @@
+$date
+  Sun Mar 26 16:11:15 2017
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$var reg 6 ! data[5:0] $end
+$var reg 1 " clock $end
+$var reg 1 # finished $end
+$var reg 1 $ enable $end
+$var reg 1 % aclr $end
+$var reg 1 & sset $end
+$var reg 6 ' q[5:0] $end
+$scope module flipflop $end
+$var reg 6 ( data[5:0] $end
+$var reg 1 ) clock $end
+$var reg 1 * enable $end
+$var reg 1 + aclr $end
+$var reg 1 , sset $end
+$var reg 6 - q[5:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+b110000 !
+0"
+0#
+0$
+0%
+0&
+bUUUUUU '
+b110000 (
+0)
+0*
+0+
+0,
+bUUUUUU -
+#10000000
+1"
+1)
+#20000000
+0"
+0)
+#30000000
+1"
+1)
+#40000000
+0"
+1$
+0)
+1*
+#50000000
+1"
+b110000 '
+1)
+b110000 -
+#60000000
+b010101 !
+0"
+0$
+b010101 (
+0)
+0*
+#70000000
+1"
+1$
+1)
+1*
+#80000000
+0"
+0)
+#90000000
+1"
+b010101 '
+1)
+b010101 -
+#100000000
+b000000 !
+0"
+1&
+b000000 (
+0)
+1,
+#110000000
+1"
+b101101 '
+1)
+b101101 -
+#120000000
+0"
+0$
+0&
+0)
+0*
+0,
+#130000000
+1"
+1)
+#140000000
+0"
+1&
+0)
+1,
+#150000000
+1"
+1)
+#160000000
+0"
+0)
+#165000000
+1%
+0&
+b000000 '
+1+
+0,
+b000000 -
+#170000000
+1"
+0%
+1)
+0+
+#180000000
+0"
+1#
+0)

@@ -1,6 +1,6 @@
-Counter - Using SSET, up/down, clock, cnt_en, aclr
+Counter - Using SSET, up/down, clock, cnt_en, aclr: COMPLETE
 Compare: COMPLETE
-Pop-Enable
+Pop-Enable: COMPLETE
 Busmux: COMPLETE
 DFF - Using Data, Clock, Enable, ACLR, and SSET
 LPM_MUX
