@@ -1,13 +1,19 @@
 v 4
-file . "g07_compare.vhd" "8d469043f17779a6a2cc947a787ae42acb917546" "20170326160503.726":
-  entity g07_compare at 1( 0) + 0 on 15;
-  architecture comp of g07_compare at 14( 278) + 0 on 16;
-file . "g07_busmux21.vhd" "d80fc1d961e340aee7eb514e611a91adcc853943" "20170326154712.898":
-  entity g07_busmux21 at 1( 0) + 0 on 11;
-  architecture multiplexor of g07_busmux21 at 17( 297) + 0 on 12;
-file . "busmux21_tst.vhd" "8092b92d1258273572b3e38beeb0ed7f2f9dd921" "20170326155314.663":
-  entity busmux21_tst at 1( 0) + 0 on 13;
-  architecture test of busmux21_tst at 7( 73) + 0 on 14;
+file . "g07_popenable.vhd" "698f9539338717b80afe0e94ee88f937d124665c" "20170326192850.007":
+  entity g07_popenable at 1( 0) + 0 on 21;
+  architecture rom of g07_popenable at 13( 235) + 0 on 22;
 file . "compare_tst.vhd" "5cee99f2fbac99ef2bce168350fa0e86df8d5d2b" "20170326160703.691":
   entity compare_tst at 1( 0) + 0 on 19;
   architecture test of compare_tst at 7( 72) + 0 on 20;
+file . "busmux21_tst.vhd" "8092b92d1258273572b3e38beeb0ed7f2f9dd921" "20170326155314.663":
+  entity busmux21_tst at 1( 0) + 0 on 13;
+  architecture test of busmux21_tst at 7( 73) + 0 on 14;
+file . "g07_busmux21.vhd" "d80fc1d961e340aee7eb514e611a91adcc853943" "20170326154712.898":
+  entity g07_busmux21 at 1( 0) + 0 on 11;
+  architecture multiplexor of g07_busmux21 at 17( 297) + 0 on 12;
+file . "g07_compare.vhd" "8d469043f17779a6a2cc947a787ae42acb917546" "20170326160503.726":
+  entity g07_compare at 1( 0) + 0 on 15;
+  architecture comp of g07_compare at 14( 278) + 0 on 16;
+file . "popenable_tst.vhd" "2337d3aa466432cc89d23643a1fdc37dab844a03" "20170326193615.261":
+  entity popenable_tst at 1( 0) + 0 on 25;
+  architecture test of popenable_tst at 8( 100) + 0 on 26;
