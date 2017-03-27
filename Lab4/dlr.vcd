@@ -1,0 +1,145 @@
+$date
+  Sun Mar 26 22:42:57 2017
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$var reg 1 ! request_deal $end
+$var reg 1 " rand_lt_num $end
+$var reg 1 # reset $end
+$var reg 1 $ stack_enable $end
+$var reg 1 % rand_enable $end
+$var reg 1 & clock $end
+$var reg 1 ' finished $end
+$scope module machine $end
+$var reg 1 ( request_deal $end
+$var reg 1 ) rand_lt_num $end
+$var reg 1 * reset $end
+$var reg 1 + clock $end
+$var reg 1 , stack_enable $end
+$var reg 1 - rand_enable $end
+$var reg 32 . initial_seed[31:0] $end
+$var reg 32 / random[31:0] $end
+$var reg 6 0 reg_out[5:0] $end
+$var reg 1 1 comp_lt $end
+$var reg 6 2 stack_num[5:0] $end
+$comment state is not handled $end
+$upscope $end
+$enddefinitions $end
+#0
+1!
+0"
+0#
+0$
+0%
+0&
+0'
+1(
+0)
+0*
+0+
+0,
+0-
+b00000000000000000000010100111001 .
+bUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU /
+bUUUUUU 0
+U1
+bUUUUUU 2
+#10000000
+1&
+1+
+#20000000
+0!
+0&
+0(
+0+
+#30000000
+1&
+1+
+#40000000
+1!
+0&
+1(
+0+
+#50000000
+1%
+1&
+1+
+1-
+#60000000
+0!
+0&
+0(
+0+
+#70000000
+1&
+1+
+#80000000
+1!
+0&
+1(
+0+
+#90000000
+1&
+1+
+#100000000
+1"
+0&
+1)
+0+
+#110000000
+1$
+0%
+1&
+1+
+1,
+0-
+#120000000
+0"
+0&
+0)
+0+
+#130000000
+0$
+1&
+1+
+0,
+#140000000
+0!
+0&
+0(
+0+
+#150000000
+1&
+1+
+#160000000
+1!
+0&
+1(
+0+
+#170000000
+1%
+1&
+1+
+1-
+#180000000
+0&
+0+
+#183000000
+1#
+0%
+1*
+0-
+#185000000
+0#
+0*
+#190000000
+1&
+1+
+#200000000
+0&
+1'
+0+

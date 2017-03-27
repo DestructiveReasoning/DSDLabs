@@ -3,4 +3,4 @@ Compare: COMPLETE
 Pop-Enable: COMPLETE
 Busmux: COMPLETE
 DFF - Using Data, Clock, Enable, ACLR, and SSET: COMPLETE
-LPM_MUX
+LPM_MUX: COMPLETE

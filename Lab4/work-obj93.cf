@@ -1,19 +1,25 @@
 v 4
-file . "compare6_tst.vhd" "116576ea1e6a2a6e560e60d65023171d28454e14" "20170322155151.713":
-  entity compare6_tst at 1( 0) + 0 on 33;
-  architecture test of compare6_tst at 7( 86) + 0 on 34;
-file . "g07_register6.vhd" "5f559f1f6162f6b978885ca4b1cb5fc2c7c744d4" "20170322151104.793":
-  entity g07_register6 at 1( 0) + 0 on 17;
-  architecture reg of g07_register6 at 13( 236) + 0 on 18;
-file . "g07_rules_tst.vhd" "68efae4ca53529c3805f9e72be78b1d4c457616a" "20170321194046.502":
-  entity g07_rules_tst at 1( 0) + 0 on 13;
-  architecture test of g07_rules_tst at 8( 114) + 0 on 14;
-file . "g07_rules.vhd" "04704b2b918d5271e212a888a2aaec9ac10ac89a" "20170321194437.490":
-  entity g07_rules at 1( 0) + 0 on 15;
-  architecture legal of g07_rules at 10( 222) + 0 on 16;
-file . "register6_tst.vhd" "d51cbe31171d5b17160453509cfe24e792d5ace2" "20170322153639.687":
-  entity register6_tst at 1( 0) + 0 on 29;
-  architecture test of register6_tst at 8( 114) + 0 on 30;
+file . "g07_dealerFSM.vhd" "d7b216c68ad4d56d12c302fe5b53daf33c98714e" "20170327024244.838":
+  entity g07_dealerfsm at 1( 0) + 0 on 45;
+  architecture machineofstate of g07_dealerfsm at 16( 291) + 0 on 46;
 file . "g07_compare6.vhd" "b1b68c1cdab3af2838c4fa6ed9035fe14aaef38e" "20170322154738.664":
   entity g07_compare6 at 1( 0) + 0 on 31;
   architecture comp of g07_compare6 at 12( 202) + 0 on 32;
+file . "register6_tst.vhd" "d51cbe31171d5b17160453509cfe24e792d5ace2" "20170322153639.687":
+  entity register6_tst at 1( 0) + 0 on 29;
+  architecture test of register6_tst at 8( 114) + 0 on 30;
+file . "g07_rules.vhd" "04704b2b918d5271e212a888a2aaec9ac10ac89a" "20170321194437.490":
+  entity g07_rules at 1( 0) + 0 on 15;
+  architecture legal of g07_rules at 10( 222) + 0 on 16;
+file . "g07_rules_tst.vhd" "68efae4ca53529c3805f9e72be78b1d4c457616a" "20170321194046.502":
+  entity g07_rules_tst at 1( 0) + 0 on 13;
+  architecture test of g07_rules_tst at 8( 114) + 0 on 14;
+file . "g07_register6.vhd" "5f559f1f6162f6b978885ca4b1cb5fc2c7c744d4" "20170322151104.793":
+  entity g07_register6 at 1( 0) + 0 on 17;
+  architecture reg of g07_register6 at 13( 236) + 0 on 18;
+file . "compare6_tst.vhd" "116576ea1e6a2a6e560e60d65023171d28454e14" "20170322155151.713":
+  entity compare6_tst at 1( 0) + 0 on 33;
+  architecture test of compare6_tst at 7( 86) + 0 on 34;
+file . "dealerFSM_tst.vhd" "4204616c67170095eb15f7aaeffc722d5df2a28d" "20170327024247.410":
+  entity dealerfsm_tst at 1( 0) + 0 on 47;
+  architecture test of dealerfsm_tst at 8( 100) + 0 on 48;
