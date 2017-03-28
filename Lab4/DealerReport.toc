@@ -8,3 +8,4 @@
 \contentsline {section}{The software circuit simulation: A poor man's analysis}{9}{section*.12}
 \contentsline {section}{The hardware circuit simulation: an Engineer's victory}{10}{section*.13}
 \contentsline {chapter}{\numberline {A}VHDL Testbench for the \texttt {g07\_dealerFSM}}{11}{appendix.A}
+\contentsline {chapter}{\numberline {B}Testbed for the \texttt {g07\_dealerFSM}}{13}{appendix.B}
