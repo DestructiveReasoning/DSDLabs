@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.15)  27 MAR 2017 09:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.21)  27 MAR 2017 19:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -942,36 +942,36 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <30.14444> not available
 (Font)              size <24.88> substituted on input line 46.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--85
+Underfull \hbox (badness 10000) in paragraph at lines 46--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--85
+Underfull \hbox (badness 10000) in paragraph at lines 46--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--85
+Underfull \hbox (badness 10000) in paragraph at lines 46--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--85
+Underfull \hbox (badness 10000) in paragraph at lines 46--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--85
+Underfull \hbox (badness 10000) in paragraph at lines 46--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--85
+Underfull \hbox (badness 10000) in paragraph at lines 46--86
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -979,10 +979,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
  (./DealerReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 Package rerunfilecheck Info: File `DealerReport.out' has not changed.
 (rerunfilecheck)             Checksum: 6CCBEBD0B78DF5B32908F6C5971E2A21;54.
 
@@ -990,7 +990,7 @@ Package rerunfilecheck Info: File `DealerReport.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 5.26443pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
  8877 strings out of 493013
@@ -1005,7 +1005,7 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti12.pfb>
-Output written on DealerReport.pdf (4 pages, 66031 bytes).
+Output written on DealerReport.pdf (4 pages, 66038 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream

@@ -36,7 +36,6 @@ begin
 		else
 			if(clock'Event and clock = '1' and enable = '1') then
 				if(mode = "01" and t_full = '0') then
---					memory <= data(width-1 downto 0)&memory(bjt_depth*width - 1 downto width - 1);
 					memory <= memory((bjt_depth-1) * width - 1 downto 0)&data;
 					t_num <= t_num + 1;
 				elsif(mode = "10") then
