@@ -1,10 +1,10 @@
 v 4
-file . "bjt_tst.vhd" "06c71e19564702b6cc239e0eaf9ac95d66186a0b" "20170328015432.199":
-  entity bjt_tst at 1( 0) + 0 on 89;
-  architecture test of bjt_tst at 9( 118) + 0 on 90;
-file . "g07_bjt.vhd" "29cd62176e45573222cfff8405b1028b8358a6da" "20170328015431.100":
-  entity g07_bjt at 1( 0) + 0 on 87;
-  architecture stacklike of g07_bjt at 25( 634) + 0 on 88;
+file . "bjt_tst.vhd" "2e940af5fbab70e26219b64a618bde48f9ca5122" "20170328020808.306":
+  entity bjt_tst at 1( 0) + 0 on 109;
+  architecture test of bjt_tst at 9( 118) + 0 on 110;
+file . "g07_bjt.vhd" "d3b2c7694b43e9e8711225f366e08d4deffa819a" "20170328020806.759":
+  entity g07_bjt at 1( 0) + 0 on 107;
+  architecture stacklike of g07_bjt at 25( 634) + 0 on 108;
 file . "g07_omnimux.vhd" "b561a5a5de13faf80cc07f43ddfa7192f346ea7e" "20170326204556.688":
   entity g07_omnimux at 1( 0) + 0 on 37;
   architecture mux of g07_omnimux at 17( 364) + 0 on 38;

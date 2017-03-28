@@ -37,7 +37,7 @@ begin
 			if(clock'Event and clock = '1' and enable = '1') then
 				if(mode = "01" and t_full = '0') then
 --					memory <= data(width-1 downto 0)&memory(bjt_depth*width - 1 downto width - 1);
-					memory <= memory(bjt_depth * width - 2 downto 0)&data;
+					memory <= memory((bjt_depth-1) * width - 1 downto 0)&data;
 					t_num <= t_num + 1;
 				elsif(mode = "10") then
 					for i in 0 to bjt_depth - 1 LOOP
@@ -47,8 +47,8 @@ begin
 				elsif(mode = "11" and t_empty = '0') then
 					if(to_integer(unsigned(addr)) < bjt_depth)then
 						if(to_integer(unsigned(addr)) = 0) then memory <= std_logic_vector(to_unsigned(0,width))&memory(bjt_depth*width-1 downto width);
-						elsif(to_integer(unsigned(addr)) = bjt_depth - 1) then memory <= std_logic_vector(to_unsigned(0,width))&memory(bjt_depth*(width-1)-1 downto 0);
-						else memory <= std_logic_vector(to_unsigned(0,width))&memory(bjt_depth * width - 1 downto width * (to_integer(unsigned(addr))+1))&memory(width*to_integer(unsigned(addr)) - 1 downto 0);
+						elsif(to_integer(unsigned(addr)) = bjt_depth - 1) then memory <= std_logic_vector(to_unsigned(0,width))&memory((bjt_depth-1)*(width)-1 downto 0);
+						else memory <= std_logic_vector(to_unsigned(0,width))&memory(bjt_depth*width-1 downto width * (to_integer(unsigned(addr))+1))&memory(width*to_integer(unsigned(addr)) - 1 downto 0);
 						end if;
 						t_num <= t_num - 1;
 					end if;
