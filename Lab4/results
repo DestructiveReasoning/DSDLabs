@@ -1,0 +1,14 @@
+Fmax: 979.43 MHz
+Restricted FMax: 380.08 MHz
+
+Minimum pulse width -> slack: -1.631
+Minimum pulse width -> end point tns: -5.297
+
+Hold time -> slack: 0.445
+
+==============================================
+
+Total combinational functions: 3/18752
+Dedicated logic registers: 3/18752
+Total registers: 3
+Total memory bits: 0
