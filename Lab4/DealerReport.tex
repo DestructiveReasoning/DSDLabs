@@ -221,6 +221,43 @@ random! Although this part did provide some inconsistencies early one (due to a 
 comparator connections, mostly), eventually it was seen that random numbers in the range of 0 to
 \texttt{NUM} were seen being popped from the BJT. Victory was gracefully achieved.
 
+\chapter*{Computer Analysis of the Dealer Circuit}
+\addcontentsline{toc}{chapter}{Computer Analysis of the Dealer Circuit}
+If you thought the validation of the \texttt{g07\_dealerFSM} circuit was complete, you have
+successfully been tricked. What blasphemy! Surely, the \texttt{g07\_dealerFSM} must be shown to not inhibit the
+circuitry that it will integrated with. To verify that this will not be an issue, Altera's magical
+Quartus II Flow Summary and TimeQuest Timing Analyzer will be used extensively. Please continue
+reading the final sections of this report to determine whether or not the \texttt{g07\_dealerFSM} is
+a \textit{feasible} circuit, given all its unwieldly power.
+
+\section*{The Flow Summary}
+\addcontentsline{toc}{section}{The Flow Summary}
+According to Quartus II's Flow Summary, the \texttt{g07\_dealerFSM} allegedly uses only 3
+combinational logic functions, and 3 dedicated logic registers. Given that there are 18752 logic
+registers and combinational logic functions available in the FPGA, these numbers make for less than
+1\% of the resources available. Then, it can be safely concluded that the \texttt{g07\_dealerFSM}
+does not require too much hardware, and is in fact \textit{very} feasible in that regard.
+Furthermore, the \texttt{g07\_dealerFSM} allegedly requires absolutely no memory bits, further
+convincing the feasibility of the dealer.
+
+\section*{The Timing Analysis}
+Lastly (and you are not being fooled this time), the dealer must not require particularly low clock
+frequencies for its operation to be successful. It also would be beneficial for it to not impose any
+restrictions on the envelope of the clock pulse, as that would be rather inconvenient. According to
+the Timing Analyzer of Quartus II, the \texttt{g07\_dealerFSM} allegedly imposes a minimum pulse
+width of -1.631 (units not given). Regardless of the units, negative pulse widths are not a problem
+in the measuring systems in use today. In fact, most may say negative pulse widths do not exist (but
+it's better not to generalize in a report like this). However, due to the negative minimum pulse
+width, it can be safely concluded that no testable pulse width should cause a problem for the
+\texttt{g07\_dealerFSM} circuit.\\\\
+Finally, the Quartus II Timing Analyzer reported a restricted maximum frequency of 380.08MHz. This
+is extremely impressive, given that the maximum clock frequency that will be supplied to the
+\texttt{g07\_dealerFSM} is the DE1's clock of 50MHz. Therefore, there shall be no timing violations
+caused by the \texttt{g07\_dealerFSM} given its clock. This maximum frequency corresponds to a
+maximum propagation delay within the circuit of $1/38008000 = 2.63$ns, which is exceedingly
+small.\\\\
+Given these results, it is clear that the \texttt{g07\_dealer} circuit uses very little hardware and
+imposes no considerable timing issues. Finally, the Engineer may leave his mark.
 \begin{appendix}
 	\chapter{VHDL Testbench for the \texttt{g07\_dealerFSM}}
 	\label{a:dealertst}

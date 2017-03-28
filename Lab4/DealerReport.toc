@@ -7,5 +7,7 @@
 \contentsline {chapter}{On the Testing of the Dealer Circuit}{9}{chapter*.11}
 \contentsline {section}{The software circuit simulation: A poor man's analysis}{9}{section*.12}
 \contentsline {section}{The hardware circuit simulation: an Engineer's victory}{10}{section*.13}
-\contentsline {chapter}{\numberline {A}VHDL Testbench for the \texttt {g07\_dealerFSM}}{11}{appendix.A}
-\contentsline {chapter}{\numberline {B}Testbed for the \texttt {g07\_dealerFSM}}{13}{appendix.B}
+\contentsline {chapter}{Computer Analysis of the Dealer Circuit}{11}{chapter*.14}
+\contentsline {section}{The Flow Summary}{11}{section*.15}
+\contentsline {chapter}{\numberline {A}VHDL Testbench for the \texttt {g07\_dealerFSM}}{12}{appendix.A}
+\contentsline {chapter}{\numberline {B}Testbed for the \texttt {g07\_dealerFSM}}{14}{appendix.B}
