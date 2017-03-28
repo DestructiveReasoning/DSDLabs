@@ -3,3 +3,8 @@
 \contentsline {chapter}{Introduction}{5}{chapter*.2}
 \contentsline {chapter}{Circuit Description}{6}{chapter*.3}
 \contentsline {section}{Description of ports}{6}{section*.4}
+\contentsline {section}{VHDL portrayal of the \texttt {g07\_dealerFSM} circuit}{7}{section*.10}
+\contentsline {chapter}{On the Testing of the Dealer Circuit}{9}{chapter*.11}
+\contentsline {section}{The software circuit simulation: A poor man's analysis}{9}{section*.12}
+\contentsline {section}{The hardware circuit simulation: an Engineer's victory}{10}{section*.13}
+\contentsline {chapter}{\numberline {A}VHDL Testbench for the \texttt {g07\_dealerFSM}}{11}{appendix.A}

@@ -135,6 +135,64 @@ proper state. It is used to enable the BJT associated with the dealer to pop a c
 \subsection*{rand\_enable}
 The \texttt{rand\_enable} output bit is active after \texttt{request\_deal} has been asserted anew,
 and enables a random number generator to generate random numbers until \texttt{rand\_lt\_num} is
-high.
+high.\\\\
+
+A complete VHDL description of the \texttt{g07\_dealerFSM} circuit is provided in the following
+section.
+
+\section*{VHDL portrayal of the \texttt{g07\_dealerFSM} circuit}
+\addcontentsline{toc}{section}{VHDL portrayal of the \texttt{g07\_dealerFSM} circuit}
+\label{s:vhdl}
+\lstinputlisting[language=VHDL,breaklines=true,frame=single]{g07_dealerFSM.vhd}
+
+\chapter*{On the Testing of the Dealer Circuit}
+\addcontentsline{toc}{chapter}{On the Testing of the Dealer Circuit}
+It was an important and difficult challenge to resist being seduced by the beauty of the VHDL code
+that describes the \texttt{g07\_dealerFSM} circuit. Despite it's beauty, a dealer cannot be trusted
+without being tested. Think about this following section as an analog to an interview process, if
+you will. Before putting the \texttt{g07\_dealerFSM} in commission, it was important to make sure it
+satisfied all dealing requirements (and boy, did it ever), and to make sure it functioned correctly
+on the hardware. The demonstrations that follow will prove that the \texttt{g07\_dealerFSM} is in
+fact an excellent candidate.
+
+\section*{The software circuit simulation: A poor man's analysis}
+\addcontentsline{toc}{section}{The software circuit simulation: A poor man's analysis}
+The first order of business in judging the effectiveness of the \texttt{g07\_dealerFSM} was to test
+it with the magical Modelsim simulator. Unfortunately, said software was not functioning to the
+tester's standards. As a consequence, the miraculous GtkWave VCD viewer came to the rescue, and the
+\texttt{g07\_dealerFSM} was examined thoroughly according to a
+\hyperref[a:dealertst]{carefully-written testbench}. \\For the less-enthused, the testbench starts the
+state machine in its default state, and examines each state transition in the trivial order. Then,
+the machine is brought to state C (where \texttt{rand\_enable} is high) and reset is activated to
+ensure that it causes the machine to return to its initial state.\\
+The resulting waveforms can be viewed below.\\\\
+\includegraphics[scale=0.75]{dealertestcropped}
+Of course, the results shown above cannot conclusively confirm the excellence of the
+\texttt{g07\_dealerFSM} circuit on their own, because they give no evidence of the dealer
+functioning on real hardware. Hence, this test was called a \textit{poor man's
+analysis}. Fortunately, the testers \textit{are not} poor men. In fact, they have access to an
+Altera DE1 FPGA development board equipped with an Altera Cyclone II FPGA. The tests in the
+following section will describe how \textit{full confidence} of the \texttt{g07\_dealerFSM} was
+obtained.
+
+\section*{The hardware circuit simulation: an Engineer's victory}
+\addcontentsline{toc}{section}{The hardware circuit simulation: an Engineer's victory}
+Some tests are easy, leaving the participants in a relaxing state of mind. Yet, some tests are hard,
+leaving participants in a state of panic. However, occasionally tests reach a transcending level of
+difficulty, such that it may be said that the test \textit{separates the boys from the men}. That,
+dear reader, is what you will witness in the remainder of this section. Anyone from laymen to
+patricians can make a software circuit simulation, neglecting the possiblity that something may go
+wrong on the hardware. While seemingly reasonable to the un-seasoned tester, this train of thought
+is highly dangerous and irresponsible. It is up to the Engineer to realize that this, in fact, will
+not suffice. This realization was exhibited, more than anything else, in the results below. \\\\
+The first order of business was to create a \textit{test bed}, or circuit that bridges the gap
+between human input and dealer communication. This was done using the not-short-of-incredible Altera
+Quartus II schematic designer, and can be seen below:
+
+\begin{appendix}
+	\chapter{VHDL Testbench for the \texttt{g07\_dealerFSM}}
+	\label{a:dealertst}
+	\lstinputlisting[language=VHDL]{dealerFSM_tst.vhd}
+\end{appendix}
 
 \end{document}
