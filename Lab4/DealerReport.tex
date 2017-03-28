@@ -43,6 +43,7 @@ breaklines=true,showstringspaces=false,numbers=left}
 \tableofcontents
 
 \part{A Pleasant Preamble}
+\label{s:preamble}
 \lettrine{S}ometimes in life one may be presented with situations that make him rethink his beliefs and
 question who, in fact, he really is. It is moments like such that actually define an individual
 \textit{ad postremum}. Of course, it is up to the individual in question to \textit{realize} that he shall be
@@ -82,5 +83,58 @@ digital systems and card games. To conclude this pleasant preamble, the reader i
 above all, \textit{have fun} with this report, and better yet, to have fun with life. Finally, it is
 important to remember that while by law a man is guilty for violating the rules, in ethics a man is
 guilty merely by \textit{considering} such violation. Be careful, be wise, and Baba Booey to all.
+
+\part{The Dealer Circuit}
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+As foreshadowed in the \hyperref[s:preamble]{pleasant preamble} above, having a loyal, dependable
+dealer will be crucial to the reliable functionality of the crazy eights system. Without such a
+dealer, the \textit{rules} of the game \textit{may not} be followed, causing complete and utter
+pandemonium, ultimately resulting in a rather atrocious crazy eights game.\\\\
+Therefore, it would benefit the system to create a robust \textit{finite state machine}, a machine
+of a finite number of states. The system was reduced to a machine of 4 states (where $4 < \infty$
+holds), representing the state which waits for the previous request to end (denoted by A), the state
+which waits for the next request to \textit{be} sent (denoted by B), the state which generates
+random numbers, so as to deal the cards (denoted by C), and finally, the state that activates a
+stack (or more accurately, a bi-directional Jenga tower) circuit (denoted by D). \\\\
+All of the cleverness and power that has been teased above was encompassed by a circuit that has
+since been named the \texttt{g07\_dealerFSM}. A more detailed insight to the design of the finite
+state machine and the \texttt{g07\_dealerFSM} follows below, and is complemented by thoughtful
+pictorial support for easier understanding.
+
+\chapter*{Circuit Description}
+\addcontentsline{toc}{chapter}{Circuit Description}
+
+\begin{figure}[h]
+	\begin{center}
+		\caption{Pin-out diagram of the \texttt{g07\_dealerFSM} circuit}
+		\includegraphics[scale=1.3]{dealer_symb}
+	\end{center}
+\end{figure}
+
+Above is a pin-out diagram of the miraculous \texttt{g07\_dealerFSM} circuit, showcasing its input
+and output ports. A more detailed description of these ports will be given below.
+
+\section*{Description of ports}
+\addcontentsline{toc}{section}{Description of ports}
+\subsection*{request\_deal}
+The \texttt{request\_deal} input bit is activated when the system requests that the dealer should
+deal a card.
+\subsection*{rand\_lt\_num}
+The \texttt{rand\_lt\_num} input bit is controlled by an external circuit that is high when a random
+number has a value that is less than the BJT's \texttt{NUM} output that the dealer is associated
+with. This allows the dealer to tell whether it should keep generating random numbers (in state C),
+or move on.
+\subsection*{reset}
+The \texttt{reset} input bit causes the finite state machine to be reset to its initial state when
+\texttt{reset} is high. It is asynchronous.
+\subsection*{stack\_enable}
+The \texttt{stack\_enable} output bit is active when a valid random number has been generated in the
+proper state. It is used to enable the BJT associated with the dealer to pop a card.
+\subsection*{rand\_enable}
+The \texttt{rand\_enable} output bit is active after \texttt{request\_deal} has been asserted anew,
+and enables a random number generator to generate random numbers until \texttt{rand\_lt\_num} is
+high.
 
 \end{document}
