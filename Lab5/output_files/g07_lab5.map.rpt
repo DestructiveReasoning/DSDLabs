@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g07_lab5
-Tue Mar 28 20:25:07 2017
+Thu Mar 30 17:05:16 2017
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -10,7 +10,14 @@ Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |bjt
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +43,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Mar 28 20:25:07 2017          ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 30 17:05:16 2017      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; g07_lab5                                   ;
-; Top-level Entity Name              ; g07_bjt                                    ;
+; Top-level Entity Name              ; bjt                                        ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Total logic elements               ; 746                                        ;
+;     Total combinational functions  ; 746                                        ;
+;     Dedicated logic registers      ; 344                                        ;
+; Total registers                    ; 344                                        ;
+; Total pins                         ; 31                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -59,8 +66,10 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C20F484C7       ;                    ;
-; Top-level entity name                                                      ; g07_bjt            ; g07_lab5           ;
+; Top-level entity name                                                      ; bjt                ; g07_lab5           ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
+; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -69,7 +78,6 @@ applicable agreement for further details.
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
 ; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
 ; Safe State Machine                                                         ; Off                ; Off                ;
 ; Extract Verilog State Machines                                             ; On                 ; On                 ;
@@ -155,27 +163,179 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                               ;
++----------------------------------+-----------------+-----------------+-------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path        ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------+---------+
+; bjt.vhd                          ; yes             ; User VHDL File  ; /home/harwiltz/DSDLabs/Lab5/bjt.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 746      ;
+;                                             ;          ;
+; Total combinational functions               ; 746      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 294      ;
+;     -- 3 input functions                    ; 371      ;
+;     -- <=2 input functions                  ; 81       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 684      ;
+;     -- arithmetic mode                      ; 62       ;
+;                                             ;          ;
+; Total registers                             ; 344      ;
+;     -- Dedicated logic registers            ; 344      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 31       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; always~1 ;
+; Maximum fan-out                             ; 344      ;
+; Total fan-out                               ; 4503     ;
+; Average fan-out                             ; 4.02     ;
++---------------------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |bjt                       ; 746 (746)         ; 344 (344)    ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |bjt                ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 344   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 332   ;
+; Number of registers using Asynchronous Clear ; 344   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 344   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |bjt|memory[51][1]         ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |bjt|t_num[0]              ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[31][2]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[50][4]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[49][1]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[48][2]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[47][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[46][5]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[45][3]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[44][2]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[43][2]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[42][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[41][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[40][4]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[39][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[38][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[37][5]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[36][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[35][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[34][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[33][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[32][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[30][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[29][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[28][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[27][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[26][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[25][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[24][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[23][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[22][4]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[21][4]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[20][1]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[19][3]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[18][3]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[17][5]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[16][3]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[15][5]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[14][3]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[13][5]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[12][3]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[11][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[10][0]         ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[9][0]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[8][1]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[7][0]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[6][4]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[5][2]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[4][3]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[3][0]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[2][0]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[1][2]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |bjt|memory[0][3]          ;
+; 53:1               ; 6 bits    ; 210 LEs       ; 210 LEs              ; 0 LEs                  ; No         ; |bjt|value                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |bjt ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; bjt_depth      ; 52    ; Signed Integer                             ;
+; width          ; 6     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Mar 28 20:25:06 2017
+    Info: Processing started: Thu Mar 30 17:05:12 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g07_lab5 -c g07_lab5
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file g07_bjt.vhd
     Info (12022): Found design unit 1: g07_bjt-stacklike
     Info (12023): Found entity 1: g07_bjt
-Info (12127): Elaborating entity "g07_bjt" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at g07_bjt.vhd(37): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Error (10779): VHDL error at g07_bjt.vhd(51): expression is not constant File: /home/harwiltz/DSDLabs/Lab5/g07_bjt.vhd Line: 51
-Error (10658): VHDL Operator error at g07_bjt.vhd(51): failed to evaluate call to operator ""&"" File: /home/harwiltz/DSDLabs/Lab5/g07_bjt.vhd Line: 51
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 359 megabytes
-    Error: Processing ended: Tue Mar 28 20:25:07 2017
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12021): Found 2 design units, including 1 entities, in source file bjt.vhd
+    Info (12022): Found design unit 1: bjt-stacklike
+    Info (12023): Found entity 1: bjt
+Info (12127): Elaborating entity "bjt" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at bjt.vhd(42): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 777 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 17 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 746 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 375 megabytes
+    Info: Processing ended: Thu Mar 30 17:05:16 2017
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

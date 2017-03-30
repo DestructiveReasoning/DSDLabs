@@ -5,8 +5,8 @@ use ieee.math_real.all;
 
 entity g07_bjt is
 	generic (
-		bjt_depth: integer;
-		width: integer
+		bjt_depth: integer := 52;
+		width: integer := 6
 	);
 	port (
 		clock: in std_logic;

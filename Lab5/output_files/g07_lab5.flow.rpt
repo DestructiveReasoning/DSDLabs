@@ -1,5 +1,5 @@
 Flow report for g07_lab5
-Tue Mar 28 20:25:07 2017
+Thu Mar 30 17:05:44 2017
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Flow Failed - Tue Mar 28 20:25:07 2017     ;
+; Flow Status                        ; Successful - Thu Mar 30 17:05:44 2017      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; g07_lab5                                   ;
-; Top-level Entity Name              ; g07_bjt                                    ;
+; Top-level Entity Name              ; bjt                                        ;
 ; Family                             ; Cyclone II                                 ;
 ; Device                             ; EP2C20F484C7                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Total logic elements               ; 746 / 18,752 ( 4 % )                       ;
+;     Total combinational functions  ; 746 / 18,752 ( 4 % )                       ;
+;     Dedicated logic registers      ; 344 / 18,752 ( 2 % )                       ;
+; Total registers                    ; 344                                        ;
+; Total pins                         ; 31 / 315 ( 10 % )                          ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0 / 239,616 ( 0 % )                        ;
+; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -64,53 +64,69 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/28/2017 20:25:06 ;
+; Start date & time ; 03/30/2017 17:05:12 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; g07_lab5            ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                            ;
-+-------------------------------------+------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                  ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.149072910602040      ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                   ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL) ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                     ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                      ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057               ; --            ; g07_bjt     ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING  ; --            ; g07_bjt     ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                 ; --            ; g07_bjt     ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files           ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; g07_bjt                ; g07_lab5      ; --          ; --             ;
-+-------------------------------------+------------------------+---------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                           ;
++-------------------------------------+---------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 0.149088991228264                     ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; bjt         ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; bjt         ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; bjt         ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; bjt                                   ; g07_lab5      ; --          ; --             ;
+; VHDL_INPUT_VERSION                  ; VHDL_2008                             ; VHDL_1993     ; --          ; --             ;
+; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                   ; --            ; --          ; --             ;
++-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 359 MB              ; 00:00:01                           ;
-; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 375 MB              ; 00:00:04                           ;
+; Fitter                    ; 00:00:08     ; 2.3                     ; 514 MB              ; 00:00:11                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 338 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 359 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 318 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:15     ; --                      ; --                  ; 00:00:19                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; shadow           ; Arch Linux ; Arch Linux ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; shadow           ; Arch Linux ; Arch Linux ; x86_64         ;
+; Fitter                    ; shadow           ; Arch Linux ; Arch Linux ; x86_64         ;
+; Assembler                 ; shadow           ; Arch Linux ; Arch Linux ; x86_64         ;
+; TimeQuest Timing Analyzer ; shadow           ; Arch Linux ; Arch Linux ; x86_64         ;
+; EDA Netlist Writer        ; shadow           ; Arch Linux ; Arch Linux ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off g07_lab5 -c g07_lab5
+quartus_fit --read_settings_files=off --write_settings_files=off g07_lab5 -c g07_lab5
+quartus_asm --read_settings_files=off --write_settings_files=off g07_lab5 -c g07_lab5
+quartus_sta g07_lab5 -c g07_lab5
+quartus_eda --read_settings_files=off --write_settings_files=off g07_lab5 -c g07_lab5
 
 
 
