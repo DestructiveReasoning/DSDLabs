@@ -28,7 +28,8 @@
 \lstset{basicstyle=\ttfamily\footnotesize, frame=single,
 breaklines=true,showstringspaces=false,numbers=left}
 
-\title{ECSE 323 - Digital System Design\\After Action Report - The Dealer Finite State Machine}
+\title{ECSE 323 - Digital System Design\\After Action Report - Plentiful Discoveries and the
+Rules-Dealer Paradigm}
 \author{Harley Wiltzer (260690006)\\Spiros-Daniel Mavroidakos (260689391)}
 \date{March 30, 2017}
 
@@ -85,24 +86,145 @@ above all, \textit{have fun} with this report, and better yet, to have fun with 
 important to remember that while by law a man is guilty for violating the rules, in ethics a man is
 guilty merely by \textit{considering} such violation. Be careful, be wise, and Baba Booey to all.
 
+\part{The Rules Circuit}
+
+\chapter*{Introduction and Rationale}
+\addcontentsline{toc}{chapter}{Introduction and Rationale}
+\label{s:intro2}
+
+It is important in any game, not just crazy eights, that the rules of the game are
+\textit{well-defined}. It would only do this game justice to ensure that the crazy eights rules are
+well defined in circuitry, and that is what will be demostrated in this part of the report.\\\\
+The circuit itself is relatively simple but nothing short of genius. The circuit was written in VHDL
+and works as follows. Firstly, it has two input ports, \texttt{play\_pile\_top\_card[5..0]} and
+\texttt{card\_to\_play[5..0]}, corresponding to the card on the top of the pile and the card that the
+player wishes to use respectively. The output of the circuit named \texttt{legal\_play} is simply a
+single bit which is given a value of ‘1’ when the move is in accordance with the rules of this great
+game. The modulo 13 circuit that was created in the prior lab was used to get the value and the suit
+of both cards (what foresight!). Once the nature of the cards is known, it is easy to apply the
+appropriate rules. A process block in the VHDL code checks to see if either of the cards are of a
+value of eight because if either of them are eight, then the play is always legal by definition.
+Furthermore, the process block is intelligent enough to also test the remaining two rules of the
+game as well. If the two cards have the same value or the same suit, the process block will
+graciously change the bit value of \texttt{legal\_play} to ‘1’ since it will recognize that the
+player has not tried to trick the other players.\\\\
+Though the explanation above is nothing short of thorough, a complete view of the
+\texttt{g07\_rules} VHDL design may be seen in the \hyperref[s:vhdlrules]{VHDL code} below.
+
+\chapter*{Circuit Description}
+\addcontentsline{toc}{chapter}{Circuit Description}
+\begin{figure}[h]
+	\begin{center}
+		\caption{Pin-out diagram of the g07\_rules circuit}
+		\includegraphics[scale=1.0]{rules_symb}
+	\end{center}
+\end{figure}
+Above is a pin-out diagram of the g07\_rules circuit. A more detailed description of these ports will be given below.
+
+\section*{Description of ports}
+\addcontentsline{toc}{section}{Description of ports}
+
+\subsection*{play\_pile\_top\_card[5..0]}
+The \texttt{play\_pile\_top\_card[5..0]} is a 6 input bit vector that represents the card at the top of the play pile.
+\subsection*{card\_to\_play[5..0]}
+The \texttt{card\_to\_play[5.0]} is a  6 input bit vector that corresponds to the users card that they wish to play.
+\subsection*{legal\_play}
+The \texttt{legal\_play} output bit is active when the g07\_rules circuit determines that the input corresponds to a legal play and not active otherwise. 
+
+\section*{VHDL charicature of the \texttt{g07\_rules} circuit}
+\addcontentsline{toc}{section}{VHDL charicature of the \texttt{g07\_rules} circuit}
+\label{s:vhdlrules}
+The VHDL code shown below was inspired by the tactics described in the \hyperref[s:intro2]{rationale section} above.
+\lstinputlisting[language=VHDL]{g07_rules.vhd}
+
+\chapter*{With Regards to the Testing of the Rules Circuit}
+\addcontentsline{toc}{chapter}{With Regards to the Testing of the Rules Circuit}
+The rules of the game are very simple, since crazy eights is a game that is played by people of all
+ages, and people with dementia. Here are the rules just in case the reader forgot: A card of face
+value of 8 in any suit can be played on any card and can have any card played on it. Furthermore,
+any card of a particular suit can be played on a card of that same suit, regardless of the cards'
+values. Finally, a card with a given face value can be played on another card with the same face
+value, regardless of the suits.\\\\
+For any testing process to be considered legitimate, the testers must implement the appropriate
+tests. Therefore, the test that were generated for this tremendous circuit were created to make sure
+that every rule was tested. It was all done in the spirit of good testing. The test results may be
+perused below. The returning reader may expect to find the simulation results from a Modelsim
+simulation wave, however, the Modelsim simulator is simply \textit{too powerful} for such a simple
+simulation. It would be innefficient to harness so much power for a circuit that doesn't require it.
+Some people are less fortunate and can make use of the excess energy. So, the simulation was done
+using the GTKWave VCD viewer, and is more than satisfactory for showing simple waves.
+
+\begin{figure}[h]
+	\begin{center}
+		\caption{Timing simulation of the rules circuit}
+		\includegraphics[scale=0.8]{rulesresults}
+	\end{center}
+\end{figure}
+
+The first clock cycle is used to show that any card can be played on top of an eight, since the
+eight is crazy after all. Note that the design of
+the test had card values starting at 0 rather than 1, so the value of 7 for the card values actually
+corresponds to a card value of 8. The second clock cycle was also used to show how crazy the eights
+can be. It displayed the rule that an eight of any suit can be played over any card and due to the
+design of the circuit, the test was passed. The third clock cycle was designed to make sure that a
+given card of a certain suit can be played on any card of the same suit and it was an engineering
+success. The penultimate clock cycle showed that a card of a given value and suit cannot be played
+on another with a different value and suit, and the circuit performed like a dream. The final test
+gave insight into the behavior when a card with a given face value would be played on a card with
+the same face value and as stated in the rules, it was legal and did not require any additional
+action to fix this violation. 
+
+\chapter*{The Computer Analysis of the Rules Circuit}
+\addcontentsline{toc}{chapter}{The Computer Analysis of the Rules Circuit}
+\section*{The Flow Summary}
+\addcontentsline{toc}{section}{The Flow Summary}
+Quartus II’s Flow Summary reveals that the \texttt{g07\_rules} circuit uses only 46 total
+combinational functions, which is quite impressive. There is a total of 18752 combinational logic
+functions available in the Cyclone II DE1, thus making the total usage under 1\%. This is a
+tremendous achievement because so many logic functions are left over to be used in the final design
+of the great crazy eights card game. The \texttt{g07\_rules} circuit also uses zero memory bits
+which is a great benefit overall. 
+
+\section*{The Timing Analysis}
+\addcontentsline{toc}{section}{The Timing Analysis}
+By means of the mighty Quartus II TimeQuest Timing Analyzer, propagation delays for the two inputs
+to the rules circuit were found. It was seen that the maximum propagation delay of the
+\texttt{card\_to\_play} input was 19.363 nanoseconds, and the maximum propagation delay of the
+\texttt{play\_pile\_top\_card} input was 19.350 nanoseconds. Therefore, the maximum propagation
+delay from the input to the output is 19.363 nanoseconds. Given this propagation delay, inputs of
+the system should not change more than once within a 19.363 nanosecond interval. This is reasonable
+so long as the inputs of the system do not change more than once in any given interval of 19.363
+nanoseconds, which is a very short amount of time.
+
+%%%NEW CIRCUIT STARTS HERE
+
 \part{The Dealer Circuit}
 
-\chapter*{Introduction}
-\addcontentsline{toc}{chapter}{Introduction}
+\chapter*{Introduction and Rationale}
+\addcontentsline{toc}{chapter}{Introduction and Rationale}
+\label{s:intro1}
 As foreshadowed in the \hyperref[s:preamble]{pleasant preamble} above, having a loyal, dependable
 dealer will be crucial to the reliable functionality of the crazy eights system. Without such a
 dealer, the \textit{rules} of the game \textit{may not} be followed, causing complete and utter
 pandemonium, ultimately resulting in a rather atrocious crazy eights game.\\\\
 Therefore, it would benefit the system to create a robust \textit{finite state machine}, a machine
 of a finite number of states. The system was reduced to a machine of 4 states (where $4 < \infty$
-holds), of which include the state that waits for the previous request to end (denoted by A), the state
+holds, proved in \hyperref[a:proof]{this appendix}), of which include the state that waits for the
+previous request to end (denoted by A), the state
 that waits for the next request to \textit{be} sent (denoted by B), the state that generates
 random numbers, so as to deal the cards (denoted by C), and finally, the state that activates a
 stack (or more accurately, a bi-directional Jenga tower) circuit (denoted by D). \\\\
 All of the cleverness and power that has been teased above was encompassed by a circuit that has
 since been named the \texttt{g07\_dealerFSM}. A more detailed insight to the design of the finite
 state machine and the \texttt{g07\_dealerFSM} follows below, and is complemented by thoughtful
-pictorial support for easier understanding.
+pictorial support for easier understanding.\\\\
+Given the immense power of the VHDL language, implementing the state machine in code was fairly
+simple. Firstly, an enumeration of states was created, and a Signal representing a state was
+defined. For simplicity, it was decided to implement a Moore-type machine, meaning the output
+depends only on the state of the system, held in the state signal. Then, in a \textit{process}
+block, a case statement was designed, which governs state transitions based on the inputs of the FSM
+and the current state of the FSM. Please enjoy the \hyperref[s:vhdl]{VHDL code} provided below for a
+complete view of the dealer's design.
 
 \chapter*{Circuit Description}
 \addcontentsline{toc}{chapter}{Circuit Description}
@@ -144,6 +266,8 @@ section.
 \section*{VHDL portrayal of the \texttt{g07\_dealerFSM} circuit}
 \addcontentsline{toc}{section}{VHDL portrayal of the \texttt{g07\_dealerFSM} circuit}
 \label{s:vhdl}
+The tactics used to develop this VHDL code may be examined in the \hyperref[s:intro1]{rationale
+section} above.
 \lstinputlisting[language=VHDL,breaklines=true,frame=single]{g07_dealerFSM.vhd}
 
 \chapter*{On the Testing of the Dealer Circuit}
@@ -156,8 +280,8 @@ satisfied all dealing requirements (and boy, did it ever), and to make sure it f
 on the hardware. The demonstrations that follow will prove that the \texttt{g07\_dealerFSM} is in
 fact an excellent candidate.
 
-\section*{The software circuit simulation: A poor man's analysis}
-\addcontentsline{toc}{section}{The software circuit simulation: A poor man's analysis}
+\section*{The software circuit simulation: a poor man's analysis}
+\addcontentsline{toc}{section}{The software circuit simulation: a poor man's analysis}
 The first order of business in judging the effectiveness of the \texttt{g07\_dealerFSM} was to test
 it with the magical Modelsim simulator. Unfortunately, said software was not functioning to the
 tester's standards. As a consequence, the miraculous GtkWave VCD viewer came to the rescue, and the
@@ -241,11 +365,12 @@ Furthermore, the \texttt{g07\_dealerFSM} allegedly requires absolutely no memory
 convincing the feasibility of the dealer.
 
 \section*{The Timing Analysis}
+\addcontentsline{toc}{section}{The Timing Analysis}
 Lastly (and you are not being fooled this time), the dealer must not require particularly low clock
 frequencies for its operation to be successful. It also would be beneficial for it to not impose any
 restrictions on the envelope of the clock pulse, as that would be rather inconvenient. According to
 the Timing Analyzer of Quartus II, the \texttt{g07\_dealerFSM} allegedly imposes a minimum pulse
-width of -1.631 (units not given). Regardless of the units, negative pulse widths are not a problem
+width of -1.631 nanoseconds. Negative pulse widths are not a problem
 in the measuring systems in use today. In fact, most may say negative pulse widths do not exist (but
 it's better not to generalize in a report like this). However, due to the negative minimum pulse
 width, it can be safely concluded that no testable pulse width should cause a problem for the
@@ -268,6 +393,40 @@ imposes no considerable timing issues. Finally, the Engineer may leave his mark.
 	Above is the section of the testbed that showws how data is output to the 7 segment displays on
 	the DE1. On the following page, the main body of the testbed may be observed.
 	\includegraphics[scale=0.5,angle=270]{testbed_body}
+	\chapter{Proving the Finite-ness of the State Machine}
+	For the precise reader, stating that the desgined state machine is actually finite may not be
+	concrete enough to be taken seriously. Given that the amount of states in the machine is 4, it
+	can be shown that the machine is in fact finite.\\\\
+	\textbf{Proof:} $4 < \infty$\\
+	\label{a:proof}
+	Follow a proof by contradiction.
+	Assume $4 \geq \infty$. Then, 
+	\begin{equation*}
+		\begin{aligned}
+			\sum_{k=0}^{\infty}x^k &\leq \infty, \ |x| < 1\\
+			10\sum_{k=0}^{\infty}x^k &\leq \infty\\
+			10\sum_{k=0}^{\infty}x^k &\leq 4\\
+		\end{aligned}
+	\end{equation*}
+	Choose $x = \frac{1}{2}$. It can be shown combinatorially that $\frac{1}{2} < 1$ as follows:
+	suppose two individuals are sharing a cake. By definition, the amount of cake each individual
+	can eat is $\frac{1}{2}$ of the cake. Since energy can neither be created or destroyed, the
+	amount of cake cannot be increased when two people share it. Thus, $\frac{1}{2} < 1$.\\\\
+	\textbf{Corollary 1:} $\frac{1}{2} < 1$. \\
+	Binding $x$ to $\frac{1}{2}$, the following can be discovered:
+	\begin{equation*}
+		\begin{aligned}
+			10\sum_{n=0}^{\infty}\frac{1}{2}^k &\leq 4\\
+			10\left(1 + \frac{1}{2} +\frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots\right) &\leq 4\\
+			10\left(1 + \aleph\right) &\leq 4, \ \aleph > 0\\
+			10 + 10\aleph &\leq 4 \rightarrow 10\aleph \leq -6
+%			10\aleph &\leq -6
+		\end{aligned}
+	\end{equation*}
+	Clearly, this is a contradiction since the definition of $\aleph$ guarantees that it is
+	positive.\\
+	Therefore, by contradiction, $4 < \infty$.
+
 \end{appendix}
 
 \end{document}

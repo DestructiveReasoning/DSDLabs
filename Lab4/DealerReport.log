@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.21)  28 MAR 2017 17:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.15)  30 MAR 2017 10:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -811,27 +811,27 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 26.
  (./DealerReport.aux)
 \openout1 = `DealerReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 36.
 
 (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 36.
 \c@lstlisting=\count129
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -865,7 +865,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring ON on input line 35.
+Package hyperref Info: Link coloring ON on input line 36.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -875,9 +875,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count136
 )
-LaTeX Info: Redefining \ref on input line 35.
-LaTeX Info: Redefining \pageref on input line 35.
-LaTeX Info: Redefining \nameref on input line 35.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
+LaTeX Info: Redefining \nameref on input line 36.
 
 (./DealerReport.out) (./DealerReport.out)
 \@outlinefile=\write3
@@ -918,11 +918,11 @@ LaTeX Info: Redefining \nameref on input line 35.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 38.
+LaTeX Font Info:    Try loading font information for U+msa on input line 39.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 38.
+LaTeX Font Info:    Try loading font information for U+msb on input line 39.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -935,7 +935,7 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 6.
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 12.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 22.
 )
 \tf@toc=\write4
 \openout4 = `DealerReport.toc'.
@@ -947,35 +947,35 @@ LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <30.14444> not available
-(Font)              size <24.88> substituted on input line 47.
+(Font)              size <24.88> substituted on input line 48.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--87
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--87
+Underfull \hbox (badness 10000) in paragraph at lines 48--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--87
+Underfull \hbox (badness 10000) in paragraph at lines 48--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--87
+Underfull \hbox (badness 10000) in paragraph at lines 48--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--87
+Underfull \hbox (badness 10000) in paragraph at lines 48--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--87
+Underfull \hbox (badness 10000) in paragraph at lines 48--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--88
 
  []
 
@@ -988,166 +988,229 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [3] [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 92--106
+Underfull \hbox (badness 10000) in paragraph at lines 95--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--106
+Underfull \hbox (badness 10000) in paragraph at lines 95--113
 
  []
 
 [5
 
-] <dealer_symb.pdf, id=118, 159.77592pt x 95.26993pt>
-File: dealer_symb.pdf Graphic file (type pdf)
- <use dealer_symb.pdf>
-Package pdftex.def Info: dealer_symb.pdf used on input line 113.
-(pdftex.def)             Requested size: 207.70865pt x 123.85088pt.
+] <rules_symb.png, id=183, 259.97125pt x 99.37125pt>
+File: rules_symb.png Graphic file (type png)
+ <use rules_symb.png>
+Package pdftex.def Info: rules_symb.png used on input line 119.
+(pdftex.def)             Requested size: 259.97061pt x 99.371pt.
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 134.
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--140
-
- []
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (./g07_rules.vhd
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 1.
 
 [6
 
- <./dealer_symb.pdf>]
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 144.
- (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-) (./g07_dealerFSM.vhd
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 1.
- [7]) [8]
-<dealertestcropped.png, id=203, 730.73pt x 135.50626pt>
-File: dealertestcropped.png Graphic file (type png)
+ <./rules_symb.png>]) [7]
+Underfull \hbox (badness 10000) in paragraph at lines 142--156
 
-<use dealertestcropped.png>
-Package pdftex.def Info: dealertestcropped.png used on input line 170.
-(pdftex.def)             Requested size: 548.04616pt x 101.62943pt.
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--178
+<rulesresults.png, id=231, 712.6625pt x 154.5775pt>
+File: rulesresults.png Graphic file (type png)
+ <use rulesresults.png>
+Package pdftex.def Info: rulesresults.png used on input line 160.
+(pdftex.def)             Requested size: 570.13078pt x 123.66214pt.
+
+Overfull \hbox (69.64679pt too wide) in paragraph at lines 160--161
+ [] 
+ []
+
+[8
+
+ <./rulesresults.png>] [9] [10
+
+] [11
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 206--228
 
  []
 
 
-Overfull \hbox (47.56216pt too wide) in paragraph at lines 161--178
+Underfull \hbox (badness 10000) in paragraph at lines 206--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--228
+
+ []
+
+[12
+
+] <dealer_symb.pdf, id=259, 159.77592pt x 95.26993pt>
+File: dealer_symb.pdf Graphic file (type pdf)
+ <use dealer_symb.pdf>
+Package pdftex.def Info: dealer_symb.pdf used on input line 235.
+(pdftex.def)             Requested size: 207.70865pt x 123.85088pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--262
+
+ []
+
+[13
+
+ <./dealer_symb.pdf>] (./g07_dealerFSM.vhd [14]) [15]
+<dealertestcropped.png, id=343, 730.73pt x 135.50626pt>
+File: dealertestcropped.png Graphic file (type png)
+
+<use dealertestcropped.png>
+Package pdftex.def Info: dealertestcropped.png used on input line 294.
+(pdftex.def)             Requested size: 548.04616pt x 101.62943pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--302
+
+ []
+
+
+Overfull \hbox (47.56216pt too wide) in paragraph at lines 285--302
 []
  []
 
 
-Overfull \hbox (10.22884pt too wide) in paragraph at lines 161--178
+Overfull \hbox (10.22884pt too wide) in paragraph at lines 285--302
 \OT1/cmr/m/n/12 Of course, the re-sults shown above can-not con-clu-sively con-
 firm the ex-cel-lence of the \OT1/pcr/m/n/12 g07[]dealerFSM
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--223
+Underfull \hbox (badness 10000) in paragraph at lines 305--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--223
+Underfull \hbox (badness 10000) in paragraph at lines 305--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--223
+Underfull \hbox (badness 10000) in paragraph at lines 305--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--223
+Underfull \hbox (badness 10000) in paragraph at lines 305--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--223
+Underfull \hbox (badness 10000) in paragraph at lines 305--347
 
  []
 
-[9
+[16
 
- <./dealertestcropped.png>] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 244--261
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 244--261
+ <./dealertestcropped.png>] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 369--386
 
  []
 
-[11
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--386
+
+ []
+
+[18
 
 ]
 Appendix A.
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 262.
-(./dealerFSM_tst.vhd [12
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 387.
+(./dealerFSM_tst.vhd [19
 
-]) [13]
+]) [20]
 Appendix B.
-<testbed_led.png, id=294, 617.30624pt x 516.93124pt>
+<testbed_led.png, id=433, 617.30624pt x 516.93124pt>
 File: testbed_led.png Graphic file (type png)
  <use testbed_led.png>
-Package pdftex.def Info: testbed_led.png used on input line 267.
+Package pdftex.def Info: testbed_led.png used on input line 392.
 (pdftex.def)             Requested size: 493.84566pt x 413.54555pt.
 
-<testbed_body.png, id=295, 1587.9325pt x 852.18375pt>
+<testbed_body.png, id=434, 1587.9325pt x 852.18375pt>
 File: testbed_body.png Graphic file (type png)
  <use testbed_body.png>
-Package pdftex.def Info: testbed_body.png used on input line 270.
+Package pdftex.def Info: testbed_body.png used on input line 395.
 (pdftex.def)             Requested size: 793.96431pt x 426.09082pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
 
-[14
+[21
 
  <./testbed_led.png>]
 Overfull \vbox (118.80533pt too high) has occurred while \output is active []
 
 
-[15 <./testbed_body.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
+[22 <./testbed_body.png>]
+Appendix C.
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--404
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--417
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
+[23
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
  (./DealerReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 273.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 432.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
 Package rerunfilecheck Info: File `DealerReport.out' has not changed.
-(rerunfilecheck)             Checksum: C781709D1B179BBA29251388BFA15953;970.
+(rerunfilecheck)             Checksum: 969006EC2B6B10E5505F64C36C4226D2;1798.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 5.26443pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 273.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 432.
  ) 
 Here is how much of TeX's memory you used:
- 9580 strings out of 493013
- 132041 string characters out of 6139316
- 362123 words of memory out of 5000000
- 12826 multiletter control sequences out of 15000+600000
+ 9679 strings out of 493013
+ 133335 string characters out of 6139316
+ 361020 words of memory out of 5000000
+ 12865 multiletter control sequences out of 15000+600000
  16747 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,12n,43p,245b,1973s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,12n,43p,245b,1963s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></u
-sr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on DealerReport.pdf (16 pages, 668003 bytes).
+/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/urw/cou
+rier/ucrb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on DealerReport.pdf (24 pages, 744624 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 334 compressed objects within 4 object streams
- 155 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 542 PDF objects out of 1000 (max. 8388607)
+ 488 compressed objects within 5 object streams
+ 210 named destinations out of 1000 (max. 500000)
+ 223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

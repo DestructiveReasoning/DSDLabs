@@ -1,5 +1,5 @@
 
-State Machine - |g07_dealer_testbed|g07_dealerFSM:inst2|state
+State Machine - |g07_dealerFSM|state
 Name state.D state.C state.B state.A 
 state.A 0 0 0 0 
 state.B 0 0 1 1 
