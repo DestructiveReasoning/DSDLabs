@@ -8,7 +8,7 @@ entity g07_rules is
 end g07_rules;
 
 architecture legal of g07_rules is
-	component mod13
+	component g07_mod13
 		port ( x: in std_logic_vector(5 downto 0);
 				modulo: out std_logic_vector(5 downto 0);
 				floor: out std_logic_vector(5 downto 0) );
@@ -16,8 +16,8 @@ architecture legal of g07_rules is
 
 	signal pile_value, pile_suit, card_value, card_suit: std_logic_vector(5 downto 0);
 begin
-	m1: mod13 port map(x => play_pile_top_card, floor => pile_suit, modulo => pile_value);
-	m2: mod13 port map(x => card_to_play, floor => card_suit, modulo => card_value);
+	m1: g07_mod13 port map(x => play_pile_top_card, floor => pile_suit, modulo => pile_value);
+	m2: g07_mod13 port map(x => card_to_play, floor => card_suit, modulo => card_value);
 
 	arbitration: process (pile_value,pile_suit,card_value,card_suit)
 	begin

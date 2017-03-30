@@ -12,14 +12,14 @@ architecture test of g07_rules_tst is
 			card_to_play: in std_logic_vector(5 downto 0);
 			legal_play: out std_logic);
 	end component;
-	component mod13
+	component g07_mod13
 		port (
 			x: in std_logic_vector(5 downto 0);
 			modulo: out std_logic_vector(5 downto 0);
 			floor: out std_logic_vector(5 downto 0));
 	end component;
 
-	SIGNAL top_card,play_card: std_logic_vector(5 downto 0);
+	SIGNAL top_card,play_card: std_logic_vector(5 downto 0) := "000000";
 	SIGNAL top_card_suit,play_card_suit,top_card_value,play_card_value: std_logic_vector(5 downto 0);
 	SIGNAL legal: std_logic;
 
@@ -31,14 +31,14 @@ begin
 		legal_play => legal
 	);
 
-	m1: mod13
+	m1: g07_mod13
 	port map (
 		x => top_card,
 		modulo => top_card_value,
 		floor => top_card_suit
 	);
 
-	m2: mod13
+	m2: g07_mod13
 	port map (
 		x => play_card,
 		modulo => play_card_value,
