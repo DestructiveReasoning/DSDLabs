@@ -1,0 +1,106 @@
+\documentclass[12pt]{report}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{lettrine}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[toc,page]{appendix}
+\usepackage{courier}
+
+\usepackage[margin=2cm]{geometry}
+
+\definecolor{dgrey}{rgb}{0.3,0.3,0.3}
+\definecolor{dyellow}{rgb}{0.6,0.6,0.0}
+\definecolor{gblue}{rgb}{0.35,0.35,0.6}
+
+\hypersetup{
+	colorlinks=true,
+	linktoc=all,
+	linkcolor=gblue,
+	citecolor=dyellow,
+}
+
+\lstset{basicstyle=\ttfamily\footnotesize, frame=single,
+breaklines=true,showstringspaces=false,numbers=left}
+
+\title{ECSE 323 - Digital System Design\\After Action Report - The Craziest Eights Known To Man}
+\author{Harley Wiltzer (260690006)\\Spiros-Daniel Mavroidakos (260689391)}
+\date{April 11, 2017}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Harley Wiltzer (260690006), Spiros-Daniel Mavroidakos (260689391) - Vandelay Industries}
+\pagenumbering{arabic}
+\tableofcontents
+\part[A Barbarous Prolegomenon]{A Barbarous Prolegomenon\\\begin{center}\textnormal{\normalsize
+		\\\textit{``Every hand's a winner,\\And every hand's a loser,\\So the best that you can hope
+		for\\Is to die in your sleep''\\ - Kenny Rogers, The Gambler}}\end{center}}
+\chapter*{A Barbarous Prolegomenon}
+\lettrine{H}ere we are at last: after many weeks of frustration, anger, euphoria, and fine
+documentation, the crazy eights system has finally experienced completion. The familiar reader
+hopefully learned not only about digital systems throughout this daring adventure, but also about
+love, about life, and about the categorical imperative. The reader is strongly discouraged,
+regardless of his exposure to the previous reports that have been published, to avoid ignoring this
+final frontier, as not only will it open the doors to unconquered kinds of clarity, but it will clear up
+and fill the \textit{lacunae} of the previous readings as well.\\\\
+There was once a time when neither Wiltzer or Mavroidakos could write a single line of VHDL without
+saying the Lord's name in vain. On that note, there was also a time when neither Wiltzer or
+Mavroidakos could tie their shoes without assistance. But was there ever a time when both Wiltzer
+and Mavroidakos \textit{had no shoes}? The point that is being made here is that while Wiltzer and
+Mavroidakos may, at one point, have not been able to design VHDL descriptions with any marginal
+degree of competence, that \textit{is not} an indication that Wiltzer and Mavroidakos will never be
+competent enough to write VHDL. This is because although there was a time when Wiltzer and
+Mavroidakos could not write respectable VHDL, they always \textit{had} VHDL in their souls. In fact,
+not only will this lab report demonstrate a considerable
+degree of competence in VHDL code, but the VHDL written by Wiltzer and Mavroidakos is projected by
+some to be considered VHDL's ``The Catcher in the Rye'' by February 2024.\\\\
+Since the conception of the infamous Bi-directional Jenga Tower (known as a stack to the
+less-informed) of Laboratory Session 3, it has been at the peak of digital systems enthusiasts'
+focus. However, it was not good enough for its developers, as it was deemed ``sloppy'', ``bloated'',
+and ``slightly cancerous''. As such, a new and improved Bi-directional Jenga Tower was designed for
+the implementation of the full Crazy Eights system, and it was done using VHDL alone. Of exceptional
+note here is that the BJT was designed without Quartus. No hot, sticky, messy Quartus, no Quartus at
+all! Should this be considered ingenious, or should it be considered humanity's greatest
+mistake?\\\\
+Allow me to be Frank: There were several occasions throughout the writings of the past four
+laboratory reports that exhibited some mild sarcasm. Of particular note was the constant praise of
+the Altera Quartus II and Modelsim software, which are indeed so inconvenient that not even
+Mother Theresa would save them from a fire. In fact, the horrendous user experience provided by
+Quartus II and Modelsim are what \textit{prompted} the designers to create the new and improved BJT
+in VHDL. To answer the concluding question of the previous paragraph, the decision to avoid Quartus
+in the design of the new BJT has so far been considered ingenious by even the most qualified of
+bystanders. As the attentive reader may pick up on throughout this report, one of the incredible
+features of the new BJT is that it's depth is modular - that is to say, the same circuit block can
+be used to create a 52-card stack and a 26-card stack. This ultimately made the design of the full
+system far cleaner and easier to manage.\\\\
+It is not the author's intention to spoil the remainder of this report by giving away all of the
+juicy details in this barbarous prolegomenon. Therefore, it is intended to conclude the beginning of
+this report prophylactically before it is no longer the beginning. But first, the reader should be
+warned that what
+is about to be exhibited is \textit{particularly} intense. For this reason, for the optimal experience,
+it is suggested that the reader digest this report with lots of paper handy and a fountain pen in
+hand, with tissue paper available, and in close vicinity to one or more restrooms. \\\\
+Furthermore, it
+is important to understand that this report \textit{is not} a novel, and thus should not be read
+like one. Do not attempt to read this report like you would read ``Cloudy with a Chance of
+Meatballs'', for example. Instead, this report should be read in a similar fashion to how one might
+read ``The Origin of Species'', which is considered by many to be on approximately the same scale in
+terms of intellectual \textit{étalage} and scientific significance.\\\\
+Finally, although communication by writing is not done face to face, the authors feel that this
+report may be the analogue to the last time they'll ever see you again. Special care was taken to
+ensure that this report was entirely complete, so that clarity may be reliably established.
+Although it is unfortunate that this channel of communication must cease after the publishing of
+this report, do not interpret this as a sad or even moderately-unhappy occasion. In truth, a lot was
+learned over the course of these laboratory sessions, and such education was made possible by the
+support of the readers. Although this dialog must end, the lessons, discoveries, and memories of
+these laboratory sessions will be around forever. \\\\That's what writing is for, after all. 
+\end{document}
