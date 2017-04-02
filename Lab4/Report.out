@@ -1,0 +1,24 @@
+\BOOKMARK [-1][-]{part.1}{I A Pleasant Preamble}{}% 1
+\BOOKMARK [-1][-]{part.2}{II The Rules Circuit}{}% 2
+\BOOKMARK [0][-]{chapter*.2}{Introduction and Rationale}{part.2}% 3
+\BOOKMARK [0][-]{chapter*.3}{Circuit Description}{part.2}% 4
+\BOOKMARK [1][-]{section*.4}{Description of ports}{chapter*.3}% 5
+\BOOKMARK [1][-]{section*.8}{VHDL charicature of the g07\137rules circuit}{chapter*.3}% 6
+\BOOKMARK [0][-]{chapter*.9}{With Regards to the Testing of the Rules Circuit}{part.2}% 7
+\BOOKMARK [0][-]{chapter*.10}{The Computer Analysis of the Rules Circuit}{part.2}% 8
+\BOOKMARK [1][-]{section*.11}{The Flow Summary}{chapter*.10}% 9
+\BOOKMARK [1][-]{section*.12}{The Timing Analysis}{chapter*.10}% 10
+\BOOKMARK [-1][-]{part.3}{III The Dealer Circuit}{}% 11
+\BOOKMARK [0][-]{chapter*.13}{Introduction and Rationale}{part.3}% 12
+\BOOKMARK [0][-]{chapter*.14}{Circuit Description}{part.3}% 13
+\BOOKMARK [1][-]{section*.15}{Description of ports}{chapter*.14}% 14
+\BOOKMARK [1][-]{section*.21}{VHDL portrayal of the g07\137dealerFSM circuit}{chapter*.14}% 15
+\BOOKMARK [0][-]{chapter*.22}{On the Testing of the Dealer Circuit}{part.3}% 16
+\BOOKMARK [1][-]{section*.23}{The software circuit simulation: a poor man's analysis}{chapter*.22}% 17
+\BOOKMARK [1][-]{section*.24}{The hardware circuit simulation: an Engineer's victory}{chapter*.22}% 18
+\BOOKMARK [0][-]{chapter*.25}{Computer Analysis of the Dealer Circuit}{part.3}% 19
+\BOOKMARK [1][-]{section*.26}{The Flow Summary}{chapter*.25}% 20
+\BOOKMARK [1][-]{section*.27}{The Timing Analysis}{chapter*.25}% 21
+\BOOKMARK [0][-]{appendix.A}{VHDL Testbench for the g07\137dealerFSM}{part.3}% 22
+\BOOKMARK [0][-]{appendix.B}{Testbed for the g07\137dealerFSM}{part.3}% 23
+\BOOKMARK [0][-]{appendix.C}{Proving the Finite-ness of the State Machine}{part.3}% 24

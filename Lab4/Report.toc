@@ -1,0 +1,24 @@
+\contentsline {part}{I\hspace {1em}A Pleasant Preamble}{2}{part.1}
+\contentsline {part}{II\hspace {1em}The Rules Circuit}{4}{part.2}
+\contentsline {chapter}{Introduction and Rationale}{5}{chapter*.2}
+\contentsline {chapter}{Circuit Description}{6}{chapter*.3}
+\contentsline {section}{Description of ports}{6}{section*.4}
+\contentsline {section}{VHDL charicature of the \texttt {g07\_rules} circuit}{6}{section*.8}
+\contentsline {chapter}{With Regards to the Testing of the Rules Circuit}{8}{chapter*.9}
+\contentsline {chapter}{The Computer Analysis of the Rules Circuit}{10}{chapter*.10}
+\contentsline {section}{The Flow Summary}{10}{section*.11}
+\contentsline {section}{The Timing Analysis}{10}{section*.12}
+\contentsline {part}{III\hspace {1em}The Dealer Circuit}{11}{part.3}
+\contentsline {chapter}{Introduction and Rationale}{12}{chapter*.13}
+\contentsline {chapter}{Circuit Description}{13}{chapter*.14}
+\contentsline {section}{Description of ports}{13}{section*.15}
+\contentsline {section}{VHDL portrayal of the \texttt {g07\_dealerFSM} circuit}{14}{section*.21}
+\contentsline {chapter}{On the Testing of the Dealer Circuit}{16}{chapter*.22}
+\contentsline {section}{The software circuit simulation: a poor man's analysis}{16}{section*.23}
+\contentsline {section}{The hardware circuit simulation: an Engineer's victory}{17}{section*.24}
+\contentsline {chapter}{Computer Analysis of the Dealer Circuit}{18}{chapter*.25}
+\contentsline {section}{The Flow Summary}{18}{section*.26}
+\contentsline {section}{The Timing Analysis}{18}{section*.27}
+\contentsline {chapter}{\numberline {A}VHDL Testbench for the \texttt {g07\_dealerFSM}}{19}{appendix.A}
+\contentsline {chapter}{\numberline {B}Testbed for the \texttt {g07\_dealerFSM}}{21}{appendix.B}
+\contentsline {chapter}{\numberline {C}Proving the Finite-ness of the State Machine}{23}{appendix.C}

@@ -1,4 +1,10 @@
 v 4
+file . "bjtst.vhd" "bd7d7a4de99713b7ebf0635ea7812eeebb463ab2" "20170330160612.851":
+  entity bjtst at 1( 0) + 0 on 163;
+  architecture test of bjtst at 9( 116) + 0 on 164;
+file . "compFSMtst.vhd" "aa5f8f31876e948f35fad8d34c81ff2d532222c1" "20170330150230.517":
+  entity compfsmtst at 1( 0) + 0 on 129;
+  architecture test of compfsmtst at 7( 71) + 0 on 130;
 file . "g07_computerFSM.vhd" "9849c44f649851e1f97565c4550a33310674cee3" "20170329011823.651":
   entity g07_computerfsm at 1( 0) + 0 on 119;
   architecture fsm of g07_computerfsm at 19( 385) + 0 on 120;
@@ -32,12 +38,15 @@ file . "dff_tst.vhd" "4ff15953e32529752343c83cc6afa83bd5df1ea4" "20170326201101.
 file . "g07_omnimux.vhd" "b561a5a5de13faf80cc07f43ddfa7192f346ea7e" "20170326204556.688":
   entity g07_omnimux at 1( 0) + 0 on 37;
   architecture mux of g07_omnimux at 17( 364) + 0 on 38;
-file . "g07_bjt.vhd" "22c784fdb0483ebd7c71b20d4afb50c369d13ec6" "20170328021413.689":
-  entity g07_bjt at 1( 0) + 0 on 111;
-  architecture stacklike of g07_bjt at 25( 634) + 0 on 112;
 file . "bjt_tst.vhd" "2e940af5fbab70e26219b64a618bde48f9ca5122" "20170328021417.795":
   entity bjt_tst at 1( 0) + 0 on 113;
   architecture test of bjt_tst at 9( 118) + 0 on 114;
 file . "computerFSM_tst.vhd" "5713b37e9d1b4c8ec3b5dff839f7a888be2a3124" "20170329012145.214":
   entity computerfsm_tst at 1( 0) + 0 on 123;
   architecture test of computerfsm_tst at 7( 76) + 0 on 124;
+file . "compFSM.vhd" "d70a7922f69b58f6b2fa39a083eaf83bf2e8dd0f" "20170330145634.638":
+  entity compfsm at 1( 0) + 0 on 125;
+  architecture fsm of compfsm at 19( 369) + 0 on 126;
+file . "bjt.vhd" "d9c2c77bb597977aa90680e7bf5d0ef46fe9bcb2" "20170330160609.866":
+  entity bjt at 1( 0) + 0 on 161;
+  architecture stacklike of bjt at 26( 680) + 0 on 162;
