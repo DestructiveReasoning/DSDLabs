@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity g07_compare is
-	generic (width: integer);
+	generic (width: integer := 6);
 	port (dataa: in std_logic_vector(width-1 downto 0);
 		datab: in std_logic_vector(width-1 downto 0);
 		eq: out std_logic;

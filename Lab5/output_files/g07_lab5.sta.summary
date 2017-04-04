@@ -3,27 +3,67 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'clock'
-Slack : -5.640
-TNS   : -1768.157
+Slack : -14.571
+TNS   : -5741.862
+
+Type  : Slow Model Setup 'g07_dealerFSM:inst23|state.D'
+Slack : -2.444
+TNS   : -14.664
 
 Type  : Slow Model Hold 'clock'
-Slack : 0.620
+Slack : -2.500
+TNS   : -20.764
+
+Type  : Slow Model Hold 'g07_dealerFSM:inst23|state.D'
+Slack : 0.971
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'clock'
+Slack : -1.048
+TNS   : -6.288
+
+Type  : Slow Model Removal 'clock'
+Slack : 1.643
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clock'
 Slack : -1.631
-TNS   : -421.999
+TNS   : -960.901
+
+Type  : Slow Model Minimum Pulse Width 'g07_dealerFSM:inst23|state.D'
+Slack : -0.611
+TNS   : -7.332
 
 Type  : Fast Model Setup 'clock'
-Slack : -1.624
-TNS   : -494.749
+Slack : -4.744
+TNS   : -1743.707
+
+Type  : Fast Model Setup 'g07_dealerFSM:inst23|state.D'
+Slack : -0.361
+TNS   : -2.166
 
 Type  : Fast Model Hold 'clock'
-Slack : 0.239
+Slack : -1.692
+TNS   : -300.674
+
+Type  : Fast Model Hold 'g07_dealerFSM:inst23|state.D'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'clock'
+Slack : 0.078
+TNS   : 0.000
+
+Type  : Fast Model Removal 'clock'
+Slack : 0.749
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clock'
 Slack : -1.380
-TNS   : -345.380
+TNS   : -786.380
+
+Type  : Fast Model Minimum Pulse Width 'g07_dealerFSM:inst23|state.D'
+Slack : -0.500
+TNS   : -6.000
 
 ------------------------------------------------------------

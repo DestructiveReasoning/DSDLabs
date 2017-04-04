@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Mar 30 17:05:16 2017
+Analysis & Synthesis Status : Successful - Tue Apr  4 15:04:47 2017
 Quartus II 32-bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
 Revision Name : g07_lab5
-Top-level Entity Name : bjt
+Top-level Entity Name : g07_lab5
 Family : Cyclone II
-Total logic elements : 746
-    Total combinational functions : 746
-    Dedicated logic registers : 344
-Total registers : 344
-Total pins : 31
+Total logic elements : 1,697
+    Total combinational functions : 1,552
+    Dedicated logic registers : 791
+Total registers : 791
+Total pins : 42
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

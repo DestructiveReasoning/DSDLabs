@@ -1,5 +1,19 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="g07_lab5">
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|LPM_CONSTANT:inst27" CBX_FILE_NAME="lpm_constant_u64.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|LPM_CONSTANT:inst41" CBX_FILE_NAME="lpm_constant_074.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|LPM_COUNTER:inst12" CBX_FILE_NAME="cntr_t9e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst35|LPM_COMPARE:inst21" CBX_FILE_NAME="cmpr_65d.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|randinator:inst87|g07_RANDU:randu|LPM_ADD_SUB:M2" CBX_FILE_NAME="add_sub_ree.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|LPM_COUNTER:inst31" CBX_FILE_NAME="cntr_3nh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|LPM_COUNTER:inst4" CBX_FILE_NAME="cntr_40h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst34|LPM_COUNTER:inst8" CBX_FILE_NAME="cntr_7jg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst36|LPM_COMPARE:inst21" CBX_FILE_NAME="cmpr_65d.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|LPM_CONSTANT:inst30" CBX_FILE_NAME="lpm_constant_7a4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst35|LPM_COUNTER:inst8" CBX_FILE_NAME="cntr_7jg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst34|LPM_COMPARE:inst21" CBX_FILE_NAME="cmpr_65d.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst36|LPM_COUNTER:inst8" CBX_FILE_NAME="cntr_7jg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|randinator:inst87|g07_RANDU:randu|LPM_ADD_SUB:M1" CBX_FILE_NAME="add_sub_ree.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

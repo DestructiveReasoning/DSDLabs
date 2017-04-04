@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity g07_busmux21 is
 	generic (
-		width: INTEGER
+		width: INTEGER := 6
 	);
 
 	port (

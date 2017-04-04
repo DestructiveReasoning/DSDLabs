@@ -1,52 +1,55 @@
 v 4
-file . "bjtst.vhd" "bd7d7a4de99713b7ebf0635ea7812eeebb463ab2" "20170330160612.851":
-  entity bjtst at 1( 0) + 0 on 163;
-  architecture test of bjtst at 9( 116) + 0 on 164;
-file . "compFSMtst.vhd" "aa5f8f31876e948f35fad8d34c81ff2d532222c1" "20170330150230.517":
-  entity compfsmtst at 1( 0) + 0 on 129;
-  architecture test of compfsmtst at 7( 71) + 0 on 130;
-file . "g07_computerFSM.vhd" "9849c44f649851e1f97565c4550a33310674cee3" "20170329011823.651":
-  entity g07_computerfsm at 1( 0) + 0 on 119;
-  architecture fsm of g07_computerfsm at 19( 385) + 0 on 120;
-file . "omnimux_tst.vhd" "01f3d6ab4ecf96d8d101a74dce5956d0e331b0d8" "20170326205505.938":
-  entity omnimux_tst at 1( 0) + 0 on 39;
-  architecture test of omnimux_tst at 8( 98) + 0 on 40;
-file . "g07_dff.vhd" "d699c4c1f45b027f1caac5f10ec9ba22467eb79d" "20170326201055.981":
-  entity g07_dff at 1( 0) + 0 on 33;
-  architecture flippityflop of g07_dff at 20( 347) + 0 on 34;
-file . "popenable_tst.vhd" "2337d3aa466432cc89d23643a1fdc37dab844a03" "20170326193615.261":
-  entity popenable_tst at 1( 0) + 0 on 25;
-  architecture test of popenable_tst at 8( 100) + 0 on 26;
-file . "g07_compare.vhd" "8d469043f17779a6a2cc947a787ae42acb917546" "20170326160503.726":
-  entity g07_compare at 1( 0) + 0 on 15;
-  architecture comp of g07_compare at 14( 278) + 0 on 16;
-file . "g07_busmux21.vhd" "d80fc1d961e340aee7eb514e611a91adcc853943" "20170326154712.898":
-  entity g07_busmux21 at 1( 0) + 0 on 11;
-  architecture multiplexor of g07_busmux21 at 17( 297) + 0 on 12;
-file . "busmux21_tst.vhd" "8092b92d1258273572b3e38beeb0ed7f2f9dd921" "20170326155314.663":
-  entity busmux21_tst at 1( 0) + 0 on 13;
-  architecture test of busmux21_tst at 7( 73) + 0 on 14;
-file . "compare_tst.vhd" "5cee99f2fbac99ef2bce168350fa0e86df8d5d2b" "20170326160703.691":
-  entity compare_tst at 1( 0) + 0 on 19;
-  architecture test of compare_tst at 7( 72) + 0 on 20;
-file . "g07_popenable.vhd" "698f9539338717b80afe0e94ee88f937d124665c" "20170326192850.007":
-  entity g07_popenable at 1( 0) + 0 on 21;
-  architecture rom of g07_popenable at 13( 235) + 0 on 22;
-file . "dff_tst.vhd" "4ff15953e32529752343c83cc6afa83bd5df1ea4" "20170326201101.746":
-  entity dff_tst at 1( 0) + 0 on 35;
-  architecture test of dff_tst at 7( 76) + 0 on 36;
-file . "g07_omnimux.vhd" "b561a5a5de13faf80cc07f43ddfa7192f346ea7e" "20170326204556.688":
-  entity g07_omnimux at 1( 0) + 0 on 37;
-  architecture mux of g07_omnimux at 17( 364) + 0 on 38;
-file . "bjt_tst.vhd" "2e940af5fbab70e26219b64a618bde48f9ca5122" "20170328021417.795":
-  entity bjt_tst at 1( 0) + 0 on 113;
-  architecture test of bjt_tst at 9( 118) + 0 on 114;
-file . "computerFSM_tst.vhd" "5713b37e9d1b4c8ec3b5dff839f7a888be2a3124" "20170329012145.214":
-  entity computerfsm_tst at 1( 0) + 0 on 123;
-  architecture test of computerfsm_tst at 7( 76) + 0 on 124;
-file . "compFSM.vhd" "d70a7922f69b58f6b2fa39a083eaf83bf2e8dd0f" "20170330145634.638":
-  entity compfsm at 1( 0) + 0 on 125;
-  architecture fsm of compfsm at 19( 369) + 0 on 126;
+file . "systemFSM.vhd" "cee7e1f8203c008ed67b3762c7e0c1bad790f43d" "20170402170430.240":
+  entity systemfsm at 1( 0) + 0 on 165;
+  architecture system of systemfsm at 31( 746) + 0 on 166;
 file . "bjt.vhd" "d9c2c77bb597977aa90680e7bf5d0ef46fe9bcb2" "20170330160609.866":
   entity bjt at 1( 0) + 0 on 161;
   architecture stacklike of bjt at 26( 680) + 0 on 162;
+file . "compFSM.vhd" "d70a7922f69b58f6b2fa39a083eaf83bf2e8dd0f" "20170330145634.638":
+  entity compfsm at 1( 0) + 0 on 125;
+  architecture fsm of compfsm at 19( 369) + 0 on 126;
+file . "computerFSM_tst.vhd" "5713b37e9d1b4c8ec3b5dff839f7a888be2a3124" "20170329012145.214":
+  entity computerfsm_tst at 1( 0) + 0 on 123;
+  architecture test of computerfsm_tst at 7( 76) + 0 on 124;
+file . "bjt_tst.vhd" "2e940af5fbab70e26219b64a618bde48f9ca5122" "20170328021417.795":
+  entity bjt_tst at 1( 0) + 0 on 113;
+  architecture test of bjt_tst at 9( 118) + 0 on 114;
+file . "g07_omnimux.vhd" "b561a5a5de13faf80cc07f43ddfa7192f346ea7e" "20170326204556.688":
+  entity g07_omnimux at 1( 0) + 0 on 37;
+  architecture mux of g07_omnimux at 17( 364) + 0 on 38;
+file . "dff_tst.vhd" "4ff15953e32529752343c83cc6afa83bd5df1ea4" "20170326201101.746":
+  entity dff_tst at 1( 0) + 0 on 35;
+  architecture test of dff_tst at 7( 76) + 0 on 36;
+file . "g07_popenable.vhd" "698f9539338717b80afe0e94ee88f937d124665c" "20170326192850.007":
+  entity g07_popenable at 1( 0) + 0 on 21;
+  architecture rom of g07_popenable at 13( 235) + 0 on 22;
+file . "compare_tst.vhd" "5cee99f2fbac99ef2bce168350fa0e86df8d5d2b" "20170326160703.691":
+  entity compare_tst at 1( 0) + 0 on 19;
+  architecture test of compare_tst at 7( 72) + 0 on 20;
+file . "busmux21_tst.vhd" "8092b92d1258273572b3e38beeb0ed7f2f9dd921" "20170326155314.663":
+  entity busmux21_tst at 1( 0) + 0 on 13;
+  architecture test of busmux21_tst at 7( 73) + 0 on 14;
+file . "g07_busmux21.vhd" "d80fc1d961e340aee7eb514e611a91adcc853943" "20170326154712.898":
+  entity g07_busmux21 at 1( 0) + 0 on 11;
+  architecture multiplexor of g07_busmux21 at 17( 297) + 0 on 12;
+file . "g07_compare.vhd" "8d469043f17779a6a2cc947a787ae42acb917546" "20170326160503.726":
+  entity g07_compare at 1( 0) + 0 on 15;
+  architecture comp of g07_compare at 14( 278) + 0 on 16;
+file . "popenable_tst.vhd" "2337d3aa466432cc89d23643a1fdc37dab844a03" "20170326193615.261":
+  entity popenable_tst at 1( 0) + 0 on 25;
+  architecture test of popenable_tst at 8( 100) + 0 on 26;
+file . "g07_dff.vhd" "d699c4c1f45b027f1caac5f10ec9ba22467eb79d" "20170326201055.981":
+  entity g07_dff at 1( 0) + 0 on 33;
+  architecture flippityflop of g07_dff at 20( 347) + 0 on 34;
+file . "omnimux_tst.vhd" "01f3d6ab4ecf96d8d101a74dce5956d0e331b0d8" "20170326205505.938":
+  entity omnimux_tst at 1( 0) + 0 on 39;
+  architecture test of omnimux_tst at 8( 98) + 0 on 40;
+file . "g07_computerFSM.vhd" "9849c44f649851e1f97565c4550a33310674cee3" "20170329011823.651":
+  entity g07_computerfsm at 1( 0) + 0 on 119;
+  architecture fsm of g07_computerfsm at 19( 385) + 0 on 120;
+file . "compFSMtst.vhd" "aa5f8f31876e948f35fad8d34c81ff2d532222c1" "20170330150230.517":
+  entity compfsmtst at 1( 0) + 0 on 129;
+  architecture test of compfsmtst at 7( 71) + 0 on 130;
+file . "bjtst.vhd" "bd7d7a4de99713b7ebf0635ea7812eeebb463ab2" "20170330160612.851":
+  entity bjtst at 1( 0) + 0 on 163;
+  architecture test of bjtst at 9( 116) + 0 on 164;

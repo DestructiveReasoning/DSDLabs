@@ -1,5 +1,5 @@
 Flow report for g07_stack
-Thu Mar 30 10:29:30 2017
+Sun Apr  2 16:18:08 2017
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 30 10:29:30 2017      ;
+; Flow Status                        ; Successful - Sun Apr  2 16:18:08 2017      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; g07_stack                                  ;
-; Top-level Entity Name              ; g07_dealerFSM                              ;
+; Top-level Entity Name              ; g07_dealer_testbed                         ;
 ; Family                             ; Cyclone II                                 ;
 ; Device                             ; EP2C20F484C7                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 3 / 18,752 ( < 1 % )                       ;
-;     Total combinational functions  ; 3 / 18,752 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 3 / 18,752 ( < 1 % )                       ;
-; Total registers                    ; 3                                          ;
-; Total pins                         ; 6 / 315 ( 2 % )                            ;
+; Total logic elements               ; 688 / 18,752 ( 4 % )                       ;
+;     Total combinational functions  ; 688 / 18,752 ( 4 % )                       ;
+;     Dedicated logic registers      ; 358 / 18,752 ( 2 % )                       ;
+; Total registers                    ; 358                                        ;
+; Total pins                         ; 37 / 315 ( 12 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0 / 239,616 ( 0 % )                        ;
+; Total memory bits                  ; 1,664 / 239,616 ( < 1 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
@@ -64,37 +64,39 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/30/2017 10:28:39 ;
+; Start date & time ; 04/02/2017 16:17:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; g07_stack           ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                             ;
-+-------------------------------------+-------------------------------------------------------+---------------+---------------+----------------+
-; Assignment Name                     ; Value                                                 ; Default Value ; Entity Name   ; Section Id     ;
-+-------------------------------------+-------------------------------------------------------+---------------+---------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.149086611809355                                     ; --            ; --            ; --             ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                    ; --            ; --            ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                           ; --            ; --            ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                             ; <None>        ; --            ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                                  ; --            ; --            ; eda_simulation ;
-; ENABLE_SIGNALTAP                    ; On                                                    ; --            ; --            ; --             ;
-; IP_TOOL_NAME                        ; LPM_CONSTANT                                          ; --            ; --            ; --             ;
-; IP_TOOL_VERSION                     ; 13.0                                                  ; --            ; --            ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                    ; --            ; --            ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                     ; --            ; --            ; --             ;
-; MISC_FILE                           ; lpm_constant0.bsf                                     ; --            ; --            ; --             ;
-; MISC_FILE                           ; lpm_constant0.cmp                                     ; --            ; --            ; --             ;
-; PARTITION_COLOR                     ; 16764057                                              ; --            ; g07_dealerFSM ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                 ; --            ; g07_dealerFSM ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                                ; --            ; g07_dealerFSM ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --            ; --            ; --             ;
-; SLD_FILE                            ; D:/DSDLabs/Lab3/g07_stack52_testbed_auto_stripped.stp ; --            ; --            ; --             ;
-; TOP_LEVEL_ENTITY                    ; g07_dealerFSM                                         ; g07_stack     ; --            ; --             ;
-; USE_SIGNALTAP_FILE                  ; g07_stack52_testbed.stp                               ; --            ; --            ; --             ;
-+-------------------------------------+-------------------------------------------------------+---------------+---------------+----------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                  ;
++-------------------------------------+-------------------------------------------------------+---------------+--------------------+----------------+
+; Assignment Name                     ; Value                                                 ; Default Value ; Entity Name        ; Section Id     ;
++-------------------------------------+-------------------------------------------------------+---------------+--------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 0.149114625526810                                     ; --            ; --                 ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                    ; --            ; --                 ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                           ; --            ; --                 ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                             ; <None>        ; --                 ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                                  ; --            ; --                 ; eda_simulation ;
+; ENABLE_SIGNALTAP                    ; On                                                    ; --            ; --                 ; --             ;
+; IP_TOOL_NAME                        ; LPM_CONSTANT                                          ; --            ; --                 ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                                                  ; --            ; --                 ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                    ; --            ; --                 ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                     ; --            ; --                 ; --             ;
+; MISC_FILE                           ; lpm_constant0.bsf                                     ; --            ; --                 ; --             ;
+; MISC_FILE                           ; lpm_constant0.cmp                                     ; --            ; --                 ; --             ;
+; PARTITION_COLOR                     ; 16764057                                              ; --            ; g07_dealer_testbed ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                 ; --            ; g07_dealer_testbed ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                ; --            ; g07_dealer_testbed ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --            ; --                 ; --             ;
+; SLD_FILE                            ; D:/DSDLabs/Lab3/g07_stack52_testbed_auto_stripped.stp ; --            ; --                 ; --             ;
+; TOP_LEVEL_ENTITY                    ; g07_dealer_testbed                                    ; g07_stack     ; --                 ; --             ;
+; USE_SIGNALTAP_FILE                  ; g07_stack52_testbed.stp                               ; --            ; --                 ; --             ;
+; VHDL_INPUT_VERSION                  ; VHDL_2008                                             ; VHDL_1993     ; --                 ; --             ;
+; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                                   ; --            ; --                 ; --             ;
++-------------------------------------+-------------------------------------------------------+---------------+--------------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -102,12 +104,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 363 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:07     ; 1.5                     ; 501 MB              ; 00:00:05                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 343 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 348 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 301 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:15     ; --                      ; --                  ; 00:00:11                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 396 MB              ; 00:00:05                           ;
+; Fitter                    ; 00:00:07     ; 1.9                     ; 506 MB              ; 00:00:10                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 356 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 359 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 313 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:17     ; --                      ; --                  ; 00:00:19                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,5 +1,5 @@
 Flow report for g07_lab5
-Thu Mar 30 17:05:44 2017
+Tue Apr  4 15:05:21 2017
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 30 17:05:44 2017      ;
+; Flow Status                        ; Successful - Tue Apr  4 15:05:21 2017      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; g07_lab5                                   ;
-; Top-level Entity Name              ; bjt                                        ;
+; Top-level Entity Name              ; g07_lab5                                   ;
 ; Family                             ; Cyclone II                                 ;
 ; Device                             ; EP2C20F484C7                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 746 / 18,752 ( 4 % )                       ;
-;     Total combinational functions  ; 746 / 18,752 ( 4 % )                       ;
-;     Dedicated logic registers      ; 344 / 18,752 ( 2 % )                       ;
-; Total registers                    ; 344                                        ;
-; Total pins                         ; 31 / 315 ( 10 % )                          ;
+; Total logic elements               ; 1,712 / 18,752 ( 9 % )                     ;
+;     Total combinational functions  ; 1,553 / 18,752 ( 8 % )                     ;
+;     Dedicated logic registers      ; 791 / 18,752 ( 4 % )                       ;
+; Total registers                    ; 791                                        ;
+; Total pins                         ; 42 / 315 ( 13 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/30/2017 17:05:12 ;
+; Start date & time ; 04/04/2017 15:04:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; g07_lab5            ;
 +-------------------+---------------------+
@@ -75,18 +75,17 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.149088991228264                     ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 0.149133268115147                     ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; bjt         ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; bjt         ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; bjt         ; Top            ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; bjt                                   ; g07_lab5      ; --          ; --             ;
 ; VHDL_INPUT_VERSION                  ; VHDL_2008                             ; VHDL_1993     ; --          ; --             ;
 ; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                   ; --            ; --          ; --             ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
@@ -97,12 +96,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 375 MB              ; 00:00:04                           ;
-; Fitter                    ; 00:00:08     ; 2.3                     ; 514 MB              ; 00:00:11                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 338 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 359 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 318 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:15     ; --                      ; --                  ; 00:00:19                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 385 MB              ; 00:00:06                           ;
+; Fitter                    ; 00:00:13     ; 1.5                     ; 514 MB              ; 00:00:19                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 349 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 358 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 329 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:31                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

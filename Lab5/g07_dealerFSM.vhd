@@ -43,7 +43,7 @@ begin
 					else state <= D;
 					end if;
 				WHEN D =>
-					state <= A;
+					state <= B;
 			end CASE;
 		end if;
 	end process machine;

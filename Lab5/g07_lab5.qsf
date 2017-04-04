@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C20F484C7
-set_global_assignment -name TOP_LEVEL_ENTITY bjt
+set_global_assignment -name TOP_LEVEL_ENTITY g07_lab5
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:16:10  MARCH 28, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.0
@@ -51,10 +51,72 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulati
 set_global_assignment -name VHDL_FILE g07_bjt.vhd
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VHDL_FILE bjt.vhd
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE bjt52.vhd
+set_global_assignment -name VHDL_FILE bjt26.vhd
+set_global_assignment -name VHDL_FILE compFSM.vhd
+set_global_assignment -name BDF_FILE g07_lab5.bdf
+set_global_assignment -name VHDL_FILE g07_counter.vhd
+set_global_assignment -name VHDL_FILE g07_register6.vhd
+set_global_assignment -name VHDL_FILE g07_compare.vhd
+set_global_assignment -name VHDL_FILE g07_rules.vhd
+set_global_assignment -name VHDL_FILE g07_busmux21.vhd
+set_global_assignment -name VHDL_FILE g07_RANDU.vhd
+set_global_assignment -name VHDL_FILE g07_numreducer.vhd
+set_global_assignment -name VHDL_FILE g07_dealerFSM.vhd
+set_global_assignment -name VHDL_FILE systemFSM.vhd
+set_global_assignment -name VHDL_FILE g07_debounder.vhd
+set_global_assignment -name BDF_FILE g07_debounder.bdf
+set_global_assignment -name VHDL_FILE g07_mod13.vhd
+set_global_assignment -name VHDL_FILE g07_7_segment_decoder.vhd
+set_global_assignment -name VHDL_FILE g07_and6.vhd
+set_global_assignment -name VHDL_FILE randinator.vhd
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_D4 -to svnll[6]
+set_location_assignment PIN_F3 -to svnll[5]
+set_location_assignment PIN_L8 -to svnll[4]
+set_location_assignment PIN_J4 -to svnll[3]
+set_location_assignment PIN_D6 -to svnll[2]
+set_location_assignment PIN_D5 -to svnll[1]
+set_location_assignment PIN_F4 -to svnll[0]
+set_location_assignment PIN_D3 -to svnlr[6]
+set_location_assignment PIN_E4 -to svnlr[5]
+set_location_assignment PIN_E3 -to svnlr[4]
+set_location_assignment PIN_C1 -to svnlr[3]
+set_location_assignment PIN_C2 -to svnlr[2]
+set_location_assignment PIN_G6 -to svnlr[1]
+set_location_assignment PIN_G5 -to svnlr[0]
+set_location_assignment PIN_D1 -to svnrl[6]
+set_location_assignment PIN_D2 -to svnrl[5]
+set_location_assignment PIN_G3 -to svnrl[4]
+set_location_assignment PIN_H4 -to svnrl[3]
+set_location_assignment PIN_H5 -to svnrl[2]
+set_location_assignment PIN_H6 -to svnrl[1]
+set_location_assignment PIN_E1 -to svnrl[0]
+set_location_assignment PIN_E2 -to svnrr[6]
+set_location_assignment PIN_F1 -to svnrr[5]
+set_location_assignment PIN_F2 -to svnrr[4]
+set_location_assignment PIN_H1 -to svnrr[3]
+set_location_assignment PIN_H2 -to svnrr[2]
+set_location_assignment PIN_J1 -to svnrr[1]
+set_location_assignment PIN_J2 -to svnrr[0]
+set_location_assignment PIN_U22 -to turn_led
+set_location_assignment PIN_R17 -to notturn_led
+set_location_assignment PIN_L1 -to clock
+set_location_assignment PIN_L21 -to displaymode[1]
+set_location_assignment PIN_L22 -to displaymode[0]
+set_location_assignment PIN_T22 -to downp
+set_location_assignment PIN_R21 -to upp
+set_location_assignment PIN_T21 -to playp
+set_location_assignment PIN_R22 -to resetp
+set_location_assignment PIN_R20 -to invalid_led
+set_location_assignment PIN_Y21 -to gg_led
+set_location_assignment PIN_T18 -to l_led
+set_location_assignment PIN_W22 -to w_led
+set_location_assignment PIN_Y22 -to d_led
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
