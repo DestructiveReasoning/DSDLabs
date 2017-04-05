@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g07_lab5
-Wed Apr  5 17:02:39 2017
+Wed Apr  5 19:04:04 2017
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -38,11 +38,11 @@ Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
  30. Parameter Settings for User Entity Instance: LPM_CONSTANT:inst27
  31. Parameter Settings for User Entity Instance: g07_busmux21:inst8
  32. Parameter Settings for User Entity Instance: LPM_COUNTER:inst12
- 33. Parameter Settings for User Entity Instance: g07_compare:inst25
- 34. Parameter Settings for User Entity Instance: g07_debounder:inst35|LPM_COMPARE:inst21
- 35. Parameter Settings for User Entity Instance: g07_debounder:inst35|LPM_COUNTER:inst8
- 36. Parameter Settings for User Entity Instance: g07_debounder:inst36|LPM_COMPARE:inst21
- 37. Parameter Settings for User Entity Instance: g07_debounder:inst36|LPM_COUNTER:inst8
+ 33. Parameter Settings for User Entity Instance: g07_debounder:inst35|LPM_COMPARE:inst21
+ 34. Parameter Settings for User Entity Instance: g07_debounder:inst35|LPM_COUNTER:inst8
+ 35. Parameter Settings for User Entity Instance: g07_debounder:inst36|LPM_COMPARE:inst21
+ 36. Parameter Settings for User Entity Instance: g07_debounder:inst36|LPM_COUNTER:inst8
+ 37. Parameter Settings for User Entity Instance: g07_compare:inst25
  38. Parameter Settings for User Entity Instance: g07_busmux21:inst72
  39. Parameter Settings for User Entity Instance: g07_busmux21:inst13
  40. Parameter Settings for User Entity Instance: g07_busmux21:inst55
@@ -83,13 +83,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr  5 17:02:39 2017      ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr  5 19:04:04 2017      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; g07_lab5                                   ;
 ; Top-level Entity Name              ; g07_lab5                                   ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 2,051                                      ;
-;     Total combinational functions  ; 1,743                                      ;
+; Total logic elements               ; 2,050                                      ;
+;     Total combinational functions  ; 1,742                                      ;
 ;     Dedicated logic registers      ; 952                                        ;
 ; Total registers                    ; 952                                        ;
 ; Total pins                         ; 42                                         ;
@@ -251,7 +251,7 @@ applicable agreement for further details.
 ; bypassff.inc                     ; yes             ; Megafunction                       ; /home/harwiltz/altera/13.0/quartus/libraries/megafunctions/bypassff.inc            ;         ;
 ; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; /home/harwiltz/altera/13.0/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
 ; db/add_sub_ree.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/harwiltz/DSDLabs/Lab5/db/add_sub_ree.tdf                                     ;         ;
-; db/cntr_vne.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/harwiltz/DSDLabs/Lab5/db/cntr_vne.tdf                                        ;         ;
+; db/cntr_hoe.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/harwiltz/DSDLabs/Lab5/db/cntr_hoe.tdf                                        ;         ;
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
 
 
@@ -260,16 +260,16 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 2,051 ;
+; Estimated Total logic elements              ; 2,050 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1743  ;
+; Total combinational functions               ; 1742  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1007  ;
-;     -- 3 input functions                    ; 513   ;
-;     -- <=2 input functions                  ; 223   ;
+;     -- 4 input functions                    ; 1005  ;
+;     -- 3 input functions                    ; 517   ;
+;     -- <=2 input functions                  ; 220   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1554  ;
+;     -- normal mode                          ; 1553  ;
 ;     -- arithmetic mode                      ; 189   ;
 ;                                             ;       ;
 ; Total registers                             ; 952   ;
@@ -280,7 +280,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
 ; Maximum fan-out                             ; 952   ;
-; Total fan-out                               ; 10286 ;
+; Total fan-out                               ; 10290 ;
 ; Average fan-out                             ; 3.76  ;
 +---------------------------------------------+-------+
 
@@ -290,8 +290,8 @@ applicable agreement for further details.
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Library Name ;
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
-; |g07_lab5                                ; 1743 (8)          ; 952 (0)      ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |g07_lab5                                                                             ;              ;
-;    |bjt26:inst11|                        ; 338 (338)         ; 161 (161)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt26:inst11                                                                ;              ;
+; |g07_lab5                                ; 1742 (7)          ; 952 (0)      ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |g07_lab5                                                                             ;              ;
+;    |bjt26:inst11|                        ; 337 (337)         ; 161 (161)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt26:inst11                                                                ;              ;
 ;    |bjt52:inst66|                        ; 608 (608)         ; 299 (299)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt52:inst66                                                                ;              ;
 ;    |bjt52:inst67|                        ; 135 (135)         ; 318 (318)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt52:inst67                                                                ;              ;
 ;    |compFSM:inst|                        ; 9 (9)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|compFSM:inst                                                                ;              ;
@@ -336,8 +336,8 @@ applicable agreement for further details.
 ;    |g07_rules:inst7|                     ; 54 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_rules:inst7                                                             ;              ;
 ;       |g07_mod13:m1|                     ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_rules:inst7|g07_mod13:m1                                                ;              ;
 ;       |g07_mod13:m2|                     ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_rules:inst7|g07_mod13:m2                                                ;              ;
-;    |lpm_counter:inst12|                  ; 6 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst12                                                          ;              ;
-;       |cntr_vne:auto_generated|          ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst12|cntr_vne:auto_generated                                  ;              ;
+;    |lpm_counter:inst12|                  ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst12                                                          ;              ;
+;       |cntr_hoe:auto_generated|          ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst12|cntr_hoe:auto_generated                                  ;              ;
 ;    |lpm_counter:inst31|                  ; 9 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst31                                                          ;              ;
 ;       |cntr_qbi:auto_generated|          ; 9 (8)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst31|cntr_qbi:auto_generated                                  ;              ;
 ;          |cmpr_acc:cmpr2|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst31|cntr_qbi:auto_generated|cmpr_acc:cmpr2                   ;              ;
@@ -455,8 +455,8 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Total registers                              ; 952   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 318   ;
-; Number of registers using Asynchronous Clear ; 826   ;
+; Number of registers using Synchronous Load   ; 324   ;
+; Number of registers using Asynchronous Clear ; 820   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 891   ;
 ; Number of registers using Preset             ; 0     ;
@@ -918,18 +918,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CARRY_CNT_EN           ; SMART             ; Untyped            ;
 ; LABWIDE_SCLR           ; ON                ; Untyped            ;
 ; USE_NEW_VERSION        ; TRUE              ; Untyped            ;
-; CBXI_PARAMETER         ; cntr_vne          ; Untyped            ;
+; CBXI_PARAMETER         ; cntr_hoe          ; Untyped            ;
 +------------------------+-------------------+--------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: g07_compare:inst25 ;
-+----------------+-------+----------------------------------------+
-; Parameter Name ; Value ; Type                                   ;
-+----------------+-------+----------------------------------------+
-; width          ; 6     ; Signed Integer                         ;
-+----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1032,6 +1022,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; USE_NEW_VERSION        ; TRUE              ; Untyped                                ;
 ; CBXI_PARAMETER         ; cntr_7jg          ; Untyped                                ;
 +------------------------+-------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g07_compare:inst25 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; width          ; 6     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1183,7 +1183,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Apr  5 17:02:32 2017
+    Info: Processing started: Wed Apr  5 19:03:56 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g07_lab5 -c g07_lab5
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file g07_bjt.vhd
@@ -1338,9 +1338,9 @@ Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:inst12
 Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:inst12"
 Info (12133): Instantiated megafunction "LPM_COUNTER:inst12" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "6"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_vne.tdf
-    Info (12023): Found entity 1: cntr_vne
-Info (12128): Elaborating entity "cntr_vne" for hierarchy "LPM_COUNTER:inst12|cntr_vne:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_hoe.tdf
+    Info (12023): Found entity 1: cntr_hoe
+Info (12128): Elaborating entity "cntr_hoe" for hierarchy "LPM_COUNTER:inst12|cntr_hoe:auto_generated"
 Info (12128): Elaborating entity "g07_busmux21" for hierarchy "g07_busmux21:inst13"
 Info (12128): Elaborating entity "g07_7_segment_decoder" for hierarchy "g07_7_segment_decoder:inst45"
 Info (12128): Elaborating entity "g07_mod13" for hierarchy "g07_mod13:inst49"
@@ -1351,14 +1351,14 @@ Info (12133): Instantiated megafunction "LPM_CONSTANT:inst30" with the following
     Info (12134): Parameter "LPM_WIDTH" = "7"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2095 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2094 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 2053 logic cells
+    Info (21061): Implemented 2052 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 385 megabytes
-    Info: Processing ended: Wed Apr  5 17:02:39 2017
-    Info: Elapsed time: 00:00:07
+    Info: Processing ended: Wed Apr  5 19:04:04 2017
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:07
 
 

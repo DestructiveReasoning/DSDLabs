@@ -4949,15 +4949,15 @@ value[5] <= value.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |g07_lab5|LPM_COUNTER:inst12
-clock => cntr_vne:auto_generated.clock
+clock => cntr_hoe:auto_generated.clock
 clk_en => ~NO_FANOUT~
-cnt_en => cntr_vne:auto_generated.cnt_en
-updown => cntr_vne:auto_generated.updown
-aclr => cntr_vne:auto_generated.aclr
+cnt_en => cntr_hoe:auto_generated.cnt_en
+updown => cntr_hoe:auto_generated.updown
+aclr => ~NO_FANOUT~
 aset => ~NO_FANOUT~
 aconst => ~NO_FANOUT~
 aload => ~NO_FANOUT~
-sclr => ~NO_FANOUT~
+sclr => cntr_hoe:auto_generated.sclr
 sset => ~NO_FANOUT~
 sconst => ~NO_FANOUT~
 sload => ~NO_FANOUT~
@@ -4968,12 +4968,12 @@ data[3] => ~NO_FANOUT~
 data[4] => ~NO_FANOUT~
 data[5] => ~NO_FANOUT~
 cin => ~NO_FANOUT~
-q[0] <= cntr_vne:auto_generated.q[0]
-q[1] <= cntr_vne:auto_generated.q[1]
-q[2] <= cntr_vne:auto_generated.q[2]
-q[3] <= cntr_vne:auto_generated.q[3]
-q[4] <= cntr_vne:auto_generated.q[4]
-q[5] <= cntr_vne:auto_generated.q[5]
+q[0] <= cntr_hoe:auto_generated.q[0]
+q[1] <= cntr_hoe:auto_generated.q[1]
+q[2] <= cntr_hoe:auto_generated.q[2]
+q[3] <= cntr_hoe:auto_generated.q[3]
+q[4] <= cntr_hoe:auto_generated.q[4]
+q[5] <= cntr_hoe:auto_generated.q[5]
 cout <= <GND>
 eq[0] <= <GND>
 eq[1] <= <GND>
@@ -4993,13 +4993,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|g07_lab5|LPM_COUNTER:inst12|cntr_vne:auto_generated
-aclr => counter_reg_bit1a[5].ACLR
-aclr => counter_reg_bit1a[4].ACLR
-aclr => counter_reg_bit1a[3].ACLR
-aclr => counter_reg_bit1a[2].ACLR
-aclr => counter_reg_bit1a[1].ACLR
-aclr => counter_reg_bit1a[0].ACLR
+|g07_lab5|LPM_COUNTER:inst12|cntr_hoe:auto_generated
 clock => counter_reg_bit1a[5].CLK
 clock => counter_reg_bit1a[4].CLK
 clock => counter_reg_bit1a[3].CLK
@@ -5013,42 +5007,15 @@ q[2] <= counter_reg_bit1a[2].REGOUT
 q[3] <= counter_reg_bit1a[3].REGOUT
 q[4] <= counter_reg_bit1a[4].REGOUT
 q[5] <= counter_reg_bit1a[5].REGOUT
+sclr => _.IN0
+sclr => _.IN0
+sclr => _.IN0
 updown => counter_comb_bita0.DATAB
 updown => counter_comb_bita1.DATAB
 updown => counter_comb_bita2.DATAB
 updown => counter_comb_bita3.DATAB
 updown => counter_comb_bita4.DATAB
 updown => counter_comb_bita5.DATAB
-
-
-|g07_lab5|g07_compare:inst25
-dataa[0] => LessThan0.IN6
-dataa[0] => LessThan1.IN6
-dataa[1] => LessThan0.IN5
-dataa[1] => LessThan1.IN5
-dataa[2] => LessThan0.IN4
-dataa[2] => LessThan1.IN4
-dataa[3] => LessThan0.IN3
-dataa[3] => LessThan1.IN3
-dataa[4] => LessThan0.IN2
-dataa[4] => LessThan1.IN2
-dataa[5] => LessThan0.IN1
-dataa[5] => LessThan1.IN1
-datab[0] => LessThan0.IN12
-datab[0] => LessThan1.IN12
-datab[1] => LessThan0.IN11
-datab[1] => LessThan1.IN11
-datab[2] => LessThan0.IN10
-datab[2] => LessThan1.IN10
-datab[3] => LessThan0.IN9
-datab[3] => LessThan1.IN9
-datab[4] => LessThan0.IN8
-datab[4] => LessThan1.IN8
-datab[5] => LessThan0.IN7
-datab[5] => LessThan1.IN7
-eq <= eq.DB_MAX_OUTPUT_PORT_TYPE
-gt <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-lt <= lt.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |g07_lab5|g07_debounder:inst35
@@ -5509,6 +5476,36 @@ q[20] <= counter_reg_bit1a[20].REGOUT
 q[21] <= counter_reg_bit1a[21].REGOUT
 q[22] <= counter_reg_bit1a[22].REGOUT
 q[23] <= counter_reg_bit1a[23].REGOUT
+
+
+|g07_lab5|g07_compare:inst25
+dataa[0] => LessThan0.IN6
+dataa[0] => LessThan1.IN6
+dataa[1] => LessThan0.IN5
+dataa[1] => LessThan1.IN5
+dataa[2] => LessThan0.IN4
+dataa[2] => LessThan1.IN4
+dataa[3] => LessThan0.IN3
+dataa[3] => LessThan1.IN3
+dataa[4] => LessThan0.IN2
+dataa[4] => LessThan1.IN2
+dataa[5] => LessThan0.IN1
+dataa[5] => LessThan1.IN1
+datab[0] => LessThan0.IN12
+datab[0] => LessThan1.IN12
+datab[1] => LessThan0.IN11
+datab[1] => LessThan1.IN11
+datab[2] => LessThan0.IN10
+datab[2] => LessThan1.IN10
+datab[3] => LessThan0.IN9
+datab[3] => LessThan1.IN9
+datab[4] => LessThan0.IN8
+datab[4] => LessThan1.IN8
+datab[5] => LessThan0.IN7
+datab[5] => LessThan1.IN7
+eq <= eq.DB_MAX_OUTPUT_PORT_TYPE
+gt <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+lt <= lt.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |g07_lab5|g07_register6:inst9
