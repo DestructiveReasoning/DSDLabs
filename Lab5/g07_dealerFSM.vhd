@@ -27,7 +27,7 @@ begin
 	stack_enable <= '1' when state = D else '0';
 	machine: process (clock, reset)
 	begin
-		if(reset = '1') then state <= A;
+		if(reset = '1') then state <= B;
 		elsif (clock'event and clock = '1') then
 			case state is
 				WHEN A =>

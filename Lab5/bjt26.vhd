@@ -27,7 +27,7 @@ architecture stacklike of bjt26 is
 	SIGNAL t_empty: std_logic := '1';
 	SIGNAL t_num: integer range 0 to 31 := 0;
 begin
-	always: process(clock, reset)
+	always: process(clock, reset,enable)
 	begin
 		if(reset = '1') then 
 			for i in 0 to 26-1 LOOP

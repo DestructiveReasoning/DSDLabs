@@ -19,7 +19,7 @@ entity compFSM is
 end compFSM;
 
 architecture fsm of compFSM is
-	Type State_Type is (A,B,C,BAD_CARD,D,E);
+	Type State_Type is (A,B,C,BAD_CARD,D,ACCEPT_CARD,E);
 	SIGNAL state: State_Type := A;
 begin
 
@@ -43,8 +43,10 @@ begin
 					state <= D;
 				when D =>
 					if(card_dealt = '0') then state <= D;
-					else state <= E;
+					else state <= ACCEPT_CARD;
 					end if;
+				when ACCEPT_CARD =>
+					state <= E;
 				when E =>
 					if (valid = '0') then state <= BAD_CARD;
 					else state <= C;
@@ -53,10 +55,10 @@ begin
 		end if;
 	end process machine;
 
-	stack_enable <= '1' when (state = C or state = E) else '0';
+	stack_enable <= '1' when (state = C or state = E or state = ACCEPT_CARD) else '0';
 	--cnt_reg_enable <= '1' when state = B or state = D else '0';
 	cnt_reg_enable <= '1' when state = B else '0';
-	stack_mode <= "00" when (state = A or state = B or state = D or state = BAD_CARD) else
+	stack_mode <= "00" when (state = A or state = B or state = D or state = BAD_CARD or state = E) else
 				  "11" when state = C else
 				  "01";
 	cnt_reset <= '1' when state = A or state = BAD_CARD else '0';
