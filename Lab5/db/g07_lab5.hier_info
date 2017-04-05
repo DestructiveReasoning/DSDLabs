@@ -3,6 +3,7 @@ turn_led <= inst60.DB_MAX_OUTPUT_PORT_TYPE
 clock => g07_debounder:inst34.CLK
 clock => LPM_COUNTER:inst4.clock
 clock => bjt26:inst3.clock
+clock => g07_register6:inst5.clock
 clock => g07_register6:inst14.clock
 clock => bjt52:inst2.clock
 clock => randinator:inst87.clock
@@ -12,7 +13,6 @@ clock => bjt26:inst11.clock
 clock => LPM_COUNTER:inst12.clock
 clock => g07_debounder:inst35.CLK
 clock => g07_debounder:inst36.CLK
-clock => g07_register6:inst5.clock
 clock => g07_register6:inst9.clock
 clock => compFSM:inst.clock
 clock => systemFSM:inst84.clock
@@ -1194,6 +1194,33 @@ data0[0] => output.DATAB
 data1[0] => output.DATAA
 sel => output.OUTPUTSELECT
 output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|g07_lab5|g07_register6:inst5
+data_in[0] => data_out[0]~reg0.DATAIN
+data_in[1] => data_out[1]~reg0.DATAIN
+data_in[2] => data_out[2]~reg0.DATAIN
+data_in[3] => data_out[3]~reg0.DATAIN
+data_in[4] => data_out[4]~reg0.DATAIN
+data_in[5] => data_out[5]~reg0.DATAIN
+enable => data_out[0]~reg0.ENA
+enable => data_out[1]~reg0.ENA
+enable => data_out[2]~reg0.ENA
+enable => data_out[3]~reg0.ENA
+enable => data_out[4]~reg0.ENA
+enable => data_out[5]~reg0.ENA
+clock => data_out[0]~reg0.CLK
+clock => data_out[1]~reg0.CLK
+clock => data_out[2]~reg0.CLK
+clock => data_out[3]~reg0.CLK
+clock => data_out[4]~reg0.CLK
+clock => data_out[5]~reg0.CLK
+data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |g07_lab5|LPM_FF:inst1
@@ -4808,33 +4835,6 @@ q[20] <= counter_reg_bit1a[20].REGOUT
 q[21] <= counter_reg_bit1a[21].REGOUT
 q[22] <= counter_reg_bit1a[22].REGOUT
 q[23] <= counter_reg_bit1a[23].REGOUT
-
-
-|g07_lab5|g07_register6:inst5
-data_in[0] => data_out[0]~reg0.DATAIN
-data_in[1] => data_out[1]~reg0.DATAIN
-data_in[2] => data_out[2]~reg0.DATAIN
-data_in[3] => data_out[3]~reg0.DATAIN
-data_in[4] => data_out[4]~reg0.DATAIN
-data_in[5] => data_out[5]~reg0.DATAIN
-enable => data_out[0]~reg0.ENA
-enable => data_out[1]~reg0.ENA
-enable => data_out[2]~reg0.ENA
-enable => data_out[3]~reg0.ENA
-enable => data_out[4]~reg0.ENA
-enable => data_out[5]~reg0.ENA
-clock => data_out[0]~reg0.CLK
-clock => data_out[1]~reg0.CLK
-clock => data_out[2]~reg0.CLK
-clock => data_out[3]~reg0.CLK
-clock => data_out[4]~reg0.CLK
-clock => data_out[5]~reg0.CLK
-data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |g07_lab5|g07_register6:inst9

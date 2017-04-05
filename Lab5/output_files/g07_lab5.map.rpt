@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g07_lab5
-Tue Apr  4 15:04:47 2017
+Tue Apr  4 21:07:40 2017
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -79,13 +79,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr  4 15:04:47 2017      ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr  4 21:07:39 2017      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; g07_lab5                                   ;
 ; Top-level Entity Name              ; g07_lab5                                   ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 1,697                                      ;
-;     Total combinational functions  ; 1,552                                      ;
+; Total logic elements               ; 1,695                                      ;
+;     Total combinational functions  ; 1,544                                      ;
 ;     Dedicated logic registers      ; 791                                        ;
 ; Total registers                    ; 791                                        ;
 ; Total pins                         ; 42                                         ;
@@ -256,17 +256,17 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,697 ;
+; Estimated Total logic elements              ; 1,695 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1552  ;
+; Total combinational functions               ; 1544  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 859   ;
-;     -- 3 input functions                    ; 197   ;
-;     -- <=2 input functions                  ; 496   ;
+;     -- 4 input functions                    ; 851   ;
+;     -- 3 input functions                    ; 198   ;
+;     -- <=2 input functions                  ; 495   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
 ;     -- normal mode                          ; 1367  ;
-;     -- arithmetic mode                      ; 185   ;
+;     -- arithmetic mode                      ; 177   ;
 ;                                             ;       ;
 ; Total registers                             ; 791   ;
 ;     -- Dedicated logic registers            ; 791   ;
@@ -276,7 +276,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
 ; Maximum fan-out                             ; 785   ;
-; Total fan-out                               ; 8335  ;
+; Total fan-out                               ; 8293  ;
 ; Average fan-out                             ; 3.49  ;
 +---------------------------------------------+-------+
 
@@ -286,11 +286,11 @@ applicable agreement for further details.
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Library Name ;
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
-; |g07_lab5                                ; 1552 (6)          ; 791 (0)      ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |g07_lab5                                                                             ;              ;
-;    |bjt26:inst11|                        ; 339 (339)         ; 161 (161)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt26:inst11                                                                ;              ;
-;    |bjt26:inst3|                         ; 181 (181)         ; 161 (161)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt26:inst3                                                                 ;              ;
+; |g07_lab5                                ; 1544 (8)          ; 791 (0)      ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |g07_lab5                                                                             ;              ;
+;    |bjt26:inst11|                        ; 338 (338)         ; 161 (161)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt26:inst11                                                                ;              ;
+;    |bjt26:inst3|                         ; 175 (175)         ; 161 (161)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt26:inst3                                                                 ;              ;
 ;    |bjt52:inst2|                         ; 607 (607)         ; 299 (299)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt52:inst2                                                                 ;              ;
-;    |compFSM:inst|                        ; 9 (9)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|compFSM:inst                                                                ;              ;
+;    |compFSM:inst|                        ; 8 (8)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|compFSM:inst                                                                ;              ;
 ;    |g07_7_segment_decoder:inst45|        ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_7_segment_decoder:inst45                                                ;              ;
 ;    |g07_7_segment_decoder:inst46|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_7_segment_decoder:inst46                                                ;              ;
 ;    |g07_7_segment_decoder:inst47|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_7_segment_decoder:inst47                                                ;              ;
@@ -298,7 +298,9 @@ applicable agreement for further details.
 ;    |g07_and6:inst69|                     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_and6:inst69                                                             ;              ;
 ;    |g07_busmux21:inst28|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst28                                                         ;              ;
 ;    |g07_busmux21:inst55|                 ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst55                                                         ;              ;
-;    |g07_busmux21:inst56|                 ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst56                                                         ;              ;
+;    |g07_busmux21:inst56|                 ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst56                                                         ;              ;
+;    |g07_busmux21:inst72|                 ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst72                                                         ;              ;
+;    |g07_busmux21:inst8|                  ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst8                                                          ;              ;
 ;    |g07_compare:inst18|                  ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_compare:inst18                                                          ;              ;
 ;    |g07_compare:inst6|                   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_compare:inst6                                                           ;              ;
 ;    |g07_dealerFSM:inst23|                ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_dealerFSM:inst23                                                        ;              ;
@@ -318,13 +320,13 @@ applicable agreement for further details.
 ;       |lpm_counter:inst8|                ; 24 (0)            ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_debounder:inst36|lpm_counter:inst8                                      ;              ;
 ;          |cntr_7jg:auto_generated|       ; 24 (24)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_debounder:inst36|lpm_counter:inst8|cntr_7jg:auto_generated              ;              ;
 ;    |g07_mod13:inst49|                    ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_mod13:inst49                                                            ;              ;
-;    |g07_mod13:inst50|                    ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_mod13:inst50                                                            ;              ;
+;    |g07_mod13:inst50|                    ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_mod13:inst50                                                            ;              ;
 ;    |g07_register6:inst14|                ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_register6:inst14                                                        ;              ;
 ;    |g07_register6:inst5|                 ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_register6:inst5                                                         ;              ;
-;    |g07_register6:inst9|                 ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_register6:inst9                                                         ;              ;
-;    |g07_rules:inst7|                     ; 81 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_rules:inst7                                                             ;              ;
+;    |g07_register6:inst9|                 ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_register6:inst9                                                         ;              ;
+;    |g07_rules:inst7|                     ; 51 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_rules:inst7                                                             ;              ;
 ;       |g07_mod13:m1|                     ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_rules:inst7|g07_mod13:m1                                                ;              ;
-;       |g07_mod13:m2|                     ; 44 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_rules:inst7|g07_mod13:m2                                                ;              ;
+;       |g07_mod13:m2|                     ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_rules:inst7|g07_mod13:m2                                                ;              ;
 ;    |lpm_counter:inst12|                  ; 6 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst12                                                          ;              ;
 ;       |cntr_t9e:auto_generated|          ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst12|cntr_t9e:auto_generated                                  ;              ;
 ;    |lpm_counter:inst31|                  ; 9 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|lpm_counter:inst31                                                          ;              ;
@@ -339,7 +341,7 @@ applicable agreement for further details.
 ;             |add_sub_ree:auto_generated| ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|randinator:inst87|g07_RANDU:randu|lpm_add_sub:M1|add_sub_ree:auto_generated ;              ;
 ;          |lpm_add_sub:M2|                ; 30 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|randinator:inst87|g07_RANDU:randu|lpm_add_sub:M2                            ;              ;
 ;             |add_sub_ree:auto_generated| ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|randinator:inst87|g07_RANDU:randu|lpm_add_sub:M2|add_sub_ree:auto_generated ;              ;
-;    |systemFSM:inst84|                    ; 25 (25)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|systemFSM:inst84                                                            ;              ;
+;    |systemFSM:inst84|                    ; 22 (22)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|systemFSM:inst84                                                            ;              ;
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -438,7 +440,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Total registers                              ; 791   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 167   ;
+; Number of registers using Synchronous Load   ; 161   ;
 ; Number of registers using Asynchronous Clear ; 659   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 728   ;
@@ -572,7 +574,7 @@ Encoding Type:  One-Hot
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |g07_lab5|g07_busmux21:inst16|output[0] ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |g07_lab5|g07_busmux21:inst55|output[1] ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |g07_lab5|g07_busmux21:inst56|output[1] ;
-; 27:1               ; 6 bits    ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |g07_lab5|bjt26:inst11|value[2]         ;
+; 27:1               ; 6 bits    ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |g07_lab5|bjt26:inst11|value[0]         ;
 ; 27:1               ; 6 bits    ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |g07_lab5|bjt26:inst3|value[0]          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
@@ -1100,7 +1102,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Apr  4 15:04:41 2017
+    Info: Processing started: Tue Apr  4 21:07:33 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g07_lab5 -c g07_lab5
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file g07_bjt.vhd
@@ -1193,6 +1195,7 @@ Info (12128): Elaborating entity "cntr_40h" for hierarchy "LPM_COUNTER:inst4|cnt
 Info (12128): Elaborating entity "bjt26" for hierarchy "bjt26:inst3"
 Warning (10492): VHDL Process Statement warning at bjt26.vhd(38): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "g07_busmux21" for hierarchy "g07_busmux21:inst28"
+Info (12128): Elaborating entity "g07_register6" for hierarchy "g07_register6:inst5"
 Info (12128): Elaborating entity "LPM_FF" for hierarchy "LPM_FF:inst1"
 Warning (287001): Assertion warning: Ignored LPM_AVALUE parameter because the aset port is not used
 Warning (287013): Variable or input pin "ac" is defined but never used.
@@ -1201,7 +1204,6 @@ Info (12133): Instantiated megafunction "LPM_FF:inst1" with the following parame
     Info (12134): Parameter "LPM_AVALUE" = "D"
     Info (12134): Parameter "LPM_WIDTH" = "6"
 Info (12128): Elaborating entity "g07_dealerFSM" for hierarchy "g07_dealerFSM:inst23"
-Info (12128): Elaborating entity "g07_register6" for hierarchy "g07_register6:inst14"
 Info (12128): Elaborating entity "g07_and6" for hierarchy "g07_and6:inst69"
 Info (12128): Elaborating entity "g07_numreducer" for hierarchy "g07_numreducer:inst22"
 Info (12128): Elaborating entity "bjt52" for hierarchy "bjt52:inst2"
@@ -1270,14 +1272,14 @@ Info (12133): Instantiated megafunction "LPM_CONSTANT:inst30" with the following
     Info (12134): Parameter "LPM_WIDTH" = "6"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1753 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1739 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 1711 logic cells
+    Info (21061): Implemented 1697 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 385 megabytes
-    Info: Processing ended: Tue Apr  4 15:04:47 2017
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 390 megabytes
+    Info: Processing ended: Tue Apr  4 21:07:40 2017
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:06
 
 

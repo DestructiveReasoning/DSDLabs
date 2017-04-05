@@ -3258,6 +3258,38 @@ applicable agreement for further details.
 		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
 	)
 )
+(symbol
+	(rect -200 1328 -136 1376)
+	(text "AND2" (rect 1 0 28 9)(font "Arial" (font_size 6)))
+	(text "inst13" (rect 3 37 33 47)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 22 21)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 22 21)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 14 16))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 22 37)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 22 37)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 14 32))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 68 29)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 68 29)(font "Courier New" (bold))(invisible))
+		(line (pt 42 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 12)(pt 30 12))
+		(line (pt 14 37)(pt 31 37))
+		(line (pt 14 12)(pt 14 37))
+		(arc (pt 31 37)(pt 30 12)(rect 18 12 43 37))
+	)
+)
 (connector
 	(text "TURN" (rect 272 208 303 218)(font "Arial" ))
 	(pt 344 216)
@@ -3313,11 +3345,6 @@ applicable agreement for further details.
 	(pt 576 608)
 )
 (connector
-	(pt 216 656)
-	(pt 352 656)
-	(bus)
-)
-(connector
 	(pt 648 536)
 	(pt 648 488)
 	(bus)
@@ -3356,11 +3383,6 @@ applicable agreement for further details.
 (connector
 	(pt 304 232)
 	(pt 344 232)
-)
-(connector
-	(pt 736 656)
-	(pt 560 656)
-	(bus)
 )
 (connector
 	(pt 1208 536)
@@ -3729,11 +3751,6 @@ applicable agreement for further details.
 	(pt 80 832)
 )
 (connector
-	(pt 216 656)
-	(pt 216 80)
-	(bus)
-)
-(connector
 	(pt 216 80)
 	(pt 1088 80)
 	(bus)
@@ -3800,41 +3817,6 @@ applicable agreement for further details.
 (connector
 	(pt 896 280)
 	(pt 888 280)
-	(bus)
-)
-(connector
-	(pt 888 280)
-	(pt 888 320)
-	(bus)
-)
-(connector
-	(pt 888 320)
-	(pt 880 320)
-	(bus)
-)
-(connector
-	(pt 880 320)
-	(pt 880 400)
-	(bus)
-)
-(connector
-	(pt 880 400)
-	(pt 560 400)
-	(bus)
-)
-(connector
-	(pt 560 400)
-	(pt 560 488)
-	(bus)
-)
-(connector
-	(pt 528 488)
-	(pt 560 488)
-	(bus)
-)
-(connector
-	(pt 560 488)
-	(pt 648 488)
 	(bus)
 )
 (connector
@@ -4832,16 +4814,6 @@ applicable agreement for further details.
 	(pt 864 744)
 )
 (connector
-	(pt 736 728)
-	(pt 944 728)
-	(bus)
-)
-(connector
-	(pt 736 656)
-	(pt 736 728)
-	(bus)
-)
-(connector
 	(pt 896 480)
 	(pt 896 712)
 	(bus)
@@ -4928,10 +4900,6 @@ applicable agreement for further details.
 	(pt 712 1160)
 )
 (connector
-	(pt -160 1296)
-	(pt -128 1296)
-)
-(connector
 	(pt 664 976)
 	(pt 640 976)
 )
@@ -4961,21 +4929,8 @@ applicable agreement for further details.
 	(pt -48 1472)
 )
 (connector
-	(text "card_dealt" (rect -200 1344 -149 1354)(font "Arial" ))
-	(pt -120 1352)
-	(pt -208 1352)
-)
-(connector
 	(pt 64 896)
 	(pt 64 1200)
-)
-(connector
-	(pt -160 1200)
-	(pt 64 1200)
-)
-(connector
-	(pt -160 1296)
-	(pt -160 1200)
 )
 (connector
 	(pt -280 944)
@@ -5214,7 +5169,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "cpu_value[5..0]" (rect 1080 184 1090 259)(font "Arial" )(vertical))
+	(text "cpu_value[5..0]" (rect 1079 183 1089 258)(font "Arial" )(vertical))
 	(pt 1088 264)
 	(pt 1088 80)
 	(bus)
@@ -5269,6 +5224,93 @@ applicable agreement for further details.
 	(pt 984 552)
 	(pt 952 552)
 )
+(connector
+	(pt -136 1352)
+	(pt -120 1352)
+)
+(connector
+	(pt -224 1200)
+	(pt 64 1200)
+)
+(connector
+	(pt -224 1200)
+	(pt -224 1344)
+)
+(connector
+	(pt -224 1344)
+	(pt -200 1344)
+)
+(connector
+	(text "card_dealt" (rect -248 1352 -197 1362)(font "Arial" ))
+	(pt -200 1360)
+	(pt -256 1360)
+)
+(connector
+	(pt 208 656)
+	(pt 352 656)
+	(bus)
+)
+(connector
+	(pt 208 656)
+	(pt 208 616)
+	(bus)
+)
+(connector
+	(pt 608 616)
+	(pt 208 616)
+	(bus)
+)
+(connector
+	(pt 608 616)
+	(pt 608 488)
+	(bus)
+)
+(connector
+	(pt 608 488)
+	(pt 648 488)
+	(bus)
+)
+(connector
+	(pt 528 488)
+	(pt 608 488)
+	(bus)
+)
+(connector
+	(pt 888 280)
+	(pt 888 320)
+	(bus)
+)
+(connector
+	(pt 888 320)
+	(pt 880 320)
+	(bus)
+)
+(connector
+	(pt 880 320)
+	(pt 880 640)
+	(bus)
+)
+(connector
+	(pt 880 640)
+	(pt 632 640)
+	(bus)
+)
+(connector
+	(pt 632 640)
+	(pt 632 656)
+	(bus)
+)
+(connector
+	(pt 632 656)
+	(pt 560 656)
+	(bus)
+)
+(connector
+	(text "cpu_value[5..0]" (rect 880 720 955 730)(font "Arial" ))
+	(pt 944 728)
+	(pt 872 728)
+	(bus)
+)
 (junction (pt 320 552))
 (junction (pt 1208 1136))
 (junction (pt 1136 1456))
@@ -5277,7 +5319,6 @@ applicable agreement for further details.
 (junction (pt 1216 1104))
 (junction (pt 1240 1016))
 (junction (pt 1544 280))
-(junction (pt 560 488))
 (junction (pt 248 736))
 (junction (pt -128 256))
 (junction (pt 600 312))
@@ -5295,5 +5336,6 @@ applicable agreement for further details.
 (junction (pt 256 1112))
 (junction (pt 920 840))
 (junction (pt 920 568))
+(junction (pt 608 488))
 (text "PLAY PILE" (rect 1240 488 1303 499)(font "Arial" (font_size 8)))
 (text "DECK" (rect 1032 888 1066 899)(font "Arial" (font_size 8)))
