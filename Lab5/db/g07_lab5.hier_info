@@ -27,39 +27,43 @@ gg_led <= inst62.DB_MAX_OUTPUT_PORT_TYPE
 w_led <= inst63.DB_MAX_OUTPUT_PORT_TYPE
 l_led <= inst64.DB_MAX_OUTPUT_PORT_TYPE
 d_led <= inst65.DB_MAX_OUTPUT_PORT_TYPE
-svnll[0] <= g07_7_segment_decoder:inst45.segments_out[0]
-svnll[1] <= g07_7_segment_decoder:inst45.segments_out[1]
-svnll[2] <= g07_7_segment_decoder:inst45.segments_out[2]
-svnll[3] <= g07_7_segment_decoder:inst45.segments_out[3]
-svnll[4] <= g07_7_segment_decoder:inst45.segments_out[4]
-svnll[5] <= g07_7_segment_decoder:inst45.segments_out[5]
-svnll[6] <= g07_7_segment_decoder:inst45.segments_out[6]
+svnll[0] <= g07_busmux21:inst13.output[0]
+svnll[1] <= g07_busmux21:inst13.output[1]
+svnll[2] <= g07_busmux21:inst13.output[2]
+svnll[3] <= g07_busmux21:inst13.output[3]
+svnll[4] <= g07_busmux21:inst13.output[4]
+svnll[5] <= g07_busmux21:inst13.output[5]
+svnll[6] <= g07_busmux21:inst13.output[6]
+displaymode[0] => inst21.IN0
 displaymode[0] => g07_busmux21:inst51.sel
 displaymode[0] => g07_busmux21:inst52.sel
 displaymode[0] => g07_busmux21:inst53.sel
+displaymode[1] => inst21.IN1
 displaymode[1] => g07_busmux21:inst55.sel
+displaymode[1] => g07_busmux21:inst2.sel
 displaymode[1] => g07_busmux21:inst56.sel
-svnlr[0] <= g07_7_segment_decoder:inst46.segments_out[0]
-svnlr[1] <= g07_7_segment_decoder:inst46.segments_out[1]
-svnlr[2] <= g07_7_segment_decoder:inst46.segments_out[2]
-svnlr[3] <= g07_7_segment_decoder:inst46.segments_out[3]
-svnlr[4] <= g07_7_segment_decoder:inst46.segments_out[4]
-svnlr[5] <= g07_7_segment_decoder:inst46.segments_out[5]
-svnlr[6] <= g07_7_segment_decoder:inst46.segments_out[6]
-svnrl[0] <= g07_7_segment_decoder:inst47.segments_out[0]
-svnrl[1] <= g07_7_segment_decoder:inst47.segments_out[1]
-svnrl[2] <= g07_7_segment_decoder:inst47.segments_out[2]
-svnrl[3] <= g07_7_segment_decoder:inst47.segments_out[3]
-svnrl[4] <= g07_7_segment_decoder:inst47.segments_out[4]
-svnrl[5] <= g07_7_segment_decoder:inst47.segments_out[5]
-svnrl[6] <= g07_7_segment_decoder:inst47.segments_out[6]
-svnrr[0] <= g07_7_segment_decoder:inst48.segments_out[0]
-svnrr[1] <= g07_7_segment_decoder:inst48.segments_out[1]
-svnrr[2] <= g07_7_segment_decoder:inst48.segments_out[2]
-svnrr[3] <= g07_7_segment_decoder:inst48.segments_out[3]
-svnrr[4] <= g07_7_segment_decoder:inst48.segments_out[4]
-svnrr[5] <= g07_7_segment_decoder:inst48.segments_out[5]
-svnrr[6] <= g07_7_segment_decoder:inst48.segments_out[6]
+displaymode[1] => g07_busmux21:inst3.sel
+svnlr[0] <= g07_busmux21:inst20.output[0]
+svnlr[1] <= g07_busmux21:inst20.output[1]
+svnlr[2] <= g07_busmux21:inst20.output[2]
+svnlr[3] <= g07_busmux21:inst20.output[3]
+svnlr[4] <= g07_busmux21:inst20.output[4]
+svnlr[5] <= g07_busmux21:inst20.output[5]
+svnlr[6] <= g07_busmux21:inst20.output[6]
+svnrl[0] <= g07_busmux21:inst2.output[0]
+svnrl[1] <= g07_busmux21:inst2.output[1]
+svnrl[2] <= g07_busmux21:inst2.output[2]
+svnrl[3] <= g07_busmux21:inst2.output[3]
+svnrl[4] <= g07_busmux21:inst2.output[4]
+svnrl[5] <= g07_busmux21:inst2.output[5]
+svnrl[6] <= g07_busmux21:inst2.output[6]
+svnrr[0] <= g07_busmux21:inst3.output[0]
+svnrr[1] <= g07_busmux21:inst3.output[1]
+svnrr[2] <= g07_busmux21:inst3.output[2]
+svnrr[3] <= g07_busmux21:inst3.output[3]
+svnrr[4] <= g07_busmux21:inst3.output[4]
+svnrr[5] <= g07_busmux21:inst3.output[5]
+svnrr[6] <= g07_busmux21:inst3.output[6]
 
 
 |g07_lab5|systemFSM:inst74
@@ -5561,6 +5565,37 @@ output[4] <= output.DB_MAX_OUTPUT_PORT_TYPE
 output[5] <= output.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|g07_lab5|g07_busmux21:inst13
+data0[0] => output.DATAB
+data0[1] => output.DATAB
+data0[2] => output.DATAB
+data0[3] => output.DATAB
+data0[4] => output.DATAB
+data0[5] => output.DATAB
+data0[6] => output.DATAB
+data1[0] => output.DATAA
+data1[1] => output.DATAA
+data1[2] => output.DATAA
+data1[3] => output.DATAA
+data1[4] => output.DATAA
+data1[5] => output.DATAA
+data1[6] => output.DATAA
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |g07_lab5|g07_7_segment_decoder:inst45
 code[0] => Mux0.IN35
 code[0] => Mux1.IN35
@@ -5725,8 +5760,40 @@ result[0] <= <VCC>
 result[1] <= <VCC>
 result[2] <= <VCC>
 result[3] <= <VCC>
-result[4] <= <GND>
-result[5] <= <GND>
+result[4] <= <VCC>
+result[5] <= <VCC>
+result[6] <= <GND>
+
+
+|g07_lab5|g07_busmux21:inst20
+data0[0] => output.DATAB
+data0[1] => output.DATAB
+data0[2] => output.DATAB
+data0[3] => output.DATAB
+data0[4] => output.DATAB
+data0[5] => output.DATAB
+data0[6] => output.DATAB
+data1[0] => output.DATAA
+data1[1] => output.DATAA
+data1[2] => output.DATAA
+data1[3] => output.DATAA
+data1[4] => output.DATAA
+data1[5] => output.DATAA
+data1[6] => output.DATAA
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= output.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |g07_lab5|g07_7_segment_decoder:inst46
@@ -5772,6 +5839,37 @@ segments_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 segments_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
 segments_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 segments_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|g07_lab5|g07_busmux21:inst2
+data0[0] => output.DATAB
+data0[1] => output.DATAB
+data0[2] => output.DATAB
+data0[3] => output.DATAB
+data0[4] => output.DATAB
+data0[5] => output.DATAB
+data0[6] => output.DATAB
+data1[0] => output.DATAA
+data1[1] => output.DATAA
+data1[2] => output.DATAA
+data1[3] => output.DATAA
+data1[4] => output.DATAA
+data1[5] => output.DATAA
+data1[6] => output.DATAA
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= output.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |g07_lab5|g07_7_segment_decoder:inst47
@@ -5904,6 +6002,37 @@ output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
 output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
 output[4] <= output.DB_MAX_OUTPUT_PORT_TYPE
 output[5] <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|g07_lab5|g07_busmux21:inst3
+data0[0] => output.DATAB
+data0[1] => output.DATAB
+data0[2] => output.DATAB
+data0[3] => output.DATAB
+data0[4] => output.DATAB
+data0[5] => output.DATAB
+data0[6] => output.DATAB
+data1[0] => output.DATAA
+data1[1] => output.DATAA
+data1[2] => output.DATAA
+data1[3] => output.DATAA
+data1[4] => output.DATAA
+data1[5] => output.DATAA
+data1[6] => output.DATAA
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+sel => output.OUTPUTSELECT
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= output.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |g07_lab5|g07_7_segment_decoder:inst48

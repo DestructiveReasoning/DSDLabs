@@ -10,7 +10,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|LPM_COUNTER:inst4" CBX_FILE_NAME="cntr_40h.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst34|LPM_COUNTER:inst8" CBX_FILE_NAME="cntr_7jg.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst36|LPM_COMPARE:inst21" CBX_FILE_NAME="cmpr_65d.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|LPM_CONSTANT:inst30" CBX_FILE_NAME="lpm_constant_7a4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|LPM_CONSTANT:inst30" CBX_FILE_NAME="lpm_constant_ba4.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst35|LPM_COUNTER:inst8" CBX_FILE_NAME="cntr_7jg.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst34|LPM_COMPARE:inst21" CBX_FILE_NAME="cmpr_65d.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|g07_lab5|g07_debounder:inst36|LPM_COUNTER:inst8" CBX_FILE_NAME="cntr_7jg.tdf"/>

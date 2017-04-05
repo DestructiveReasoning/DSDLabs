@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g07_lab5
-Wed Apr  5 16:13:18 2017
+Wed Apr  5 17:02:39 2017
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -44,16 +44,20 @@ Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
  36. Parameter Settings for User Entity Instance: g07_debounder:inst36|LPM_COMPARE:inst21
  37. Parameter Settings for User Entity Instance: g07_debounder:inst36|LPM_COUNTER:inst8
  38. Parameter Settings for User Entity Instance: g07_busmux21:inst72
- 39. Parameter Settings for User Entity Instance: g07_busmux21:inst55
- 40. Parameter Settings for User Entity Instance: g07_busmux21:inst51
- 41. Parameter Settings for User Entity Instance: g07_busmux21:inst52
- 42. Parameter Settings for User Entity Instance: LPM_CONSTANT:inst30
- 43. Parameter Settings for User Entity Instance: g07_busmux21:inst56
- 44. Parameter Settings for User Entity Instance: g07_busmux21:inst53
- 45. Parameter Settings for User Entity Instance: g07_busmux21:inst29
- 46. Parameter Settings for User Entity Instance: g07_busmux21:inst40
- 47. Elapsed Time Per Partition
- 48. Analysis & Synthesis Messages
+ 39. Parameter Settings for User Entity Instance: g07_busmux21:inst13
+ 40. Parameter Settings for User Entity Instance: g07_busmux21:inst55
+ 41. Parameter Settings for User Entity Instance: g07_busmux21:inst51
+ 42. Parameter Settings for User Entity Instance: g07_busmux21:inst52
+ 43. Parameter Settings for User Entity Instance: LPM_CONSTANT:inst30
+ 44. Parameter Settings for User Entity Instance: g07_busmux21:inst20
+ 45. Parameter Settings for User Entity Instance: g07_busmux21:inst2
+ 46. Parameter Settings for User Entity Instance: g07_busmux21:inst56
+ 47. Parameter Settings for User Entity Instance: g07_busmux21:inst53
+ 48. Parameter Settings for User Entity Instance: g07_busmux21:inst3
+ 49. Parameter Settings for User Entity Instance: g07_busmux21:inst29
+ 50. Parameter Settings for User Entity Instance: g07_busmux21:inst40
+ 51. Elapsed Time Per Partition
+ 52. Analysis & Synthesis Messages
 
 
 
@@ -79,13 +83,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr  5 16:13:18 2017      ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr  5 17:02:39 2017      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; g07_lab5                                   ;
 ; Top-level Entity Name              ; g07_lab5                                   ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 2,035                                      ;
-;     Total combinational functions  ; 1,727                                      ;
+; Total logic elements               ; 2,051                                      ;
+;     Total combinational functions  ; 1,743                                      ;
 ;     Dedicated logic registers      ; 952                                        ;
 ; Total registers                    ; 952                                        ;
 ; Total pins                         ; 42                                         ;
@@ -256,16 +260,16 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 2,035 ;
+; Estimated Total logic elements              ; 2,051 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1727  ;
+; Total combinational functions               ; 1743  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 998   ;
-;     -- 3 input functions                    ; 517   ;
-;     -- <=2 input functions                  ; 212   ;
+;     -- 4 input functions                    ; 1007  ;
+;     -- 3 input functions                    ; 513   ;
+;     -- <=2 input functions                  ; 223   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1538  ;
+;     -- normal mode                          ; 1554  ;
 ;     -- arithmetic mode                      ; 189   ;
 ;                                             ;       ;
 ; Total registers                             ; 952   ;
@@ -276,7 +280,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
 ; Maximum fan-out                             ; 952   ;
-; Total fan-out                               ; 10239 ;
+; Total fan-out                               ; 10286 ;
 ; Average fan-out                             ; 3.76  ;
 +---------------------------------------------+-------+
 
@@ -286,20 +290,23 @@ applicable agreement for further details.
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Library Name ;
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
-; |g07_lab5                                ; 1727 (7)          ; 952 (0)      ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |g07_lab5                                                                             ;              ;
-;    |bjt26:inst11|                        ; 340 (340)         ; 161 (161)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt26:inst11                                                                ;              ;
+; |g07_lab5                                ; 1743 (8)          ; 952 (0)      ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |g07_lab5                                                                             ;              ;
+;    |bjt26:inst11|                        ; 338 (338)         ; 161 (161)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt26:inst11                                                                ;              ;
 ;    |bjt52:inst66|                        ; 608 (608)         ; 299 (299)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt52:inst66                                                                ;              ;
 ;    |bjt52:inst67|                        ; 135 (135)         ; 318 (318)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|bjt52:inst67                                                                ;              ;
 ;    |compFSM:inst|                        ; 9 (9)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|compFSM:inst                                                                ;              ;
-;    |g07_7_segment_decoder:inst45|        ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_7_segment_decoder:inst45                                                ;              ;
+;    |g07_7_segment_decoder:inst45|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_7_segment_decoder:inst45                                                ;              ;
 ;    |g07_7_segment_decoder:inst46|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_7_segment_decoder:inst46                                                ;              ;
 ;    |g07_7_segment_decoder:inst47|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_7_segment_decoder:inst47                                                ;              ;
-;    |g07_7_segment_decoder:inst48|        ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_7_segment_decoder:inst48                                                ;              ;
 ;    |g07_and6:inst69|                     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_and6:inst69                                                             ;              ;
 ;    |g07_busmux21:inst10|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst10                                                         ;              ;
+;    |g07_busmux21:inst13|                 ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst13                                                         ;              ;
+;    |g07_busmux21:inst20|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst20                                                         ;              ;
 ;    |g07_busmux21:inst28|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst28                                                         ;              ;
+;    |g07_busmux21:inst2|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst2                                                          ;              ;
+;    |g07_busmux21:inst3|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst3                                                          ;              ;
 ;    |g07_busmux21:inst55|                 ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst55                                                         ;              ;
-;    |g07_busmux21:inst56|                 ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst56                                                         ;              ;
+;    |g07_busmux21:inst56|                 ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst56                                                         ;              ;
 ;    |g07_busmux21:inst72|                 ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst72                                                         ;              ;
 ;    |g07_busmux21:inst8|                  ; 219 (219)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_busmux21:inst8                                                          ;              ;
 ;    |g07_compare:inst18|                  ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_compare:inst18                                                          ;              ;
@@ -322,7 +329,7 @@ applicable agreement for further details.
 ;       |lpm_counter:inst8|                ; 24 (0)            ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_debounder:inst36|lpm_counter:inst8                                      ;              ;
 ;          |cntr_7jg:auto_generated|       ; 24 (24)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_debounder:inst36|lpm_counter:inst8|cntr_7jg:auto_generated              ;              ;
 ;    |g07_mod13:inst49|                    ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_mod13:inst49                                                            ;              ;
-;    |g07_mod13:inst50|                    ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_mod13:inst50                                                            ;              ;
+;    |g07_mod13:inst50|                    ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_mod13:inst50                                                            ;              ;
 ;    |g07_register6:inst14|                ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_register6:inst14                                                        ;              ;
 ;    |g07_register6:inst5|                 ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_register6:inst5                                                         ;              ;
 ;    |g07_register6:inst9|                 ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g07_lab5|g07_register6:inst9                                                         ;              ;
@@ -416,11 +423,11 @@ Encoding Type:  One-Hot
 ; bjt52:inst66|memory[48][3]             ; Stuck at GND due to stuck port data_in ;
 ; bjt52:inst66|memory[48][2]             ; Stuck at GND due to stuck port data_in ;
 ; bjt52:inst66|memory[51][1]             ; Merged with bjt52:inst66|memory[51][0] ;
-; bjt52:inst66|memory[51][5]             ; Merged with bjt52:inst66|memory[51][0] ;
 ; bjt52:inst66|memory[51][4]             ; Merged with bjt52:inst66|memory[51][0] ;
+; bjt52:inst66|memory[51][5]             ; Merged with bjt52:inst66|memory[51][0] ;
 ; bjt52:inst66|memory[47][2]             ; Merged with bjt52:inst66|memory[47][3] ;
-; bjt52:inst66|memory[50][5]             ; Merged with bjt52:inst66|memory[50][1] ;
 ; bjt52:inst66|memory[50][4]             ; Merged with bjt52:inst66|memory[50][1] ;
+; bjt52:inst66|memory[50][5]             ; Merged with bjt52:inst66|memory[50][1] ;
 ; bjt52:inst66|memory[46][2]             ; Merged with bjt52:inst66|memory[46][3] ;
 ; bjt52:inst66|memory[49][4]             ; Merged with bjt52:inst66|memory[49][5] ;
 ; bjt52:inst66|memory[45][2]             ; Merged with bjt52:inst66|memory[45][3] ;
@@ -471,143 +478,143 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |g07_lab5|bjt26:inst11|memory[25][0]    ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |g07_lab5|bjt26:inst11|t_num[2]         ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |g07_lab5|bjt52:inst67|memory[51][2]    ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |g07_lab5|bjt52:inst67|t_num[2]         ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |g07_lab5|bjt52:inst66|memory[51][0]    ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |g07_lab5|bjt26:inst11|memory[25][1]    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |g07_lab5|bjt26:inst11|t_num[4]         ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |g07_lab5|bjt52:inst67|memory[51][0]    ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |g07_lab5|bjt52:inst67|t_num[1]         ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |g07_lab5|bjt52:inst66|memory[51][1]    ;
 ; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |g07_lab5|bjt52:inst66|t_num[5]         ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[24][0]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[23][1]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[22][0]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[21][3]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[20][5]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[19][5]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[18][0]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[24][5]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[23][5]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[22][5]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[21][5]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[20][0]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[19][2]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[18][5]    ;
 ; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[17][0]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[16][4]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[15][1]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[14][2]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[13][2]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[12][2]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[11][5]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[10][5]    ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[9][1]     ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[8][5]     ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[7][4]     ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[6][5]     ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[5][5]     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[16][1]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[15][5]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[14][3]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[13][0]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[12][3]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[11][0]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[10][1]    ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[9][5]     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[8][1]     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[7][2]     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[6][1]     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[5][1]     ;
 ; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[4][1]     ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[3][2]     ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[2][2]     ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[1][2]     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[3][1]     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[2][1]     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[1][4]     ;
 ; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |g07_lab5|bjt26:inst11|memory[0][4]     ;
-; 53:1               ; 6 bits    ; 210 LEs       ; 210 LEs              ; 0 LEs                  ; Yes        ; |g07_lab5|lpm_ff:inst1|dffs[1]          ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[31][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[31][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[50][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[49][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[48][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[47][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[46][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[45][0]    ;
+; 53:1               ; 6 bits    ; 210 LEs       ; 210 LEs              ; 0 LEs                  ; Yes        ; |g07_lab5|lpm_ff:inst1|dffs[5]          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[31][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[31][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[50][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[49][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[48][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[47][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[46][4]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[45][4]    ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[44][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[43][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[42][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[43][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[42][0]    ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[41][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[40][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[40][4]    ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[39][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[38][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[37][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[38][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[37][0]    ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[36][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[35][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[34][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[33][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[32][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[30][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[29][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[28][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[27][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[26][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[25][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[24][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[23][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[22][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[21][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[20][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[19][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[35][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[34][3]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[33][3]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[32][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[30][3]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[29][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[28][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[27][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[26][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[25][4]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[24][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[23][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[22][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[21][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[20][4]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[19][1]    ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[18][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[17][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[16][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[15][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[14][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[13][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[12][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[17][3]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[16][3]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[15][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[14][4]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[13][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[12][4]    ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[11][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[10][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[9][3]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[8][4]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[7][5]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[10][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[9][5]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[8][0]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[7][0]     ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[6][2]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[5][2]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[4][2]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[3][2]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[2][4]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[1][4]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[0][3]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[50][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[49][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[48][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[47][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[46][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[45][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[44][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[43][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[42][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[41][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[40][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[39][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[38][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[37][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[36][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[35][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[34][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[5][0]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[4][0]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[3][4]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[2][1]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[1][0]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst67|memory[0][2]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[50][3]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[49][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[48][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[47][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[46][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[45][4]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[44][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[43][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[42][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[41][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[40][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[39][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[38][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[37][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[36][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[35][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[34][3]    ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[33][5]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[32][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[30][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[29][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[28][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[27][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[26][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[25][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[24][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[23][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[22][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[21][3]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[20][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[19][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[32][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[30][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[29][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[28][4]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[27][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[26][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[25][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[24][3]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[23][3]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[22][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[21][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[20][3]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[19][0]    ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[18][0]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[17][1]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[16][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[15][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[14][4]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[17][0]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[16][4]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[15][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[14][3]    ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[13][2]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[12][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[11][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[10][4]    ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[9][4]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[12][5]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[11][2]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[10][1]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[9][0]     ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[8][4]     ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[7][4]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[6][4]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[5][3]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[4][3]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[3][5]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[2][3]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[6][1]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[5][1]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[4][1]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[3][1]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[2][4]     ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[1][1]     ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[0][1]     ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |g07_lab5|bjt52:inst66|memory[0][3]     ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |g07_lab5|g07_busmux21:inst16|output[1] ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |g07_lab5|g07_busmux21:inst55|output[1] ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |g07_lab5|g07_busmux21:inst56|output[5] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |g07_lab5|g07_busmux21:inst56|output[0] ;
 ; 27:1               ; 6 bits    ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |g07_lab5|bjt26:inst11|value[2]         ;
 ; 54:1               ; 6 bits    ; 216 LEs       ; 216 LEs              ; 0 LEs                  ; No         ; |g07_lab5|g07_busmux21:inst8|output[1]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
@@ -1039,6 +1046,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g07_busmux21:inst13 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; width          ; 7     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: g07_busmux21:inst55 ;
 +----------------+-------+-----------------------------------------+
 ; Parameter Name ; Value ; Type                                    ;
@@ -1073,11 +1090,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------+------------------+--------------------------+
 ; Parameter Name     ; Value            ; Type                     ;
 +--------------------+------------------+--------------------------+
-; LPM_WIDTH          ; 6                ; Untyped                  ;
-; LPM_CVALUE         ; 15               ; Signed Integer           ;
+; LPM_WIDTH          ; 7                ; Untyped                  ;
+; LPM_CVALUE         ; 63               ; Signed Integer           ;
 ; ENABLE_RUNTIME_MOD ; NO               ; Untyped                  ;
-; CBXI_PARAMETER     ; lpm_constant_7a4 ; Untyped                  ;
+; CBXI_PARAMETER     ; lpm_constant_ba4 ; Untyped                  ;
 +--------------------+------------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g07_busmux21:inst20 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; width          ; 7     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g07_busmux21:inst2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; width          ; 7     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1098,6 +1135,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-----------------------------------------+
 ; width          ; 6     ; Signed Integer                          ;
 +----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g07_busmux21:inst3 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; width          ; 7     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1136,7 +1183,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Apr  5 16:13:11 2017
+    Info: Processing started: Wed Apr  5 17:02:32 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g07_lab5 -c g07_lab5
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file g07_bjt.vhd
@@ -1294,22 +1341,23 @@ Info (12133): Instantiated megafunction "LPM_COUNTER:inst12" with the following 
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_vne.tdf
     Info (12023): Found entity 1: cntr_vne
 Info (12128): Elaborating entity "cntr_vne" for hierarchy "LPM_COUNTER:inst12|cntr_vne:auto_generated"
+Info (12128): Elaborating entity "g07_busmux21" for hierarchy "g07_busmux21:inst13"
 Info (12128): Elaborating entity "g07_7_segment_decoder" for hierarchy "g07_7_segment_decoder:inst45"
 Info (12128): Elaborating entity "g07_mod13" for hierarchy "g07_mod13:inst49"
 Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "LPM_CONSTANT:inst30"
 Info (12130): Elaborated megafunction instantiation "LPM_CONSTANT:inst30"
 Info (12133): Instantiated megafunction "LPM_CONSTANT:inst30" with the following parameter:
-    Info (12134): Parameter "LPM_CVALUE" = "15"
-    Info (12134): Parameter "LPM_WIDTH" = "6"
+    Info (12134): Parameter "LPM_CVALUE" = "63"
+    Info (12134): Parameter "LPM_WIDTH" = "7"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2079 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2095 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 2037 logic cells
+    Info (21061): Implemented 2053 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 385 megabytes
-    Info: Processing ended: Wed Apr  5 16:13:18 2017
+    Info: Processing ended: Wed Apr  5 17:02:39 2017
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:07
 
