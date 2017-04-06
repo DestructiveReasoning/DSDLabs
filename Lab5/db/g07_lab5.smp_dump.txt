@@ -17,10 +17,10 @@ state.ACCEPT_CARD 0 1 0 0 0 0 1
 state.E 1 0 0 0 0 0 1 
 
 State Machine - |g07_lab5|systemFSM:inst74|state
-Name state.PILE_RECV_CARD state.PILE state.DEAL_PILE state.G state.F state.HUM_RECV_CARD state.E state.D state.C state.GET_CARD state.B state.DEAL_NEXT state.WAIT_FOR_NEW_DECK state.A 
+Name state.PILE_RECV_CARD state.PILE state.DEAL_PILE state.G state.F state.HUM_RECV_CARD state.E state.D state.C state.GET_CARD state.B state.WAIT_FOR_NEW_DECK state.DEAL_NEXT state.A 
 state.A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.WAIT_FOR_NEW_DECK 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.DEAL_NEXT 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.DEAL_NEXT 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.WAIT_FOR_NEW_DECK 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
 state.B 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
 state.GET_CARD 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
 state.C 0 0 0 0 0 0 0 0 1 0 0 0 0 1 

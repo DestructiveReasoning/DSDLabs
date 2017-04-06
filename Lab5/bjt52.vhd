@@ -20,7 +20,7 @@ entity bjt52 is
 end bjt52;
 
 architecture stacklike of bjt52 is
-	type donald is array (52-1 downto 0) of std_logic_vector(5 downto 0);
+	type donald is array (51 downto 0) of std_logic_vector(5 downto 0);
 	SIGNAL memory: donald;
 	--SIGNAL memory: std_logic_vector(52 * 6 - 1 downto 0) := (others => '0');
 	SIGNAL t_full: std_logic := '0';

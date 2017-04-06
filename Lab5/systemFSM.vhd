@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity systemFSM is
 	port (
@@ -32,30 +33,35 @@ entity systemFSM is
 end systemFSM;
 
 architecture system of systemFSM is
-	Type State_Type is (A,WAIT_FOR_NEW_DECK,DEAL_NEXT,B,GET_CARD,C,D,E,HUM_RECV_CARD,F,G,DEAL_PILE,PILE, PILE_RECV_CARD);
-	SIGNAL state: State_Type;
+	Type State_Type is (A,DEAL_NEXT,WAIT_FOR_NEW_DECK,B,GET_CARD,C,D,E,HUM_RECV_CARD,F,G,DEAL_PILE,PILE, PILE_RECV_CARD);
+	SIGNAL state: State_Type := A;
 	SIGNAL invalid_state: std_logic := '1';
-
+	SIGNAL kronus: integer range 0 to 31 := 0;
 begin
 	machine: process(clock, reset)
 	begin
 		if(reset = '1') then
 			state <= A;
+			kronus <= 0;
 		elsif(clock'Event and clock='1') then
 			case state is
 				when A =>
 					state <= WAIT_FOR_NEW_DECK;
+					kronus <= 0;
 				when WAIT_FOR_NEW_DECK =>
 					state <= DEAL_NEXT;
+					kronus <= 0;
 				when DEAL_NEXT =>
 					state <= B;
 				when B =>
-					if(count >= "10000") then
+--					if(count >= "10000") then
+					if(kronus >= 16) then
 						state <= DEAL_PILE;
 					elsif (card_dealt = '1') then state <= GET_CARD;
 					else state <= B;
 					end if;
 				when GET_CARD =>
+					kronus <= kronus + 1;
 					state <= DEAL_NEXT;
 				when DEAL_PILE =>
 					state <= PILE;
@@ -99,19 +105,21 @@ begin
 	turn <= '1' when state = F else '0';
 	request_deal <= '1' when (state = E or state = DEAL_NEXT or state = DEAL_PILE or state = PILE) else '0';
 	game_start <= '1' when state = B or state = GET_CARD or state = DEAL_NEXT else '0';
-	cpu_en <= '1' when state = GET_CARD and count(0) = '1' else '0';
-	hum_en <= '1' when (state = GET_CARD and count(0) = '0' ) or (state = D and valid = '1')  or state = HUM_RECV_CARD else '0';
-	cnt_en <= '1' when state = GET_CARD or state <= PILE else '0';
-	deck_mode <= "10" when state = A else "11";
---	deck_mode <= "10" when state = A else "11" when (state = B or state = DEAL_NEXT or state = GET_CARD or state = PILE or state = PILE_RECV_CARD or state = E or state = F) else "00";
+--	cpu_en <= '1' when state = GET_CARD and count(0) = '1' else '0';
+--	hum_en <= '1' when (state = GET_CARD and count(0) = '0' ) or (state = D and valid = '1')  or state = HUM_RECV_CARD else '0';
+	cpu_en <= '1' when state = GET_CARD and (kronus mod 2 = 1) else '0';
+	hum_en <= '1' when (state = GET_CARD and (kronus mod 2 = 0)) or (state = D and valid = '1')  or state = HUM_RECV_CARD else '0';
+	cnt_en <= '1' when state = GET_CARD else '0';
+--	cnt_en <= '1' when state = GET_CARD or state <= PILE else '0';
+	deck_mode <= "10" when state = A else "00" when state = WAIT_FOR_NEW_DECK or state = DEAL_NEXT else "11";
 	init_deck <= '1' when state = PILE else '0';
 	gg_led <= '0' when state = G else '1';
 	w_led <= '0' when state = G and hum_num = "000000" else '1';
 	l_led <= '0' when state = G and cpu_num = "000000" else '1';
-	--d_led <= '0' when state = PILE else '1';
 	d_led <= '0' when state = G and deck_num = "000000" else '1';
 	--deck_en <= '0' when (state = A or state = B or state = PILE) else '0';
-	deck_en <= '1' when state = A or state = PILE_RECV_CARD else '0';
+	deck_en <= '1' when state = A else '0';
+--	deck_en <= '1' when state = A or state = PILE_RECV_CARD else '0';
 	hum_mode <= "01" when state = B or state = GET_CARD or state = E or state = HUM_RECV_CARD else "11";
 	invalid_led <= invalid_state;
 end system;
