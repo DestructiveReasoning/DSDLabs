@@ -115,8 +115,8 @@ game_start <= game_start.DB_MAX_OUTPUT_PORT_TYPE
 cpu_en <= cpu_en.DB_MAX_OUTPUT_PORT_TYPE
 hum_en <= hum_en.DB_MAX_OUTPUT_PORT_TYPE
 cnt_en <= cnt_en.DB_MAX_OUTPUT_PORT_TYPE
-deck_mode[0] <= deck_mode.DB_MAX_OUTPUT_PORT_TYPE
-deck_mode[1] <= deck_mode.DB_MAX_OUTPUT_PORT_TYPE
+deck_mode[0] <= deck_mode[0].DB_MAX_OUTPUT_PORT_TYPE
+deck_mode[1] <= <VCC>
 init_deck <= init_deck.DB_MAX_OUTPUT_PORT_TYPE
 invalid_led <= invalid_state.DB_MAX_OUTPUT_PORT_TYPE
 gg_led <= gg_led.DB_MAX_OUTPUT_PORT_TYPE
@@ -3468,22 +3468,6 @@ datab[4] => data_wire[2].IN1
 datab[5] => data_wire[2].IN1
 
 
-|g07_lab5|g07_busmux21:inst16
-data0[0] => output.DATAB
-data0[1] => output.DATAB
-data1[0] => output.DATAA
-data1[1] => output.DATAA
-sel => output.OUTPUTSELECT
-sel => output.OUTPUTSELECT
-output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
-output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|g07_lab5|LPM_CONSTANT:inst41
-result[0] <= <VCC>
-result[1] <= <VCC>
-
-
 |g07_lab5|randinator:inst87
 clock => s[0].CLK
 clock => s[1].CLK
@@ -6093,5 +6077,10 @@ sel => output.OUTPUTSELECT
 sel => output.OUTPUTSELECT
 output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
 output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|g07_lab5|LPM_CONSTANT:inst41
+result[0] <= <VCC>
+result[1] <= <VCC>
 
 

@@ -66,7 +66,7 @@ begin
 				when PILE_RECV_CARD =>
 					state <= C;
 				when C =>
-					if(cpu_num = "000000") then state <= G;
+					if(cpu_num = "000000" or deck_num = "000000") then state <= G;
 					else
 						if(play = '0') then state <= C;
 						else state <= D;
@@ -85,7 +85,7 @@ begin
 				when HUM_RECV_CARD =>
 					state <= C;
 				when F =>
-					if(hum_num = "000000") then state <= G;
+					if(hum_num = "000000" or deck_num = "000000") then state <= G;
 					else
 						if(done = '0') then state <= F;
 						else state <= C;
@@ -102,7 +102,8 @@ begin
 	cpu_en <= '1' when state = GET_CARD and count(0) = '1' else '0';
 	hum_en <= '1' when (state = GET_CARD and count(0) = '0' ) or (state = D and valid = '1')  or state = HUM_RECV_CARD else '0';
 	cnt_en <= '1' when state = GET_CARD or state <= PILE else '0';
-	deck_mode <= "10" when state = A else "11" when (state = B or state = DEAL_NEXT or state = GET_CARD or state = PILE or state = PILE_RECV_CARD or state = E) else "00";
+	deck_mode <= "10" when state = A else "11";
+--	deck_mode <= "10" when state = A else "11" when (state = B or state = DEAL_NEXT or state = GET_CARD or state = PILE or state = PILE_RECV_CARD or state = E or state = F) else "00";
 	init_deck <= '1' when state = PILE else '0';
 	gg_led <= '0' when state = G else '1';
 	w_led <= '0' when state = G and hum_num = "000000" else '1';

@@ -2646,81 +2646,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 296 1184 520 1296)
-	(text "g07_busmux21" (rect 5 0 80 10)(font "Arial" ))
-	(text "inst16" (rect 8 96 38 106)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "data0[width-1..0]" (rect 0 0 82 10)(font "Arial" ))
-		(text "data0[width-1..0]" (rect 21 27 103 37)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "data1[width-1..0]" (rect 0 0 82 10)(font "Arial" ))
-		(text "data1[width-1..0]" (rect 21 43 103 53)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "sel" (rect 0 0 15 10)(font "Arial" ))
-		(text "sel" (rect 21 59 36 69)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 224 32)
-		(output)
-		(text "output[width-1..0]" (rect 0 0 86 10)(font "Arial" ))
-		(text "output[width-1..0]" (rect 131 27 217 37)(font "Arial" ))
-		(line (pt 224 32)(pt 208 32)(line_width 3))
-	)
-	(parameter
-		"width"
-		"2"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 208 96))
-	)
-	(annotation_block (parameter)(rect 520 1160 685 1182))
-)
-(symbol
-	(rect 136 1368 200 1416)
-	(text "OR2" (rect 1 0 22 9)(font "Arial" (font_size 6)))
-	(text "inst17" (rect 3 37 33 47)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "IN2" (rect 2 23 22 37)(font "Courier New" (bold))(invisible))
-		(text "IN2" (rect 2 23 22 37)(font "Courier New" (bold))(invisible))
-		(line (pt 0 32)(pt 15 32))
-	)
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN1" (rect 2 7 22 21)(font "Courier New" (bold))(invisible))
-		(text "IN1" (rect 2 7 22 21)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 15 16))
-	)
-	(port
-		(pt 64 24)
-		(output)
-		(text "OUT" (rect 48 15 68 29)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 48 15 68 29)(font "Courier New" (bold))(invisible))
-		(line (pt 48 24)(pt 64 24))
-	)
-	(drawing
-		(line (pt 14 36)(pt 25 36))
-		(line (pt 14 13)(pt 25 13))
-		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
-		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
-		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
-	)
-)
-(symbol
 	(rect 960 1248 1160 1360)
 	(text "g07_dealerFSM" (rect 5 0 81 10)(font "Arial" ))
 	(text "inst23" (rect 8 96 38 106)(font "Arial" ))
@@ -5272,12 +5197,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "pop[1..0]" (rect 208 1224 251 1234)(font "Arial" ))
-	(pt 296 1232)
-	(pt 200 1232)
-	(bus)
-)
-(connector
 	(pt 216 912)
 	(pt 16 912)
 	(bus)
@@ -5285,16 +5204,6 @@ applicable agreement for further details.
 (connector
 	(pt 216 912)
 	(pt 216 1216)
-	(bus)
-)
-(connector
-	(pt 216 1216)
-	(pt 296 1216)
-	(bus)
-)
-(connector
-	(pt 520 1216)
-	(pt 536 1216)
 	(bus)
 )
 (connector
@@ -5312,40 +5221,6 @@ applicable agreement for further details.
 	(pt 1088 264)
 	(pt 1088 80)
 	(bus)
-)
-(connector
-	(pt 128 1384)
-	(pt 128 1392)
-)
-(connector
-	(pt 136 1384)
-	(pt 128 1384)
-)
-(connector
-	(text "game_start" (rect 96 1384 152 1394)(font "Arial" ))
-	(pt 128 1392)
-	(pt 88 1392)
-)
-(connector
-	(pt 88 1400)
-	(pt 88 1408)
-)
-(connector
-	(text "init_deck" (rect 96 1392 140 1402)(font "Arial" ))
-	(pt 136 1400)
-	(pt 88 1400)
-)
-(connector
-	(pt 200 1392)
-	(pt 224 1392)
-)
-(connector
-	(pt 224 1392)
-	(pt 224 1248)
-)
-(connector
-	(pt 224 1248)
-	(pt 296 1248)
 )
 (connector
 	(text "csen" (rect 576 179 586 203)(font "Arial" )(vertical))
@@ -5657,6 +5532,11 @@ applicable agreement for further details.
 (connector
 	(pt 1368 216)
 	(pt 1384 216)
+)
+(connector
+	(pt 216 1216)
+	(pt 536 1216)
+	(bus)
 )
 (junction (pt 320 552))
 (junction (pt 1208 1136))
